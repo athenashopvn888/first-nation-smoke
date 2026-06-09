@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | First Nation Smoke Cannabis Dispensary Toronto",
   },
   description:
-    "Shop 200+ premium cannabis strains at First Nation Smoke Cannabis Dispensary Toronto. Exotic, Premium, AAA+, AA & Budget flower from $3/g. Toronto's uplifting dispensary at 1504 Eglinton Ave W. Open 24 Hours.",
+    "Shop 200+ premium cannabis strains at First Nation Smoke Cannabis Dispensary Toronto. Exotic, Premium, AAA+, AA & Budget flower from $3/g. Toronto's uplifting dispensary at 1504 Eglinton Ave W. Open Daily: 12:00 AM - 11:59 PM.",
   keywords: [
     "cannabis dispensary Toronto",
     "weed store Toronto",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "First Nation Smoke Cannabis Dispensary Toronto",
     title: "First Nation Smoke Cannabis Dispensary Toronto — Premium Toronto Cannabis Dispensary",
     description:
-      "200+ strains from $3/g. Exotic to Budget. Toronto's uplifting dispensary at 1504 Eglinton Ave W. Open 24 Hours.",
+      "200+ strains from $3/g. Exotic to Budget. Toronto's uplifting dispensary at 1504 Eglinton Ave W. Open Daily: 12:00 AM - 11:59 PM.",
     images: [
       {
         url: "https://firstnationsmokez.com/wp-content/uploads/2026/04/46Oi5.jpg",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "First Nation Smoke Cannabis Dispensary Toronto — Toronto's Uplifting Dispensary",
-    description: "200+ strains from $3/g. Open 24 Hours at 1504 Eglinton Ave W, Toronto.",
+    description: "200+ strains from $3/g. Open Daily: 12:00 AM - 11:59 PM at 1504 Eglinton Ave W, Toronto.",
     images: ["https://firstnationsmokez.com/wp-content/uploads/2026/04/46Oi5.jpg"],
   },
   robots: {
@@ -75,7 +75,7 @@ const jsonLd = {
   additionalType: "https://schema.org/Store",
   "@id": "https://firstnationsmokez.com",
   name: "First Nation Smoke Cannabis Dispensary Toronto",
-  description: "Cannabis dispensary at 1504 Eglinton Ave W in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
+  description: "Cannabis dispensary at 1504 Eglinton Ave W in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open Daily: 12:00 AM - 11:59 PM.",
   url: "https://firstnationsmokez.com",
   telephone: "+14372151466",
   image: "https://firstnationsmokez.com/wp-content/uploads/2026/04/7Clmh.jpg",
@@ -94,13 +94,21 @@ const jsonLd = {
     longitude: -79.4409900,
   },
   openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "00:00",
-      closes: "23:59",
-    },
-  ],
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  }
+],
   sameAs: [
     "http://firstnationsmokez.com/",
     "http://firstnationsmokez.com/",
