@@ -8,15 +8,14 @@ export interface SeoPageData {
   icon: string;
   heroTagline: string;
   banner?: string;
-  sections: { heading: string; body: string }[];
   faqs: { q: string; a: string }[];
 }
 
 export const SEO_PAGES: SeoPageData[] = [
   {
     slug: "york-weed-dispensary",
-    title: "Toronto Weed Dispensary — First Nation Smoke Cannabis Dispensary Toronto | 24 Hours | 1504 Eglinton Ave W & Nearby Expressway",
-    metaDescription: "First Nation Smoke Cannabis Dispensary Toronto is Toronto's #1 24-hour weed dispensary at 1504 Eglinton Ave W near Weston. 200+ strains, THC up to 39%, edibles, vapes, concentrates & more. Walk in anytime.",
+    title: "Toronto Weed Dispensary — First Nation Smoke Cannabis Dispensary Toronto | Open 24 Hours | 1504 Eglinton Ave W & Nearby Expressway",
+    metaDescription: "First Nation Smoke Cannabis Dispensary Toronto is Toronto's premier weed dispensary at 1504 Eglinton Ave W near Weston. 200+ strains, THC up to 39%, edibles, vapes, concentrates & more. We are open 24 hours a day, 7 days a week.",
     h1: "Toronto Weed Dispensary — First Nation Smoke Cannabis Dispensary Toronto",
     icon: "✨",
     heroTagline: "Premium Cannabis on 1504 Eglinton Ave W & Nearby Expressway · Open 24 Hours · Walk-In Welcome",
@@ -24,7 +23,7 @@ export const SEO_PAGES: SeoPageData[] = [
     sections: [
       {
         heading: "Toronto's Premier Cannabis Destination",
-        body: "First Nation Smoke Cannabis Dispensary Toronto is a premium cannabis dispensary located at 1504 Eglinton Ave W in the heart of Toronto's vibrant 1504 Eglinton Ave W & Nearby Expressway area. We carry over 200 hand-picked cannabis strains across five quality tiers — from ultra-rare Exotic genetics with THC up to 39% to affordable Budget flower starting at just $3/g. Whether you're a connoisseur seeking the rarest strains or a daily smoker looking for reliable value, First Nation Smoke Cannabis Dispensary Toronto has the perfect flower for you. We're proud to be one of Toronto's most trusted dispensaries, serving our community 24 hours a day, 7 days a week.",
+        body: "First Nation Smoke Cannabis Dispensary Toronto is a premium cannabis dispensary located at 1504 Eglinton Ave W in the heart of Toronto's vibrant 1504 Eglinton Ave W & Nearby Expressway area. We carry over 200 hand-picked cannabis strains across five quality tiers — from ultra-rare Exotic genetics with THC up to 39% to affordable Budget flower starting at just $3/g. Whether you're a connoisseur seeking the rarest strains or a daily smoker looking for reliable value, First Nation Smoke Cannabis Dispensary Toronto has the perfect flower for you. We're proud to be one of Toronto's most trusted dispensaries, and we are Open 24 Hours.",
       },
       {
         heading: "Five Tiers of Quality Cannabis — Transparent Pricing",
@@ -36,7 +35,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Open 24 Hours on 1504 Eglinton Ave W & Nearby Expressway",
-        body: "Unlike most dispensaries that close at midnight, First Nation Smoke Cannabis Dispensary Toronto is open around the clock — 24 hours a day, 7 days a week, 365 days a year. Whether you're finishing a late shift, heading out for the night, or need something at 3 AM, our doors are always open. We're centrally located at 1504 Eglinton Ave W, near major transit bus routes, close to major highways and central stations. Free street parking is available near the dispensary.",
+        body: "At First Nation Smoke Cannabis Dispensary Toronto, we make it convenient for you. We are Open 24 Hours, 365 days a year. Whether you're finishing a late shift, heading out for the night, or need an early morning pickup, we are ready to serve you. We're centrally located at 1504 Eglinton Ave W, near major transit bus routes, close to major highways and central stations. Free street parking is available near the dispensary.",
       },
       {
         heading: "Unbeatable Promotions on Every Purchase",
@@ -44,16 +43,16 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Serving Toronto, Toronto & Mississauga",
-        body: "First Nation Smoke Cannabis Dispensary Toronto proudly serves customers from across the Greater Toronto Area. Whether you're coming from Weston, Mount Dennis, North Toronto, Etobicoke, Mississauga, Brampton, or downtown Toronto, we welcome you. Our 24-hour operation means you can visit on your own schedule. Call us at (437) 215-1466 or visit us at 1504 Eglinton Ave W, Toronto, ON M6E 2G5.",
+        body: "First Nation Smoke Cannabis Dispensary Toronto proudly serves customers from across the Greater Toronto Area. Whether you're coming from Weston, Mount Dennis, North Toronto, Etobicoke, Mississauga, Brampton, or downtown Toronto, we welcome you. Call us at (437) 215-1466 or visit us at 1504 Eglinton Ave W, Toronto, ON M6E 2G5.",
       },
     ],
     faqs: [
       { q: "Where is First Nation Smoke Cannabis Dispensary Toronto located?", a: "We are located at 1504 Eglinton Ave W, Toronto, ON M6E 2G5 — in the heart of 1504 Eglinton Ave W & Nearby Expressway area — one of Toronto's most accessible areas. We're near major transit bus routes and close to major highways." },
-      { q: "What are the hours for First Nation Smoke Cannabis Dispensary Toronto?", a: "We are open 24 hours a day, 7 days a week, 365 days a year. Walk in anytime — no appointment needed. Whether it's 2 PM or 2 AM, our staff is here to help." },
+      { q: "What are the hours for First Nation Smoke Cannabis Dispensary Toronto?", a: "We are open 24 hours a day, 7 days a week. Walk in anytime — no appointment needed. Whether it's day or night, our staff is here to help." },
       { q: "What cannabis products does First Nation Smoke Cannabis Dispensary Toronto carry?", a: "We carry 200+ strains of cannabis flower across 5 quality tiers (Exotic, Premium, AAA+, AA, Budget), plus edibles, vapes, concentrates, pre-rolls, magic mushrooms, native cigarettes, and accessories. Our menu updates in real time online." },
       { q: "What is the cheapest weed at First Nation Smoke Cannabis Dispensary Toronto?", a: "Our Budget tier starts at $3/g with value ounces from $40. Our AA tier is $4/g. Every tier includes our Buy 2g Get 1g FREE promotion, making our prices even more competitive." },
       { q: "Does First Nation Smoke Cannabis Dispensary Toronto have a live menu?", a: "Yes! Our online menu at firstnationsmokez.com updates in real time with current stock, prices, and availability. You can see exactly what we have before you visit." },
-      { q: "What makes First Nation Smoke Cannabis Dispensary Toronto different from other Toronto dispensaries?", a: "Three things set us apart: (1) We're open 24 hours, (2) our transparent 5-tier pricing system means no confusing markups, and (3) every purchase includes our Buy 2g Get 1g FREE promotion. Plus we carry one of Toronto's largest selections with over 200 strains." },
+      { q: "What makes First Nation Smoke Cannabis Dispensary Toronto different from other Toronto dispensaries?", a: "Three things set us apart: (1) we are open 24 hours a day, 7 days a week, (2) our transparent 5-tier pricing system means no confusing markups, and (3) every purchase includes our Buy 2g Get 1g FREE promotion. Plus we carry one of Toronto's largest selections with over 200 strains." },
       { q: "Can I check stock before visiting?", a: "Absolutely. Visit firstnationsmokez.com to see our live menu. All flower, edibles, vapes, and accessories are listed with real-time stock status, THC levels, and pricing." },
       { q: "Is there parking near First Nation Smoke Cannabis Dispensary Toronto?", a: "Yes. Free street parking is available nearby and surrounding residential streets. We're also easily accessible via local transit." },
     ],
@@ -62,10 +61,10 @@ export const SEO_PAGES: SeoPageData[] = [
   {
     slug: "cheap-weed-york",
     title: "Cheap Weed Toronto — Budget Cannabis Deals From $3/g | First Nation Smoke Cannabis Dispensary Toronto",
-    metaDescription: "Looking for cheap weed in Toronto? First Nation Smoke Cannabis Dispensary Toronto has budget flower from $3/g, ounces from $40, and Buy 2g Get 1g FREE promos. Open 24 hours at 1504 Eglinton Ave W.",
+    metaDescription: "Looking for cheap weed in Toronto? First Nation Smoke Cannabis Dispensary Toronto has budget flower from $3/g, ounces from $40, and Buy 2g Get 1g FREE promos. We are Open 24 Hours at 1504 Eglinton Ave W.",
     h1: "Cheap Weed Toronto — Budget Cannabis Deals",
     icon: "💰",
-    heroTagline: "Budget Flower From $3/g · Ounces From $40 · Always Open",
+    heroTagline: "Budget Flower From $3/g · Ounces From $40 · Open 24 Hours",
     banner: "",
     sections: [
       {
@@ -89,7 +88,7 @@ export const SEO_PAGES: SeoPageData[] = [
       { q: "What is the cheapest weed at First Nation Smoke Cannabis Dispensary Toronto?", a: "Our Budget tier starts at $3/g with value ounces from $40. These are quality, properly-cured strains at Toronto's most competitive prices." },
       { q: "Do you have ounce deals?", a: "Yes! Budget ounces from $40, AA ounces from $90, AAA+ ounces from $100. All with excellent quality, freshness guaranteed, and Buy 2g Get 1g FREE promotions on top." },
       { q: "Is cheap weed still good quality?", a: "Absolutely. Our Budget flower delivers THC 24-27% from trusted Canadian growers. We never sell old, dry, or improperly stored flower. Every product meets our quality standards regardless of price point." },
-      { q: "Where can I buy cheap weed in Toronto?", a: "First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W, Toronto. Open 24 hours a day, walk in anytime, no appointment needed. We're in the heart of 1504 Eglinton Ave W & Nearby Expressway area." },
+      { q: "Where can I buy cheap weed in Toronto?", a: "First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W, Toronto. We are open 24 hours a day, 7 days a week, walk in anytime, no appointment needed. We're in the heart of 1504 Eglinton Ave W & Nearby Expressway area." },
       { q: "What promotions do you offer?", a: "Every tier includes Buy 2g Get 1g FREE (pay for 2g, get 3g). Our Exotic, Premium, and AAA+ tiers also offer Buy 3g Get 3g FREE (pay for 3g, get 6g). These promos apply on every visit." },
       { q: "Do you offer bulk discounts?", a: "Yes — our ounce pricing is deeply discounted compared to per-gram rates. Budget ounces are $40, AA ounces $90, and AAA+ ounces $100. The more you buy, the more you save." },
     ],
@@ -98,7 +97,7 @@ export const SEO_PAGES: SeoPageData[] = [
   {
     slug: "native-cigarettes-york",
     title: "Native Cigarettes Toronto — Discount Tobacco | First Nation Smoke Cannabis Dispensary Toronto",
-    metaDescription: "Buy native cigarettes in Toronto at First Nation Smoke Cannabis Dispensary Toronto. Wide selection of premium and value tobacco brands at the best prices. 1504 Eglinton Ave W, 1504 Eglinton Ave W & Nearby Expressway. Open 24/7.",
+    metaDescription: "Buy native cigarettes in Toronto at First Nation Smoke Cannabis Dispensary Toronto. Wide selection of premium and value tobacco brands at the best prices. 1504 Eglinton Ave W, 1504 Eglinton Ave W & Nearby Expressway. We are Open 24 Hours.",
     h1: "Native Cigarettes Toronto — Discount Tobacco",
     icon: "🏷️",
     heroTagline: "Premium & Value Brands · Best Prices in Toronto · Open 24 Hours",
@@ -110,7 +109,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Why Toronto Smokers Choose First Nation Smoke Cannabis Dispensary Toronto",
-        body: "There are three reasons Toronto smokers keep coming back to First Nation Smoke Cannabis Dispensary Toronto for their cigarettes. First, our prices are among the lowest in the 1504 Eglinton Ave W & Nearby Expressway area — we buy in volume and pass the savings to our customers. Second, our selection is comprehensive — we carry brands and varieties that many other shops simply don't stock. Third, we're open 24 hours a day, 7 days a week. Need cigarettes at midnight? 3 AM? We're here. No other tobacco shop in Toronto offers this level of convenience.",
+        body: "There are three reasons Toronto smokers keep coming back to First Nation Smoke Cannabis Dispensary Toronto for their cigarettes. First, our prices are among the lowest in the 1504 Eglinton Ave W & Nearby Expressway area — we buy in volume and pass the savings to our customers. Second, our selection is comprehensive — we carry brands and varieties that many other shops simply don't stock. Third, we are open 24 hours a day, 7 days a week. Need cigarettes? Stop by during our hours: Open 24 Hours. No other tobacco shop in Toronto offers this level of convenience.",
       },
       {
         heading: "Convenient 1504 Eglinton Ave W & Nearby Expressway Location",
@@ -124,8 +123,8 @@ export const SEO_PAGES: SeoPageData[] = [
     faqs: [
       { q: "Does First Nation Smoke Cannabis Dispensary Toronto sell native cigarettes?", a: "Yes! We carry one of the widest selections of native cigarettes in Toronto, including premium brands, value brands, full-flavour, light, and menthol varieties." },
       { q: "What cigarette brands do you carry?", a: "We stock a comprehensive range of native cigarette brands in multiple varieties. Our selection rotates regularly. Visit us at 1504 Eglinton Ave W to see our full current inventory and pricing." },
-      { q: "Where can I buy cheap cigarettes in Toronto?", a: "First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W offers some of the best cigarette prices in Toronto's Weston area. We're open 24 hours so you can shop on your own schedule." },
-      { q: "Are you open late for cigarette purchases?", a: "We're open 24 hours a day, 7 days a week. Whether you need cigarettes at noon or 3 AM, our doors are always open." },
+      { q: "Where can I buy cheap cigarettes in Toronto?", a: "First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W offers some of the best cigarette prices in Toronto's Weston area. We are open 24 hours a day, 7 days a week so you can shop on your own schedule." },
+      { q: "Are you open late for cigarette purchases?", a: "We are open 24 hours a day, 7 days a week. Whether you need cigarettes at noon or late at night, our doors are open." },
       { q: "Can I buy cigarettes and cannabis at First Nation Smoke Cannabis Dispensary Toronto?", a: "Absolutely. First Nation Smoke Cannabis Dispensary Toronto is both a fully-licensed cannabis dispensary and a tobacco retailer. Many customers appreciate the convenience of one stop for both products." },
       { q: "Where is First Nation Smoke Cannabis Dispensary Toronto located?", a: "1504 Eglinton Ave W, Toronto, ON M6E 2G5 — in 1504 Eglinton Ave W & Nearby Expressway area. Near transit routes with free street parking available." },
     ],
@@ -134,7 +133,7 @@ export const SEO_PAGES: SeoPageData[] = [
   {
     slug: "weed-store-near-toronto",
     title: "Weed Store Near Toronto — First Nation Smoke Cannabis Dispensary Toronto",
-    metaDescription: "Looking for a weed store near Toronto? First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W, Toronto is just minutes away via major highways. 200+ strains, open 24 hours.",
+    metaDescription: "Looking for a weed store near Toronto? First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W, Toronto is just minutes away via major highways. 200+ strains, we are Open 24 Hours.",
     h1: "Weed Store Near Toronto — First Nation Smoke Cannabis Dispensary Toronto",
     icon: "🚗",
     heroTagline: "Just Minutes From Mississauga via major highways · Open 24 Hours",
@@ -150,7 +149,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Open 24 Hours — Perfect for Late Night Visits",
-        body: "Unlike most dispensaries in Peel Region with limited hours, First Nation Smoke Cannabis Dispensary Toronto is open 24 hours a day, 7 days a week. Whether you're heading home from a late shift in Mississauga, going out for the night, or just need a quick pickup after hours, you can stop by First Nation Smoke Cannabis Dispensary Toronto anytime. Early morning, late night, weekends, holidays — we're always here.",
+        body: "Unlike most dispensaries in Peel Region with limited hours, First Nation Smoke Cannabis Dispensary Toronto is open 24 hours a day, 7 days a week. Whether you're heading home from a late shift, going out for the night, or just need a quick pickup, you can stop by First Nation Smoke Cannabis Dispensary Toronto during our hours: Open 24 Hours. Early morning, late night, weekends, holidays — we are always here.",
       },
       {
         heading: "Directions From Toronto",
@@ -164,7 +163,7 @@ export const SEO_PAGES: SeoPageData[] = [
     faqs: [
       { q: "How far is First Nation Smoke Cannabis Dispensary Toronto from Mississauga?", a: "We're located at 1504 Eglinton Ave W in Toronto — just a 15-20 minute drive from central Mississauga via Highway 401 East." },
       { q: "Is it worth driving from Mississauga for cannabis?", a: "Absolutely. First Nation Smoke Cannabis Dispensary Toronto offers 200+ strains, prices starting at $3/g, and promotions like Buy 2g Get 1g FREE that make the short drive incredibly worthwhile." },
-      { q: "Is First Nation Smoke Cannabis Dispensary Toronto open late?", a: "We're open 24 hours a day, 7 days a week. Whether you're driving up from Mississauga at noon or midnight, we're open and ready to serve you." },
+      { q: "Is First Nation Smoke Cannabis Dispensary Toronto open late?", a: "We are open 24 hours a day, 7 days a week. Whether you're driving up at noon or late at night, we are open and ready to serve you." },
       { q: "What's the cheapest weed near Toronto?", a: "First Nation Smoke Cannabis Dispensary Toronto has Budget flower from $3/g and value ounces from $40. With our Buy 2g Get 1g FREE promo, these are some of the best prices in the Greater Toronto Area." },
       { q: "Is there parking at First Nation Smoke Cannabis Dispensary Toronto?", a: "Yes. Free evening street parking is available near the store and surrounding residential streets." },
       { q: "Can I take transit from Toronto to First Nation Smoke Cannabis Dispensary Toronto?", a: "Yes! Local transit connects directly subway and bus routes that will drop you off right near our location." },
@@ -175,7 +174,7 @@ export const SEO_PAGES: SeoPageData[] = [
   {
     slug: "dispensary-near-me-york",
     title: "Cannabis Dispensary Near Me Toronto — First Nation Smoke Cannabis Dispensary Toronto | Open 24 Hours",
-    metaDescription: "Find a cannabis dispensary near you in Toronto. First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W has 200+ strains from $3/g. Open 24 hours. Walk in anytime, no appointment needed.",
+    metaDescription: "Find a cannabis dispensary near you in Toronto. First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W has 200+ strains from $3/g. We are Open 24 Hours. Walk in anytime, no appointment needed.",
     h1: "Cannabis Dispensary Near Me — Toronto",
     icon: "🗺️",
     heroTagline: "Walk-In Welcome · Open 24 Hours · 200+ Strains In Stock",
@@ -187,7 +186,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Why Choose First Nation Smoke Cannabis Dispensary Toronto Over Other Dispensaries?",
-        body: "What sets First Nation Smoke Cannabis Dispensary Toronto apart from other Toronto dispensaries is our combination of selection, pricing, and convenience. We carry 200+ strains across five clear quality tiers — no confusing markups, no inconsistent pricing. Our Buy 2g Get 1g FREE promotion applies to every tier, every purchase. And unlike most dispensaries that close at midnight, we're open 24 hours a day, 7 days a week. Whether you need flower, edibles, vapes, or concentrates at any hour, First Nation Smoke Cannabis Dispensary Toronto is here.",
+        body: "What sets First Nation Smoke Cannabis Dispensary Toronto apart from other Toronto dispensaries is our combination of selection, pricing, and convenience. We carry 200+ strains across five clear quality tiers — no confusing markups, no inconsistent pricing. Our Buy 2g Get 1g FREE promotion applies to every tier, every purchase. And unlike most dispensaries that close early, we are open 24 hours a day, 7 days a week. Whether you need flower, edibles, vapes, or concentrates, First Nation Smoke Cannabis Dispensary Toronto is here.",
       },
       {
         heading: "Areas We Serve in Greater Toronto Area",
@@ -196,7 +195,7 @@ export const SEO_PAGES: SeoPageData[] = [
     ],
     faqs: [
       { q: "Where is the closest dispensary in 1504 Eglinton Ave W & Nearby Expressway?", a: "First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W is conveniently located in the heart of Toronto — easily accessible from 1504 Eglinton Ave W & Nearby Expressway." },
-      { q: "Is First Nation Smoke Cannabis Dispensary Toronto walk-in friendly?", a: "Absolutely! No appointment needed. Walk in anytime — we're open 24 hours a day, 7 days a week. Our friendly staff is always ready to help." },
+      { q: "Is First Nation Smoke Cannabis Dispensary Toronto walk-in friendly?", a: "Absolutely! No appointment needed. Walk in anytime during our hours — we are open 24 hours a day, 7 days a week. Our friendly staff is always ready to help." },
       { q: "What neighbourhoods does First Nation Smoke Cannabis Dispensary Toronto serve?", a: "We serve all of Toronto and surrounding areas, including 1504 Eglinton Ave W & Nearby Expressway and surrounding areas." },
       { q: "How do I check what's in stock?", a: "Visit firstnationsmokez.com for our live menu with real-time stock, pricing, and THC levels for all products." },
       { q: "Do you sell edibles and vapes?", a: "Yes! In addition to 200+ flower strains, we carry edibles (gummies, chocolates), vape pens, disposable vapes, concentrates, pre-rolls, and accessories." },

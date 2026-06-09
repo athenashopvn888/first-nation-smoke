@@ -70,7 +70,7 @@ const EXPLORE_CATEGORIES = [
 const LOCAL_FAQS = [
   {
     q: "What are the hours for First Nation Smoke Cannabis Dispensary Toronto?",
-    a: "First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W, Toronto is open daily from 12:00 AM to 11:59 PM. Walk in anytime — no appointment needed.",
+    a: "First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W, Toronto is open 24 hours a day, 7 days a week. Walk in anytime — no appointment needed.",
   },
   {
     q: "What cannabis products do you carry?",
@@ -218,7 +218,7 @@ export default function HomePage() {
             <img src="/storeFavicon.webp" alt="First Nation Smoke Cannabis Dispensary Toronto Icon" style={{ height: "60px", width: "60px", objectFit: "contain", borderRadius: "8px", marginBottom: "8px" }} />
             <h1 className={styles.brandTitle}>FIRST NATION SMOKE CANNABIS DISPENSARY TORONTO</h1>
             <p className={styles.brandSub}>Premium Cannabis Dispensary</p>
-            <div className={styles.brandBadge}>Open Daily: 12:00 AM - 11:59 PM</div>
+            <div className={styles.brandBadge}>Open 24 Hours</div>
           </div>
 
           {/* Bento Grid */}
@@ -301,12 +301,12 @@ export default function HomePage() {
       <section className={styles.seoSection}>
         <div className={styles.container}>
           <div className={styles.seoPanel}>
-            <h2 className={styles.seoPanelTitle}>1504 Eglinton Ave W & Nearby Expressway's Premier Cannabis Dispensary — Open Daily: 12:00 AM - 11:59 PM</h2>
+            <h2 className={styles.seoPanelTitle}>1504 Eglinton Ave W & Nearby Expressway's Premier Cannabis Dispensary — Open 24 Hours</h2>
             <p className={styles.seoPanelText}>
               Welcome to <strong>First Nation Smoke Cannabis Dispensary Toronto</strong>, Toronto's premier cannabis destination at 1504 Eglinton Ave W. We carry an electrifying selection of top-shelf strains — from ultra-rare exotics to solid everyday budget picks.
             </p>
             <p className={styles.seoPanelText}>
-              We are open Open Daily: 12:00 AM - 11:59 PM — First Nation Smoke Cannabis Dispensary Toronto is here to serve you. Our live menu is constantly refreshed with the freshest drops, premium prerolls, artisan edibles, and everything in between. Whether you're winding down or stocking up for the weekend, our knowledgeable staff is always here for you.
+              We are open Open 24 Hours — First Nation Smoke Cannabis Dispensary Toronto is here to serve you. Our live menu is constantly refreshed with the freshest drops, premium prerolls, artisan edibles, and everything in between. Whether you're winding down or stocking up for the weekend, our knowledgeable staff is always here for you.
             </p>
             <p className={styles.seoPanelText}>
               Searching for a cannabis dispensary in Toronto or the surrounding area? First Nation Smoke Cannabis Dispensary Toronto is your go-to destination for premium flower, potent prerolls, and artisan edibles. Our six-tier pricing system means quality cannabis at every budget level — starting from just $3/g.

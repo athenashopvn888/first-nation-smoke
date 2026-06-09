@@ -128,7 +128,7 @@ export default function PostContent() {
 
         <div className={styles.cta}>
           <p>
-            <strong>First Nation Smoke Cannabis Dispensary Toronto</strong> — 1504 Eglinton Ave W, Toronto · Open Daily: 12:00 AM - 11:59 PM · (437) 215-1466
+            <strong>First Nation Smoke Cannabis Dispensary Toronto</strong> — 1504 Eglinton Ave W, Toronto · Open 24 Hours · (437) 215-1466
           </p>
           <Link href="/exotic" className={styles.ctaBtn}>Browse Our Menu</Link>
         </div>
