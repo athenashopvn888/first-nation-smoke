@@ -24,8 +24,8 @@ export const gbpLocation = {
     "Accessories"
   ],
   menuUrl: "/",
-  directionsUrl: "https://www.google.com/maps/search/?api=1&query=1504%20Eglinton%20Ave%20W%2C%20Toronto%2C%20ON%20M6E%202G5",
-  mapEmbedUrl: "https://maps.google.com/maps?q=First%20Nation%20Smoke%20Cannabis%20Dispensary%20Toronto%201504%20Eglinton%20Ave%20W%2C%20Toronto%2C%20ON%20M6E%202G5&t=&z=15&ie=UTF8&iwloc=&output=embed",
+  directionsUrl: "",
+  mapEmbedUrl: "",
   latitude: "43.6979500",
   longitude: "-79.4409900",
   hours: ["Open 24 Hours"],

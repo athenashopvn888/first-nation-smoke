@@ -130,14 +130,6 @@ export default async function ItemsCategoryPage({
             <p className={styles.visitText}>
               1504 Eglinton Ave W, Toronto, ON M6E 2G5 · Open 24 Hours
             </p>
-            <a
-              href="http://firstnationsmokez.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.visitBtn}
-            >
-              📍 Get Directions
-            </a>
           </div>
         </div>
       </section>

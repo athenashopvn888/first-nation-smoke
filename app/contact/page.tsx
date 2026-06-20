@@ -44,14 +44,6 @@ export default function ContactPage() {
                 <br />
                 <span className={styles.infoMuted}>1504 Eglinton Ave W & Nearby Expressway</span>
               </p>
-              <a
-                href="http://firstnationsmokez.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.infoBtn}
-              >
-                Get Directions →
-              </a>
             </div>
 
             {/* Hours */}
@@ -107,16 +99,6 @@ export default function ContactPage() {
 
           {/* Map */}
           <div className={styles.mapSection}>
-            <iframe
-              src="https://maps.google.com/maps?q=1504%20Eglinton%20Ave%20W,+Toronto,+ON+M6E%202G5&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="First Nation Smoke Cannabis Dispensary Toronto — 1504 Eglinton Ave W, Toronto"
-            ></iframe>
           </div>
         </div>
       </section>
