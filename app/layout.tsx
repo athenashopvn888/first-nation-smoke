@@ -5,11 +5,11 @@ import AgeGate from "./components/AgeGate";
 export const metadata: Metadata = {
   metadataBase: new URL("https://firstnationsmokez.com"),
   title: {
-    default: "First Nation Smoke Cannabis Dispensary Toronto — Premium Cannabis Dispensary, Toronto",
+    default: "First Nation Smoke Cannabis | Toronto Dispensary",
     template: "%s | First Nation Smoke Cannabis Dispensary Toronto",
   },
   description:
-    "Shop 200+ premium cannabis strains at First Nation Smoke Cannabis Dispensary Toronto. Exotic, Premium, AAA+, AA & Budget flower from $3/g. Toronto's uplifting dispensary at 1504 Eglinton Ave W. Open 24 Hours.",
+    "First Nation Smoke Cannabis Dispensary Toronto is a Toronto cannabis store on Eglinton Ave W with adult 19+ store info and category browsing for flower, pre-rolls, vapes, edibles, concentrates, and accessories. Open 24 Hours.",
   keywords: [
     "cannabis dispensary Toronto",
     "weed store Toronto",
