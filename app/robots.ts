@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://firstnationsmokez.com/sitemap.xml",
+    sitemap: "https://www.firstnationsmokez.com/sitemap.xml",
   };
 }

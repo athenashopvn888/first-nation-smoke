@@ -25,7 +25,7 @@ export const STORE_BLOG_CONFIG = {
   storeCode: "OB01",
   storeName: "First Nation Smoke Cannabis Dispensary Toronto",
   city: "Toronto",
-  domain: "firstnationsmokez.com",
+  domain: "www.firstnationsmokez.com",
   storePath: "/weed-dispensary-toronto",
 };
 
