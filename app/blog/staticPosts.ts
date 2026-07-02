@@ -31,7 +31,7 @@ export const STORE_BLOG_CONFIG = {
 
 export const STATIC_POSTS: StaticBlogPost[] = [
   {
-    slug: "first-nation-smoke-cannabis-dispensary-toronto-toronto-store-guide",
+    slug: "first-nation-smoke-cannabis-dispensary-toronto-store-guide",
     title: "First Nation Smoke Cannabis Dispensary Toronto Local Store Guide for Adults 19+",
     seoTitle: "First Nation Smoke Cannabis Dispensary Toronto Guide | Toronto Adult 19+",
     seo_title: "First Nation Smoke Cannabis Dispensary Toronto Guide | Toronto Adult 19+",
