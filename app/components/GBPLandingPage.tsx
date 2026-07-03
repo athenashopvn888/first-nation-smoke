@@ -133,6 +133,10 @@ export function GBPLandingPage() {
         <p className={styles.infoBlock}>
           Helpful local reference points include {landmarkList}. Customers also use this page when planning from {nearbyAreaList}.
         </p>
+        <p className={styles.infoText}>
+          For a fuller local overview, read the{" "}
+          <Link href="/blog/first-nation-smoke-cannabis-dispensary-toronto-store-guide">First Nation Smoke store guide</Link>.
+        </p>
       </section>
 
       {/* Location & NAP Section */}
