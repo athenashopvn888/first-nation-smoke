@@ -39,7 +39,7 @@ export const STATIC_POSTS: StaticBlogPost[] = [
     meta_description: "Adult 19+ guide to First Nation Smoke Cannabis Dispensary Toronto around Little Jamaica / Fairbank, with local store-page checks, menu-category context, and safe visit planning.",
     h1: "First Nation Smoke Cannabis Dispensary Toronto Local Store Guide for Adults 19+",
     excerpt: "First Nation Smoke Cannabis Dispensary Toronto guide for adults 19+ reviewing store information around Little Jamaica / Fairbank.",
-    author: "Athena SEO Team",
+    author: "The First Nation Smoke Cannabis Dispensary Toronto Team",
     date: "2026-07-02",
     category: "Store Guide",
     readTime: "4 min",
