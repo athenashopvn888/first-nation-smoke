@@ -139,7 +139,6 @@ const TICKER_SLIDES = [
   "Open 24 Hours",
   "Pre-Rolls · Edibles · Vapes · Concentrates",
   "ALL SALES ARE FINAL",
-  "🎮 Play Games at firstnationsmokez.com/games",
 ];
 
 function VerticalTicker() {

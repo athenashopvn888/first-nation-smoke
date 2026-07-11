@@ -1,5 +1,3 @@
-/* ── Geo-targeted SEO landing pages for Toronto/Weston keywords ── */
-
 export interface SeoPageData {
   slug: string;
   title: string;
@@ -14,194 +12,365 @@ export interface SeoPageData {
 
 export const SEO_PAGES: SeoPageData[] = [
   {
-    slug: "york-weed-dispensary",
-    title: "Toronto Weed Dispensary — First Nation Smoke Cannabis Dispensary Toronto | Open 24 Hours | 1504 Eglinton Ave W & Nearby Expressway",
-    metaDescription: "First Nation Smoke Cannabis Dispensary Toronto is Toronto's premier weed dispensary at 1504 Eglinton Ave W near Weston. 200+ strains, THC up to 39%, edibles, vapes, concentrates & more. We are open 24 hours a day, 7 days a week.",
-    h1: "Toronto Weed Dispensary — First Nation Smoke Cannabis Dispensary Toronto",
-    icon: "✨",
-    heroTagline: "Premium Cannabis on 1504 Eglinton Ave W & Nearby Expressway · Open 24 Hours · Walk-In Welcome",
-    banner: "",
-    sections: [
+    "slug": "toronto-weed-dispensary",
+    "title": "First Nation Smoke Cannabis Dispensary Toronto Weed Dispensary in Toronto",
+    "metaDescription": "First Nation Smoke Cannabis Dispensary Toronto is a weed dispensary in Toronto with flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and shopper resources.",
+    "h1": "First Nation Smoke Cannabis Dispensary Toronto Weed Dispensary in Toronto",
+    "icon": "*",
+    "heroTagline": "Menu shopping around Little Jamaica / Fairbank",
+    "sections": [
       {
-        heading: "Toronto's Premier Cannabis Destination",
-        body: "First Nation Smoke Cannabis Dispensary Toronto is a premium cannabis dispensary located at 1504 Eglinton Ave W in the heart of Toronto's vibrant 1504 Eglinton Ave W & Nearby Expressway area. We carry over 200 hand-picked cannabis strains across five quality tiers — from ultra-rare Exotic genetics with THC up to 39% to affordable Budget flower starting at just $3/g. Whether you're a connoisseur seeking the rarest strains or a daily smoker looking for reliable value, First Nation Smoke Cannabis Dispensary Toronto has the perfect flower for you. We're proud to be one of Toronto's most trusted dispensaries, and we are Open 24 Hours.",
+        "heading": "Shop First Nation Smoke Cannabis Dispensary Toronto With A Plan",
+        "body": "First Nation Smoke Cannabis Dispensary Toronto helps adults compare the menu without turning the visit into a maze. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
       },
       {
-        heading: "Five Tiers of Quality Cannabis — Transparent Pricing",
-        body: "Our unique tier system ensures transparent pricing and quality grading so you always know what you're getting. Exotic ($10-$12/g) features top-shelf, ultra-rare genetics with THC levels reaching 35-39% — these are the strains connoisseurs travel across Toronto to find. Premium ($7-$10/g) offers connoisseur-grade strains at THC 32-34%, balancing quality and value. AAA+ ($5-$6/g) delivers heavy hitters at THC 30-32% — our most popular tier for experienced users. AA ($4/g) provides quality daily drivers at THC 27-29%, perfect for regular consumption. Budget ($3/g) offers value ounces from $40 without sacrificing reliability. Every tier is lab-tested, properly cured, and freshly rotated.",
+        "heading": "Local Menu Notes For Little Jamaica / Fairbank",
+        "body": "If you searched for a weed dispensary in Little Jamaica / Fairbank or a cannabis dispensary in Toronto, use this page to get oriented. Little Jamaica / Fairbank, Eglinton Ave W, Little Jamaica, Fairbank are useful local cues, but the current menu and staff are the right place for details that change."
       },
       {
-        heading: "Beyond Flower — Edibles, Vapes, Concentrates & More",
-        body: "First Nation Smoke Cannabis Dispensary Toronto is more than just a flower shop. We carry a comprehensive selection of cannabis edibles (gummies, chocolates, baked goods), vape pens and disposable vapes, concentrates (shatter, wax, hash, diamonds, live resin), pre-rolled joints, native cigarettes, rolling papers, and accessories. Our live digital menu at firstnationsmokez.com updates in real time so you always know exactly what's in stock before you make the trip.",
-      },
-      {
-        heading: "Open 24 Hours on 1504 Eglinton Ave W & Nearby Expressway",
-        body: "At First Nation Smoke Cannabis Dispensary Toronto, we make it convenient for you. We are Open 24 Hours, 365 days a year. Whether you're finishing a late shift, heading out for the night, or need an early morning pickup, we are ready to serve you. We're centrally located at 1504 Eglinton Ave W, near major transit bus routes, close to major highways and central stations. Free street parking is available near the dispensary.",
-      },
-      {
-        heading: "Clear Bundle Pricing on Flower",
-        body: "Every purchase at First Nation Smoke Cannabis Dispensary Toronto comes with our signature bundle offers. Our 3g bundle offer applies to every single tier — the 3g total is shown clearly before purchase. Our top three tiers (Exotic, Premium, and AAA+) also qualify for 6g bundle pricing for 6g total. Combined with our already competitive pricing, First Nation Smoke Cannabis Dispensary Toronto offers some of the best cannabis value in Toronto, Toronto, and the surrounding area.",
-      },
-      {
-        heading: "Serving Toronto, Toronto & Mississauga",
-        body: "First Nation Smoke Cannabis Dispensary Toronto proudly serves customers from across the Greater Toronto Area. Whether you're coming from Weston, Mount Dennis, North Toronto, Etobicoke, Mississauga, Brampton, or downtown Toronto, we welcome you. Call us at (437) 215-1466 or visit us at 1504 Eglinton Ave W, Toronto, ON M6E 2G5.",
-      },
+        "heading": "What To Check Before Visiting",
+        "body": "Confirm the store page, directions, contact options, listed hours, and menu category first. For current products, prices, or availability, use the menu or ask staff before leaving."
+      }
     ],
-    faqs: [
-      { q: "Where is First Nation Smoke Cannabis Dispensary Toronto located?", a: "We are located at 1504 Eglinton Ave W, Toronto, ON M6E 2G5 — in the heart of 1504 Eglinton Ave W & Nearby Expressway area — one of Toronto's most accessible areas. We're near major transit bus routes and close to major highways." },
-      { q: "What are the hours for First Nation Smoke Cannabis Dispensary Toronto?", a: "We are open 24 hours a day, 7 days a week. Walk in anytime — no appointment needed. Whether it's day or night, our staff is here to help." },
-      { q: "What cannabis products does First Nation Smoke Cannabis Dispensary Toronto carry?", a: "We carry 200+ strains of cannabis flower across 5 quality tiers (Exotic, Premium, AAA+, AA, Budget), plus edibles, vapes, concentrates, pre-rolls, native cigarettes, and accessories. Our menu updates in real time online." },
-      { q: "What is the cheapest weed at First Nation Smoke Cannabis Dispensary Toronto?", a: "Our Budget tier starts at $3/g with value ounces from $40. Our AA tier is $4/g. Every tier includes our 3g bundle pricing, making our prices even more competitive." },
-      { q: "Does First Nation Smoke Cannabis Dispensary Toronto have a live menu?", a: "Yes! Our online menu at firstnationsmokez.com updates in real time with current stock, prices, and availability. You can see exactly what we have before you visit." },
-      { q: "What makes First Nation Smoke Cannabis Dispensary Toronto different from other Toronto dispensaries?", a: "Three things set us apart: (1) we are open 24 hours a day, 7 days a week, (2) our transparent 5-tier pricing system means no confusing markups, and (3) every purchase includes our 3g bundle pricing. Plus we carry one of Toronto's largest selections with over 200 strains." },
-      { q: "Can I check stock before visiting?", a: "Absolutely. Visit firstnationsmokez.com to see our live menu. All flower, edibles, vapes, and accessories are listed with real-time stock status, THC levels, and pricing." },
-      { q: "Is there parking near First Nation Smoke Cannabis Dispensary Toronto?", a: "Yes. Free street parking is available nearby and surrounding residential streets. We're also easily accessible via local transit." },
-    ],
+    "faqs": [
+      {
+        "q": "Is First Nation Smoke Cannabis Dispensary Toronto a cannabis dispensary in Toronto?",
+        "a": "Yes. First Nation Smoke Cannabis Dispensary Toronto serves shoppers looking for a cannabis dispensary in Toronto. Use the store page for directions, contact options, and listed hours."
+      },
+      {
+        "q": "What should I check before visiting First Nation Smoke Cannabis Dispensary Toronto?",
+        "a": "Start with the store page, then use the current menu to compare product names, formats, prices, and item notes."
+      },
+      {
+        "q": "Does First Nation Smoke Cannabis Dispensary Toronto carry flower and pre-rolls?",
+        "a": "The site has menu paths for flower tiers and pre-rolls. Check the current menu or ask staff for current details."
+      }
+    ]
   },
-
   {
-    slug: "cheap-weed-york",
-    title: "Cheap Weed Toronto — Budget Cannabis Deals From $3/g | First Nation Smoke Cannabis Dispensary Toronto",
-    metaDescription: "Looking for cheap weed in Toronto? First Nation Smoke Cannabis Dispensary Toronto has budget flower from $3/g, ounces from $40, and 3g bundle pricing. We are Open 24 Hours at 1504 Eglinton Ave W.",
-    h1: "Cheap Weed Toronto — Budget Cannabis Deals",
-    icon: "💰",
-    heroTagline: "Budget Flower From $3/g · Ounces From $40 · Open 24 Hours",
-    banner: "",
-    sections: [
+    "slug": "york-weed-dispensary",
+    "title": "First Nation Smoke Cannabis Dispensary Toronto Weed Dispensary in Toronto",
+    "metaDescription": "First Nation Smoke Cannabis Dispensary Toronto is a weed dispensary in Toronto with flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and shopper resources.",
+    "h1": "First Nation Smoke Cannabis Dispensary Toronto Weed Dispensary in Toronto",
+    "icon": "*",
+    "heroTagline": "Menu shopping around Little Jamaica / Fairbank",
+    "sections": [
       {
-        heading: "Toronto's Best Prices on Quality Cannabis",
-        body: "Looking for cheap weed in Toronto without sacrificing quality? First Nation Smoke Cannabis Dispensary Toronto offers some of the most competitive cannabis prices in the city. Our Budget tier starts at just $3/g with value ounces from $40. Our AA tier ($4/g) and AAA+ tier ($5-$6/g) also deliver incredible value with THC levels from 27% to 32%. We believe great cannabis shouldn't break the bank, and our transparent tier-based pricing ensures you always get exactly what you pay for — no hidden markups, no gimmicks.",
+        "heading": "Shop First Nation Smoke Cannabis Dispensary Toronto With A Plan",
+        "body": "First Nation Smoke Cannabis Dispensary Toronto helps adults compare the menu without turning the visit into a maze. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
       },
       {
-        heading: "Flower Bundle Pricing",
-        body: "Every tier at First Nation Smoke Cannabis Dispensary Toronto comes with clear 3g bundle pricing so the total grams and price are shown before purchase. Our top three tiers (Exotic, Premium, AAA+) also offer 6g bundle pricing for 6g total. When you combine our already low prices with these bundle offers, First Nation Smoke Cannabis Dispensary Toronto delivers the best cannabis value in Toronto. A $15 AAA+ 3g purchase actually gets you 3g of flower — that's just $5/g for THC 30%+ cannabis.",
+        "heading": "Local Menu Notes For Little Jamaica / Fairbank",
+        "body": "If you searched for a weed dispensary in Little Jamaica / Fairbank or a cannabis dispensary in Toronto, use this page to get oriented. Little Jamaica / Fairbank, Eglinton Ave W, Little Jamaica, Fairbank are useful local cues, but the current menu and staff are the right place for details that change."
       },
       {
-        heading: "Budget Doesn't Mean Low Quality",
-        body: "At First Nation Smoke Cannabis Dispensary Toronto, cheap doesn't mean low quality. Every strain in our Budget and AA tiers delivers reliable potency (THC 24-29%) from trusted Canadian growers. We rotate our inventory frequently to ensure freshness and maintain our quality standards across all price points. Our Budget strains are perfect for rolling, sessions, or anyone who prefers value over premium aesthetics. Our AA tier is a step up — solid daily drivers with consistent effects.",
-      },
-      {
-        heading: "Compare Our Prices",
-        body: "Budget: $3/g — $40/oz. AA: $4/g — $90/oz. AAA+: $5-$6/g — $100/oz. Premium: $7-$10/g. Exotic: $10-$12/g. Every tier includes 3g bundle pricing. Top tiers include 6g bundle pricing. These are some of the lowest prices you'll find at any dispensary in Toronto, 1504 Eglinton Ave W & Nearby Expressway and surrounding areas.",
-      },
+        "heading": "What To Check Before Visiting",
+        "body": "Confirm the store page, directions, contact options, listed hours, and menu category first. For current products, prices, or availability, use the menu or ask staff before leaving."
+      }
     ],
-    faqs: [
-      { q: "What is the cheapest weed at First Nation Smoke Cannabis Dispensary Toronto?", a: "Our Budget tier starts at $3/g with value ounces from $40. These are quality, properly-cured strains at Toronto's most competitive prices." },
-      { q: "Do you have ounce deals?", a: "Yes! Budget ounces from $40, AA ounces from $90, AAA+ ounces from $100. All with excellent quality, freshness guaranteed, and 3g bundle pricing on top." },
-      { q: "Is cheap weed still good quality?", a: "Absolutely. Our Budget flower delivers THC 24-27% from trusted Canadian growers. We never sell old, dry, or improperly stored flower. Every product meets our quality standards regardless of price point." },
-      { q: "Where can I buy cheap weed in Toronto?", a: "First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W, Toronto. We are open 24 hours a day, 7 days a week, walk in anytime, no appointment needed. We're in the heart of 1504 Eglinton Ave W & Nearby Expressway area." },
-      { q: "What bundle pricing do you offer?", a: "Every tier includes 3g bundle pricing (pay for 3g total). Our Exotic, Premium, and AAA+ tiers also offer 6g bundle pricing (pay for 6g total). These bundle offers apply on every visit." },
-      { q: "Do you offer bulk discounts?", a: "Yes — our ounce pricing is deeply discounted compared to per-gram rates. Budget ounces are $40, AA ounces $90, and AAA+ ounces $100. The more you buy, the more you save." },
-    ],
+    "faqs": [
+      {
+        "q": "Is First Nation Smoke Cannabis Dispensary Toronto a cannabis dispensary in Toronto?",
+        "a": "Yes. First Nation Smoke Cannabis Dispensary Toronto serves shoppers looking for a cannabis dispensary in Toronto. Use the store page for directions, contact options, and listed hours."
+      },
+      {
+        "q": "What should I check before visiting First Nation Smoke Cannabis Dispensary Toronto?",
+        "a": "Start with the store page, then use the current menu to compare product names, formats, prices, and item notes."
+      },
+      {
+        "q": "Does First Nation Smoke Cannabis Dispensary Toronto carry flower and pre-rolls?",
+        "a": "The site has menu paths for flower tiers and pre-rolls. Check the current menu or ask staff for current details."
+      }
+    ]
   },
-
   {
-    slug: "native-cigarettes-york",
-    title: "Native Cigarettes Toronto — Discount Tobacco | First Nation Smoke Cannabis Dispensary Toronto",
-    metaDescription: "Buy native cigarettes in Toronto at First Nation Smoke Cannabis Dispensary Toronto. Wide selection of premium and value tobacco brands at the best prices. 1504 Eglinton Ave W, 1504 Eglinton Ave W & Nearby Expressway. We are Open 24 Hours.",
-    h1: "Native Cigarettes Toronto — Discount Tobacco",
-    icon: "🏷️",
-    heroTagline: "Premium & Value Brands · Best Prices in Toronto · Open 24 Hours",
-    banner: "",
-    sections: [
+    "slug": "cheap-weed-toronto",
+    "title": "First Nation Smoke Cannabis Dispensary Toronto Cheap Weed and Budget Weed Guide",
+    "metaDescription": "A value-minded First Nation Smoke Cannabis Dispensary Toronto guide for cheap weed, budget weed, affordable weed, and flower tier shopping in Toronto.",
+    "h1": "First Nation Smoke Cannabis Dispensary Toronto Cheap Weed and Budget Weed Guide",
+    "icon": "$",
+    "heroTagline": "Value shopping without the guessing game",
+    "sections": [
       {
-        heading: "Toronto's Best Selection of Native Cigarettes",
-        body: "First Nation Smoke Cannabis Dispensary Toronto carries one of the widest selections of native cigarettes in Toronto. Located at 1504 Eglinton Ave W near 1504 Eglinton Ave W & Nearby Expressway, we stock a comprehensive range of both premium and value native cigarette brands at competitive prices. Whether you prefer full-flavour, light, menthol, or specialty blends, our tobacco selection has something for every smoker. We're proud to be one of the few stores in Toronto that combines a full cannabis dispensary with a comprehensive tobacco counter — one stop for everything you need.",
+        "heading": "Start With Budget And AA",
+        "body": "If cheap weed or affordable weed is the mission, start with the Budget and AA flower lanes before jumping around the rest of the menu. That keeps the comparison clean."
       },
       {
-        heading: "Why Toronto Smokers Choose First Nation Smoke Cannabis Dispensary Toronto",
-        body: "There are three reasons Toronto smokers keep coming back to First Nation Smoke Cannabis Dispensary Toronto for their cigarettes. First, our prices are among the lowest in the 1504 Eglinton Ave W & Nearby Expressway area — we buy in volume and pass the savings to our customers. Second, our selection is comprehensive — we carry brands and varieties that many other shops simply don't stock. Third, we are open 24 hours a day, 7 days a week. Need cigarettes? Stop by during our hours: Open 24 Hours. No other tobacco shop in Toronto offers this level of convenience.",
+        "heading": "Compare The Current Menu",
+        "body": "Look at product name, format, weight, posted price, and item notes. Menus change, so use this page for the shopping method and the live menu or staff for current details."
       },
       {
-        heading: "Convenient 1504 Eglinton Ave W & Nearby Expressway Location",
-        body: "Our shop at 1504 Eglinton Ave W is centrally located in Toronto — easily accessible from Weston Rd, Lawrence Ave W, Highway 401, and all major Peel/Toronto routes. Whether you're walking, driving, or taking the bus, First Nation Smoke Cannabis Dispensary Toronto is easy to reach. Free evening street parking is available nearby. We serve customers from across Toronto including 1504 Eglinton Ave W & Nearby Expressway and surrounding areas.",
-      },
-      {
-        heading: "More Than Just Cigarettes",
-        body: "While you're picking up your cigarettes, browse our full cannabis menu — over 200 strains of flower, plus edibles, vapes, concentrates, pre-rolls, and accessories. Many of our customers appreciate the convenience of getting their cigarettes and cannabis in one trip. Our knowledgeable staff can help you with both sides of our inventory.",
-      },
+        "heading": "Know When To Move Up",
+        "body": "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A better tier decision starts with the lane, not with random scrolling."
+      }
     ],
-    faqs: [
-      { q: "Does First Nation Smoke Cannabis Dispensary Toronto sell native cigarettes?", a: "Yes! We carry one of the widest selections of native cigarettes in Toronto, including premium brands, value brands, full-flavour, light, and menthol varieties." },
-      { q: "What cigarette brands do you carry?", a: "We stock a comprehensive range of native cigarette brands in multiple varieties. Our selection rotates regularly. Visit us at 1504 Eglinton Ave W to see our full current inventory and pricing." },
-      { q: "Where can I buy cheap cigarettes in Toronto?", a: "First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W offers some of the best cigarette prices in Toronto's Weston area. We are open 24 hours a day, 7 days a week so you can shop on your own schedule." },
-      { q: "Are you open late for cigarette purchases?", a: "We are open 24 hours a day, 7 days a week. Whether you need cigarettes at noon or late at night, our doors are open." },
-      { q: "Can I buy cigarettes and cannabis at First Nation Smoke Cannabis Dispensary Toronto?", a: "Absolutely. First Nation Smoke Cannabis Dispensary Toronto is both a fully-licensed cannabis dispensary and a tobacco retailer. Many customers appreciate the convenience of one stop for both products." },
-      { q: "Where is First Nation Smoke Cannabis Dispensary Toronto located?", a: "1504 Eglinton Ave W, Toronto, ON M6E 2G5 — in 1504 Eglinton Ave W & Nearby Expressway area. Near transit routes with free street parking available." },
-    ],
+    "faqs": [
+      {
+        "q": "Where should value shoppers start at First Nation Smoke Cannabis Dispensary Toronto?",
+        "a": "Start with Budget and AA flower, then compare current menu details before choosing."
+      },
+      {
+        "q": "Does affordable weed mean guessing?",
+        "a": "No. Compare the category, product name, format, size, posted price, and item notes. Ask staff if anything is unclear."
+      },
+      {
+        "q": "Where can shoppers confirm current prices?",
+        "a": "Use the current menu or ask staff. A guide should not pretend prices and availability never move."
+      }
+    ]
   },
-
   {
-    slug: "weed-store-near-toronto",
-    title: "Weed Store Near Toronto — First Nation Smoke Cannabis Dispensary Toronto",
-    metaDescription: "Looking for a weed store near Toronto? First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W, Toronto is just minutes away via major highways. 200+ strains, we are Open 24 Hours.",
-    h1: "Weed Store Near Toronto — First Nation Smoke Cannabis Dispensary Toronto",
-    icon: "🚗",
-    heroTagline: "Just Minutes From Mississauga via major highways · Open 24 Hours",
-    banner: "",
-    sections: [
+    "slug": "cheap-weed-york",
+    "title": "First Nation Smoke Cannabis Dispensary Toronto Cheap Weed and Budget Weed Guide",
+    "metaDescription": "A value-minded First Nation Smoke Cannabis Dispensary Toronto guide for cheap weed, budget weed, affordable weed, and flower tier shopping in Toronto.",
+    "h1": "First Nation Smoke Cannabis Dispensary Toronto Cheap Weed and Budget Weed Guide",
+    "icon": "$",
+    "heroTagline": "Value shopping without the guessing game",
+    "sections": [
       {
-        heading: "The Closest Quality Dispensary to Mississauga",
-        body: "First Nation Smoke Cannabis Dispensary Toronto is one of the closest premium cannabis dispensaries to Toronto. Located at 1504 Eglinton Ave W in Toronto — just minutes up Highway 410 and East on 401 — we're the easiest dispensary to reach when you're coming from the surrounding area. Whether you're driving from Toronto and surrounding areas, First Nation Smoke Cannabis Dispensary Toronto is the fastest, most convenient option for top-tier cannabis.",
+        "heading": "Start With Budget And AA",
+        "body": "If cheap weed or affordable weed is the mission, start with the Budget and AA flower lanes before jumping around the rest of the menu. That keeps the comparison clean."
       },
       {
-        heading: "Why Make the Drive to First Nation Smoke Cannabis Dispensary Toronto?",
-        body: "First Nation Smoke Cannabis Dispensary Toronto offers a wider selection and more competitive pricing than most local Peel options. You'll find over 200 strains across five quality tiers — from ultra-rare Exotic genetics (THC 35-39%) to affordable Budget flower at just $3/g. Our 3g bundle pricing applies to every tier, and our top three tiers offer 6g bundle pricing. With prices starting at $3/g and ounces from $40, First Nation Smoke Cannabis Dispensary Toronto delivers value that's worth the short drive from Toronto.",
+        "heading": "Compare The Current Menu",
+        "body": "Look at product name, format, weight, posted price, and item notes. Menus change, so use this page for the shopping method and the live menu or staff for current details."
       },
       {
-        heading: "Open 24 Hours — Perfect for Late Night Visits",
-        body: "Unlike most dispensaries in Peel Region with limited hours, First Nation Smoke Cannabis Dispensary Toronto is open 24 hours a day, 7 days a week. Whether you're heading home from a late shift, going out for the night, or just need a quick pickup, you can stop by First Nation Smoke Cannabis Dispensary Toronto during our hours: Open 24 Hours. Early morning, late night, weekends, holidays — we are always here.",
-      },
-      {
-        heading: "Directions From Toronto",
-        body: "We are located centrally at 1504 Eglinton Ave W, Toronto, making it easy to drive or take transit from Toronto. Total drive time is just a few minutes. Free street parking is available.",
-      },
-      {
-        heading: "Full Menu — Cannabis, Edibles, Vapes & More",
-        body: "When you make the trip up to Toronto, make it count. First Nation Smoke Cannabis Dispensary Toronto carries a full selection including 200+ flower strains, edibles, vape pens, disposable vapes, concentrates (shatter, wax, hash, live resin), pre-rolled joints, native cigarettes, and accessories. Check our live online menu at firstnationsmokez.com before you visit to see exactly what's in stock.",
-      },
+        "heading": "Know When To Move Up",
+        "body": "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A better tier decision starts with the lane, not with random scrolling."
+      }
     ],
-    faqs: [
-      { q: "How far is First Nation Smoke Cannabis Dispensary Toronto from Mississauga?", a: "We're located at 1504 Eglinton Ave W in Toronto — just a 15-20 minute drive from central Mississauga via Highway 401 East." },
-      { q: "Is it worth driving from Mississauga for cannabis?", a: "Absolutely. First Nation Smoke Cannabis Dispensary Toronto offers 200+ strains, prices starting at $3/g, and bundle pricing options like 3g total that make the short drive incredibly worthwhile." },
-      { q: "Is First Nation Smoke Cannabis Dispensary Toronto open late?", a: "We are open 24 hours a day, 7 days a week. Whether you're driving up at noon or late at night, we are open and ready to serve you." },
-      { q: "What's the cheapest weed near Toronto?", a: "First Nation Smoke Cannabis Dispensary Toronto has Budget flower from $3/g and value ounces from $40. With our 3g bundle pricing, these are some of the best prices in the Greater Toronto Area." },
-      { q: "Is there parking at First Nation Smoke Cannabis Dispensary Toronto?", a: "Yes. Free evening street parking is available near the store and surrounding residential streets." },
-      { q: "Can I take transit from Toronto to First Nation Smoke Cannabis Dispensary Toronto?", a: "Yes! Local transit connects directly subway and bus routes that will drop you off right near our location." },
-      { q: "Do you carry products besides cannabis?", a: "Yes — we also carry native cigarettes, rolling papers, grinders, and other accessories. Many Mississauga customers appreciate the one-stop convenience." },
-    ],
+    "faqs": [
+      {
+        "q": "Where should value shoppers start at First Nation Smoke Cannabis Dispensary Toronto?",
+        "a": "Start with Budget and AA flower, then compare current menu details before choosing."
+      },
+      {
+        "q": "Does affordable weed mean guessing?",
+        "a": "No. Compare the category, product name, format, size, posted price, and item notes. Ask staff if anything is unclear."
+      },
+      {
+        "q": "Where can shoppers confirm current prices?",
+        "a": "Use the current menu or ask staff. A guide should not pretend prices and availability never move."
+      }
+    ]
   },
-
   {
-    slug: "dispensary-near-me-york",
-    title: "Cannabis Dispensary Near Me Toronto — First Nation Smoke Cannabis Dispensary Toronto | Open 24 Hours",
-    metaDescription: "Find a cannabis dispensary near you in Toronto. First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W has 200+ strains from $3/g. We are Open 24 Hours. Walk in anytime, no appointment needed.",
-    h1: "Cannabis Dispensary Near Me — Toronto",
-    icon: "🗺️",
-    heroTagline: "Walk-In Welcome · Open 24 Hours · 200+ Strains In Stock",
-    banner: "",
-    sections: [
+    "slug": "native-cigarettes-toronto",
+    "title": "First Nation Smoke Cannabis Dispensary Toronto Native Cigarettes Resource",
+    "metaDescription": "First Nation Smoke Cannabis Dispensary Toronto Native cigarettes resource with brand names shown on the menu and $25 carton notes where listed.",
+    "h1": "First Nation Smoke Cannabis Dispensary Toronto Native Cigarettes Resource",
+    "icon": "#",
+    "heroTagline": "$25 carton notes and brand names where listed",
+    "sections": [
       {
-        heading: "Find Premium Cannabis Near You in Toronto",
-        body: "If you're searching for a cannabis dispensary near you in Toronto, First Nation Smoke Cannabis Dispensary Toronto is conveniently located at 1504 Eglinton Ave W — in the heart of 1504 Eglinton Ave W & Nearby Expressway area. We serve customers from across Toronto, North Toronto, Etobicoke, Mississauga, and Toronto.",
+        "heading": "Start With The Cigarette Category",
+        "body": "The cigarette menu may show carton-style Native smoke options around $25, with brand names such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, and Canadian Classics Silver. Check the current menu or ask staff before making the trip."
       },
       {
-        heading: "Why Choose First Nation Smoke Cannabis Dispensary Toronto Over Other Dispensaries?",
-        body: "What sets First Nation Smoke Cannabis Dispensary Toronto apart from other Toronto dispensaries is our combination of selection, pricing, and convenience. We carry 200+ strains across five clear quality tiers — no confusing markups, no inconsistent pricing. Our 3g bundle pricing applies to every tier, every purchase. And unlike most dispensaries that close early, we are open 24 hours a day, 7 days a week. Whether you need flower, edibles, vapes, or concentrates, First Nation Smoke Cannabis Dispensary Toronto is here.",
+        "heading": "Keep Cannabis And Smokes Separate",
+        "body": "If you are also shopping flower, pre-rolls, edibles, THC vapes, or concentrates, compare those categories separately. It keeps the visit cleaner."
       },
       {
-        heading: "Areas We Serve in Greater Toronto Area",
-        body: "First Nation Smoke Cannabis Dispensary Toronto is centrally located and easily accessible from anywhere in Toronto and West Toronto. We regularly serve customers from: 1504 Eglinton Ave W & Nearby Expressway and surrounding areas including Toronto, Toronto, and nearby neighbourhoods."
-      },
+        "heading": "Confirm What Matters Today",
+        "body": "Specific brands, carton options, and prices can change. Use this resource for the shopping path, then confirm current details with the menu or staff."
+      }
     ],
-    faqs: [
-      { q: "Where is the closest dispensary in 1504 Eglinton Ave W & Nearby Expressway?", a: "First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W is conveniently located in the heart of Toronto — easily accessible from 1504 Eglinton Ave W & Nearby Expressway." },
-      { q: "Is First Nation Smoke Cannabis Dispensary Toronto walk-in friendly?", a: "Absolutely! No appointment needed. Walk in anytime during our hours — we are open 24 hours a day, 7 days a week. Our friendly staff is always ready to help." },
-      { q: "What neighbourhoods does First Nation Smoke Cannabis Dispensary Toronto serve?", a: "We serve all of Toronto and surrounding areas, including 1504 Eglinton Ave W & Nearby Expressway and surrounding areas." },
-      { q: "How do I check what's in stock?", a: "Visit firstnationsmokez.com for our live menu with real-time stock, pricing, and THC levels for all products." },
-      { q: "Do you sell edibles and vapes?", a: "Yes! In addition to 200+ flower strains, we carry edibles (gummies, chocolates), vape pens, disposable vapes, concentrates, pre-rolls, and accessories." },
-    ],
+    "faqs": [
+      {
+        "q": "Does First Nation Smoke Cannabis Dispensary Toronto list Native cigarette options?",
+        "a": "The menu may show Native smoke brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, and Canadian Menthol. Confirm current options before visiting."
+      },
+      {
+        "q": "Are $25 cartons guaranteed?",
+        "a": "No. This page points shoppers toward menu listings where $25 carton-style options are shown. Confirm current price and availability before choosing."
+      },
+      {
+        "q": "Where should shoppers start?",
+        "a": "Open the cigarette category, then use the store page for directions, contact options, and listed hours."
+      }
+    ]
   },
+  {
+    "slug": "native-cigarettes-york",
+    "title": "First Nation Smoke Cannabis Dispensary Toronto Native Cigarettes Resource",
+    "metaDescription": "First Nation Smoke Cannabis Dispensary Toronto Native cigarettes resource with brand names shown on the menu and $25 carton notes where listed.",
+    "h1": "First Nation Smoke Cannabis Dispensary Toronto Native Cigarettes Resource",
+    "icon": "#",
+    "heroTagline": "$25 carton notes and brand names where listed",
+    "sections": [
+      {
+        "heading": "Start With The Cigarette Category",
+        "body": "The cigarette menu may show carton-style Native smoke options around $25, with brand names such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, and Canadian Classics Silver. Check the current menu or ask staff before making the trip."
+      },
+      {
+        "heading": "Keep Cannabis And Smokes Separate",
+        "body": "If you are also shopping flower, pre-rolls, edibles, THC vapes, or concentrates, compare those categories separately. It keeps the visit cleaner."
+      },
+      {
+        "heading": "Confirm What Matters Today",
+        "body": "Specific brands, carton options, and prices can change. Use this resource for the shopping path, then confirm current details with the menu or staff."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Does First Nation Smoke Cannabis Dispensary Toronto list Native cigarette options?",
+        "a": "The menu may show Native smoke brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, and Canadian Menthol. Confirm current options before visiting."
+      },
+      {
+        "q": "Are $25 cartons guaranteed?",
+        "a": "No. This page points shoppers toward menu listings where $25 carton-style options are shown. Confirm current price and availability before choosing."
+      },
+      {
+        "q": "Where should shoppers start?",
+        "a": "Open the cigarette category, then use the store page for directions, contact options, and listed hours."
+      }
+    ]
+  },
+  {
+    "slug": "weed-store-near-little-jamaica-fairbank",
+    "title": "Weed Store Near Little Jamaica / Fairbank | First Nation Smoke Cannabis Dispensary Toronto",
+    "metaDescription": "Looking for a weed store near Little Jamaica / Fairbank? Use First Nation Smoke Cannabis Dispensary Toronto for store-page checks, menu categories, and local visit planning in Toronto.",
+    "h1": "Weed Store Near Little Jamaica / Fairbank",
+    "icon": ">",
+    "heroTagline": "Local visit notes for Little Jamaica / Fairbank, Eglinton Ave W, Little Jamaica, Fairbank",
+    "sections": [
+      {
+        "heading": "Confirm The Right Store Page",
+        "body": "When you search for a weed store near Little Jamaica / Fairbank, open the First Nation Smoke Cannabis Dispensary Toronto store page first. Confirm directions, contact options, listed hours, and the menu path before visiting."
+      },
+      {
+        "heading": "Choose The Product Lane",
+        "body": "Flower, pre-rolls, edibles, THC vapes, concentrates, and accessories all shop differently. Pick the category first, then compare current product details."
+      },
+      {
+        "heading": "Use Staff For The Close Call",
+        "body": "If one detail decides the visit, ask staff. That is the cleanest way to handle current product questions."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is the best first step for a Little Jamaica / Fairbank visit?",
+        "a": "Open the First Nation Smoke Cannabis Dispensary Toronto store page, then use the current menu category that matches the visit."
+      },
+      {
+        "q": "Should shoppers rely on old blog prices?",
+        "a": "No. Use the current menu or staff for details that change."
+      },
+      {
+        "q": "What categories can shoppers compare?",
+        "a": "Use the menu paths for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed."
+      }
+    ]
+  },
+  {
+    "slug": "weed-store-near-brampton",
+    "title": "Weed Store Near Little Jamaica / Fairbank | First Nation Smoke Cannabis Dispensary Toronto",
+    "metaDescription": "Looking for a weed store near Little Jamaica / Fairbank? Use First Nation Smoke Cannabis Dispensary Toronto for store-page checks, menu categories, and local visit planning in Toronto.",
+    "h1": "Weed Store Near Little Jamaica / Fairbank",
+    "icon": ">",
+    "heroTagline": "Local visit notes for Little Jamaica / Fairbank, Eglinton Ave W, Little Jamaica, Fairbank",
+    "sections": [
+      {
+        "heading": "Confirm The Right Store Page",
+        "body": "When you search for a weed store near Little Jamaica / Fairbank, open the First Nation Smoke Cannabis Dispensary Toronto store page first. Confirm directions, contact options, listed hours, and the menu path before visiting."
+      },
+      {
+        "heading": "Choose The Product Lane",
+        "body": "Flower, pre-rolls, edibles, THC vapes, concentrates, and accessories all shop differently. Pick the category first, then compare current product details."
+      },
+      {
+        "heading": "Use Staff For The Close Call",
+        "body": "If one detail decides the visit, ask staff. That is the cleanest way to handle current product questions."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is the best first step for a Little Jamaica / Fairbank visit?",
+        "a": "Open the First Nation Smoke Cannabis Dispensary Toronto store page, then use the current menu category that matches the visit."
+      },
+      {
+        "q": "Should shoppers rely on old blog prices?",
+        "a": "No. Use the current menu or staff for details that change."
+      },
+      {
+        "q": "What categories can shoppers compare?",
+        "a": "Use the menu paths for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed."
+      }
+    ]
+  },
+  {
+    "slug": "dispensary-near-me-toronto",
+    "title": "Cannabis Dispensary Near Me in Toronto | First Nation Smoke Cannabis Dispensary Toronto",
+    "metaDescription": "Use First Nation Smoke Cannabis Dispensary Toronto when searching for a cannabis dispensary near me in Toronto; compare menu categories and confirm current details before visiting.",
+    "h1": "Cannabis Dispensary Near Me in Toronto",
+    "icon": "o",
+    "heroTagline": "Store page first, menu category second",
+    "sections": [
+      {
+        "heading": "Make The Search Useful",
+        "body": "A near-me search should get you to the right store page, not a wall of generic copy. First Nation Smoke Cannabis Dispensary Toronto gives shoppers a clear path to the store page, menu categories, and resources."
+      },
+      {
+        "heading": "Compare Categories Naturally",
+        "body": "Use normal shopping language: cannabis dispensary in Toronto, weed dispensary in Little Jamaica / Fairbank, cheap weed, budget weed, premium flower, pre-rolls, edibles, THC vapes, and concentrates. The point is to help the shopper, not stuff a sentence."
+      },
+      {
+        "heading": "Check Current Details",
+        "body": "For product names, prices, and availability, use the current menu or ask staff. This page is for orientation and visit planning."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is First Nation Smoke Cannabis Dispensary Toronto useful for a near-me cannabis search?",
+        "a": "Yes. Use the store page to confirm First Nation Smoke Cannabis Dispensary Toronto, then open the menu category that matches your visit."
+      },
+      {
+        "q": "Can shoppers browse before visiting?",
+        "a": "Yes. Use the current menu and resources section before heading over."
+      },
+      {
+        "q": "What should shoppers avoid?",
+        "a": "Avoid guessing from old examples. Confirm current details with the menu or staff."
+      }
+    ]
+  },
+  {
+    "slug": "dispensary-near-me-york",
+    "title": "Cannabis Dispensary Near Me in Toronto | First Nation Smoke Cannabis Dispensary Toronto",
+    "metaDescription": "Use First Nation Smoke Cannabis Dispensary Toronto when searching for a cannabis dispensary near me in Toronto; compare menu categories and confirm current details before visiting.",
+    "h1": "Cannabis Dispensary Near Me in Toronto",
+    "icon": "o",
+    "heroTagline": "Store page first, menu category second",
+    "sections": [
+      {
+        "heading": "Make The Search Useful",
+        "body": "A near-me search should get you to the right store page, not a wall of generic copy. First Nation Smoke Cannabis Dispensary Toronto gives shoppers a clear path to the store page, menu categories, and resources."
+      },
+      {
+        "heading": "Compare Categories Naturally",
+        "body": "Use normal shopping language: cannabis dispensary in Toronto, weed dispensary in Little Jamaica / Fairbank, cheap weed, budget weed, premium flower, pre-rolls, edibles, THC vapes, and concentrates. The point is to help the shopper, not stuff a sentence."
+      },
+      {
+        "heading": "Check Current Details",
+        "body": "For product names, prices, and availability, use the current menu or ask staff. This page is for orientation and visit planning."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is First Nation Smoke Cannabis Dispensary Toronto useful for a near-me cannabis search?",
+        "a": "Yes. Use the store page to confirm First Nation Smoke Cannabis Dispensary Toronto, then open the menu category that matches your visit."
+      },
+      {
+        "q": "Can shoppers browse before visiting?",
+        "a": "Yes. Use the current menu and resources section before heading over."
+      },
+      {
+        "q": "What should shoppers avoid?",
+        "a": "Avoid guessing from old examples. Confirm current details with the menu or staff."
+      }
+    ]
+  }
 ];
 
 export function getSeoPageBySlug(slug: string): SeoPageData | undefined {
