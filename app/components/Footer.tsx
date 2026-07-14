@@ -12,12 +12,11 @@ export default function Footer() {
               FIRST NATION SMOKE CANNABIS DISPENSARY TORONTO
             </div>
             <p className={styles.desc}>
-              Your Local Cannabis Dispensary At 1504 Eglinton Ave W, Toronto. Visit
-              First Nation Smoke Cannabis Dispensary Toronto For Premium Flower, Edibles, Vapes &amp; More.
-              Open: Open 24 Hours.
+              Your Local Cannabis Dispensary At 1504 Eglinton Ave W, Toronto.
+              Visit First Nation Smoke Cannabis Dispensary Toronto For Premium
+              Flower, Edibles, Vapes &amp; More. Open: Open 24 Hours.
             </p>
-            <div className={styles.buttons}>
-            </div>
+            <div className={styles.buttons}></div>
           </div>
 
           {/* Column 2 — Contact Info */}
@@ -31,7 +30,11 @@ export default function Footer() {
             </div>
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Phone:</span>
-              <span><a href="tel:+14372151466" style={{color: "inherit"}}>(437) 215-1466</a></span>
+              <span>
+                <a href="tel:+14372151466" style={{ color: "inherit" }}>
+                  (437) 215-1466
+                </a>
+              </span>
             </div>
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Hours:</span>
@@ -55,11 +58,22 @@ export default function Footer() {
               <Link href="/resources">Resources</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/delivery">Delivery (Coming Soon)</Link>
-              <Link href="/info/york-weed-dispensary">Toronto Dispensary</Link>
-              <Link href="/info/cheap-weed-york">Cheap Weed Toronto</Link>
-              <Link href="/info/native-cigarettes-york">Native Cigarettes</Link>
-              <Link href="/info/weed-store-near-mississauga">Weed Store Near Mississauga</Link>
-              <Link href="/weed-dispensary-toronto/">First Nation Smoke Cannabis Dispensary Toronto Weed Dispensary in Toronto</Link>
+              <Link href="/info/toronto-weed-dispensary">
+                Little Jamaica Dispensary
+              </Link>
+              <Link href="/info/cheap-weed-toronto">
+                Cheap Weed Little Jamaica
+              </Link>
+              <Link href="/info/native-cigarettes-toronto">
+                Native Cigarettes Little Jamaica
+              </Link>
+              <Link href="/info/weed-store-near-little-jamaica-fairbank">
+                Weed Store Near Little Jamaica
+              </Link>
+              <Link href="/weed-dispensary-toronto/">
+                First Nation Smoke Cannabis Dispensary Toronto Weed Dispensary
+                in Toronto
+              </Link>
               <Link href="/contact">Contact Us</Link>
               <a
                 href="http://firstnationsmokez.com/"
@@ -74,8 +88,8 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <p>
-            © {new Date().getFullYear()} First Nation Smoke Cannabis Dispensary Toronto. Must be 19+ to
-            enter. Please consume responsibly.
+            © {new Date().getFullYear()} First Nation Smoke Cannabis Dispensary
+            Toronto. Must be 19+ to enter. Please consume responsibly.
           </p>
         </div>
       </div>

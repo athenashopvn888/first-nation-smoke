@@ -7,7 +7,9 @@ import styles from "./delivery.module.css";
 
 export default function DeliveryContent() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -19,7 +21,7 @@ export default function DeliveryContent() {
       // Save to Google Sheets via Apps Script
       const res = await fetch(
         `https://script.google.com/macros/s/AKfycbySrZYxI-NNnXfxY1jXOqHgT2HQi4zst2Fgte6FXTeymat_W_r0o1E3P83EfnVCjEk0/exec?action=delivery_email&email=${encodeURIComponent(email)}&store=OB01`,
-        { method: "GET", mode: "no-cors" }
+        { method: "GET", mode: "no-cors" },
       );
       setStatus("success");
       setEmail("");
@@ -36,15 +38,18 @@ export default function DeliveryContent() {
           Delivery <span className={styles.highlight}>Coming Soon</span>
         </h1>
         <p className={styles.pageSubtitle}>
-          First Nation Smoke Cannabis Dispensary Toronto is launching delivery across Toronto.
-          Sign up below to be the first to know when we go live — and get an exclusive launch-day deal.
+          First Nation Smoke Cannabis Dispensary Toronto is preparing a local
+          delivery launch around Eglinton Ave W and Little Jamaica. Sign up
+          below to get one notice when delivery is ready. For now, use the
+          current menu before heading over.
         </p>
 
         {/* Email signup */}
         <div className={styles.formSection}>
           <h2 className={styles.formTitle}>🔔 Get Notified When We Launch</h2>
           <p className={styles.formDesc}>
-            Enter your email to join our delivery waitlist. We&apos;ll send you one email when delivery goes live.
+            Enter your email to join our delivery waitlist. We&apos;ll send you
+            one email when delivery goes live.
           </p>
           <form onSubmit={handleSubmit}>
             <div className={styles.inputRow}>
@@ -68,7 +73,8 @@ export default function DeliveryContent() {
           </form>
           {status === "success" && (
             <p className={styles.successMsg}>
-              ✅ You&apos;re on the list! We&apos;ll notify you when delivery launches.
+              You&apos;re on the list! We&apos;ll notify you when delivery
+              launches.
             </p>
           )}
           {status === "error" && (
@@ -82,26 +88,37 @@ export default function DeliveryContent() {
         <div className={styles.infoGrid}>
           <div className={styles.infoCard}>
             <span className={styles.infoIcon}>📦</span>
-            <h3 className={styles.infoTitle}>Same-Day Delivery</h3>
-            <p className={styles.infoDesc}>Order before 6 PM, delivered same day across Toronto.</p>
+            <h3 className={styles.infoTitle}>Delivery Launch List</h3>
+            <p className={styles.infoDesc}>
+              Delivery is not live yet. Join the waitlist for the local launch
+              notice.
+            </p>
           </div>
           <div className={styles.infoCard}>
             <span className={styles.infoIcon}>🌉</span>
-            <h3 className={styles.infoTitle}>Toronto & Gatineau</h3>
-            <p className={styles.infoDesc}>Serving the entire National Capital Region.</p>
+            <h3 className={styles.infoTitle}>Little Jamaica Service Area</h3>
+            <p className={styles.infoDesc}>
+              Planned around Eglinton Ave W, Little Jamaica, Fairbank, and
+              Oakwood Village. Final zones will be confirmed before launch.
+            </p>
           </div>
           <div className={styles.infoCard}>
             <span className={styles.infoIcon}>💰</span>
-            <h3 className={styles.infoTitle}>Same Great Prices</h3>
-            <p className={styles.infoDesc}>All in-store promotions apply to delivery orders too.</p>
+            <h3 className={styles.infoTitle}>Menu First</h3>
+            <p className={styles.infoDesc}>
+              Use the current menu for product and price details before
+              visiting.
+            </p>
           </div>
         </div>
 
         {/* CTA */}
         <div className={styles.ctaSection}>
           <p className={styles.ctaText}>
-            Can&apos;t wait? Visit us in-store at <strong>1504 Eglinton Ave W, Toronto</strong> —
-            we are <strong>Open 24 Hours</strong>. Call <strong>(437) 215-1466</strong>.
+            Can&apos;t wait? Visit us in-store at{" "}
+            <strong>1504 Eglinton Ave W, Toronto</strong> — we are{" "}
+            <strong>Open 24 Hours</strong>. Call <strong>(437) 215-1466</strong>
+            .
           </p>
         </div>
       </div>
