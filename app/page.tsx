@@ -56,14 +56,48 @@ const BENTO_TIERS = [
 
 /* ── Explore Categories Config (New Banners) ── */
 const EXPLORE_CATEGORIES = [
-  { name: "Vape Pens", slug: "items/vapes", banner: "/banners/01_Vape_Pens.webp", icon: "💨" },
-  { name: "Nic Vape", slug: "items/vape-disposables", banner: "/banners/02_Vape_Disposable.webp", icon: "💨" },
-  { name: "Concentrates", slug: "items/concentrates", banner: "/banners/03_Concentrates.webp", icon: "💎" },
-  { name: "Pre-Rolls", slug: "items/prerolls", banner: "/banners/04_Pre_Rolls.webp", icon: "🚬" },
-  { name: "Accessories", slug: "items/add-ons", banner: "/banners/05_Accessories.webp", icon: "➕" },
-  { name: "Cigarettes", slug: "items/cigarettes", banner: "/banners/06_Cigarettes.webp", icon: "🏷️" },
-  { name: "Magic Stuff", slug: "items/magic", banner: "/banners/09_Magic_Stuff.webp", icon: "🍄" },
-  { name: "Games Arcade", slug: "games", banner: "/banners/10_Games.webp", icon: "🎮" },
+  {
+    name: "Vape Pens",
+    slug: "items/vapes",
+    banner: "/banners/01_Vape_Pens.webp",
+    icon: "💨",
+  },
+  {
+    name: "Nic Vape",
+    slug: "items/vape-disposables",
+    banner: "/banners/02_Vape_Disposable.webp",
+    icon: "💨",
+  },
+  {
+    name: "Concentrates",
+    slug: "items/concentrates",
+    banner: "/banners/03_Concentrates.webp",
+    icon: "💎",
+  },
+  {
+    name: "Pre-Rolls",
+    slug: "items/prerolls",
+    banner: "/banners/04_Pre_Rolls.webp",
+    icon: "🚬",
+  },
+  {
+    name: "Accessories",
+    slug: "items/add-ons",
+    banner: "/banners/05_Accessories.webp",
+    icon: "➕",
+  },
+  {
+    name: "Cigarettes",
+    slug: "items/cigarettes",
+    banner: "/banners/06_Cigarettes.webp",
+    icon: "🏷️",
+  },
+  {
+    name: "Magic Stuff",
+    slug: "items/magic",
+    banner: "/banners/09_Magic_Stuff.webp",
+    icon: "🍄",
+  },
 ];
 
 /* ── Local FAQs for Jane St ── */
@@ -104,7 +138,12 @@ export default function HomePage() {
   const [reviewsLoading, setReviewsLoading] = useState(true);
   const [welcomeBannerError, setWelcomeBannerError] = useState(false);
   const welcomeBannerSrc: string = "/banners/welcome_banner.webp";
-  const hasWelcomeBanner = welcomeBannerSrc && welcomeBannerSrc !== "/banners/" && !welcomeBannerSrc.includes("HERO_BANNER") && !welcomeBannerSrc.includes("WELCOME_BANNER") && welcomeBannerSrc !== "";
+  const hasWelcomeBanner =
+    welcomeBannerSrc &&
+    welcomeBannerSrc !== "/banners/" &&
+    !welcomeBannerSrc.includes("HERO_BANNER") &&
+    !welcomeBannerSrc.includes("WELCOME_BANNER") &&
+    welcomeBannerSrc !== "";
 
   /* ── 1. Fetch Client-Side Google Reviews ── */
   useEffect(() => {
@@ -129,9 +168,11 @@ export default function HomePage() {
         });
 
         const skIdx = colMap["StoreKey"] !== undefined ? colMap["StoreKey"] : 0;
-        const rnIdx = colMap["ReviewerName"] !== undefined ? colMap["ReviewerName"] : 1;
+        const rnIdx =
+          colMap["ReviewerName"] !== undefined ? colMap["ReviewerName"] : 1;
         const cmIdx = colMap["Comment"] !== undefined ? colMap["Comment"] : 2;
-        const dtIdx = colMap["CreateTime"] !== undefined ? colMap["CreateTime"] : 3;
+        const dtIdx =
+          colMap["CreateTime"] !== undefined ? colMap["CreateTime"] : 3;
 
         const reviewsPool: Review[] = [];
         let totalVal: number | null = null;
@@ -145,7 +186,10 @@ export default function HomePage() {
 
           const rn = row.c[rnIdx] ? row.c[rnIdx].v || "" : "";
           if (rn === "__STATS__") {
-            const parsedTotal = parseInt(row.c[cmIdx] ? row.c[cmIdx].v : "", 10);
+            const parsedTotal = parseInt(
+              row.c[cmIdx] ? row.c[cmIdx].v : "",
+              10,
+            );
             const parsedAvg = parseFloat(row.c[dtIdx] ? row.c[dtIdx].v : "");
             if (Number.isFinite(parsedTotal) && Number.isFinite(parsedAvg)) {
               totalVal = parsedTotal;
@@ -226,8 +270,20 @@ export default function HomePage() {
         <div className={styles.heroContent}>
           {/* Brand branding */}
           <div className={styles.brandBlock}>
-            <img src="/storeFavicon.webp" alt="First Nation Smoke Cannabis Dispensary Toronto Icon" style={{ height: "60px", width: "60px", objectFit: "contain", borderRadius: "8px", marginBottom: "8px" }} />
-            <h1 className={styles.brandTitle}>FIRST NATION SMOKE CANNABIS DISPENSARY TORONTO</h1>
+            <img
+              src="/storeFavicon.webp"
+              alt="First Nation Smoke Cannabis Dispensary Toronto Icon"
+              style={{
+                height: "60px",
+                width: "60px",
+                objectFit: "contain",
+                borderRadius: "8px",
+                marginBottom: "8px",
+              }}
+            />
+            <h1 className={styles.brandTitle}>
+              FIRST NATION SMOKE CANNABIS DISPENSARY TORONTO
+            </h1>
             <p className={styles.brandSub}>Premium Cannabis Dispensary</p>
             <div className={styles.brandBadge}>Open 24 Hours</div>
           </div>
@@ -261,7 +317,8 @@ export default function HomePage() {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Explore Categories</h2>
             <p className={styles.sectionSubtitle}>
-              From custom disposable vapes and concentrates to accessories and cigarettes.
+              Pick the category that matches the visit, then compare the current
+              menu details.
             </p>
           </div>
 
@@ -279,7 +336,8 @@ export default function HomePage() {
                 <div className={styles.categoryCardOverlay} />
                 <div className={styles.categoryCardContent}>
                   <h3 className={styles.categoryCardName}>
-                    {cat.icon} {cat.name} <span className={styles.categoryCardArrow}>→</span>
+                    {cat.icon} {cat.name}{" "}
+                    <span className={styles.categoryCardArrow}>→</span>
                   </h3>
                 </div>
               </Link>
@@ -294,7 +352,8 @@ export default function HomePage() {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Featured Strains</h2>
             <p className={styles.sectionSubtitle}>
-              Staff picks and top sellers dynamically updated from our real-time stock sheet.
+              A quick look at flower options from the store menu. Open the item
+              page for current details before choosing.
             </p>
           </div>
 
@@ -312,15 +371,21 @@ export default function HomePage() {
       <section className={styles.seoSection}>
         <div className={styles.container}>
           <div className={styles.seoPanel}>
-            <h2 className={styles.seoPanelTitle}>1504 Eglinton Ave W & Nearby Expressway's Premier Cannabis Dispensary — Open 24 Hours</h2>
+            <h2 className={styles.seoPanelTitle}>Shop The Menu With A Plan</h2>
             <p className={styles.seoPanelText}>
-              Welcome to <strong>First Nation Smoke Cannabis Dispensary Toronto</strong>, Toronto's premier cannabis destination at 1504 Eglinton Ave W. We carry an electrifying selection of top-shelf strains — from ultra-rare exotics to solid everyday budget picks.
+              Start with the store page, then choose the product lane that fits
+              the visit. Flower, pre-rolls, edibles, THC vapes, concentrates,
+              accessories, and cigarettes each shop differently.
             </p>
             <p className={styles.seoPanelText}>
-              Open 24 Hours — First Nation Smoke Cannabis Dispensary Toronto is here to serve you. Our live menu is constantly refreshed with the freshest drops, premium prerolls, artisan edibles, and everything in between. Whether you're winding down or stocking up for the weekend, our knowledgeable staff can help 24 hours a day.
+              If cheap weed or affordable weed is the goal, start with Budget
+              and AA flower before moving up. If premium flower or exotic flower
+              is the mood, open those lanes first and compare the current
+              details there.
             </p>
             <p className={styles.seoPanelText}>
-              Searching for a cannabis dispensary in Toronto or the surrounding area? First Nation Smoke Cannabis Dispensary Toronto is your go-to destination for premium flower, potent prerolls, and artisan edibles. Our six-tier pricing system means quality cannabis at every budget level — starting from just $3/g.
+              Menus change, so use the current menu and staff for product names,
+              prices, and availability before you make the trip.
             </p>
           </div>
         </div>
@@ -346,7 +411,9 @@ export default function HomePage() {
 
           <div className={styles.reviewsGrid}>
             {reviewsLoading ? (
-              <div className={styles.reviewsLoading}>Loading customer feedback...</div>
+              <div className={styles.reviewsLoading}>
+                Loading customer feedback...
+              </div>
             ) : reviews.length === 0 ? (
               <div className={styles.reviewsLoading}>
                 Customer feedback is unavailable right now.
@@ -372,22 +439,26 @@ export default function HomePage() {
                     <span className={styles.rvStars}>★★★★★</span>
                   </div>
                   <p className={styles.rvText}>
-                    {rv.comment.length > 180 ? `${rv.comment.substring(0, 177)}...` : rv.comment}
+                    {rv.comment.length > 180
+                      ? `${rv.comment.substring(0, 177)}...`
+                      : rv.comment}
                   </p>
                 </div>
               ))
             )}
           </div>
 
-          <div className={styles.reviewCtaRow}>
-          </div>
+          <div className={styles.reviewCtaRow}></div>
         </div>
       </section>
 
       {/* ── FAQS SECTION ── */}
       <section className={styles.faqSection}>
         <div className={styles.faqContainer}>
-          <h2 className={styles.sectionTitle} style={{ textAlign: "center", marginBottom: "32px" }}>
+          <h2
+            className={styles.sectionTitle}
+            style={{ textAlign: "center", marginBottom: "32px" }}
+          >
             Frequently Asked Questions
           </h2>
           {LOCAL_FAQS.map((faq, i) => (
@@ -428,14 +499,15 @@ export default function HomePage() {
               <p className={styles.storeCardText}>
                 No appointment needed
                 <br />
-                <span className={styles.storeHighlight}>1504 Eglinton Ave W & Nearby Expressway, Toronto</span>
+                <span className={styles.storeHighlight}>
+                  1504 Eglinton Ave W near Little Jamaica, Toronto
+                </span>
               </p>
             </div>
           </div>
 
           {/* Map wrapper */}
-          <div className={styles.mapWrap}>
-          </div>
+          <div className={styles.mapWrap}></div>
         </div>
       </section>
 

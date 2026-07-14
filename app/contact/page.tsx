@@ -4,14 +4,16 @@ import Footer from "../components/Footer";
 import styles from "./contact.module.css";
 
 export const metadata: Metadata = {
-  title: "Contact Us — First Nation Smoke Cannabis Dispensary Toronto | 1504 Eglinton Ave W, Toronto",
+  title:
+    "Contact Us — First Nation Smoke Cannabis Dispensary Toronto | 1504 Eglinton Ave W, Toronto",
   description:
     "Visit First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W, Toronto, ON M6E 2G5. We are open 24 hours a day, 7 days a week. Walk-ins welcome.",
   alternates: {
     canonical: "https://firstnationsmokez.com/contact",
   },
   openGraph: {
-    title: "Contact First Nation Smoke Cannabis Dispensary Toronto — Toronto Dispensary",
+    title:
+      "Contact First Nation Smoke Cannabis Dispensary Toronto — Toronto Dispensary",
     description:
       "1504 Eglinton Ave W, Toronto. We are open 24 hours a day, 7 days a week. Premium cannabis, always fire.",
   },
@@ -24,8 +26,19 @@ export default function ContactPage() {
 
       {/* ── Hero ── */}
       <section className={styles.hero} style={{ paddingTop: "92px" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}>
-          <img src="/banners/08_Contact_Us.webp" alt="Contact Us" style={{ width: "100%", height: "auto", display: "block", borderRadius: "var(--radius-lg)" }} />
+        <div
+          style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}
+        >
+          <img
+            src="/banners/08_Contact_Us.webp"
+            alt="Contact Us"
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+              borderRadius: "var(--radius-lg)",
+            }}
+          />
         </div>
       </section>
 
@@ -42,7 +55,9 @@ export default function ContactPage() {
                 <br />
                 Toronto, ON M6E 2G5
                 <br />
-                <span className={styles.infoMuted}>1504 Eglinton Ave W & Nearby Expressway</span>
+                <span className={styles.infoMuted}>
+                  1504 Eglinton Ave W near Little Jamaica
+                </span>
               </p>
             </div>
 
@@ -51,13 +66,34 @@ export default function ContactPage() {
               <div className={styles.infoIcon}>🕒</div>
               <h2 className={styles.infoTitle}>Hours</h2>
               <div className={styles.hoursTable}>
-                <div className={styles.hoursRow}><span>Monday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
-                <div className={styles.hoursRow}><span>Tuesday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
-                <div className={styles.hoursRow}><span>Wednesday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
-                <div className={styles.hoursRow}><span>Thursday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
-                <div className={styles.hoursRow}><span>Friday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
-                <div className={styles.hoursRow}><span>Saturday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
-                <div className={styles.hoursRow}><span>Sunday</span><span className={styles.hoursTime}>Open 24 Hours</span></div>
+                <div className={styles.hoursRow}>
+                  <span>Monday</span>
+                  <span className={styles.hoursTime}>Open 24 Hours</span>
+                </div>
+                <div className={styles.hoursRow}>
+                  <span>Tuesday</span>
+                  <span className={styles.hoursTime}>Open 24 Hours</span>
+                </div>
+                <div className={styles.hoursRow}>
+                  <span>Wednesday</span>
+                  <span className={styles.hoursTime}>Open 24 Hours</span>
+                </div>
+                <div className={styles.hoursRow}>
+                  <span>Thursday</span>
+                  <span className={styles.hoursTime}>Open 24 Hours</span>
+                </div>
+                <div className={styles.hoursRow}>
+                  <span>Friday</span>
+                  <span className={styles.hoursTime}>Open 24 Hours</span>
+                </div>
+                <div className={styles.hoursRow}>
+                  <span>Saturday</span>
+                  <span className={styles.hoursTime}>Open 24 Hours</span>
+                </div>
+                <div className={styles.hoursRow}>
+                  <span>Sunday</span>
+                  <span className={styles.hoursTime}>Open 24 Hours</span>
+                </div>
               </div>
               <div className={styles.openBadge}>
                 <div className={styles.openDot} />
@@ -98,8 +134,7 @@ export default function ContactPage() {
           </div>
 
           {/* Map */}
-          <div className={styles.mapSection}>
-          </div>
+          <div className={styles.mapSection}></div>
         </div>
       </section>
 

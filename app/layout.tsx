@@ -24,14 +24,15 @@ export const metadata: Metadata = {
     "vapes",
     "pre-rolls",
     "native cigarettes Toronto",
-    "weed store Mississauga",
+    "weed store Little Jamaica",
   ],
   openGraph: {
     type: "website",
     locale: "en_CA",
     url: "https://firstnationsmokez.com",
     siteName: "First Nation Smoke Cannabis Dispensary Toronto",
-    title: "First Nation Smoke Cannabis Dispensary Toronto — Premium Toronto Cannabis Dispensary",
+    title:
+      "First Nation Smoke Cannabis Dispensary Toronto — Premium Toronto Cannabis Dispensary",
     description:
       "200+ strains from $3/g. Exotic to Budget. Toronto's uplifting dispensary at 1504 Eglinton Ave W. Open 24 Hours.",
     images: [
@@ -39,15 +40,19 @@ export const metadata: Metadata = {
         url: "https://firstnationsmokez.com/wp-content/uploads/2026/04/46Oi5.jpg",
         width: 1200,
         height: 630,
-        alt: "First Nation Smoke Cannabis Dispensary Toronto — Premium Cannabis Dispensary Toronto",
+        alt: "First Nation Smoke Cannabis Dispensary Toronto — Toronto Cannabis Dispensary Toronto",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "First Nation Smoke Cannabis Dispensary Toronto — Toronto's Uplifting Dispensary",
-    description: "200+ strains from $3/g. Open 24 Hours at 1504 Eglinton Ave W, Toronto.",
-    images: ["https://firstnationsmokez.com/wp-content/uploads/2026/04/46Oi5.jpg"],
+    title:
+      "First Nation Smoke Cannabis Dispensary Toronto — Toronto's Uplifting Dispensary",
+    description:
+      "200+ strains from $3/g. Open 24 Hours at 1504 Eglinton Ave W, Toronto.",
+    images: [
+      "https://firstnationsmokez.com/wp-content/uploads/2026/04/46Oi5.jpg",
+    ],
   },
   robots: {
     index: true,
@@ -68,14 +73,15 @@ export const metadata: Metadata = {
   },
 };
 
-/* ── JSON-LD Structured Data ── */
+/* JSON-LD Structured Data */
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Store",
   additionalType: "https://schema.org/Store",
   "@id": "https://firstnationsmokez.com",
   name: "First Nation Smoke Cannabis Dispensary Toronto",
-  description: "Cannabis dispensary at 1504 Eglinton Ave W in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
+  description:
+    "Cannabis dispensary at 1504 Eglinton Ave W in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
   url: "https://firstnationsmokez.com",
   telephone: "+14372151466",
   image: "https://firstnationsmokez.com/wp-content/uploads/2026/04/7Clmh.jpg",
@@ -90,29 +96,26 @@ const jsonLd = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 43.6979500,
-    longitude: -79.4409900,
+    latitude: 43.69795,
+    longitude: -79.44099,
   },
   openingHoursSpecification: [
-  {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    ],
-    "opens": "00:00",
-    "closes": "23:59"
-  }
-],
-  sameAs: [
-    "http://firstnationsmokez.com/",
-    "http://firstnationsmokez.com/",
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "00:00",
+      closes: "23:59",
+    },
   ],
+  sameAs: ["http://firstnationsmokez.com/", "http://firstnationsmokez.com/"],
   hasMap: "http://firstnationsmokez.com/",
   areaServed: {
     "@type": "City",
@@ -142,7 +145,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ714NB2QM"></script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-DQ714NB2QM"
+        ></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -150,7 +156,7 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-DQ714NB2QM');
-            `
+            `,
           }}
         />
       </head>
