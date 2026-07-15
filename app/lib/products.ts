@@ -161,10 +161,10 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     banner: "/banners/edibles_prerolls_more_banner.webp",
     name: "Edibles", slug: "edibles", color: "#f97316", icon: "ED",
     seoTitle: "Cannabis Edibles Toronto | First Nation Smoke Cannabis Dispensary Toronto",
-    seoIntro: "Browse edible options at First Nation Smoke Cannabis Dispensary Toronto. Compare product names, package details, posted notes, and current menu information before choosing.",
+    seoIntro: "Browse edible options at First Nation Smoke Cannabis Dispensary Toronto. Compare product names, package details, posted details, and current menu information before choosing.",
     seoDescription: "Edibles shop best when you compare the exact listing instead of guessing from an old example. Use the current menu at First Nation Smoke Cannabis Dispensary Toronto for names, package details, posted prices, and staff help when needed.",
     faqs: [
-      { q: "What edibles are listed at First Nation Smoke Cannabis Dispensary Toronto?", a: "Use the current menu to compare edible names, package details, prices, and item notes." },
+      { q: "What edibles are listed at First Nation Smoke Cannabis Dispensary Toronto?", a: "Use the current menu to compare edible names, package details, prices, and item details." },
       { q: "Should shoppers ask staff about edibles?", a: "Yes. If a package detail or menu note is unclear, ask staff before choosing." },
     ],
   },
@@ -172,10 +172,10 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     banner: "/banners/01_Vape_Pens.webp",
     name: "THC Vape", slug: "vapes", color: "#8b5cf6", icon: "VP",
     seoTitle: "Vapes Toronto | First Nation Smoke Cannabis Dispensary Toronto",
-    seoIntro: "Compare vape listings at First Nation Smoke Cannabis Dispensary Toronto by product name, format, posted notes, and current menu details.",
+    seoIntro: "Compare vape listings at First Nation Smoke Cannabis Dispensary Toronto by product name, format, posted details, and current menu details.",
     seoDescription: "Vape shoppers should use the current menu first, then ask staff if a cartridge, disposable, battery, or format detail needs a current answer.",
     faqs: [
-      { q: "How should shoppers compare vapes?", a: "Start with the vape category, then compare product name, format, posted price, and item notes." },
+      { q: "How should shoppers compare vapes?", a: "Start with the vape category, then compare product name, format, posted price, and item details." },
       { q: "Can vape details change?", a: "Yes. Check the current menu or staff before making the trip." },
     ],
   },
@@ -183,7 +183,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     banner: "/banners/02_Vape_Disposable.webp",
     name: "Nic Vape", slug: "vape-disposables", color: "#a78bfa", icon: "VD",
     seoTitle: "Disposable Vapes Toronto | First Nation Smoke Cannabis Dispensary Toronto",
-    seoIntro: "Use the disposable vape category at First Nation Smoke Cannabis Dispensary Toronto for current product names, formats, and menu notes.",
+    seoIntro: "Use the disposable vape category at First Nation Smoke Cannabis Dispensary Toronto for current product names, formats, and menu details.",
     seoDescription: "Disposable vape listings are easiest to compare inside their own category. Check the current menu and ask staff if a detail matters before choosing.",
     faqs: [
       { q: "Where should disposable vape shoppers start?", a: "Open the disposable vape category and compare the current listings." },
@@ -194,7 +194,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     banner: "/banners/03_Concentrates.webp",
     name: "Concentrates", slug: "concentrates", color: "#f59e0b", icon: "CN",
     seoTitle: "Concentrates Toronto | First Nation Smoke Cannabis Dispensary Toronto",
-    seoIntro: "Compare concentrates at First Nation Smoke Cannabis Dispensary Toronto by product type, name, posted notes, and current menu details.",
+    seoIntro: "Compare concentrates at First Nation Smoke Cannabis Dispensary Toronto by product type, name, posted details, and current menu details.",
     seoDescription: "Concentrate shoppers should stay inside the concentrate category first, then compare the current listing details and ask staff when a format question needs a current answer.",
     faqs: [
       { q: "How should shoppers compare concentrates?", a: "Use the concentrate category, compare current product details, and ask staff when a format note is unclear." },
@@ -204,7 +204,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   PREROLLS: {
     banner: "/banners/04_Pre_Rolls.webp", name: "Pre-Rolls", slug: "prerolls", color: "#22c55e", icon: "PR",
     seoTitle: "Pre-Rolls Toronto | First Nation Smoke Cannabis Dispensary Toronto",
-    seoIntro: "Shop pre-rolls at First Nation Smoke Cannabis Dispensary Toronto by comparing the current product name, format, package details, and posted notes.",
+    seoIntro: "Shop pre-rolls at First Nation Smoke Cannabis Dispensary Toronto by comparing the current product name, format, package details, and posted details.",
     seoDescription: "Pre-rolls should be compared inside the pre-roll category instead of mixed into flower, edibles, vapes, or concentrates. Use the current menu for details that change.",
     faqs: [
       { q: "Where should pre-roll shoppers start?", a: "Open the pre-roll category and compare the current listing details." },
@@ -215,10 +215,10 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     banner: "/banners/05_Accessories.webp",
     name: "Accessories", slug: "add-ons", color: "#34d399", icon: "+",
     seoTitle: "Cannabis Accessories Toronto | First Nation Smoke Cannabis Dispensary Toronto",
-    seoIntro: "Browse accessories at First Nation Smoke Cannabis Dispensary Toronto and compare the current menu notes before visiting.",
+    seoIntro: "Browse accessories at First Nation Smoke Cannabis Dispensary Toronto and compare the current menu details before visiting.",
     seoDescription: "Accessory listings are practical add-ons for the visit. Check the current menu for what is listed and ask staff when a specific item matters.",
     faqs: [
-      { q: "What accessories are listed?", a: "Use the current menu to compare accessories and item notes." },
+      { q: "What accessories are listed?", a: "Use the current menu to compare accessories and item details." },
     ],
   },
   "MAGIC & OTHERS": {

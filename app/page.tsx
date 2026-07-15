@@ -262,7 +262,20 @@ export default function HomePage() {
       )}
 
       {/* ── BENTO MOSAIC HERO ── */}
-      <section className={styles.hero}>
+
+
+      <section className={styles.hiringCallout} aria-label="Hiring at First Nation Smoke Cannabis Dispensary Toronto">
+        <div className={styles.hiringCalloutInner}>
+          <div>
+            <span className={styles.hiringEyebrow}>Budtenders / Managers Wanted</span>
+            <h2>Join First Nation Smoke</h2>
+            <p>First Nation Smoke is taking online applications for budtender and manager roles. We are looking for motivated, determined people who can stay friendly through busy shifts. Online applications only. Please do not call the store about hiring.</p>
+          </div>
+          <Link href="/careers/budtender" className={styles.hiringButton}>Apply Online</Link>
+        </div>
+      </section>
+
+<section className={styles.hero}>
         <div className={styles.heroBg} />
         <div className={styles.heroOverlay} />
         <div className={styles.heroStars} />
