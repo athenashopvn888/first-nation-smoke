@@ -3,7 +3,7 @@ import "./globals.css";
 import AgeGate from "./components/AgeGate";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://firstnationsmokez.com"),
+  metadataBase: new URL("https://www.firstnationsmokez.com"),
   title: {
     default: "First Nation Smoke Cannabis | Toronto Dispensary",
     template: "%s | First Nation Smoke Cannabis Dispensary Toronto",
@@ -29,15 +29,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://firstnationsmokez.com",
+    url: "https://www.firstnationsmokez.com",
     siteName: "First Nation Smoke Cannabis Dispensary Toronto",
     title:
       "First Nation Smoke Cannabis Dispensary Toronto — Premium Toronto Cannabis Dispensary",
     description:
-      "200+ strains from $3/g. Exotic to Budget. Toronto's uplifting dispensary at 1504 Eglinton Ave W. Open 24 Hours.",
+      "Browse flower tiers and cannabis categories at First Nation Smoke on Eglinton Ave W in Toronto. Open 24 Hours.",
     images: [
       {
-        url: "https://firstnationsmokez.com/wp-content/uploads/2026/04/46Oi5.jpg",
+        url: "https://www.firstnationsmokez.com/wp-content/uploads/2026/04/46Oi5.jpg",
         width: 1200,
         height: 630,
         alt: "First Nation Smoke Cannabis Dispensary Toronto — Toronto Cannabis Dispensary Toronto",
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
     title:
       "First Nation Smoke Cannabis Dispensary Toronto — Toronto's Uplifting Dispensary",
     description:
-      "200+ strains from $3/g. Open 24 Hours at 1504 Eglinton Ave W, Toronto.",
+      "Browse First Nation Smoke cannabis categories. Open 24 Hours at 1504 Eglinton Ave W, Toronto.",
     images: [
-      "https://firstnationsmokez.com/wp-content/uploads/2026/04/46Oi5.jpg",
+      "https://www.firstnationsmokez.com/wp-content/uploads/2026/04/46Oi5.jpg",
     ],
   },
   robots: {
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://firstnationsmokez.com",
+    canonical: "https://www.firstnationsmokez.com",
   },
   verification: {
     // google: "your-google-verification-code",
@@ -78,13 +78,13 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Store",
   additionalType: "https://schema.org/Store",
-  "@id": "https://firstnationsmokez.com",
+  "@id": "https://www.firstnationsmokez.com",
   name: "First Nation Smoke Cannabis Dispensary Toronto",
   description:
     "Cannabis dispensary at 1504 Eglinton Ave W in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
-  url: "https://firstnationsmokez.com",
+  url: "https://www.firstnationsmokez.com",
   telephone: "+14372151466",
-  image: "https://firstnationsmokez.com/wp-content/uploads/2026/04/7Clmh.jpg",
+  image: "https://www.firstnationsmokez.com/wp-content/uploads/2026/04/7Clmh.jpg",
   priceRange: "$3 - $12/g",
   address: {
     "@type": "PostalAddress",
@@ -115,8 +115,8 @@ const jsonLd = {
       closes: "23:59",
     },
   ],
-  sameAs: ["http://firstnationsmokez.com/", "http://firstnationsmokez.com/"],
-  hasMap: "http://firstnationsmokez.com/",
+  sameAs: ["https://www.firstnationsmokez.com/", "https://www.firstnationsmokez.com/"],
+  hasMap: "https://www.firstnationsmokez.com/",
   areaServed: {
     "@type": "City",
     name: "Toronto",

@@ -6,7 +6,7 @@ import BudtenderApplicationForm from "./BudtenderApplicationForm";
 import styles from "./budtender.module.css";
 
 export const metadata: Metadata = {
-  title: "Budtender Or Manager Application | First Nation Smoke Cannabis Dispensary Toronto",
+  title: { absolute: "Budtender Or Manager Application | First Nation Smoke Cannabis Dispensary Toronto" },
   description:
     "Apply online for budtender or manager opportunities at First Nation Smoke Cannabis Dispensary Toronto. Submit availability, customer-service experience, motivation, determination, and a required selfie.",
   alternates: {

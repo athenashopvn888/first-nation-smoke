@@ -1,7 +1,7 @@
 // Auto-generated Google Business Profile Local SEO Location Configuration
 export const gbpLocation = {
   storeName: "First Nation Smoke Cannabis Dispensary Toronto",
-  domain: "firstnationsmokez.com",
+  domain: "www.firstnationsmokez.com",
   city: "Toronto",
   province: "ON",
   country: "CA",
@@ -32,7 +32,7 @@ export const gbpLocation = {
   seoTitle: "First Nation Smoke Cannabis Dispensary Toronto | Weed Dispensary in Toronto",
   metaDescription: "First Nation Smoke Cannabis Dispensary Toronto is a local weed dispensary in Toronto offering flower, pre-rolls, edibles, vapes, concentrates, CBD, and service fo...",
   localLandmarks: ["Eglinton Ave W", "Little Jamaica", "Fairbank"],
-  introVariant: "First Nation Smoke Cannabis Dispensary Toronto is a local weed dispensary in Toronto, located at 1504 Eglinton Ave W. We serve adults 19+ looking for quality weed, cannabis flower, pre-rolls, edibles, THC vapes, concentrates, shatter, CBD oils, and accessories. Whether you are searching for a weed dispensary near Little Jamaica / Fairbank, a cannabis store in Toronto, or a local weed shop close to Little Jamaica, our friendly team is here to help you find the right product.",
+  introVariant: "First Nation Smoke Cannabis Dispensary Toronto is located at 1504 Eglinton Ave W. Adults 19+ can browse cannabis flower, pre-rolls, edibles, THC vapes, concentrates, shatter, CBD oils, and accessories. Visit the store page and menu categories for current details near Little Jamaica and Fairbank.",
   neighborhoodDescription: "Located in the vibrant Little Jamaica / Fairbank district, our cannabis store fits right into this active and historic community, surrounded by local retail shops and convenient transit links.",
   parkingNote: "Street parking and public parking spaces are available nearby",
   transitNote: "Served by local TTC bus routes along Eglinton Avenue West.",

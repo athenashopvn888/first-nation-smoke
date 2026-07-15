@@ -76,7 +76,7 @@ export default function Footer() {
               </Link>
               <Link href="/contact">Contact Us</Link>
               <a
-                href="http://firstnationsmokez.com/"
+                href="https://www.firstnationsmokez.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -89,7 +89,7 @@ export default function Footer() {
         <div className={styles.bottom}>
           <p>
             © {new Date().getFullYear()} First Nation Smoke Cannabis Dispensary
-            Toronto. Must be 19+ to enter. Please consume responsibly.
+            Toronto. Must be 19+ to enter.
           </p>
         </div>
       </div>

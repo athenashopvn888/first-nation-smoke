@@ -672,7 +672,7 @@ function AddOnsCard({ items, hiIdx }: { items: Item[]; hiIdx: number }) {
    ============================================================ */
 const TICKER_SLIDES = [
   "🔥 First Nation Smoke Cannabis Dispensary Toronto — 1504 Eglinton Ave W, Toronto",
-  "200+ Strains In Stock",
+  "Browse Flower Tiers",
   "Open 24 Hours",
   "ALL SALES ARE FINAL",
 ];

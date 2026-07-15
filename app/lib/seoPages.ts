@@ -114,7 +114,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         q: "Can cigarette selection change?",
-        a: "Yes. Brand names, carton notes, and availability can change, so use the current menu or staff for live details.",
+        a: "Yes. Brand names and carton notes can change, so use the current menu or ask staff for current details.",
       },
     ],
   },
@@ -133,8 +133,8 @@ export const SEO_PAGES: SeoPageData[] = [
         body: "First Nation Smoke Cannabis Dispensary Toronto is tied to the local Eglinton Ave W and Little Jamaica shopping area. Use this page when comparing nearby cannabis menu options and store details.",
       },
       {
-        heading: "Avoid Stale City Pages",
-        body: "The page is written for this local store identity and does not reuse unrelated city copy.",
+        heading: "Little Jamaica Store Details",
+        body: "Use the store page for the Eglinton Ave W location, contact details, menu categories, and directions.",
       },
       {
         heading: "Check Before You Go",
@@ -144,7 +144,7 @@ export const SEO_PAGES: SeoPageData[] = [
     faqs: [
       {
         q: "Is this page focused on Little Jamaica?",
-        a: "Yes. This page is focused on First Nation Smoke Cannabis Dispensary Toronto around Eglinton Ave W and Little Jamaica, not unrelated city copy.",
+        a: "Yes. This page focuses on First Nation Smoke Cannabis Dispensary Toronto around Eglinton Ave W and Little Jamaica.",
       },
       {
         q: "What is the best next step?",
@@ -164,11 +164,11 @@ export const SEO_PAGES: SeoPageData[] = [
     sections: [
       {
         heading: "A Local Near-Me Result",
-        body: "Near-me searches should land on a page connected to First Nation Smoke Cannabis Dispensary Toronto and the local Eglinton Ave W and Little Jamaica area.",
+        body: "First Nation Smoke serves adults around Eglinton Ave W and Little Jamaica with store details and menu-category links.",
       },
       {
-        heading: "Use The Menu For Live Details",
-        body: "This page explains the shopping path. The current menu and staff remain the source for live products, prices, and availability.",
+        heading: "Use The Menu For Current Details",
+        body: "Use the current menu or ask staff when product names, prices, or other details matter for the visit.",
       },
       {
         heading: "Keep The Route Simple",
@@ -178,7 +178,7 @@ export const SEO_PAGES: SeoPageData[] = [
     faqs: [
       {
         q: "Is this page focused on Little Jamaica?",
-        a: "Yes. This page is focused on First Nation Smoke Cannabis Dispensary Toronto around Eglinton Ave W and Little Jamaica, not unrelated city copy.",
+        a: "Yes. This page focuses on First Nation Smoke Cannabis Dispensary Toronto around Eglinton Ave W and Little Jamaica.",
       },
       {
         q: "What is the best next step?",

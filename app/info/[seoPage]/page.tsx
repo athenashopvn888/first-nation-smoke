@@ -28,7 +28,7 @@ export async function generateMetadata({
     title: page.title,
     description: page.metaDescription,
     alternates: {
-      canonical: `https://firstnationsmokez.com/info/${slug}`,
+      canonical: `https://www.firstnationsmokez.com/info/${slug}`,
     },
   };
 }

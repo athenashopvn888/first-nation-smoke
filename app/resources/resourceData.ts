@@ -253,7 +253,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "The First Nation Smoke Cannabis Dispensary Toronto resource centre gives shoppers cleaner menu guides for flower, value, pre-rolls, and store visits.",
     eyebrow: "Resource Update",
     intro:
-      "The resource centre is here to make the menu easier to shop. No stiff SEO talk, no fake certainty, just cleaner notes for real shoppers.",
+      "The resource centre makes the menu easier to browse with clear notes for flower, value, pre-rolls, and store visits.",
     cards: [
       {
         title: "Menu Guide",
