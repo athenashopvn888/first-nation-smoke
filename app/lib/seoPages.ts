@@ -32,7 +32,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "What To Check Before Visiting",
-        body: "Confirm the current menu, directions, contact options, and listed hours. For current products, prices, or availability, use the menu or ask staff before leaving.",
+        body: "Confirm the current menu, directions, contact options, and listed hours. For current product names, prices, and package details, use the menu or ask staff before leaving.",
       },
     ],
     faqs: [
@@ -79,7 +79,7 @@ export const SEO_PAGES: SeoPageData[] = [
         a: "Start with Budget and AA, then compare current product name, format, weight, posted price, and item details.",
       },
       {
-        q: "Does this page guarantee current availability?",
+        q: "Where can I check current item details?",
         a: "No. Use this page as a shopping guide and confirm the current menu before visiting.",
       },
     ],
