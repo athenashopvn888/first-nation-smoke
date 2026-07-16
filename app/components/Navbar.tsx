@@ -38,9 +38,9 @@ export default function Navbar() {
     <nav className={styles.navbar} id="main-nav">
       {/* Top bar — logo + open now */}
       <div className={styles.topBar}>
-        <Link href="/" className={styles.logo} style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none" }}>
+        <Link href="/" className={styles.logo} aria-label="First Nation Smoke Cannabis Dispensary Toronto" style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none" }}>
           <img src="/storeFavicon.webp" alt="First Nation Smoke Cannabis Dispensary Toronto Logo" style={{ height: "30px", width: "30px", objectFit: "contain", borderRadius: "4px" }} />
-          <span style={{
+          <span className={styles.brandName} style={{
             fontFamily: "var(--font-display)",
             fontWeight: 900,
             fontSize: "18px",
