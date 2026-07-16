@@ -31,7 +31,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "Resource guides for shopping the First Nation Smoke Cannabis Dispensary Toronto menu in Toronto, including flower, value, pre-rolls, and Native smokes where listed.",
     eyebrow: "Resource Centre",
     intro:
-      "Use these First Nation Smoke Cannabis Dispensary Toronto guides to understand the menu before visiting. Start with the product category that matches your visit, then check the current menu or ask staff for details that can change.",
+      "This First Nation Smoke resource library is built for a practical Eglinton West visit. Choose the question you need answered, use the guide to narrow the site, and finish with the store's current public category.",
     cards: [
       {
         title: "Menu Guide",
@@ -61,17 +61,17 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     sections: [
       {
-        heading: "How To Use These Guides",
-        body: "Start with the store page for location and hours, then open the category guide that matches your visit. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarette options each have different details to check.",
+        heading: "Separate Trip Planning From Menu Planning",
+        body: "The Toronto store page covers the stop itself. The Resource pages explain how to navigate flower shelves, pre-roll formats, value choices, and Native smokes without treating every type of listing the same way.",
         bullets: [
-          "Use the store page for directions, contact options, and listed hours.",
-          "Use category pages to compare the current menu category.",
-          "Ask staff when a product detail needs a current answer.",
+          "Confirm the Eglinton West visit on the store page.",
+          "Choose one guide that matches the shopping goal.",
+          "Recheck the current category when item-level details matter.",
         ],
       },
       {
         heading: "Local Notes For Little Jamaica / Fairbank",
-        body: "First Nation Smoke Cannabis Dispensary Toronto serves shoppers around Eglinton Ave W, Little Jamaica, Fairbank, and Oakwood Village. Use this resource centre to confirm store details, choose the right product category, and check the current menu before visiting.",
+        body: "Shoppers searching around Eglinton Avenue West, Little Jamaica, Fairbank, or Oakwood Village can move through the site in three clear steps: store information, category guidance, then the current menu listing.",
       },
     ],
   },
@@ -85,7 +85,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "How to shop the First Nation Smoke Cannabis Dispensary Toronto menu by category, with natural tips for flower, pre-rolls, edibles, THC vapes, concentrates, and value shopping.",
     eyebrow: "Menu Guide",
     intro:
-      "The fastest way through the menu is simple: choose the product type before you compare products. That keeps the page useful whether you want premium flower, cheap weed, pre-rolls, edibles, THC vapes, or concentrates.",
+      "First Nation Smoke has several different menu paths, so begin by naming the purpose of the stop. Flower tiers, pre-roll formats, edibles, vapes, concentrates, accessories, and cigarettes each deserve a separate first look.",
     cards: [
       {
         title: "Flower Guide",
@@ -110,17 +110,17 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     sections: [
       {
-        heading: "Choose The Product Category First",
-        body: "If you want flower, start with flower. If you want pre-rolls, stay in pre-rolls. If the visit is about edibles, vapes, concentrates, or accessories, open that section and compare there first.",
+        heading: "Start With The Reason For The Visit",
+        body: "A flower visit begins with a shelf level. A format-driven visit begins with its category. Keeping that purpose fixed for the first pass prevents a long Toronto menu from becoming an unfocused comparison.",
         bullets: [
-          "Flower shoppers should compare tiers.",
-          "Pre-roll shoppers should compare format and package details.",
-          "Edible, vape, and concentrate shoppers should read current details carefully.",
+          "For flower, choose among the five shelf pages.",
+          "For pre-rolls, begin with the displayed package style.",
+          "For other formats, read the details inside that dedicated section.",
         ],
       },
       {
-        heading: "Check What Is Current",
-        body: "Use this guide for the shopping method, then use the current menu and staff for the product names, prices, and package details currently listed.",
+        heading: "Use The Guide For Method, Not Inventory",
+        body: "The menu guide stays useful because it explains a browsing order. Product names, package details, and posted prices belong to the current First Nation Smoke listing and should be checked there.",
       },
     ],
   },
@@ -133,7 +133,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "Compare exotic flower, premium flower, budget weed, cheap weed, and affordable weed at First Nation Smoke Cannabis Dispensary Toronto with current menu details.",
     eyebrow: "Flower Guide",
     intro:
-      "Flower gets easier when you compare one tier at a time. Exotic flower and premium flower sit in different lanes from AAA+, AA, and Budget, so start with the lane that matches the visit.",
+      "First Nation Smoke organizes flower into Exotic, Premium, AAA+, AA, and Budget shelves. Select one shelf as the starting boundary, then compare the current entries within it before moving elsewhere.",
     cards: [
       {
         title: "Exotic Flower",
@@ -163,12 +163,12 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     sections: [
       {
-        heading: "Compare Tier, Then Details",
-        body: "Open the tier, then compare the current product name, format, weight, posted price, and item details. That gives you a clean decision path without turning the whole menu into noise.",
+        heading: "Treat The Tier As A Starting Boundary",
+        body: "Once a shelf is open, compare the listed name, size, format, posted price, and page notes together. Those fields make more sense inside one tier than in a single mixed flower list.",
       },
       {
-        heading: "Value Does Not Need To Be Complicated",
-        body: "Budget weed and affordable weed are easiest to compare when you stay inside the right lane. If the details are thin or the choice feels close, ask staff before choosing.",
+        heading: "Change Shelves With A Reason",
+        body: "Move from one First Nation Smoke tier to another only when the current shelf does not fit the visit. Restarting the comparison keeps different price and shelf goals from blurring together.",
       },
     ],
   },
@@ -181,7 +181,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "A practical value guide for shoppers comparing cheap weed, budget weed, affordable weed, and menu categories at First Nation Smoke Cannabis Dispensary Toronto.",
     eyebrow: "Value Guide",
     intro:
-      "Good value shopping starts with the product type, the current details, and the price that fits the visit.",
+      "A value-first flower browse at First Nation Smoke can begin with Budget and AA, while other product types should stay in their own categories and use the public details shown there.",
     cards: [
       {
         title: "Budget Flower",
@@ -201,12 +201,12 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     sections: [
       {
-        heading: "Start With The Budget Lane",
-        body: "If low spend is the point, start in Budget and AA before jumping across the rest of the menu. That keeps the comparison honest and quick.",
+        heading: "Give The Lowest Shelves The First Pass",
+        body: "Open Budget first and AA second when the plan is specifically value-led flower. Only widen the search after checking what those current Eglinton West menu pages present.",
       },
       {
-        heading: "Read The Menu Notes",
-        body: "Compare the product name, format, size, and posted price. If one detail is unclear, use staff for the answer instead of guessing from an old blog line.",
+        heading: "Price Needs Its Listing Context",
+        body: "Read the displayed name, size, format, and price as one unit. If a detail essential to the choice is missing, confirm it with the store instead of filling the gap from older content.",
       },
     ],
   },
@@ -219,7 +219,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "How to compare pre-rolls at First Nation Smoke Cannabis Dispensary Toronto without mixing them up with flower, edibles, THC vapes, and concentrates.",
     eyebrow: "Pre-Roll Guide",
     intro:
-      "Pre-rolls are their own lane. Compare them like pre-rolls, not like loose flower, edibles, THC vapes, or concentrates.",
+      "First Nation Smoke pre-roll listings are easier to compare when the package style comes first. Identify the displayed single, pack, infused, or other format before weighing the remaining details.",
     cards: [
       {
         title: "Pre-Rolls",
@@ -234,12 +234,12 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     sections: [
       {
-        heading: "Compare Format First",
-        body: "Check whether the listing is a single, pack, infused option, or another pre-roll format shown on the menu. Then compare the posted details and price before choosing.",
+        heading: "Sort The Page By Format In Your Head",
+        body: "Group together current listings that serve the same kind of pre-roll stop. Then compare their displayed count, package notes, and price without pulling loose flower into the decision.",
       },
       {
-        heading: "Keep It Separate",
-        body: "If the visit turns into flower, edibles, vapes, or concentrates, switch categories. Do not force one pre-roll decision to carry the whole menu.",
+        heading: "A New Category Means A New Comparison",
+        body: "If the plan changes to flower, edibles, vapes, or concentrates, open that First Nation Smoke section and begin again. Pre-roll format is not a useful filter for those pages.",
       },
     ],
   },
@@ -253,7 +253,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "The First Nation Smoke Cannabis Dispensary Toronto resource centre gives shoppers cleaner menu guides for flower, value, pre-rolls, and store visits.",
     eyebrow: "Resource Update",
     intro:
-      "The resource centre makes the menu easier to browse with clear notes for flower, value, pre-rolls, and store visits.",
+      "The First Nation Smoke Resource Centre gives Little Jamaica and Fairbank shoppers a stable map of the site while keeping current product listings on the menu itself.",
     cards: [
       {
         title: "Menu Guide",
@@ -283,12 +283,12 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     sections: [
       {
-        heading: "What Changed",
-        body: "The resources section now gives shoppers a central place for menu tips, flower comparison, value shopping, pre-roll notes, and store visit guidance.",
+        heading: "A Map For The Store Site",
+        body: "The hub brings flower, value, pre-roll, cigarette, and visit guidance together without pretending that evergreen articles can replace current category pages.",
       },
       {
-        heading: "How To Use It",
-        body: "Start with the guide that matches the visit, then open the current menu or store page when you are ready to compare details.",
+        heading: "Move From Context To Current Details",
+        body: "Begin here for the browsing method, continue to the matching menu section for public listings, and use the Toronto store page when the Eglinton West trip information is the priority.",
       },
     ],
   },
@@ -302,7 +302,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "First Nation Smoke Cannabis Dispensary Toronto Native smokes resource with cigarette brand names shown on the menu and $25 carton notes where listed.",
     eyebrow: "Native Smokes",
     intro:
-      "First Nation Smoke Cannabis Dispensary Toronto shoppers looking for Native smokes can use this page as a cleaner starting point. Brand names shown on the cigarette menu include Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, Canadian Classics Silver, * Rolled Gold Lights, Nexus Full, Nexus Lights, and Time Full. Some carton-style listings show around $25, but shoppers should check the current menu or staff before making the trip.",
+      "Native smokes are a distinct part of the First Nation Smoke menu. Use this overview to understand brand families, variant words, and carton notes, then open the live cigarette category for the store's current public list.",
     cards: [
       {
         title: "Cigarette Menu",
@@ -322,8 +322,8 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     sections: [
       {
-        heading: "Brands Shoppers May See",
-        body: "The cigarette menu may show brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, Canadian Classics Silver, * Rolled Gold Lights, Nexus Full, Nexus Lights, and Time Full. The exact shelf can change, so treat this as a menu guide and confirm current options before choosing.",
+        heading: "Read Brand Families And Variants Separately",
+        body: "The First Nation Smoke category has shown Canadian, Putters, Canadian Goose, Canadian Classics, Rolled Gold, Nexus, and Time names. Variant words such as full, light, silver, or menthol complete the label and should be read with the current entry.",
         bullets: [
           "Canadian Lights",
           "Canadian Full",
@@ -340,12 +340,12 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         ],
       },
       {
-        heading: "$25 Carton Notes",
-        body: "Where the menu lists $25 carton-style Native cigarettes, this resource points shoppers to the cigarette category first. Check the current menu or ask staff for what is available today.",
+        heading: "Match A Carton Note To Its Current Entry",
+        body: "Some cigarette listings have carried a $25 carton-style note. Check which brand and variant the current page attaches it to rather than treating it as a general price statement.",
       },
       {
-        heading: "Keep The Visit Simple",
-        body: "If you are also shopping cannabis, keep the cigarette decision separate from flower, pre-rolls, edibles, THC vapes, and concentrates. One lane at a time keeps the visit smooth.",
+        heading: "Complete The Cigarette Check On Its Own",
+        body: "Finish the Native smokes decision in the cigarette category. For cannabis during the same Toronto stop, return to the main menu and choose that product type independently.",
       },
     ],
   },
@@ -359,7 +359,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "A shopper-friendly Native cigarettes guide for First Nation Smoke Cannabis Dispensary Toronto, including brand names shown on the menu and $25 carton notes where listed.",
     eyebrow: "Native Cigarettes Guide",
     intro:
-      "If Native cigarettes are part of the stop, start with the cigarette category and compare the current listings. First Nation Smoke Cannabis Dispensary Toronto menu brand names may include Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, Canadian Classics Silver, * Rolled Gold Lights, Nexus Full, Nexus Lights, and Time Full.",
+      "A cigarette listing can look similar to the next one until the full label is read. On the First Nation Smoke page, scan the family name, variant, carton detail, and posted price in that order.",
     cards: [
       {
         title: "Cigarette Menu",
@@ -379,8 +379,8 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     sections: [
       {
-        heading: "Compare The Brand Names",
-        body: "Look for the brand name first, then compare the posted price and any item details. The menu may include Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, Canadian Classics Silver, * Rolled Gold Lights, Nexus Full, Nexus Lights, and Time Full.",
+        heading: "Use The Complete Label",
+        body: "Canadian, Putters, Canadian Goose, Canadian Classics, Rolled Gold, Nexus, and Time families have appeared in the category. Read the following full, light, silver, or menthol wording before comparing the rest of the listing.",
         bullets: [
           "Canadian Lights",
           "Canadian Full",
@@ -397,12 +397,12 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         ],
       },
       {
-        heading: "Ask If The Shelf Matters",
-        body: "When a specific carton, full, light, or menthol option matters, ask staff before choosing. That is better than guessing from any resource page.",
+        heading: "Confirm A Specific Variant When Needed",
+        body: "If the Little Jamaica visit depends on one exact cigarette label, use the current category and contact the store if the public entry leaves an important question unanswered.",
       },
       {
-        heading: "Use The Cigarette Category",
-        body: "Open the cigarette category before the trip. It is the cleanest public path for current Native smokes information at this store.",
+        heading: "Finish With The Store's Current List",
+        body: "This guide supplies the reading order. The live cigarette category supplies the public entries that First Nation Smoke currently presents."
       },
     ],
   },
