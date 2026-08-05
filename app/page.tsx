@@ -113,7 +113,7 @@ const LOCAL_FAQS = [
   },
   {
     q: "Where is First Nation Smoke Cannabis Dispensary Toronto located?",
-    a: "We are located at 1504 Eglinton Ave W, Toronto, ON M6E 2G5. Visit us in person or call us at (437) 215-1466. Free evening street parking is available.",
+    a: "We are located at 1504 Eglinton Ave W, Toronto, ON M6E 2G5. Visit us in person or call us at +1 (289) 819-5073. Free evening street parking is available.",
   },
   {
     q: "What is the cheapest weed at First Nation Smoke Cannabis Dispensary Toronto?",

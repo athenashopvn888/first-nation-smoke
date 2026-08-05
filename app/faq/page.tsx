@@ -91,7 +91,7 @@ export default function FAQPage() {
           <div className={styles.ctaSection}>
             <h2 className={styles.ctaTitle}>Still have questions?</h2>
             <p className={styles.ctaText}>
-              Call <a href="tel:+14372151466">(437) 215-1466</a> or use the store page before visiting.
+              Call <a href="tel:+12898195073">+1 (289) 819-5073</a> or use the store page before visiting.
             </p>
           </div>
         </div>

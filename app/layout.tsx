@@ -83,7 +83,7 @@ const jsonLd = {
   description:
     "Cannabis dispensary at 1504 Eglinton Ave W in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
   url: "https://www.firstnationsmokez.com",
-  telephone: "+14372151466",
+  telephone: "+12898195073",
   image: "https://www.firstnationsmokez.com/wp-content/uploads/2026/04/7Clmh.jpg",
   priceRange: "$3 - $12/g",
   address: {

@@ -9,8 +9,8 @@ export const gbpLocation = {
   address: "1504 Eglinton Ave W, Toronto, ON M6E 2G5",
   streetAddress: "1504 Eglinton Ave W",
   postalCode: "M6E 2G5",
-  phone: "(437) 215-1466",
-  phoneIntl: "+14372151466",
+  phone: "+1 (289) 819-5073",
+  phoneIntl: "+12898195073",
   neighborhood: "Little Jamaica / Fairbank",
   nearbyAreas: ["Eglinton Ave W", "Little Jamaica", "Fairbank", "Oakwood Village", "Dufferin St", "Eglinton West Station", "TTC"],
   products: [

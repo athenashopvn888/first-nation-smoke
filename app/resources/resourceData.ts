@@ -85,7 +85,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "How to shop the First Nation Smoke Cannabis Dispensary Toronto menu by category, with natural tips for flower, pre-rolls, edibles, THC vapes, concentrates, and value shopping.",
     eyebrow: "Menu Guide",
     intro:
-      "First Nation Smoke has several different menu paths, so begin by naming the purpose of the stop. Flower tiers, pre-roll formats, edibles, vapes, concentrates, accessories, and cigarettes each deserve a separate first look.",
+      "Use the menu guide to explore flower tiers, pre-roll formats, edibles, vapes, concentrates, accessories, and cigarettes. Choose a category, then compare the formats and pricing shown on the menu.",
     cards: [
       {
         title: "Flower Guide",
