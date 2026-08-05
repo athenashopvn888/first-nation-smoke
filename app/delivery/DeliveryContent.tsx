@@ -117,7 +117,7 @@ export default function DeliveryContent() {
           <p className={styles.ctaText}>
             Can&apos;t wait? Visit us in-store at{" "}
             <strong>1504 Eglinton Ave W, Toronto</strong> — we are{" "}
-            <strong>Open 24 Hours</strong>. Call <strong>(437) 215-1466</strong>
+            <strong>Open 24 Hours</strong>. Call <strong>+1 (289) 819-5073</strong>
             .
           </p>
         </div>
