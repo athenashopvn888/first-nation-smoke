@@ -161,6 +161,9 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <a className="deliveryAnnouncement" href="/delivery">
+          NEW DELIVERY MENU IS HERE — CLICK TO EXPLORE
+        </a>
         {children}
         <AgeGate />
       </body>
