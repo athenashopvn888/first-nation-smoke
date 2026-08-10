@@ -6,15 +6,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 .deliveryAnnouncement {
-  display: block;
+  position: relative;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  padding: 0.7rem 1rem;
-  background: linear-gradient(90deg, #7f1d1d, #ef4444, #7f1d1d);
+  min-height: 42px;
+  box-sizing: border-box;
+  padding: 0.65rem 1rem;
+  background: var(--green-deep, #052e16);
+  border-bottom: 3px solid var(--green-light, #22c55e);
   color: #fff;
   font: 800 clamp(0.78rem, 2.5vw, 0.95rem)/1.25 system-ui, sans-serif;
   letter-spacing: 0.04em;
   text-align: center;
   text-decoration: none;
+}
+
+body > .deliveryAnnouncement ~ * nav {
+  top: 42px !important;
 }
 
 .deliveryAnnouncement:hover,
