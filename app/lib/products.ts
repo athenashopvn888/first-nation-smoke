@@ -232,7 +232,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   CIGARETTES: {
-    banner: "/banners/06_Cigarettes.webp",
+    banner: "/banners/native-cigarette-offer-20260822.webp",
     name: "Cigarettes", slug: "cigarettes", color: "#78716c", icon: "CG",
     seoTitle: "Native Cigarettes Toronto | First Nation Smoke Cannabis Dispensary Toronto",
     seoIntro: "Native smokes at First Nation Smoke Cannabis Dispensary Toronto in Toronto. The cigarette menu may show $25 carton-style listings and brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, and Canadian Classics Silver.",
