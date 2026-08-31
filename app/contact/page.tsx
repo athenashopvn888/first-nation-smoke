@@ -29,6 +29,7 @@ export default function ContactPage() {
         <div
           style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}
         >
+          <h1 className={styles.heroTitle}>Contact First Nation Smoke Cannabis Dispensary Toronto</h1>
           <img
             src="/banners/08_Contact_Us.webp"
             alt="Contact Us"
