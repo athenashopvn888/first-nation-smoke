@@ -1,12 +1,12 @@
 import { Metadata } from "next";
-import { GBPLandingPage } from "@/app/components/GBPLandingPage";
-import { gbpLocation } from "@/app/lib/gbp-location";
+import { WeedOwnerPage } from "@/app/components/WeedOwnerPage";
 
 export const metadata: Metadata = {
-  title: gbpLocation.seoTitle,
-  description: gbpLocation.metaDescription,
+  title: { absolute: "Weed Dispensary in Toronto | First Nation Smoke Cannabis Dispensary Toronto" },
+  description:
+    "First Nation Smoke Cannabis Dispensary Toronto is open 24 hours at 1504 Eglinton Ave W. Adults 19+ can explore cannabis, flower and pre-roll information.",
   alternates: {
-    canonical: `https://${gbpLocation.domain}/${gbpLocation.slug}/`,
+    canonical: "https://www.firstnationsmokez.com/weed-dispensary-toronto/",
   },
   robots: {
     index: true,
@@ -15,5 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <GBPLandingPage />;
+  return <WeedOwnerPage />;
 }

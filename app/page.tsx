@@ -467,6 +467,17 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className={styles.weedModule} aria-labelledby="weed-cannabis-heading">
+        <div className={styles.container}>
+          <h2 id="weed-cannabis-heading">Weed &amp; Cannabis in Toronto</h2>
+          <p>First Nation Smoke Cannabis Dispensary Toronto is open 24 hours at 1504 Eglinton Ave W. Adults 19+ can explore flower, pre-roll and broader cannabis information.</p>
+          <div className={styles.weedModuleLinks}>
+            <Link href="/weed-dispensary-toronto/">Explore Weed &amp; Cannabis</Link>
+            <Link href="/resources/flower-guide">Explore the Flower Guide</Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── STORE LOCATION GRID ── */}
       <section className={styles.storeSection} id="contact">
         <div className={styles.container}>
