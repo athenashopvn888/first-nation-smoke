@@ -103,7 +103,7 @@ export default function DeliveryContent() {
   return <main className={styles.main}>
     <Navbar />
     <section className={`${styles.hero} ${styles.heroPlain}`}>
-      <div><p>First Nation Smoke Cannabis Dispensary Toronto</p><h1>Delivery Menu</h1><span>Browse the shared product catalog. The store confirms current availability and delivery details before an order is accepted.</span></div>
+      <div><p>First Nation Smoke Cannabis Dispensary Toronto</p><h1>Weed Delivery in Toronto</h1><span>Browse the shared product catalog. The store confirms current availability and delivery details before an order is accepted.</span></div>
     </section>
     <section className={styles.deliveryDetails} aria-label="First Nation Smoke Cannabis Dispensary Toronto delivery details">
       <strong>$60 PRODUCT MINIMUM</strong>
@@ -122,7 +122,7 @@ export default function DeliveryContent() {
     <section className={styles.howToOrder} aria-labelledby="how-to-order-title">
       <div><p>HOW TO ORDER</p><h2 id="how-to-order-title">Order with the First Nation Smoke Cannabis Dispensary Toronto dispatcher</h2><span>LIVE ORDER connects you with the First Nation Smoke Cannabis Dispensary Toronto dispatcher.</span></div>
       <ol>
-        <li><strong>Browse the delivery menu</strong><span>Note the product names and weights you want.</span></li>
+        <li><strong>Browse Weed Delivery</strong><span>Note the product names and weights you want.</span></li>
         <li><strong>Select LIVE ORDER</strong><span>Open Web Chat at the bottom-right and send your choices.</span></li>
         <li><strong>Verify privately if you are new</strong><span>New customers complete the private selfie-with-ID step in Web Chat.</span></li>
         <li><strong>Confirm with the dispatcher</strong><span>The First Nation Smoke Cannabis Dispensary Toronto dispatcher confirms availability, delivery details, and next steps.</span></li>
@@ -131,11 +131,11 @@ export default function DeliveryContent() {
     <section className={styles.catalogShell}>
       <aside className={styles.filters}><h2>Flower tiers</h2>{filters.map((tier) => <button type="button" key={tier} className={filter === tier ? styles.active : ""} onClick={() => setFilter(tier)}>{tier}<span>{tier === "ALL" ? products.length : products.filter((product) => product.tier === tier).length}</span></button>)}</aside>
       <div className={styles.catalog}>
-        <header className={styles.tools}><div><p>DELIVERY CATALOG</p><h2>{filter === "ALL" ? "All products" : filter}</h2><span>{visible.length} products</span></div><label><span>Search products</span><input type="search" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Product or strain" /></label></header>
+        <header className={styles.tools}><div><p>WEED DELIVERY CATALOG</p><h2>{filter === "ALL" ? "All products" : filter}</h2><span>{visible.length} products</span></div><label><span>Search products</span><input type="search" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Product or strain" /></label></header>
         <div className={styles.mobileFilters}>{filters.map((tier) => <button type="button" key={tier} className={filter === tier ? styles.active : ""} onClick={() => setFilter(tier)}>{tier}</button>)}</div>
         <div className={styles.grid}>{visible.map((product) => <article className={styles.card} key={product.publicProductId}>
           <button type="button" className={styles.imageButton} onClick={() => setSelected(product)} aria-label={`View details for ${product.name}`}>
-            {product.images[0] ? <Image src={product.images[0]} alt={`${product.name} on the First Nation Smoke Cannabis Dispensary Toronto delivery menu`} fill sizes="(max-width: 640px) 50vw, 280px" unoptimized /> : <span>First Nation Smoke Cannabis Dispensary Toronto</span>}
+            {product.images[0] ? <Image src={product.images[0]} alt={`${product.name} on the First Nation Smoke Cannabis Dispensary Toronto Weed Delivery menu`} fill sizes="(max-width: 640px) 50vw, 280px" unoptimized /> : <span>First Nation Smoke Cannabis Dispensary Toronto</span>}
           </button>
           <div className={styles.cardBody}><div className={styles.badges}><span>{product.tier}</span><span>{product.category}</span></div><h3><button type="button" onClick={() => setSelected(product)}>{product.name}</button></h3><ProductPricing product={product} /><button type="button" className={styles.detailsButton} onClick={() => setSelected(product)}>View details</button></div>
         </article>)}</div>

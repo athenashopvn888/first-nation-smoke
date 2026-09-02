@@ -60,7 +60,7 @@ export default function Footer() {
               </Link>
               <Link href="/resources">Resources</Link>
               <Link href="/faq">FAQ</Link>
-              <Link href="/delivery">Delivery Menu</Link>
+              <Link href="/weed-delivery-toronto">Weed Delivery</Link>
               <Link href="/info/toronto-weed-dispensary">
                 Little Jamaica Dispensary
               </Link>
