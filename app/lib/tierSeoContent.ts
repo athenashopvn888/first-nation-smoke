@@ -7,7 +7,7 @@ export interface TierSeoData {
 
 export const TIER_SEO: Record<string, TierSeoData> = {
   "EXOTIC": {
-    "seoTitle": "Exotic Cannabis Flower Toronto | First Nation Smoke Cannabis Dispensary Toronto",
+    "seoTitle": "Exotic Weed & Cannabis Flower Toronto",
     "seoIntro": "Exotic flower at First Nation Smoke Cannabis Dispensary Toronto is easiest to compare as its own lane. Open the current Exotic menu, read the posted details, and ask staff when one product detail matters.",
     "sections": [
       {
@@ -39,7 +39,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     ]
   },
   "PREMIUM": {
-    "seoTitle": "Premium Cannabis Flower Toronto | First Nation Smoke Cannabis Dispensary Toronto",
+    "seoTitle": "Premium Weed & Cannabis Flower Toronto",
     "seoIntro": "Premium flower at First Nation Smoke Cannabis Dispensary Toronto is easiest to compare as its own lane. Open the current Premium menu, read the posted details, and ask staff when one product detail matters.",
     "sections": [
       {
@@ -71,7 +71,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     ]
   },
   "AAA+": {
-    "seoTitle": "AAA+ Cannabis Flower Toronto | First Nation Smoke Cannabis Dispensary Toronto",
+    "seoTitle": "AAA+ Weed & Cannabis Flower Toronto",
     "seoIntro": "AAA+ flower at First Nation Smoke Cannabis Dispensary Toronto is easiest to compare as its own lane. Open the current AAA+ menu, read the posted details, and ask staff when one product detail matters.",
     "sections": [
       {
@@ -103,7 +103,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     ]
   },
   "AA": {
-    "seoTitle": "AA Cannabis Flower Toronto | First Nation Smoke Cannabis Dispensary Toronto",
+    "seoTitle": "AA Weed & Cannabis Flower Toronto",
     "seoIntro": "AA flower at First Nation Smoke Cannabis Dispensary Toronto is easiest to compare as its own lane. Open the current AA menu, read the posted details, and ask staff when one product detail matters.",
     "sections": [
       {
@@ -135,7 +135,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     ]
   },
   "BUDGET": {
-    "seoTitle": "Budget Cannabis Flower Toronto | First Nation Smoke Cannabis Dispensary Toronto",
+    "seoTitle": "Budget Weed & Cannabis Flower Toronto",
     "seoIntro": "Budget flower at First Nation Smoke Cannabis Dispensary Toronto is easiest to compare as its own lane. Open the current Budget menu, read the posted details, and ask staff when one product detail matters.",
     "sections": [
       {
