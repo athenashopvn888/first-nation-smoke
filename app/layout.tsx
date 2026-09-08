@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import "./globals.css";
 import AgeGate from "./components/AgeGate";
 
@@ -162,9 +161,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Link className="deliveryAnnouncement" href="/weed-delivery-toronto">
-          WEED DELIVERY IS HERE — CLICK TO EXPLORE
-        </Link>
+        <div className="deliveryAnnouncement" role="status" aria-label="Store welcome announcement">
+          WELCOME TO FIRST NATION SMOKE
+        </div>
         {children}
         <AgeGate />
       </body>
