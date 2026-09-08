@@ -161,6 +161,9 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <div className="deliveryHoursAnnouncement" role="status" aria-label="Delivery hours announcement">
+          NEW WEED DELIVERY 10am -10pm
+        </div>
         <div className="deliveryAnnouncement" role="status" aria-label="Store welcome announcement">
           WELCOME TO FIRST NATION SMOKE
         </div>
