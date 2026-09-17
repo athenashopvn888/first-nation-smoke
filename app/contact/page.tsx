@@ -1,21 +1,25 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./contact.module.css";
+import { STORE } from "../lib/storeIdentity";
 
 export const metadata: Metadata = {
-  title:
-    "Contact Us — First Nation Smoke Cannabis Dispensary Toronto | 1504 Eglinton Ave W, Toronto",
+  title: {
+    absolute:
+      "Contact Us — First Nation Smoke Cannabis Dispensary Toronto | 1504 Eglinton Ave W, Toronto",
+  },
   description:
-    "Visit First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W, Toronto, ON M6E 2G5. We are open 24 hours a day, 7 days a week. Walk-ins welcome.",
+    "Visit First Nation Smoke at 1504 Eglinton Ave W, Toronto, ON M6E 2G5, on Eglinton West through Little Jamaica and Fairbank. Open 24 Hours. Adults 19+. Call +1 289 819 5073.",
   alternates: {
     canonical: "https://www.firstnationsmokez.com/contact",
   },
   openGraph: {
     title:
-      "Contact First Nation Smoke Cannabis Dispensary Toronto — Toronto Dispensary",
+      "Contact First Nation Smoke on Eglinton West — Toronto Dispensary",
     description:
-      "1504 Eglinton Ave W, Toronto. We are open 24 hours a day, 7 days a week. Premium cannabis, always fire.",
+      "1504 Eglinton Ave W, Toronto, ON M6E 2G5. Little Jamaica / Fairbank walk-in. Open 24 Hours. Adults 19+. Phone +1 289 819 5073.",
   },
 };
 
@@ -57,8 +61,13 @@ export default function ContactPage() {
                 Toronto, ON M6E 2G5
                 <br />
                 <span className={styles.infoMuted}>
-                  1504 Eglinton Ave W near Little Jamaica
+                  Eglinton West · Little Jamaica / Fairbank
                 </span>
+              </p>
+              <p className={styles.infoText}>
+                <a href={`tel:${STORE.phoneE164}`}>{STORE.phoneDisplay}</a>
+                <br />
+                <Link href="/visit">How to reach 1504 Eglinton Ave W</Link>
               </p>
             </div>
 
@@ -135,7 +144,15 @@ export default function ContactPage() {
           </div>
 
           {/* Map */}
-          <div className={styles.mapSection}></div>
+          <div className={styles.mapSection}>
+            <iframe
+              title="Map of First Nation Smoke at 1504 Eglinton Ave W, Toronto"
+              src={STORE.mapEmbedUrl}
+              className={styles.mapIframe}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </section>
 

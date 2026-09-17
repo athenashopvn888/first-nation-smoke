@@ -22,6 +22,7 @@ const ALL_LINKS: { href: string; label: string; featured?: boolean }[] = [
   { href: "/weed-delivery-toronto", label: "🚗 Weed Delivery" },
     { href: "/careers/budtender", label: "Join Team", featured: true },
 
+  { href: "/visit", label: "Visit" },
   { href: "/faq", label: "FAQ" },
   { href: "/resources", label: "Resources" },
 ];

@@ -6,17 +6,19 @@ const owner = readFileSync("app/components/WeedOwnerPage.tsx", "utf8");
 const route = readFileSync("app/weed-dispensary-toronto/page.tsx", "utf8");
 const home = readFileSync("app/page.tsx", "utf8");
 
-test("protected owner retains canonical and indexability", () => {
+test("city owner is demoted with noindex and homepage canonical", () => {
   assert.match(route, /Weed Dispensary in Toronto \| First Nation Smoke Cannabis Dispensary Toronto/);
-  assert.match(route, /firstnationsmokez\.com\/weed-dispensary-toronto\//);
-  assert.match(route, /index: true/);
+  assert.match(route, /canonical: "https:\/\/www\.firstnationsmokez\.com\/"/);
+  assert.match(route, /index: false/);
   assert.match(route, /follow: true/);
 });
 
 test("owner uses the exact public identity and verified visit facts", () => {
+  const identity = readFileSync("app/lib/storeIdentity.ts", "utf8");
   assert.match(owner, /First Nation Smoke Cannabis Dispensary Toronto/);
   assert.match(owner, /1504 Eglinton Ave W/);
-  assert.match(owner, /\+1 289-819-5073/);
+  assert.match(owner, /STORE\.phoneDisplay/);
+  assert.match(identity, /\+1 289 819 5073/);
   assert.match(owner, /Open 24 Hours/);
 });
 

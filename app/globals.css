@@ -48,6 +48,7 @@ body > .deliveryAnnouncement ~ * nav {
   font: 800 clamp(0.78rem, 2.5vw, 0.95rem)/1.25 system-ui, sans-serif;
   letter-spacing: 0.04em;
   text-align: center;
+  text-decoration: none;
 }
 
 body > .deliveryHoursAnnouncement + .deliveryAnnouncement { top: 42px; }

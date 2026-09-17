@@ -134,7 +134,10 @@ export default async function ItemsCategoryPage({
           <div className={styles.visitCta}>
             <h3 className={styles.visitTitle}>Visit First Nation Smoke Cannabis Dispensary Toronto</h3>
             <p className={styles.visitText}>
-              1504 Eglinton Ave W, Toronto, ON M6E 2G5 · Open 24 Hours
+              1504 Eglinton Ave W, Toronto, ON M6E 2G5 · Open 24 Hours · +1 289 819 5073
+            </p>
+            <p className={styles.visitText}>
+              <Link href="/visit">How to reach the Eglinton West door</Link>
             </p>
           </div>
         </div>

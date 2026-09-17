@@ -4,8 +4,9 @@ import Footer from "../components/Footer";
 import styles from "./faq.module.css";
 
 export const metadata: Metadata = {
-  title: "FAQ | First Nation Smoke Cannabis Dispensary Toronto",
-  description: "Frequently asked questions about First Nation Smoke Cannabis Dispensary Toronto in Toronto, including store-page checks, menu categories, value shopping, and Native smokes where listed.",
+  title: { absolute: "FAQ | First Nation Smoke on Eglinton West" },
+  description:
+    "Hours, ID, Eglinton West / Little Jamaica / Fairbank directions, and menu questions for First Nation Smoke at 1504 Eglinton Ave W, Toronto. Adults 19+.",
   alternates: {
     canonical: "https://www.firstnationsmokez.com/faq",
   },
@@ -15,9 +16,9 @@ const FAQ_CATEGORIES = [
   {
     title: "Location and Hours",
     faqs: [
-      { q: "Where is First Nation Smoke Cannabis Dispensary Toronto located?", a: "First Nation Smoke Cannabis Dispensary Toronto is listed at 1504 Eglinton Ave W, Toronto, ON M6E 2G5. Use the store page for directions and contact options before visiting." },
-      { q: "What are the listed hours?", a: "Open 24 Hours. Check the current store page or contact staff before visiting if timing matters." },
-      { q: "What is the best way to plan the visit?", a: "Start with the store page, confirm directions and listed hours, then open the menu category that matches the visit." },
+      { q: "Where is First Nation Smoke Cannabis Dispensary Toronto located?", a: "First Nation Smoke is at 1504 Eglinton Ave W, Toronto, ON M6E 2G5, on Eglinton West through Little Jamaica and Fairbank, near Dufferin Street and Oakwood Avenue. Call +1 289 819 5073. Use the homepage map or /visit for how to reach the door." },
+      { q: "What are the listed hours?", a: "Open 24 Hours, seven days a week, matching the homepage hub. Call +1 289 819 5073 if your timing is unusual." },
+      { q: "What is the best way to plan the visit?", a: "Confirm 1504 Eglinton Ave W and the homepage hours, then open /visit if you need TTC from Eglinton West Station, the 32 Eglinton West bus, driving from Dufferin or Oakwood, or curb-parking notes." },
     ],
   },
   {
@@ -39,9 +40,9 @@ const FAQ_CATEGORIES = [
   {
     title: "Native Smokes",
     faqs: [
-      { q: "Does First Nation Smoke Cannabis Dispensary Toronto list Native cigarettes?", a: "The cigarette menu may show Native smoke brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, and Canadian Classics Silver. Confirm current options through the menu or staff." },
+      { q: "Does First Nation Smoke Cannabis Dispensary Toronto list Native cigarettes?", a: "The cigarette menu may show Native smoke brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, and Canadian Classics Silver. That is a merchandise category only. Confirm current options through the menu or staff." },
       { q: "Where can I check $25 carton-style listings?", a: "Where those listings are shown, check the current menu or ask staff for the listed price and package details." },
-      { q: "Where should cigarette shoppers start?", a: "Open the cigarette category first, then use the store page for directions, contact options, and listed hours." },
+      { q: "Where should cigarette shoppers start?", a: "Open the cigarette category first, then use the homepage map and /visit for directions, contact options, and listed hours." },
     ],
   },
 ];
@@ -73,7 +74,7 @@ export default function FAQPage() {
         <div className={styles.content}>
           <h1 className={styles.pageTitle}>Frequently Asked Questions</h1>
           <p className={styles.pageSubtitle}>
-            Straight answers for shopping First Nation Smoke Cannabis Dispensary Toronto: store page first, menu category second, staff when the current detail matters.
+            Straight answers for an Eglinton West visit: homepage hub first, /visit for the last block, menu category second, staff when a current detail matters.
           </p>
 
           {FAQ_CATEGORIES.map((cat) => (
@@ -91,7 +92,7 @@ export default function FAQPage() {
           <div className={styles.ctaSection}>
             <h2 className={styles.ctaTitle}>Still have questions?</h2>
             <p className={styles.ctaText}>
-              Call <a href="tel:+12898195073">+1 (289) 819-5073</a> or use the store page before visiting.
+              Call <a href="tel:+12898195073">+1 289 819 5073</a> or use the homepage map before visiting.
             </p>
           </div>
         </div>

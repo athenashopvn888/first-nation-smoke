@@ -8,6 +8,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { SEO_PAGES, getSeoPageBySlug } from "../../lib/seoPages";
 import { TIER_CONFIG } from "../../lib/products";
+import { STORE } from "../../lib/storeIdentity";
 import styles from "./seo.module.css";
 
 /* ── Generate all SEO pages ── */
@@ -139,8 +140,21 @@ export default async function SeoLandingPage({
           {heroPreview?.theme !== "nicotine" && <div className={styles.section}>
             <h2 className={styles.sectionTitle}>Find Us</h2>
             <div className={styles.mapWrap}>
+              <iframe
+                title={`Map of ${STORE.name} at ${STORE.addressLine}`}
+                src={STORE.mapEmbedUrl}
+                className={styles.mapIframe}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
             <div className={styles.visitBtns}>
+              <Link href="/visit" className={styles.visitBtn}>
+                How to reach 1504 Eglinton Ave W
+              </Link>
+              <a href={`tel:${STORE.phoneE164}`} className={styles.visitBtn}>
+                Call {STORE.phoneDisplay}
+              </a>
             </div>
           </div>}
 
