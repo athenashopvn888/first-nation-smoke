@@ -3,11 +3,15 @@ import DeliveryContent from "../delivery/DeliveryContent";
 import menu from "../delivery/delivery-menu.json";
 
 export const metadata: Metadata = {
-  title: "Weed Delivery Toronto",
+  title: "Weed Delivery for Eglinton West / Little Jamaica",
   description:
-    "Browse Weed Delivery from First Nation Smoke Cannabis Dispensary Toronto and confirm current availability and delivery details before an order is accepted.",
+    "Neighbourhood delivery notes from First Nation Smoke at 1504 Eglinton Ave W, Little Jamaica / Fairbank. Confirm current availability before an order is accepted. This is not a city-wide Toronto delivery page.",
   alternates: {
     canonical: "https://www.firstnationsmokez.com/weed-delivery-toronto",
+  },
+  robots: {
+    index: false,
+    follow: true,
   },
 };
 
@@ -15,7 +19,7 @@ export default function WeedDeliveryPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Weed Delivery",
+    name: "Weed Delivery for Eglinton West / Little Jamaica",
     url: "https://www.firstnationsmokez.com/weed-delivery-toronto",
     mainEntity: {
       "@type": "ItemList",

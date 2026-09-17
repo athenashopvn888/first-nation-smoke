@@ -4,12 +4,12 @@ import { WeedOwnerPage } from "@/app/components/WeedOwnerPage";
 export const metadata: Metadata = {
   title: { absolute: "Weed Dispensary in Toronto | First Nation Smoke Cannabis Dispensary Toronto" },
   description:
-    "First Nation Smoke Cannabis Dispensary Toronto is open 24 hours at 1504 Eglinton Ave W. Adults 19+ can explore cannabis, flower and pre-roll information.",
+    "First Nation Smoke is the Eglinton West walk-in at 1504 Eglinton Ave W through Little Jamaica and Fairbank. Use the homepage for hours and the map; use /visit for how to reach the door.",
   alternates: {
-    canonical: "https://www.firstnationsmokez.com/weed-dispensary-toronto/",
+    canonical: "https://www.firstnationsmokez.com/",
   },
   robots: {
-    index: true,
+    index: false,
     follow: true,
   },
 };

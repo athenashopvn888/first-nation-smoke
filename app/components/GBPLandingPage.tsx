@@ -49,10 +49,10 @@ export function GBPLandingPage() {
   // Generate schema.org markup dynamically
   const schemaMarkup: StoreSchemaMarkup = {
     "@context": "https://schema.org",
-    "@type": "Store",
+    "@type": "CannabisStore",
     "name": gbpLocation.storeName,
     "url": `https://${gbpLocation.domain}/${gbpLocation.slug}/`,
-    "telephone": gbpLocation.phone,
+    "telephone": gbpLocation.phoneIntl,
     "address": {
       "@type": "PostalAddress",
       "streetAddress": gbpLocation.streetAddress,

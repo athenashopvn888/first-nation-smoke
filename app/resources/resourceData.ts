@@ -316,8 +316,8 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       },
       {
         title: "Store Page",
-        href: "/weed-dispensary-toronto",
-        text: "Use the store page for directions, contact options, and listed hours.",
+        href: "/visit",
+        text: "Use /visit for Eglinton West directions, then the homepage for hours.",
       },
     ],
     sections: [
@@ -373,8 +373,8 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       },
       {
         title: "Store Page",
-        href: "/weed-dispensary-toronto",
-        text: "Use the store page for directions, contact options, and listed hours.",
+        href: "/visit",
+        text: "Use /visit for Eglinton West directions, then the homepage for hours.",
       },
     ],
     sections: [

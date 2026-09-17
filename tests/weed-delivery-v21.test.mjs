@@ -10,11 +10,12 @@ const layout = readFileSync("app/layout.tsx", "utf8");
 const sitemap = readFileSync("app/sitemap.ts", "utf8");
 const config = readFileSync("next.config.ts", "utf8");
 
-test("new Weed Delivery owner has exact title, canonical, H1, and schema", () => {
-  assert.match(page, /title: "Weed Delivery Toronto"/);
+test("Weed Delivery owner uses neighbourhood H1 and demotes city indexing", () => {
+  assert.match(page, /title: "Weed Delivery for Eglinton West \/ Little Jamaica"/);
   assert.match(page, /canonical: "https:\/\/www\.firstnationsmokez\.com\/weed-delivery-toronto"/);
-  assert.match(page, /name: "Weed Delivery"/);
-  assert.match(content, /<h1>Weed Delivery in Toronto<\/h1>/);
+  assert.match(page, /index: false/);
+  assert.match(page, /name: "Weed Delivery for Eglinton West \/ Little Jamaica"/);
+  assert.match(content, /<h1>Weed Delivery for Eglinton West \/ Little Jamaica<\/h1>/);
 });
 
 test("legacy delivery route redirects directly to the new owner", () => {
@@ -25,10 +26,10 @@ test("navigation, footer, announcement, and sitemap point directly to Weed Deliv
   for (const source of [navbar, footer, layout, sitemap]) assert.match(source, /\/weed-delivery-toronto/);
   assert.match(navbar, /label: "🚗 Weed Delivery"/);
   assert.match(footer, />Weed Delivery<\/Link>/);
-  assert.match(layout, /WEED DELIVERY IS HERE/);
+  assert.match(layout, /NEW WEED DELIVERY/);
   assert.doesNotMatch(`${navbar}\n${footer}\n${layout}\n${sitemap}`, /href="\/delivery"|`\$\{BASE\}\/delivery`/);
 });
 
 test("delivery mechanics and protected facts remain present", () => {
-  for (const required of ["FirstNationSmokeWebChat", "$60 PRODUCT MINIMUM", "+1 (437) 523-9104", "1504 Eglinton Ave W", "(289) 819-5073", "confirms current availability and delivery details before an order is accepted"]) assert.ok(content.includes(required), required);
+  for (const required of ["FirstNationSmokeWebChat", "$60 PRODUCT MINIMUM", "+1 (437) 523-9104", "1504 Eglinton Ave W", "+1 289 819 5073", "confirms current availability and delivery details before an order is accepted"]) assert.ok(content.includes(required), required);
 });

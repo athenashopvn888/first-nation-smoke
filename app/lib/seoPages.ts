@@ -42,33 +42,33 @@ export const SEO_PAGES: SeoPageData[] = [
     title:
       "First Nation Smoke Cannabis Dispensary Toronto Weed Dispensary in Toronto",
     metaDescription:
-      "First Nation Smoke Cannabis Dispensary Toronto is a local cannabis dispensary in Toronto around Eglinton Ave W and Little Jamaica, with shopper resources for flower, pre-rolls, edibles, vapes, concentrates, accessories, and listed cigarettes.",
+      "First Nation Smoke is the Eglinton West walk-in at 1504 Eglinton Ave W through Little Jamaica and Fairbank, with shopper resources for flower, pre-rolls, edibles, vapes, concentrates, accessories, and listed cigarettes.",
     h1: "First Nation Smoke Cannabis Dispensary Toronto Weed Dispensary in Toronto",
     icon: "*",
-    heroTagline: "Menu shopping around Eglinton Ave W and Little Jamaica",
+    heroTagline: "Eglinton West walk-in through Little Jamaica and Fairbank",
     sections: [
       {
         heading:
-          "Shop First Nation Smoke Cannabis Dispensary Toronto With A Plan",
-        body: "First Nation Smoke Cannabis Dispensary Toronto helps adult shoppers review the menu by category. Start with the store page, then choose the section that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed.",
+          "Start At 1504 Eglinton Ave W, Then Open One Menu Lane",
+        body: "First Nation Smoke is the adult 19+ walk-in at 1504 Eglinton Ave W. Use the homepage for hours, phone +1 289 819 5073, and the map pin. Then choose one category: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or listed cigarettes.",
       },
       {
-        heading: "Local Notes For Eglinton Ave W and Little Jamaica",
-        body: "If you searched for a cannabis dispensary near Little Jamaica, use this page to confirm the local store, product categories, and current menu details.",
+        heading: "Local Notes For Eglinton West, Little Jamaica, and Fairbank",
+        body: "If you searched for a cannabis shop near Little Jamaica or Fairbank, confirm civic number 1504 on Eglinton Avenue West — near Dufferin Street and Oakwood Avenue. The /visit page covers TTC from Eglinton West Station and curb parking on this corridor only.",
       },
       {
         heading: "What To Check Before Visiting",
-        body: "Confirm the current menu, directions, contact options, and listed hours. For current product names, prices, and package details, use the menu or ask staff before leaving.",
+        body: "Confirm the current menu, directions, +1 289 819 5073, and listed hours. For product names, prices, and package details, use the menu or ask staff before leaving. Native cigarettes, where listed, are a merchandise category only.",
       },
     ],
     faqs: [
       {
         q: "Is First Nation Smoke Cannabis Dispensary Toronto a local cannabis dispensary?",
-        a: "Yes. First Nation Smoke Cannabis Dispensary Toronto serves adult shoppers in Toronto around Eglinton Ave W and Little Jamaica. Use the store page for directions, contact details, and listed hours.",
+        a: "Yes. First Nation Smoke serves adult shoppers at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank. Use the homepage for directions, contact details, and listed hours.",
       },
       {
         q: "What should I check before visiting First Nation Smoke Cannabis Dispensary Toronto?",
-        a: "Check the current menu, category pages, directions, and contact details before visiting. Product details can change.",
+        a: "Check the current menu, category pages, /visit for the last block, and +1 289 819 5073 before visiting. Product details can change.",
       },
       {
         q: "Does the site show current product categories?",
@@ -135,14 +135,14 @@ export const SEO_PAGES: SeoPageData[] = [
         body: "Brand names, carton notes, and pricing can change. Treat this page as a guide and confirm current options from the menu or staff.",
       },
       {
-        heading: "Keep The Visit Local",
-        body: "This guide is connected to First Nation Smoke Cannabis Dispensary Toronto around Eglinton Ave W and Little Jamaica, so shoppers do not land on copied pages for another market.",
+        heading: "Keep The Visit On This Corridor",
+        body: "This cigarette guide is for the First Nation Smoke walk-in at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank. Native cigarettes here means the cigarette merchandise category, not a cultural or medical claim.",
       },
     ],
     faqs: [
       {
         q: "Does First Nation Smoke Cannabis Dispensary Toronto list Native cigarettes?",
-        a: "The site includes a cigarette category where listed. Confirm current brands and pricing before visiting.",
+        a: "The site includes a cigarette category where listed. Native cigarettes are a merchandise category only. Confirm current brands and pricing before visiting.",
       },
       {
         q: "Can cigarette selection change?",
@@ -155,32 +155,32 @@ export const SEO_PAGES: SeoPageData[] = [
     title:
       "First Nation Smoke Cannabis Dispensary Toronto Weed Store Near Little Jamaica",
     metaDescription:
-      "First Nation Smoke Cannabis Dispensary Toronto local guide for adults searching for a weed store near Little Jamaica.",
+      "How to reach First Nation Smoke at 1504 Eglinton Ave W from Little Jamaica, Fairbank, Oakwood, and Dufferin. Adults 19+. Open 24 Hours. Homepage keeps the map hub.",
     h1: "First Nation Smoke Cannabis Dispensary Toronto Weed Store Near Little Jamaica",
     icon: "*",
-    heroTagline: "Local guide around Little Jamaica",
+    heroTagline: "Reach guide for Little Jamaica, Fairbank, and Eglinton West",
     sections: [
       {
-        heading: "Near Little Jamaica",
-        body: "First Nation Smoke Cannabis Dispensary Toronto is tied to the local Eglinton Ave W and Little Jamaica shopping area. Use this page when comparing nearby cannabis menu options and store details.",
+        heading: "The Little Jamaica / Fairbank storefront",
+        body: "First Nation Smoke is at 1504 Eglinton Ave W, Toronto, ON M6E 2G5 — the same Eglinton West frontage people mean when they say Little Jamaica or Fairbank. Oakwood Avenue sits east; Dufferin Street is the close north-south handle. Phone +1 289 819 5073. Hours on the homepage: Open 24 Hours.",
       },
       {
-        heading: "Little Jamaica Store Details",
-        body: "Use the store page for the Eglinton Ave W location, contact details, menu categories, and directions.",
+        heading: "TTC, driving, and the last block",
+        body: "From Eglinton West Station (Line 1 at Allen Road), continue west on Eglinton Avenue West. The 32 Eglinton West bus covers that stretch. Dufferin buses drop you at the Eglinton corner a short walk from 1504. Drivers should stay on Eglinton rather than hunting a downtown pin. The dedicated /visit page has parking notes for this corridor only.",
       },
       {
         heading: "Check Before You Go",
-        body: "Open the current menu, confirm directions, and use the contact details if a product or category detail matters before the visit.",
+        body: "Open the current menu, confirm 1504 on the homepage map, and call if one product is the only reason for the trip. Native cigarettes, where listed, are a merchandise category on the cigarette shelf — not a cultural claim. Adults 19+ with photo ID.",
       },
     ],
     faqs: [
       {
         q: "Is this page focused on Little Jamaica?",
-        a: "Yes. This page focuses on First Nation Smoke Cannabis Dispensary Toronto around Eglinton Ave W and Little Jamaica.",
+        a: "Yes. This page focuses on First Nation Smoke at 1504 Eglinton Ave W on the Little Jamaica / Fairbank stretch of Eglinton West.",
       },
       {
         q: "What is the best next step?",
-        a: "Open the current menu or store page, then confirm directions and contact details before heading over.",
+        a: "Use the homepage for hours and the map, open /visit for TTC and parking, then confirm the current menu before heading over.",
       },
     ],
   },
@@ -192,29 +192,29 @@ export const SEO_PAGES: SeoPageData[] = [
       "First Nation Smoke Cannabis Dispensary Toronto guide for adults using near-me searches around Eglinton Ave W and Little Jamaica.",
     h1: "First Nation Smoke Cannabis Dispensary Toronto Dispensary Near Me Guide",
     icon: "*",
-    heroTagline: "A near-me page tied to the actual store",
+    heroTagline: "A near-me page tied to 1504 Eglinton Ave W",
     sections: [
       {
-        heading: "A Local Near-Me Result",
-        body: "First Nation Smoke serves adults around Eglinton Ave W and Little Jamaica with store details and menu-category links.",
+        heading: "A Local Near-Me Result On Eglinton West",
+        body: "If you searched dispensary near me around Little Jamaica or Fairbank, First Nation Smoke is the walk-in at 1504 Eglinton Ave W. Use the homepage for hours and the map; use /visit for TTC and parking on this corridor only.",
       },
       {
         heading: "Use The Menu For Current Details",
-        body: "Use the current menu or ask staff when product names, prices, or other details matter for the visit.",
+        body: "Use the current menu or ask staff when product names, prices, or other details matter for the visit. Call +1 289 819 5073 before travelling for one item.",
       },
       {
-        heading: "Keep The Route Simple",
-        body: "Confirm directions, listed hours, and product category before heading over.",
+        heading: "Keep The Route On Eglinton West",
+        body: "Confirm 1504 Eglinton Ave W, listed hours, and one product category before heading over. Do not treat this as a city-wide Toronto delivery page.",
       },
     ],
     faqs: [
       {
         q: "Is this page focused on Little Jamaica?",
-        a: "Yes. This page focuses on First Nation Smoke Cannabis Dispensary Toronto around Eglinton Ave W and Little Jamaica.",
+        a: "Yes. This page focuses on First Nation Smoke at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank.",
       },
       {
         q: "What is the best next step?",
-        a: "Open the current menu or store page, then confirm directions and contact details before heading over.",
+        a: "Open the homepage map, then /visit for the last block, and confirm the current menu before heading over.",
       },
     ],
   },

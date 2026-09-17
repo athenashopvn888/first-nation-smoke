@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import FlowerCard from "./components/FlowerCard";
 import { allFlowers } from "./lib/products";
 import Papa from "papaparse";
+import { HOME_FAQS, STORE } from "./lib/storeIdentity";
 
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
@@ -99,26 +100,6 @@ const EXPLORE_CATEGORIES = [
     slug: "items/magic",
     banner: "/banners/09_Magic_Stuff.webp",
     icon: "🍄",
-  },
-];
-
-/* ── Local FAQs for Jane St ── */
-const LOCAL_FAQS = [
-  {
-    q: "What are the hours for First Nation Smoke Cannabis Dispensary Toronto?",
-    a: "First Nation Smoke Cannabis Dispensary Toronto at 1504 Eglinton Ave W, Toronto is open 24 hours a day, 7 days a week. Walk in anytime — no appointment needed.",
-  },
-  {
-    q: "What cannabis products do you carry?",
-    a: "We carry five tiers of premium flower: Exotic ($10-$12/g), Premium ($7-$10/g), AAA+ ($5-$6/g), AA ($4/g), and Budget ($3/g), plus a wide variety of edibles, prerolls, vapes, and concentrates.",
-  },
-  {
-    q: "Where is First Nation Smoke Cannabis Dispensary Toronto located?",
-    a: "We are located at 1504 Eglinton Ave W, Toronto, ON M6E 2G5. Visit us in person or call us at +1 (289) 819-5073. Free evening street parking is available.",
-  },
-  {
-    q: "What is the cheapest weed at First Nation Smoke Cannabis Dispensary Toronto?",
-    a: "Our budget flower starts at just $3/g. We also offer AA daily drivers from $4/g and AAA+ heavy hitters from $5-$6/g. View our budget menu for our latest deals.",
   },
 ];
 
@@ -283,8 +264,12 @@ export default function HomePage() {
             <h1 className={styles.brandTitle}>
               FIRST NATION SMOKE CANNABIS DISPENSARY TORONTO
             </h1>
-            <p className={styles.brandSub}>Premium Cannabis Dispensary</p>
-            <div className={styles.brandBadge}>Open 24 Hours</div>
+            <p className={styles.brandSub}>
+              Eglinton West walk-in · Little Jamaica · Fairbank
+            </p>
+            <div className={styles.brandBadge}>
+              Open 24 Hours · Adults 19+ · {STORE.streetAddress}
+            </div>
           </div>
 
           {/* Bento Grid */}
@@ -316,8 +301,8 @@ export default function HomePage() {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Explore Categories</h2>
             <p className={styles.sectionSubtitle}>
-              Pick the category that matches the visit, then compare the current
-              menu details.
+              Eglinton West shelves first: open one lane, then compare the
+              current card at 1504 before you leave Little Jamaica.
             </p>
           </div>
 
@@ -351,8 +336,9 @@ export default function HomePage() {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Featured Strains</h2>
             <p className={styles.sectionSubtitle}>
-              A quick look at flower options from the store menu. Open the item
-              page for current details before choosing.
+              A rotating sample from the 1504 Eglinton Ave W flower wall. Open
+              the item page; do not treat this row as a stock or price
+              guarantee.
             </p>
           </div>
 
@@ -370,21 +356,28 @@ export default function HomePage() {
       <section className={styles.seoSection}>
         <div className={styles.container}>
           <div className={styles.seoPanel}>
-            <h2 className={styles.seoPanelTitle}>Shop The Menu With A Plan</h2>
+            <h2 className={styles.seoPanelTitle}>
+              Walk in on Eglinton West at Little Jamaica
+            </h2>
             <p className={styles.seoPanelText}>
-              Start with the store page, then choose the product category that
-              fits the visit. Flower, pre-rolls, edibles, THC vapes,
-              concentrates, accessories, and cigarettes each shop differently.
+              First Nation Smoke sits at {STORE.addressLine}, on the Eglinton
+              Avenue West frontage through Little Jamaica and Fairbank, near
+              Dufferin Street and Oakwood Avenue. Oakwood Village, Caledonia,
+              and Marlee are the local handles — not a downtown Toronto hunt.
+              Adults 19+ with photo ID can walk in any hour we list as open.
             </p>
             <p className={styles.seoPanelText}>
-              If cheap weed or affordable weed is the goal, start with Budget
-              and AA flower before moving up. If premium flower or exotic flower
-              is the mood, open those lanes first and compare the current
-              details there.
+              Use this homepage as the visit hub: address, phone{" "}
+              {STORE.phoneDisplay}, 24-hour hours, and the map pin below. For
+              TTC from Eglinton West Station, the 32 Eglinton West bus, curb
+              parking, and the last-block approach, open the{" "}
+              <Link href="/visit">how to reach First Nation Smoke</Link> page.
             </p>
             <p className={styles.seoPanelText}>
-              Menus change, so use the current menu and staff for product names,
-              prices, and package details before you make the trip.
+              Menu categories live on this site so you can plan the stop. Posted
+              names and prices change; ask at the counter before you travel for
+              one item. Listed cigarettes include Native cigarettes as a
+              merchandise category only. No medical claims — adult retail only.
             </p>
           </div>
         </div>
@@ -460,8 +453,8 @@ export default function HomePage() {
           >
             Frequently Asked Questions
           </h2>
-          {LOCAL_FAQS.map((faq, i) => (
-            <details key={i} className={styles.faqItem}>
+          {HOME_FAQS.map((faq) => (
+            <details key={faq.q} className={styles.faqItem}>
               <summary className={styles.faqQuestion}>{faq.q}</summary>
               <p className={styles.faqAnswer}>{faq.a}</p>
             </details>
@@ -471,10 +464,15 @@ export default function HomePage() {
 
       <section className={styles.weedModule} aria-labelledby="weed-cannabis-heading">
         <div className={styles.container}>
-          <h2 id="weed-cannabis-heading">Weed &amp; Cannabis in Toronto</h2>
-          <p>First Nation Smoke Cannabis Dispensary Toronto is open 24 hours at 1504 Eglinton Ave W. Adults 19+ can explore flower, pre-roll and broader cannabis information.</p>
+          <h2 id="weed-cannabis-heading">Weed &amp; Cannabis on Eglinton West</h2>
+          <p>
+            First Nation Smoke is open 24 hours at 1504 Eglinton Ave W on the
+            Little Jamaica / Fairbank stretch. Adults 19+ can explore flower,
+            pre-roll, and broader cannabis information, then use the homepage
+            map as the visit hub.
+          </p>
           <div className={styles.weedModuleLinks}>
-            <Link href="/weed-dispensary-toronto/">Explore Weed &amp; Cannabis</Link>
+            <Link href="/visit">Explore Weed &amp; Cannabis</Link>
             <Link href="/resources/flower-guide">Explore the Flower Guide</Link>
           </div>
         </div>
@@ -488,10 +486,13 @@ export default function HomePage() {
               <span className={styles.storeIcon}>📍</span>
               <h3 className={styles.storeCardTitle}>Location</h3>
               <p className={styles.storeCardText}>
-                1504 Eglinton Ave W
+                {STORE.streetAddress}
                 <br />
-                Toronto, ON M6E 2G5
+                {STORE.city}, {STORE.region} {STORE.postalCode}
                 <br />
+                <a href={`tel:${STORE.phoneE164}`} className={styles.storeLink}>
+                  {STORE.phoneDisplay}
+                </a>
               </p>
             </div>
             <div className={styles.storeCard}>
@@ -500,24 +501,36 @@ export default function HomePage() {
               <p className={styles.storeCardText}>
                 Open 7 Days a Week
                 <br />
-                <span className={styles.storeHighlight}>Open 24 Hours</span>
+                <span className={styles.storeHighlight}>{STORE.hoursLabel}</span>
               </p>
             </div>
             <div className={styles.storeCard}>
               <span className={styles.storeIcon}>🔥</span>
               <h3 className={styles.storeCardTitle}>Walk In</h3>
               <p className={styles.storeCardText}>
-                No appointment needed
+                Adults 19+ · no appointment
                 <br />
                 <span className={styles.storeHighlight}>
-                  1504 Eglinton Ave W near Little Jamaica, Toronto
+                  {STORE.intersection}
                 </span>
               </p>
             </div>
           </div>
 
-          {/* Map wrapper */}
-          <div className={styles.mapWrap}></div>
+          <p className={styles.visitHubCta}>
+            Need TTC, driving, or parking notes for this corridor?{" "}
+            <Link href="/visit">How to reach 1504 Eglinton Ave W</Link>
+          </p>
+
+          <div className={styles.mapWrap}>
+            <iframe
+              title="Map of First Nation Smoke at 1504 Eglinton Ave W, Toronto"
+              src={STORE.mapEmbedUrl}
+              className={styles.mapIframe}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </section>
 

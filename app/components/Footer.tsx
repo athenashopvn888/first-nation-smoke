@@ -12,11 +12,16 @@ export default function Footer() {
               FIRST NATION SMOKE CANNABIS DISPENSARY TORONTO
             </div>
             <p className={styles.desc}>
-              Your Local Cannabis Dispensary At 1504 Eglinton Ave W, Toronto.
-              Visit First Nation Smoke Cannabis Dispensary Toronto For Premium
-              Flower, Edibles, Vapes &amp; More. Open: Open 24 Hours.
+              Adult 19+ walk-in at 1504 Eglinton Ave W on Eglinton West through
+              Little Jamaica and Fairbank, near Dufferin and Oakwood. Open 24
+              Hours. Check the current menu in store — we do not post medical
+              claims.
             </p>
-            <div className={styles.buttons}></div>
+            <div className={styles.buttons}>
+              <a href="tel:+12898195073" className={styles.btnPrimary}>
+                Call Now
+              </a>
+            </div>
           </div>
 
           {/* Column 2 — Contact Info */}
@@ -32,7 +37,7 @@ export default function Footer() {
               <span className={styles.infoLabel}>Phone:</span>
               <span>
                 <a href="tel:+12898195073" style={{ color: "inherit" }}>
-                  +1 (289) 819-5073
+                  +1 289 819 5073
                 </a>
               </span>
             </div>
@@ -47,6 +52,7 @@ export default function Footer() {
             <h3 className={styles.colTitle}>Quick Links</h3>
             <nav className={styles.links}>
               <Link href="/">Home</Link>
+              <Link href="/visit">How to Reach Us</Link>
               <Link href="/exotic-weed">Exotic Weed</Link>
               <Link href="/premium-weed">Premium Weed</Link>
               <Link href="/aaa-weed">AAA+ Weed</Link>
@@ -73,13 +79,9 @@ export default function Footer() {
               <Link href="/info/weed-store-near-little-jamaica-fairbank">
                 Weed Store Near Little Jamaica
               </Link>
-              <Link href="/weed-dispensary-toronto/">
-                First Nation Smoke Cannabis Dispensary Toronto Weed Dispensary
-                in Toronto
-              </Link>
               <Link href="/contact">Contact Us</Link>
               <a
-                href="https://www.firstnationsmokez.com/"
+                href="https://maps.google.com/?q=1504+Eglinton+Ave+W,+Toronto,+ON+M6E+2G5"
                 target="_blank"
                 rel="noopener noreferrer"
               >
