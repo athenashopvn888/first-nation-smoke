@@ -63,7 +63,8 @@ test("dynamic sitemap and product backlinks inherit the canonical tier config", 
 
 test("protected broad owner remains outside the tier migration", () => {
   const owner = readFileSync("app/weed-dispensary-toronto/page.tsx", "utf8");
-  assert.match(owner, /weed-dispensary-toronto/);
+  assert.match(owner, /WeedOwnerPage/);
+  assert.match(owner, /index: false/);
 });
 
 test("delivery and nicotine modules remain untouched by this migration", () => {

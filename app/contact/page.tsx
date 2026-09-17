@@ -6,8 +6,10 @@ import styles from "./contact.module.css";
 import { STORE } from "../lib/storeIdentity";
 
 export const metadata: Metadata = {
-  title:
-    "Contact Us — First Nation Smoke Cannabis Dispensary Toronto | 1504 Eglinton Ave W, Toronto",
+  title: {
+    absolute:
+      "Contact Us — First Nation Smoke Cannabis Dispensary Toronto | 1504 Eglinton Ave W, Toronto",
+  },
   description:
     "Visit First Nation Smoke at 1504 Eglinton Ave W, Toronto, ON M6E 2G5, on Eglinton West through Little Jamaica and Fairbank. Open 24 Hours. Adults 19+. Call +1 289 819 5073.",
   alternates: {

@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import styles from "./faq.module.css";
 
 export const metadata: Metadata = {
-  title: "FAQ | First Nation Smoke on Eglinton West",
+  title: { absolute: "FAQ | First Nation Smoke on Eglinton West" },
   description:
     "Hours, ID, Eglinton West / Little Jamaica / Fairbank directions, and menu questions for First Nation Smoke at 1504 Eglinton Ave W, Toronto. Adults 19+.",
   alternates: {
