@@ -152,6 +152,9 @@ export default async function SeoLandingPage({
               <Link href="/visit" className={styles.visitBtn}>
                 How to reach 1504 Eglinton Ave W
               </Link>
+              <Link href="/24-hour-eglinton-west-dispensary" className={styles.visitBtn}>
+                24-hour Eglinton West
+              </Link>
               <a href={`tel:${STORE.phoneE164}`} className={styles.visitBtn}>
                 Call {STORE.phoneDisplay}
               </a>

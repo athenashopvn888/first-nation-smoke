@@ -58,7 +58,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "What To Check Before Visiting",
-        body: "Confirm the current menu, directions, +1 289 819 5073, and listed hours. For product names, prices, and package details, use the menu or ask staff before leaving. Native cigarettes, where listed, are a merchandise category only.",
+        body: "Confirm the current menu, directions, +1 289 819 5073, and listed hours. For overnight or open-now timing on this corridor, use the 24-hour Eglinton West page. For product names, prices, and package details, use the menu or ask staff before leaving. Native cigarettes, where listed, are a merchandise category only.",
       },
     ],
     faqs: [
@@ -180,7 +180,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         q: "What is the best next step?",
-        a: "Use the homepage for hours and the map, open /visit for TTC and parking, then confirm the current menu before heading over.",
+        a: "Use the homepage for hours and the map, open /visit for TTC and parking, open the 24-hour Eglinton West page for overnight walk-ins, then confirm the current menu before heading over.",
       },
     ],
   },

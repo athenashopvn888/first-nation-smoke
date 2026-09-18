@@ -10,6 +10,9 @@ import FlowerCard from "./components/FlowerCard";
 import { allFlowers } from "./lib/products";
 import Papa from "papaparse";
 import { HOME_FAQS, STORE } from "./lib/storeIdentity";
+import LocalSeoMesh, {
+  TWENTY_FOUR_HOUR_HREF,
+} from "./components/LocalSeoMesh";
 
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
@@ -372,6 +375,11 @@ export default function HomePage() {
               TTC from Eglinton West Station, the 32 Eglinton West bus, curb
               parking, and the last-block approach, open the{" "}
               <Link href="/visit">how to reach First Nation Smoke</Link> page.
+              Overnight and “open now” intent for this corridor only sits on the{" "}
+              <Link href={TWENTY_FOUR_HOUR_HREF}>
+                24-hour Eglinton West dispensary
+              </Link>{" "}
+              page.
             </p>
             <p className={styles.seoPanelText}>
               Menu categories live on this site so you can plan the stop. Posted
@@ -473,8 +481,10 @@ export default function HomePage() {
           </p>
           <div className={styles.weedModuleLinks}>
             <Link href="/visit">Explore Weed &amp; Cannabis</Link>
+            <Link href={TWENTY_FOUR_HOUR_HREF}>24-Hour Eglinton West</Link>
             <Link href="/resources/flower-guide">Explore the Flower Guide</Link>
           </div>
+          <LocalSeoMesh currentPath="/" tone="dark" />
         </div>
       </section>
 
@@ -520,6 +530,8 @@ export default function HomePage() {
           <p className={styles.visitHubCta}>
             Need TTC, driving, or parking notes for this corridor?{" "}
             <Link href="/visit">How to reach 1504 Eglinton Ave W</Link>
+            {" · "}
+            <Link href={TWENTY_FOUR_HOUR_HREF}>24-hour Eglinton West walk-in</Link>
           </p>
 
           <div className={styles.mapWrap}>

@@ -28,9 +28,19 @@ test("tier names and slugs follow the V2.1 convention", () => {
   }
 });
 
-test("tier metadata titles use tier name first and defer the brand template", () => {
-  for (const [name] of tiers) {
-    assert.ok(tierSeo.includes(`"seoTitle": "${name} & Cannabis Flower Toronto"`));
+test("tier metadata titles stay unique, name-first, and brand-free", () => {
+  const titles = {
+    "Exotic Weed": "Exotic Weed on Eglinton West",
+    "Premium Weed": "Premium Weed in Little Jamaica",
+    "AAA+ Weed": "AAA+ Weed near Oakwood",
+    "AA Weed": "AA Weed on Fairbank",
+    "Budget Weed": "Budget Weed at 1504 Eglinton Ave W",
+  };
+  const seen = new Set();
+  for (const [name, title] of Object.entries(titles)) {
+    assert.ok(tierSeo.includes(`seoTitle: "${title}"`), `missing unique title for ${name}`);
+    assert.equal(seen.has(title), false);
+    seen.add(title);
   }
   assert.doesNotMatch(tierSeo, /Weed (Exotic|Premium|AAA\+|AA|Budget)/i);
   assert.doesNotMatch(tierSeo, /seoTitle.*First Nation Smoke/i);

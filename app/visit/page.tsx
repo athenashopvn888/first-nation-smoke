@@ -7,6 +7,9 @@ import {
   faqPageJsonLd,
   stringifyJsonLd,
 } from "../lib/storeIdentity";
+import LocalSeoMesh, {
+  TWENTY_FOUR_HOUR_HREF,
+} from "../components/LocalSeoMesh";
 import styles from "./visit.module.css";
 
 const VISIT_FAQS = [
@@ -24,7 +27,7 @@ const VISIT_FAQS = [
   },
   {
     q: "Is First Nation Smoke a walk-in for adults 19+?",
-    a: "Yes. Bring government-issued photo ID. No appointment is required. Hours on this page match the homepage hub: Open 24 Hours.",
+    a: "Yes. Bring government-issued photo ID. No appointment is required. Hours on this page match the homepage hub: Open 24 Hours. Overnight and open-now notes for this corridor sit on the 24-hour Eglinton West page.",
   },
 ];
 
@@ -48,8 +51,25 @@ export const metadata: Metadata = {
 };
 
 export default function VisitPage() {
+  const visitWebPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "How to Reach First Nation Smoke on Eglinton West",
+    url: `${STORE.url}/visit`,
+    description:
+      "Driving, TTC, and parking notes for First Nation Smoke at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank.",
+    isPartOf: { "@id": `${STORE.url}/#cannabis-store` },
+    about: { "@id": `${STORE.url}/#cannabis-store` },
+  };
+
   return (
     <main className={styles.main}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(visitWebPageSchema),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -73,6 +93,11 @@ export default function VisitPage() {
           name-address-phone block stay on the{" "}
           <Link href="/#contact">homepage visit hub</Link>. Use these notes
           when you are coming along Eglinton West, Dufferin, or Oakwood.
+          Overnight and “open now” visits use the{" "}
+          <Link href={TWENTY_FOUR_HOUR_HREF}>
+            24-hour Eglinton West dispensary
+          </Link>{" "}
+          page — this URL stays the how-to-reach owner.
         </p>
 
         <section className={styles.nap} aria-label="Store name, address, and phone">
@@ -192,11 +217,23 @@ export default function VisitPage() {
             Hours on the door match the homepage: {STORE.hoursDetail}. After
             you know the route, go back to the{" "}
             <Link href="/">First Nation Smoke homepage</Link> for the live
-            map pin, the hours card, and menu lanes. Delivery, when you want
+            map pin, the hours card, and menu lanes. Overnight walk-ins use
+            the{" "}
+            <Link href={TWENTY_FOUR_HOUR_HREF}>
+              24-hour Eglinton West
+            </Link>{" "}
+            page. Flower comparison stays on{" "}
+            <Link href="/exotic-weed">Exotic</Link>,{" "}
+            <Link href="/premium-weed">Premium</Link>,{" "}
+            <Link href="/aaa-weed">AAA+</Link>,{" "}
+            <Link href="/aa-weed">AA</Link>, and{" "}
+            <Link href="/budget-weed">Budget</Link>. Delivery, when you want
             it, stays on a separate URL and is scoped to this neighbourhood
             — it is not a city-wide Toronto delivery war.
           </p>
         </section>
+
+        <LocalSeoMesh currentPath="/visit" tone="light" />
 
         <div className={styles.mapWrap}>
           <iframe
@@ -226,9 +263,9 @@ export default function VisitPage() {
           <Link href="/#contact" className={styles.primary}>
             Homepage map &amp; hours
           </Link>
-          <a href={`tel:${STORE.phoneE164}`} className={styles.secondary}>
-            Call {STORE.phoneDisplay}
-          </a>
+          <Link href={TWENTY_FOUR_HOUR_HREF} className={styles.secondary}>
+            24-hour Eglinton West
+          </Link>
         </p>
       </article>
 
