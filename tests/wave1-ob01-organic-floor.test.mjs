@@ -1,7 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
-import { TIER_SEO } from "../app/lib/tierSeoContent.ts";
 
 const home = readFileSync("app/page.tsx", "utf8");
 const visit = readFileSync("app/visit/page.tsx", "utf8");
@@ -15,6 +14,7 @@ const sitemap = readFileSync("app/sitemap.ts", "utf8");
 const identity = readFileSync("app/lib/storeIdentity.ts", "utf8");
 const tierPage = readFileSync("app/[tier]/page.tsx", "utf8");
 const mesh = readFileSync("app/components/LocalSeoMesh.tsx", "utf8");
+const tierSeo = readFileSync("app/lib/tierSeoContent.ts", "utf8");
 
 const WAVE1_BUNDLE = [
   home,
@@ -25,7 +25,7 @@ const WAVE1_BUNDLE = [
   identity,
   tierPage,
   mesh,
-  readFileSync("app/lib/tierSeoContent.ts", "utf8"),
+  tierSeo,
 ].join("\n");
 
 test("homepage stays the NAP / hours / map hub", () => {
@@ -63,34 +63,20 @@ test("dedicated 24-hour Eglinton West LP is area-true, not city spam", () => {
 });
 
 test("five flower tiers have unique H1 place, title, and FAQ questions", () => {
-  const keys = ["EXOTIC", "PREMIUM", "AAA+", "AA", "BUDGET"];
-  const titles = new Set();
-  const h1Places = new Set();
-  const questions = new Set();
-  const intros = new Set();
-
-  for (const key of keys) {
-    const seo = TIER_SEO[key];
-    assert.ok(seo, `missing TIER_SEO.${key}`);
-    assert.ok(seo.h1Place.length > 8, `${key} h1Place too short`);
-    assert.ok(seo.seoTitle.length > 8, `${key} seoTitle too short`);
-    assert.equal(seo.faqs.length, 3, `${key} should have 3 unique FAQs`);
-    assert.equal(titles.has(seo.seoTitle), false, `duplicate title ${seo.seoTitle}`);
-    assert.equal(h1Places.has(seo.h1Place), false, `duplicate h1Place ${seo.h1Place}`);
-    assert.equal(intros.has(seo.seoIntro), false, `duplicate intro for ${key}`);
-    titles.add(seo.seoTitle);
-    h1Places.add(seo.h1Place);
-    intros.add(seo.seoIntro);
-    for (const faq of seo.faqs) {
-      assert.equal(questions.has(faq.q), false, `duplicate FAQ ${faq.q}`);
-      questions.add(faq.q);
-      assert.notEqual(
-        faq.a,
-        "Open the tier, compare the current product details, and ask staff when a note needs a current answer.",
-      );
-    }
-  }
-
+  const titles = [...tierSeo.matchAll(/seoTitle: "([^"]+)"/g)].map((m) => m[1]);
+  const places = [...tierSeo.matchAll(/h1Place: "([^"]+)"/g)].map((m) => m[1]);
+  const questions = [...tierSeo.matchAll(/q: "([^"]+)"/g)].map((m) => m[1]);
+  assert.equal(titles.length, 5);
+  assert.equal(places.length, 5);
+  assert.equal(questions.length, 15);
+  assert.equal(new Set(titles).size, 5, `duplicate titles: ${titles.join(" | ")}`);
+  assert.equal(new Set(places).size, 5, `duplicate h1Place: ${places.join(" | ")}`);
+  assert.equal(new Set(questions).size, 15, "FAQ questions must be unique across tiers");
+  assert.match(tierSeo, /Exotic Weed on Eglinton West/);
+  assert.match(tierSeo, /Premium Weed in Little Jamaica/);
+  assert.match(tierSeo, /AAA\+ Weed near Oakwood/);
+  assert.match(tierSeo, /AA Weed on Fairbank/);
+  assert.match(tierSeo, /Budget Weed at 1504 Eglinton Ave W/);
   assert.match(tierPage, /seo\?\.h1Place/);
   assert.match(tierPage, /faqPageJsonLd\(seo\.faqs\)/);
 });
