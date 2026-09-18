@@ -12,6 +12,11 @@ const cityPage = readFileSync("app/weed-dispensary-toronto/page.tsx", "utf8");
 const deliveryPage = readFileSync("app/weed-delivery-toronto/page.tsx", "utf8");
 const littleJamaica = readFileSync("app/lib/seoPages.ts", "utf8");
 const owner = readFileSync("app/components/WeedOwnerPage.tsx", "utf8");
+const twentyFour = readFileSync(
+  "app/24-hour-eglinton-west-dispensary/page.tsx",
+  "utf8",
+);
+const tierSeo = readFileSync("app/lib/tierSeoContent.ts", "utf8");
 
 const publicBundle = [
   layout,
@@ -21,6 +26,8 @@ const publicBundle = [
   footer,
   littleJamaica,
   owner,
+  twentyFour,
+  tierSeo,
 ].join("\n");
 
 test("homepage schema identity is CannabisStore + FAQPage with exact NAP", () => {

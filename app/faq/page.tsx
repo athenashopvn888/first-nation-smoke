@@ -17,7 +17,7 @@ const FAQ_CATEGORIES = [
     title: "Location and Hours",
     faqs: [
       { q: "Where is First Nation Smoke Cannabis Dispensary Toronto located?", a: "First Nation Smoke is at 1504 Eglinton Ave W, Toronto, ON M6E 2G5, on Eglinton West through Little Jamaica and Fairbank, near Dufferin Street and Oakwood Avenue. Call +1 289 819 5073. Use the homepage map or /visit for how to reach the door." },
-      { q: "What are the listed hours?", a: "Open 24 Hours, seven days a week, matching the homepage hub. Call +1 289 819 5073 if your timing is unusual." },
+      { q: "What are the listed hours?", a: "Open 24 Hours, seven days a week, matching the homepage hub. Overnight notes for this corridor only are on the 24-hour Eglinton West page. Call +1 289 819 5073 if your timing is unusual." },
       { q: "What is the best way to plan the visit?", a: "Confirm 1504 Eglinton Ave W and the homepage hours, then open /visit if you need TTC from Eglinton West Station, the 32 Eglinton West bus, driving from Dufferin or Oakwood, or curb-parking notes." },
     ],
   },

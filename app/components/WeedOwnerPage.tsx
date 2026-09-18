@@ -57,7 +57,7 @@ export function WeedOwnerPage() {
         <p>Supporting notes for shoppers heading to 1504 Eglinton Ave W on the Little Jamaica / Fairbank stretch. The homepage remains the visit hub.</p>
         <div className={styles.actions}>
           <Link href="/visit" className={styles.primary}>How to reach 1504 Eglinton Ave W</Link>
-          <a href={`tel:${STORE.phoneE164}`} className={styles.secondary}>Call {STORE.phoneDisplay}</a>
+          <Link href="/24-hour-eglinton-west-dispensary" className={styles.secondary}>24-hour Eglinton West</Link>
         </div>
       </header>
 
@@ -65,7 +65,7 @@ export function WeedOwnerPage() {
         <h2>Weed and Cannabis on Eglinton Avenue West</h2>
         <p>{storeName} is the walk-in at {STORE.addressLine}, open 24 hours a day, seven days a week.</p>
         <p>Adults 19+ can begin with flower information, compare broader cannabis choices, or focus on pre-rolls when that is the format they are interested in.</p>
-        <p>For one specific item, call <a href={`tel:${STORE.phoneE164}`}>{STORE.phoneDisplay}</a> before making a special trip. For TTC, parking, and last-block notes, use the <Link href="/visit">how-to-reach page</Link>.</p>
+        <p>For one specific item, call <a href={`tel:${STORE.phoneE164}`}>{STORE.phoneDisplay}</a> before making a special trip. For TTC, parking, and last-block notes, use the <Link href="/visit">how-to-reach page</Link>. Overnight and open-now intent for this corridor sits on the <Link href="/24-hour-eglinton-west-dispensary">24-hour Eglinton West</Link> page.</p>
       </section>
 
       <section className={styles.section}>

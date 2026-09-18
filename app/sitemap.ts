@@ -35,6 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${BASE}/24-hour-eglinton-west-dispensary`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
       url: `${BASE}/weed-delivery-toronto`,
       lastModified: now,
       changeFrequency: "monthly",

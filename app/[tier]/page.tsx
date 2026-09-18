@@ -11,6 +11,8 @@ import {
   TIER_CONFIG,
 } from "../lib/products";
 import { TIER_SEO } from "../lib/tierSeoContent";
+import LocalSeoMesh from "../components/LocalSeoMesh";
+import { faqPageJsonLd, stringifyJsonLd } from "../lib/storeIdentity";
 import styles from "./tier.module.css";
 
 /* -- Generate all tier pages at build -- */
@@ -37,8 +39,10 @@ export async function generateMetadata({
       canonical: `https://www.firstnationsmokez.com/${tierSlug}`,
     },
     openGraph: {
-      title: `${tierInfo.config.name} Flower | First Nation Smoke Cannabis Dispensary Toronto`,
-      description: `Browse the ${tierInfo.config.name.toLowerCase()} flower tier and review current menu details.`,
+      title: seo?.seoTitle || `${tierInfo.config.name} Flower`,
+      description:
+        seo?.seoIntro ||
+        `Browse the ${tierInfo.config.name.toLowerCase()} flower tier and review current menu details.`,
     },
   };
 }
@@ -68,6 +72,14 @@ export default async function TierPage({
 
   return (
     <main className={styles.main}>
+      {seo?.faqs?.length ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: stringifyJsonLd(faqPageJsonLd(seo.faqs)),
+          }}
+        />
+      ) : null}
       <Navbar />
 
       {/* ── Banner Image (standalone, no overlay text) ── */}
@@ -92,6 +104,9 @@ export default async function TierPage({
               <span className={styles.heroIcon}>{config.icon}</span>
               <h1 className={styles.heroTitle}>
                 <span style={{ color: config.color }}>{config.name}</span>
+                {seo?.h1Place ? (
+                  <span className={styles.heroPlace}>{seo.h1Place}</span>
+                ) : null}
               </h1>
             </div>
             <p className={styles.heroTagline}>{config.tagline}</p>
@@ -205,6 +220,8 @@ export default async function TierPage({
                 ))}
               </div>
             )}
+
+            <LocalSeoMesh currentPath={`/${tierSlug}`} tone="light" />
           </div>
         </section>
       )}
