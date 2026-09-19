@@ -54,7 +54,7 @@ export default function Footer() {
               <Link href="/">Home</Link>
               <Link href="/visit">How to Reach Us</Link>
               <Link href="/24-hour-eglinton-west-dispensary">
-                24-Hour Eglinton West
+                Open Now / 24-Hour Eglinton West
               </Link>
               <Link href="/exotic-weed">Exotic Weed</Link>
               <Link href="/premium-weed">Premium Weed</Link>

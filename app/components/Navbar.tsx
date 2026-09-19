@@ -23,7 +23,7 @@ const ALL_LINKS: { href: string; label: string; featured?: boolean }[] = [
     { href: "/careers/budtender", label: "Join Team", featured: true },
 
   { href: "/visit", label: "Visit" },
-  { href: "/24-hour-eglinton-west-dispensary", label: "24-Hour Walk-in" },
+  { href: "/24-hour-eglinton-west-dispensary", label: "Open Now / 24h" },
   { href: "/faq", label: "FAQ" },
   { href: "/resources", label: "Resources" },
 ];

@@ -55,7 +55,7 @@ test("Big Three neighbourhood LPs have unique H1 and title", () => {
     "Cannabis Delivery on Eglinton West",
     "Native Cigarettes on Eglinton West",
     "Nicotine Vapes on Eglinton West",
-    "24-Hour Dispensary on Eglinton West",
+    "24-Hour Dispensary Open Now on Eglinton West",
   ]);
   assert.equal(new Set(H1S).size, 4);
   assert.match(delivery, /Cannabis Delivery on Eglinton West \| First Nation Smoke/);
@@ -73,7 +73,9 @@ test("FAQ questions are unique across 24h and Big Three", () => {
 
 test("door-test 24h page owns open-now / near-me for this corridor", () => {
   assert.match(twentyFour, /open now near me on Eglinton West/);
-  assert.match(twentyFour, /Open now \/ near me on this block/);
+  assert.match(twentyFour, /Open now \/ 24h near me on this block/);
+  assert.match(twentyFour, /24-Hour Dispensary Open Now on Eglinton West/);
+  assert.match(twentyFour, /first-class/);
   assert.match(twentyFour, /Little Jamaica/);
   assert.match(twentyFour, /Fairbank/);
   assert.doesNotMatch(twentyFour, /Toronto-wide 24-hour dispensary directory/i);

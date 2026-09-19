@@ -10,7 +10,7 @@ export { TWENTY_FOUR_HOUR_HREF };
 const HUB_LINKS = [
   { href: PATHS.home, label: "Homepage hours & map" },
   { href: PATHS.visit, label: "How to reach 1504" },
-  { href: PATHS.twentyFour, label: "24-hour Eglinton West" },
+  { href: PATHS.twentyFour, label: "Open now / 24-hour Eglinton West" },
   { href: PATHS.deliveryLp, label: "Cannabis delivery on Eglinton West" },
   { href: PATHS.nativeCigarettesLp, label: "Native cigarettes on Eglinton West" },
   { href: PATHS.nicotineVapeLp, label: "Nicotine vapes on Eglinton West" },

@@ -20,7 +20,7 @@ const NATIVE_CIG_FAQS = [
   },
   {
     q: "What does “Native cigarettes” mean on this page?",
-    a: "It means the cigarette merchandise category already used on this site — not a cultural story, not a health claim, and not a second shop. The brand name of the store stays First Nation Smoke. Product copy here is retail category language only.",
+    a: "It means the cigarette merchandise category already used on this site — retail shelf language only, not a medical claim, and not a second shop. The brand name of the store stays First Nation Smoke.",
   },
   {
     q: "Where do I check the current cigarette shelf at 1504?",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     absolute: "Native Cigarettes on Eglinton West | First Nation Smoke",
   },
   description:
-    "Native cigarettes as a listed merchandise category at First Nation Smoke, 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank. Adults 19+. Check the current cigarette shelf — no cultural or health claims.",
+    "Native cigarettes as a listed merchandise category at First Nation Smoke, 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank. Adults 19+. Check the current cigarette shelf. No medical claims.",
   alternates: {
     canonical: PAGE_URL,
   },
@@ -90,8 +90,8 @@ export default function NativeCigarettesEglintonWestPage() {
           category on the cigarette shelf at{" "}
           <strong>{STORE.addressLine}</strong>. This page owns that
           neighbourhood query for the Little Jamaica / Fairbank stretch of
-          Eglinton West. It is stronger than the thin city info URL, and it
-          is not a cultural or health page. Hours, phone{" "}
+          Eglinton West. It is stronger than the thin city info URL. Retail
+          category language only — no medical claims. Hours, phone{" "}
           {STORE.phoneDisplay}, and the map pin stay on the{" "}
           <Link href="/#contact">homepage visit hub</Link>.
         </p>
@@ -123,7 +123,7 @@ export default function NativeCigarettesEglintonWestPage() {
             On this site, “Native cigarettes” means the cigarette merchandise
             category — the same wording already used on the homepage and
             cigarette lane. The store brand stays First Nation Smoke. This
-            page does not add ownership stories or health claims. Adults
+            page does not add ownership stories or medical claims. Adults
             19+ with photo ID.
           </p>
           <p>
@@ -143,8 +143,7 @@ export default function NativeCigarettesEglintonWestPage() {
             <Link href={PATHS.itemsCigarettes}>/items/cigarettes</Link>. If
             one exact label is the only reason to come out, call{" "}
             <a href={`tel:${STORE.phoneE164}`}>{STORE.phoneDisplay}</a> first.
-            The city info URL is a thin leftover — this corridor page is the
-            owner.
+            Neighbourhood notes live here, not on a city-wide Toronto page.
           </p>
           <p>
             Finding the door is still a how-to-reach job: use{" "}
@@ -174,7 +173,8 @@ export default function NativeCigarettesEglintonWestPage() {
             </Link>{" "}
             (current nicotine shelf at{" "}
             <Link href={PATHS.itemsVapes}>/items/vapes</Link>) have their own
-            URLs. This page does not sell those lanes.
+            URLs. This page does not replace those lanes. The 24-hour /
+            open-now page is equal, not a side note.
           </p>
         </section>
 

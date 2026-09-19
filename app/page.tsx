@@ -382,24 +382,26 @@ export default function HomePage() {
               page.
             </p>
             <p className={styles.seoPanelText}>
-            Menu categories live on this site so you can plan the stop. Posted
-            names and prices change; ask at the counter before you travel for
-            one item. Listed cigarettes include Native cigarettes as a
-            merchandise category only — neighbourhood notes sit on the{" "}
-            <Link href="/native-cigarettes-eglinton-west">
-              Native cigarettes on Eglinton West
-            </Link>{" "}
-            page. For this corridor only, also use{" "}
-            <Link href="/cannabis-delivery-eglinton-west">
-              cannabis delivery on Eglinton West
-            </Link>{" "}
-            and{" "}
-            <Link href="/nicotine-vape-eglinton-west">
-              nicotine vapes on Eglinton West
-            </Link>{" "}
-            (current nicotine shelf at{" "}
-            <Link href="/items/vapes">/items/vapes</Link>). No medical
-            claims — adult retail only.
+              Four equal corridor pages sit beside this hub: the{" "}
+              <Link href={TWENTY_FOUR_HOUR_HREF}>
+                24-hour / open-now Eglinton West
+              </Link>{" "}
+              page,{" "}
+              <Link href="/cannabis-delivery-eglinton-west">
+                cannabis delivery on Eglinton West
+              </Link>
+              ,{" "}
+              <Link href="/native-cigarettes-eglinton-west">
+                Native cigarettes on Eglinton West
+              </Link>{" "}
+              (merchandise category only), and{" "}
+              <Link href="/nicotine-vape-eglinton-west">
+                nicotine vapes on Eglinton West
+              </Link>{" "}
+              (current shelf at{" "}
+              <Link href="/items/vapes">/items/vapes</Link>). Posted names
+              and prices change; ask at the counter before you travel for
+              one item. No medical claims — adult retail only.
             </p>
           </div>
         </div>
@@ -494,8 +496,7 @@ export default function HomePage() {
             map as the visit hub.
           </p>
           <div className={styles.weedModuleLinks}>
-            <Link href="/visit">Explore Weed &amp; Cannabis</Link>
-            <Link href={TWENTY_FOUR_HOUR_HREF}>24-Hour Eglinton West</Link>
+            <Link href={TWENTY_FOUR_HOUR_HREF}>Open Now / 24-Hour</Link>
             <Link href="/cannabis-delivery-eglinton-west">
               Eglinton West Delivery
             </Link>
@@ -503,6 +504,7 @@ export default function HomePage() {
               Native Cigarettes
             </Link>
             <Link href="/nicotine-vape-eglinton-west">Nicotine Vapes</Link>
+            <Link href="/visit">Explore Weed &amp; Cannabis</Link>
             <Link href="/resources/flower-guide">Explore the Flower Guide</Link>
           </div>
           <LocalSeoMesh currentPath="/" tone="dark" />

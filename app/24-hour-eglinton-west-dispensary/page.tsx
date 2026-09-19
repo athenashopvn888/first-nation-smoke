@@ -15,8 +15,12 @@ const PAGE_URL = `${STORE.url}${TWENTY_FOUR_HOUR_HREF}`;
 
 const TWENTY_FOUR_FAQS = [
   {
+    q: "Is First Nation Smoke open now near me on Eglinton West?",
+    a: "Yes, if you mean the Little Jamaica / Fairbank stretch of Eglinton Avenue West near Dufferin Street or Oakwood Avenue. The walk-in at 1504 Eglinton Ave W is listed Open 24 Hours, matching the homepage hours card. Adults 19+ with photo ID. This is the open-now / 24h-near-me page for this corridor only.",
+  },
+  {
     q: "Is First Nation Smoke a 24-hour dispensary on Eglinton West?",
-    a: "Yes. The walk-in at 1504 Eglinton Ave W, Toronto, ON M6E 2G5 is listed Open 24 Hours, seven days a week. That claim matches the homepage hours card. This page is only for overnight and open-now intent on the Little Jamaica / Fairbank stretch — not a city-wide Toronto directory.",
+    a: "Yes. 1504 Eglinton Ave W, Toronto, ON M6E 2G5 is listed Open 24 Hours, seven days a week. That is the same listing as the homepage hub. This page is not a city-wide Toronto 24-hour directory.",
   },
   {
     q: "Can adults 19+ walk in after midnight at 1504 Eglinton Ave W?",
@@ -24,36 +28,32 @@ const TWENTY_FOUR_FAQS = [
   },
   {
     q: "Is this a Toronto-wide 24-hour dispensary list?",
-    a: "No. This page covers one storefront: First Nation Smoke on Eglinton Avenue West through Little Jamaica and Fairbank, near Dufferin Street and Oakwood Avenue. Downtown, waterfront, and other city pins are the wrong hunt.",
+    a: "No. This page covers one storefront: First Nation Smoke on Eglinton Avenue West through Little Jamaica and Fairbank. Downtown, waterfront, and other city pins are the wrong hunt.",
   },
   {
     q: "How do I reach the 24-hour door if the subway has stopped?",
     a: "Stay on Eglinton Avenue West and match civic number 1504. Use a car, taxi, or rideshare along Eglinton rather than a downtown pin. The /visit page has daytime TTC notes from Eglinton West Station and the 32 Eglinton West bus; night surface service can change, so do not treat a bus number as a guarantee.",
   },
   {
-    q: "Is First Nation Smoke open now near me on Eglinton West?",
-    a: "If you are on the Little Jamaica / Fairbank stretch of Eglinton Avenue West — near Dufferin Street or Oakwood Avenue — the walk-in at 1504 is listed Open 24 Hours. That is the open-now / near-me answer for this corridor. Confirm civic 1504 before you leave. Adults 19+ with photo ID.",
-  },
-  {
-    q: "If I searched “dispensary near me,” is this the Little Jamaica door?",
-    a: "Only if you mean Eglinton West through Little Jamaica and Fairbank. This page is not a downtown Toronto open-now list. Match 1504 Eglinton Ave W, then use the homepage map if neighbouring retail hides the door.",
+    q: "If I searched “24 hour dispensary near me,” is this the Little Jamaica door?",
+    a: "Only if you mean Eglinton West through Little Jamaica and Fairbank. Match 1504 Eglinton Ave W, then use the homepage map if neighbouring retail hides the door. Delivery, Native cigarettes, and nicotine vapes have equal neighbourhood pages — they do not replace this open-now URL.",
   },
 ];
 
 export const metadata: Metadata = {
   title: {
     absolute:
-      "24-Hour Dispensary on Eglinton West | First Nation Smoke",
+      "24-Hour Dispensary Open Now on Eglinton West | First Nation Smoke",
   },
   description:
-    "First Nation Smoke at 1504 Eglinton Ave W is listed Open 24 Hours on the Little Jamaica / Fairbank stretch of Eglinton West. Adults 19+. Homepage keeps the map and hours hub.",
+    "Open now: First Nation Smoke at 1504 Eglinton Ave W is listed Open 24 Hours on the Little Jamaica / Fairbank stretch of Eglinton West. Adults 19+. Equal corridor page with delivery, Native cigarettes, and nicotine vapes. Homepage keeps the map hub.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "24-Hour Dispensary on Eglinton West",
+    title: "24-Hour Dispensary Open Now on Eglinton West",
     description:
-      "Overnight walk-in at 1504 Eglinton Ave W, Little Jamaica / Fairbank. Adults 19+. Open 24 Hours.",
+      "Open now / 24h near me at 1504 Eglinton Ave W, Little Jamaica / Fairbank. Adults 19+. Open 24 Hours.",
     url: PAGE_URL,
   },
   robots: { index: true, follow: true },
@@ -63,10 +63,10 @@ export default function TwentyFourHourEglintonWestPage() {
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "24-Hour Dispensary on Eglinton West",
+    name: "24-Hour Dispensary Open Now on Eglinton West",
     url: PAGE_URL,
     description:
-      "Overnight and open-now notes for First Nation Smoke at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank.",
+      "Open now / 24-hour near-me notes for First Nation Smoke at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank.",
     isPartOf: { "@id": `${STORE.url}/#cannabis-store` },
     about: { "@id": `${STORE.url}/#cannabis-store` },
     primaryImageOfPage: STORE.image,
@@ -90,15 +90,19 @@ export default function TwentyFourHourEglintonWestPage() {
 
       <article className={styles.article}>
         <p className={styles.eyebrow}>
-          24-hour / open-now · Eglinton West only · Adults 19+
+          Open now / 24h near me · Eglinton West only · Adults 19+
         </p>
-        <h1 className={styles.h1}>24-Hour Dispensary on Eglinton West</h1>
+        <h1 className={styles.h1}>
+          24-Hour Dispensary Open Now on Eglinton West
+        </h1>
         <p className={styles.lede}>
           First Nation Smoke lists <strong>{STORE.hoursDetail}</strong> at{" "}
-          <strong>{STORE.addressLine}</strong>. This page owns overnight and
-          “open now” intent for the Little Jamaica / Fairbank corridor — not
-          a soft city-wide Toronto 24-hour list. Hours, phone{" "}
-          {STORE.phoneDisplay}, and the map pin stay on the{" "}
+          <strong>{STORE.addressLine}</strong>. This is a first-class
+          corridor page — equal to neighbourhood delivery, Native cigarettes,
+          and nicotine vapes — and it owns “open now” / 24-hour-near-me
+          intent for Little Jamaica / Fairbank. It is not a city-wide
+          Toronto 24-hour list. Hours, phone {STORE.phoneDisplay}, and the
+          map pin stay on the{" "}
           <Link href="/#contact">homepage visit hub</Link>. Use{" "}
           <Link href="/visit">how to reach 1504</Link> for TTC, driving, and
           parking geometry.
@@ -122,6 +126,25 @@ export default function TwentyFourHourEglintonWestPage() {
             Hours: {STORE.hoursDetail}
             <br />
             Corridor: {STORE.corridor}
+          </p>
+        </section>
+
+        <section>
+          <h2>Open now / 24h near me on this block</h2>
+          <p>
+            If you searched “dispensary open now,” “24 hour weed near me,” or
+            “24-hour dispensary near me” around Little Jamaica, Fairbank,
+            Oakwood, or Dufferin, this is the 1504 door — not a city-wide
+            Toronto open-now directory. Stay on Eglinton Avenue West and
+            match the civic number. The homepage hours card is the live
+            listing; this URL is the open-now / 24h-near-me owner for this
+            corridor, on equal footing with the other neighbourhood pages.
+          </p>
+          <p>
+            Adults 19+ can walk in without an appointment at any hour we
+            list as open. Staff still check photo ID after midnight. If you
+            are not on this stretch, do not treat a generic near-me result as
+            this storefront.
           </p>
         </section>
 
@@ -166,25 +189,6 @@ export default function TwentyFourHourEglintonWestPage() {
             service can change; if the subway has stopped, stay on Eglinton
             Avenue West by car, taxi, or rideshare and match 1504. Do not
             treat a bus number on this page as a night-service guarantee.
-          </p>
-        </section>
-
-        <section>
-          <h2>Open now / near me on this block</h2>
-          <p>
-            If you searched “dispensary open now,” “24 hour weed near me,” or
-            “walk-in near me” around Little Jamaica, Fairbank, Oakwood, or
-            Dufferin, this is the 1504 door — not a city-wide Toronto
-            open-now directory. Stay on Eglinton Avenue West and match the
-            civic number. The homepage hours card is the live listing; this
-            page owns the overnight / open-now write-up for this corridor
-            only.
-          </p>
-          <p>
-            Adults 19+ can walk in without an appointment at any hour we
-            list as open. Staff still check photo ID after midnight. If you
-            are not on this stretch, do not treat a generic near-me result as
-            this storefront.
           </p>
         </section>
 
@@ -241,7 +245,7 @@ export default function TwentyFourHourEglintonWestPage() {
         </p>
 
         <section className={styles.faq}>
-          <h2>24-hour Eglinton West — quick answers</h2>
+          <h2>Open now / 24-hour near me — quick answers</h2>
           {TWENTY_FOUR_FAQS.map((faq) => (
             <details key={faq.q}>
               <summary>{faq.q}</summary>

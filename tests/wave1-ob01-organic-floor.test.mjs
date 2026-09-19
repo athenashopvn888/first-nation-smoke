@@ -64,7 +64,7 @@ test("/visit keeps how-to-reach schema that matches visible NAP copy", () => {
 });
 
 test("dedicated 24-hour Eglinton West LP is area-true, not city spam", () => {
-  assert.match(twentyFour, /24-Hour Dispensary on Eglinton West/);
+  assert.match(twentyFour, /24-Hour Dispensary Open Now on Eglinton West/);
   assert.match(twentyFour, /1504 Eglinton Ave W/);
   assert.match(twentyFour, /Little Jamaica/);
   assert.match(twentyFour, /Fairbank/);
@@ -72,7 +72,7 @@ test("dedicated 24-hour Eglinton West LP is area-true, not city spam", () => {
   assert.match(twentyFour, /faqPageJsonLd\(TWENTY_FOUR_FAQS\)/);
   assert.match(sitemap, /\/24-hour-eglinton-west-dispensary/);
   assert.match(footer, /24-Hour Eglinton West/);
-  assert.match(navbar, /24-Hour Walk-in/);
+  assert.match(navbar, /Open Now \/ 24h/);
   assert.doesNotMatch(twentyFour, /24-hour Toronto dispensary directory/i);
   assert.doesNotMatch(twentyFour, /Ottawa|Gatineau|ByWard/i);
 });

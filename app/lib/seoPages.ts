@@ -141,7 +141,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Keep The Visit On This Corridor",
-        body: "This thin city URL is not the owner. Use /native-cigarettes-eglinton-west for neighbourhood Native cigarettes notes at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank. Native cigarettes here means the cigarette merchandise category, not a cultural or medical claim.",
+        body: "This thin city URL is not the owner. Use /native-cigarettes-eglinton-west for neighbourhood Native cigarettes notes at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank. Native cigarettes here means the cigarette merchandise category only — no medical claims.",
       },
     ],
     faqs: [

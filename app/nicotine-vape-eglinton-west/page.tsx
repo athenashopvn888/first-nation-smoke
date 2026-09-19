@@ -148,11 +148,11 @@ export default function NicotineVapeEglintonWestPage() {
           <p>
             Last-block TTC and parking stay on{" "}
             <Link href={PATHS.visit}>how to reach 1504</Link>. Overnight and
-            “open now” walk-ins use the{" "}
+            “open now” walk-ins use the equal{" "}
             <Link href={PATHS.twentyFour}>
-              24-hour Eglinton West dispensary
+              24-hour / open-now Eglinton West
             </Link>{" "}
-            page. This URL does not steal those jobs.
+            page. This URL does not steal that job.
           </p>
         </section>
 
