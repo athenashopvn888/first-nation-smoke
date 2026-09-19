@@ -375,17 +375,33 @@ export default function HomePage() {
               TTC from Eglinton West Station, the 32 Eglinton West bus, curb
               parking, and the last-block approach, open the{" "}
               <Link href="/visit">how to reach First Nation Smoke</Link> page.
-              Overnight and “open now” intent for this corridor only sits on the{" "}
+              Open-now / 24h-near-me intent is a first-class corridor page — the{" "}
               <Link href={TWENTY_FOUR_HOUR_HREF}>
-                24-hour Eglinton West dispensary
-              </Link>{" "}
-              page.
+                24-hour dispensary on Eglinton West
+              </Link>
+              — equal to delivery, Native cigarettes, and nicotine vapes.
             </p>
             <p className={styles.seoPanelText}>
-              Menu categories live on this site so you can plan the stop. Posted
-              names and prices change; ask at the counter before you travel for
-              one item. Listed cigarettes include Native cigarettes as a
-              merchandise category only. No medical claims — adult retail only.
+              Four equal corridor pages sit beside this hub: the{" "}
+              <Link href={TWENTY_FOUR_HOUR_HREF}>
+                24-hour / open-now Eglinton West
+              </Link>{" "}
+              page,{" "}
+              <Link href="/cannabis-delivery-eglinton-west">
+                cannabis delivery on Eglinton West
+              </Link>
+              ,{" "}
+              <Link href="/native-cigarettes-eglinton-west">
+                Native cigarettes on Eglinton West
+              </Link>{" "}
+              (merchandise category only), and{" "}
+              <Link href="/nicotine-vape-eglinton-west">
+                nicotine vapes on Eglinton West
+              </Link>{" "}
+              (current shelf at{" "}
+              <Link href="/items/vapes">/items/vapes</Link>). Posted names
+              and prices change; ask at the counter before you travel for
+              one item. No medical claims — adult retail only.
             </p>
           </div>
         </div>
@@ -480,8 +496,15 @@ export default function HomePage() {
             map as the visit hub.
           </p>
           <div className={styles.weedModuleLinks}>
+            <Link href={TWENTY_FOUR_HOUR_HREF}>Open Now / 24-Hour</Link>
+            <Link href="/cannabis-delivery-eglinton-west">
+              Eglinton West Delivery
+            </Link>
+            <Link href="/native-cigarettes-eglinton-west">
+              Native Cigarettes
+            </Link>
+            <Link href="/nicotine-vape-eglinton-west">Nicotine Vapes</Link>
             <Link href="/visit">Explore Weed &amp; Cannabis</Link>
-            <Link href={TWENTY_FOUR_HOUR_HREF}>24-Hour Eglinton West</Link>
             <Link href="/resources/flower-guide">Explore the Flower Guide</Link>
           </div>
           <LocalSeoMesh currentPath="/" tone="dark" />
@@ -532,6 +555,10 @@ export default function HomePage() {
             <Link href="/visit">How to reach 1504 Eglinton Ave W</Link>
             {" · "}
             <Link href={TWENTY_FOUR_HOUR_HREF}>24-hour Eglinton West walk-in</Link>
+            {" · "}
+            <Link href="/cannabis-delivery-eglinton-west">
+              Neighbourhood delivery
+            </Link>
           </p>
 
           <div className={styles.mapWrap}>

@@ -19,11 +19,11 @@ const ALL_LINKS: { href: string; label: string; featured?: boolean }[] = [
   { href: "/items/magic", label: "Magic Stuff" },
   { href: "/items/cigarettes", label: "Cigarettes" },
   { href: "/items/add-ons", label: "Accessories" },
-  { href: "/weed-delivery-toronto", label: "🚗 Weed Delivery" },
+  { href: "/cannabis-delivery-eglinton-west", label: "🚗 Weed Delivery" },
     { href: "/careers/budtender", label: "Join Team", featured: true },
 
   { href: "/visit", label: "Visit" },
-  { href: "/24-hour-eglinton-west-dispensary", label: "24-Hour Walk-in" },
+  { href: "/24-hour-eglinton-west-dispensary", label: "Open Now / 24h" },
   { href: "/faq", label: "FAQ" },
   { href: "/resources", label: "Resources" },
 ];

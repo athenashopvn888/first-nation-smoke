@@ -45,7 +45,7 @@ export const HOME_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Is First Nation Smoke open 24 hours on Eglinton West?",
-    a: "Yes. The Eglinton West walk-in is listed open 24 hours, seven days a week. Adults 19+ can come in without an appointment. Confirm the homepage hours card if your timing is unusual. Overnight and open-now notes for this corridor only sit on the 24-hour Eglinton West page.",
+    a: "Yes. The Eglinton West walk-in is listed open 24 hours, seven days a week. Adults 19+ can come in without an appointment. Confirm the homepage hours card if your timing is unusual. Open-now / 24h-near-me notes live on the first-class 24-hour Eglinton West page, equal to the neighbourhood delivery, Native cigarettes, and nicotine vape pages.",
   },
   {
     q: "How do I reach 1504 Eglinton Ave W by TTC?",
@@ -61,7 +61,7 @@ export const HOME_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What can I browse at the Eglinton West walk-in?",
-    a: "Adults 19+ can compare flower tiers, pre-rolls, edibles, vapes, concentrates, accessories, and listed cigarettes — including Native cigarettes as a merchandise category on the cigarette shelf. Names, packages, and posted prices change; ask staff before you travel for one item.",
+    a: "Adults 19+ can compare flower tiers, pre-rolls, edibles, vapes, concentrates, accessories, and listed cigarettes — including Native cigarettes as a merchandise category on the cigarette shelf. Neighbourhood notes for cannabis delivery, Native cigarettes, and nicotine vapes (current shelf at /items/vapes) live on their own Eglinton West pages. Names, packages, and posted prices change; ask staff before you travel for one item.",
   },
 ];
 

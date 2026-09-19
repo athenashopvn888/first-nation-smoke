@@ -17,7 +17,7 @@ const FAQ_CATEGORIES = [
     title: "Location and Hours",
     faqs: [
       { q: "Where is First Nation Smoke Cannabis Dispensary Toronto located?", a: "First Nation Smoke is at 1504 Eglinton Ave W, Toronto, ON M6E 2G5, on Eglinton West through Little Jamaica and Fairbank, near Dufferin Street and Oakwood Avenue. Call +1 289 819 5073. Use the homepage map or /visit for how to reach the door." },
-      { q: "What are the listed hours?", a: "Open 24 Hours, seven days a week, matching the homepage hub. Overnight notes for this corridor only are on the 24-hour Eglinton West page. Call +1 289 819 5073 if your timing is unusual." },
+      { q: "What are the listed hours?", a: "Open 24 Hours, seven days a week, matching the homepage hub. Open-now / 24h-near-me notes live on the first-class 24-hour Eglinton West page, equal to the neighbourhood delivery, Native cigarettes, and nicotine vape pages. Call +1 289 819 5073 if your timing is unusual." },
       { q: "What is the best way to plan the visit?", a: "Confirm 1504 Eglinton Ave W and the homepage hours, then open /visit if you need TTC from Eglinton West Station, the 32 Eglinton West bus, driving from Dufferin or Oakwood, or curb-parking notes." },
     ],
   },
@@ -43,6 +43,14 @@ const FAQ_CATEGORIES = [
       { q: "Does First Nation Smoke Cannabis Dispensary Toronto list Native cigarettes?", a: "The cigarette menu may show Native smoke brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, and Canadian Classics Silver. That is a merchandise category only. Confirm current options through the menu or staff." },
       { q: "Where can I check $25 carton-style listings?", a: "Where those listings are shown, check the current menu or ask staff for the listed price and package details." },
       { q: "Where should cigarette shoppers start?", a: "Open the cigarette category first, then use the homepage map and /visit for directions, contact options, and listed hours." },
+    ],
+  },
+  {
+    title: "Neighbourhood delivery and nicotine vapes",
+    faqs: [
+      { q: "Where is the Eglinton West cannabis delivery page?", a: "Corridor delivery notes live on /cannabis-delivery-eglinton-west. That page is the neighbourhood owner. The city /weed-delivery-toronto URL is a noindex catalog only." },
+      { q: "Where should nicotine vape shoppers start on this corridor?", a: "Use /nicotine-vape-eglinton-west for neighbourhood notes, then /items/vapes for the current shelf. Adults 19+. Nicotine is addictive. This is not a city-wide Toronto vape list." },
+      { q: "Where is the Native cigarettes neighbourhood page?", a: "Use /native-cigarettes-eglinton-west, then /items/cigarettes for the listed shelf. Native cigarettes is merchandise-category language only." },
     ],
   },
 ];

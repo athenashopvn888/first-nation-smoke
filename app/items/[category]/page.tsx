@@ -5,6 +5,7 @@ import path from "path";
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import LocalSeoMesh from "../../components/LocalSeoMesh";
 import SafeImage from "../../components/SafeImage";
 import { getItemPriceDisplay } from "../../lib/itemPricing";
 import {
@@ -139,6 +140,7 @@ export default async function ItemsCategoryPage({
             <p className={styles.visitText}>
               <Link href="/visit">How to reach the Eglinton West door</Link>
             </p>
+            <LocalSeoMesh currentPath={`/items/${catSlug}`} tone="light" />
           </div>
         </div>
       </section>

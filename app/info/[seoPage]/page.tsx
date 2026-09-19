@@ -9,6 +9,7 @@ import Footer from "../../components/Footer";
 import { SEO_PAGES, getSeoPageBySlug } from "../../lib/seoPages";
 import { TIER_CONFIG } from "../../lib/products";
 import { STORE } from "../../lib/storeIdentity";
+import LocalSeoMesh from "../../components/LocalSeoMesh";
 import styles from "./seo.module.css";
 
 /* ── Generate all SEO pages ── */
@@ -30,8 +31,10 @@ export async function generateMetadata({
     title: page.absoluteTitle ? { absolute: page.title } : page.title,
     description: page.metaDescription,
     alternates: {
-      canonical: `https://www.firstnationsmokez.com/info/${slug}`,
+      canonical:
+        page.canonicalUrl ?? `https://www.firstnationsmokez.com/info/${slug}`,
     },
+    robots: page.robots,
   };
 }
 
@@ -174,6 +177,7 @@ export default async function SeoLandingPage({
             </div>
           )}
           {heroPreview?.warning && <p className={styles.nicotineWarning}>{heroPreview.warning}</p>}
+          <LocalSeoMesh currentPath={`/info/${slug}`} tone="light" />
         </div>
       </section>
 

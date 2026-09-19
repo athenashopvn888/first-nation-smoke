@@ -15,6 +15,18 @@ const identity = readFileSync("app/lib/storeIdentity.ts", "utf8");
 const tierPage = readFileSync("app/[tier]/page.tsx", "utf8");
 const mesh = readFileSync("app/components/LocalSeoMesh.tsx", "utf8");
 const tierSeo = readFileSync("app/lib/tierSeoContent.ts", "utf8");
+const deliveryLp = readFileSync(
+  "app/cannabis-delivery-eglinton-west/page.tsx",
+  "utf8",
+);
+const nativeCigsLp = readFileSync(
+  "app/native-cigarettes-eglinton-west/page.tsx",
+  "utf8",
+);
+const nicotineLp = readFileSync(
+  "app/nicotine-vape-eglinton-west/page.tsx",
+  "utf8",
+);
 
 const WAVE1_BUNDLE = [
   home,
@@ -26,6 +38,9 @@ const WAVE1_BUNDLE = [
   tierPage,
   mesh,
   tierSeo,
+  deliveryLp,
+  nativeCigsLp,
+  nicotineLp,
 ].join("\n");
 
 test("homepage stays the NAP / hours / map hub", () => {
@@ -49,7 +64,7 @@ test("/visit keeps how-to-reach schema that matches visible NAP copy", () => {
 });
 
 test("dedicated 24-hour Eglinton West LP is area-true, not city spam", () => {
-  assert.match(twentyFour, /24-Hour Dispensary on Eglinton West/);
+  assert.match(twentyFour, /24-Hour Dispensary Open Now on Eglinton West/);
   assert.match(twentyFour, /1504 Eglinton Ave W/);
   assert.match(twentyFour, /Little Jamaica/);
   assert.match(twentyFour, /Fairbank/);
@@ -57,7 +72,7 @@ test("dedicated 24-hour Eglinton West LP is area-true, not city spam", () => {
   assert.match(twentyFour, /faqPageJsonLd\(TWENTY_FOUR_FAQS\)/);
   assert.match(sitemap, /\/24-hour-eglinton-west-dispensary/);
   assert.match(footer, /24-Hour Eglinton West/);
-  assert.match(navbar, /24-Hour Walk-in/);
+  assert.match(navbar, /Open Now \/ 24h/);
   assert.doesNotMatch(twentyFour, /24-hour Toronto dispensary directory/i);
   assert.doesNotMatch(twentyFour, /Ottawa|Gatineau|ByWard/i);
 });
@@ -81,10 +96,13 @@ test("five flower tiers have unique H1 place, title, and FAQ questions", () => {
   assert.match(tierPage, /faqPageJsonLd\(seo\.faqs\)/);
 });
 
-test("internal mesh links homepage, visit, 24h, and canonical tiers", () => {
-  assert.match(mesh, /href: "\/"/);
-  assert.match(mesh, /href: "\/visit"/);
-  assert.match(mesh, /TWENTY_FOUR_HOUR_HREF/);
+test("internal mesh links homepage, visit, 24h, Big Three, and canonical tiers", () => {
+  assert.match(mesh, /PATHS\.home/);
+  assert.match(mesh, /PATHS\.visit/);
+  assert.match(mesh, /PATHS\.twentyFour/);
+  assert.match(mesh, /PATHS\.deliveryLp/);
+  assert.match(mesh, /PATHS\.nativeCigarettesLp/);
+  assert.match(mesh, /PATHS\.nicotineVapeLp/);
   assert.match(mesh, /TIER_CONFIG/);
   assert.match(home, /TWENTY_FOUR_HOUR_HREF/);
   assert.match(home, /href="\/visit"/);
@@ -95,7 +113,7 @@ test("internal mesh links homepage, visit, 24h, and canonical tiers", () => {
   assert.match(tierPage, /LocalSeoMesh/);
 });
 
-test("wave 1 does not add smoke SEO verticals, fleet language, or Native claims", () => {
+test("wave 1 keeps retail voice and does not add Native or fleet claims", () => {
   assert.doesNotMatch(WAVE1_BUNDLE, /sister store/i);
   assert.doesNotMatch(WAVE1_BUNDLE, /our other locations/i);
   assert.doesNotMatch(WAVE1_BUNDLE, /native reserve dispensary/i);
@@ -103,6 +121,5 @@ test("wave 1 does not add smoke SEO verticals, fleet language, or Native claims"
   assert.doesNotMatch(WAVE1_BUNDLE, /\breserve\b/i);
   assert.doesNotMatch(WAVE1_BUNDLE, /healing/);
   assert.doesNotMatch(WAVE1_BUNDLE, /Ottawa|Gatineau|ByWard/);
-  assert.doesNotMatch(twentyFour, /\/native-cigarettes-/);
   assert.doesNotMatch(twentyFour, /nicotine pouches/i);
 });

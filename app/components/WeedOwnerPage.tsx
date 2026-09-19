@@ -2,6 +2,7 @@ import Link from "next/link";
 import PreferredSourceButton from "./PreferredSourceButton";
 import styles from "./WeedOwnerPage.module.css";
 import { STORE } from "../lib/storeIdentity";
+import LocalSeoMesh from "./LocalSeoMesh";
 
 const storeName = STORE.name;
 
@@ -104,6 +105,7 @@ export function WeedOwnerPage() {
           {faqs.map(([question, answer]) => <article key={question}><h3>{question}</h3><p>{answer}</p></article>)}
         </div>
       </section>
+      <LocalSeoMesh currentPath="/weed-dispensary-toronto" tone="light" />
       <PreferredSourceButton />
     </main>
   );
