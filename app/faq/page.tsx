@@ -45,6 +45,14 @@ const FAQ_CATEGORIES = [
       { q: "Where should cigarette shoppers start?", a: "Open the cigarette category first, then use the homepage map and /visit for directions, contact options, and listed hours." },
     ],
   },
+  {
+    title: "Neighbourhood delivery and nicotine vapes",
+    faqs: [
+      { q: "Where is the Eglinton West cannabis delivery page?", a: "Corridor delivery notes live on /cannabis-delivery-eglinton-west. That page is the neighbourhood owner. The city /weed-delivery-toronto URL is a noindex catalog only." },
+      { q: "Where should nicotine vape shoppers start on this corridor?", a: "Use /nicotine-vape-eglinton-west for neighbourhood notes, then /items/vapes for the current shelf. Adults 19+. Nicotine is addictive. This is not a city-wide Toronto vape list." },
+      { q: "Where is the Native cigarettes neighbourhood page?", a: "Use /native-cigarettes-eglinton-west, then /items/cigarettes for the listed shelf. Native cigarettes is merchandise-category language only." },
+    ],
+  },
 ];
 
 export default function FAQPage() {

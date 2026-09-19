@@ -34,7 +34,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/info/native-cigarettes-york",
-        destination: "/info/native-cigarettes-toronto",
+        destination: "/native-cigarettes-eglinton-west",
+        permanent: true,
+      },
+      {
+        source: "/info/native-cigarettes-toronto",
+        destination: "/native-cigarettes-eglinton-west",
         permanent: true,
       },
       {

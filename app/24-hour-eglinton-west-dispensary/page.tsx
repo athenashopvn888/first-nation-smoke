@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import LocalSeoMesh, {
-  TWENTY_FOUR_HOUR_HREF,
-} from "../components/LocalSeoMesh";
+import LocalSeoMesh from "../components/LocalSeoMesh";
+import { PATHS, TWENTY_FOUR_HOUR_HREF } from "../lib/organicPaths";
 import {
   STORE,
   faqPageJsonLd,
@@ -30,6 +29,14 @@ const TWENTY_FOUR_FAQS = [
   {
     q: "How do I reach the 24-hour door if the subway has stopped?",
     a: "Stay on Eglinton Avenue West and match civic number 1504. Use a car, taxi, or rideshare along Eglinton rather than a downtown pin. The /visit page has daytime TTC notes from Eglinton West Station and the 32 Eglinton West bus; night surface service can change, so do not treat a bus number as a guarantee.",
+  },
+  {
+    q: "Is First Nation Smoke open now near me on Eglinton West?",
+    a: "If you are on the Little Jamaica / Fairbank stretch of Eglinton Avenue West — near Dufferin Street or Oakwood Avenue — the walk-in at 1504 is listed Open 24 Hours. That is the open-now / near-me answer for this corridor. Confirm civic 1504 before you leave. Adults 19+ with photo ID.",
+  },
+  {
+    q: "If I searched “dispensary near me,” is this the Little Jamaica door?",
+    a: "Only if you mean Eglinton West through Little Jamaica and Fairbank. This page is not a downtown Toronto open-now list. Match 1504 Eglinton Ave W, then use the homepage map if neighbouring retail hides the door.",
   },
 ];
 
@@ -163,14 +170,33 @@ export default function TwentyFourHourEglintonWestPage() {
         </section>
 
         <section>
+          <h2>Open now / near me on this block</h2>
+          <p>
+            If you searched “dispensary open now,” “24 hour weed near me,” or
+            “walk-in near me” around Little Jamaica, Fairbank, Oakwood, or
+            Dufferin, this is the 1504 door — not a city-wide Toronto
+            open-now directory. Stay on Eglinton Avenue West and match the
+            civic number. The homepage hours card is the live listing; this
+            page owns the overnight / open-now write-up for this corridor
+            only.
+          </p>
+          <p>
+            Adults 19+ can walk in without an appointment at any hour we
+            list as open. Staff still check photo ID after midnight. If you
+            are not on this stretch, do not treat a generic near-me result as
+            this storefront.
+          </p>
+        </section>
+
+        <section>
           <h2>What to browse when the door is open</h2>
           <p>
             The overnight counter is the same menu lanes as daytime: flower
             tiers, pre-rolls, edibles, vapes, concentrates, accessories, and
             listed cigarettes. Names and posted prices move; call{" "}
             <a href={`tel:${STORE.phoneE164}`}>{STORE.phoneDisplay}</a> if
-            one item is the only reason to come out. This page does not add a
-            new smoke SEO vertical or any medical claim.
+            one item is the only reason to come out. No medical claims —
+            adult retail only.
           </p>
           <p>
             Flower comparison still starts on one tier page —{" "}
@@ -179,8 +205,22 @@ export default function TwentyFourHourEglintonWestPage() {
             <Link href="/aaa-weed">AAA+</Link>,{" "}
             <Link href="/aa-weed">AA</Link>, or{" "}
             <Link href="/budget-weed">Budget</Link> — then the live card in
-            store. The homepage map remains the pin if neighbouring retail
-            makes the door hard to pick out from the curb.
+            store. Neighbourhood notes for{" "}
+            <Link href={PATHS.deliveryLp}>
+              cannabis delivery on Eglinton West
+            </Link>
+            ,{" "}
+            <Link href={PATHS.nativeCigarettesLp}>
+              Native cigarettes on Eglinton West
+            </Link>
+            , and{" "}
+            <Link href={PATHS.nicotineVapeLp}>
+              nicotine vapes on Eglinton West
+            </Link>{" "}
+            (shelf at <Link href={PATHS.itemsVapes}>/items/vapes</Link>) live
+            on their own URLs. This page stays the 24-hour / open-now owner.
+            The homepage map remains the pin if neighbouring retail makes
+            the door hard to pick out from the curb.
           </p>
         </section>
 

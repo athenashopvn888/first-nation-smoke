@@ -61,7 +61,7 @@ export const HOME_FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What can I browse at the Eglinton West walk-in?",
-    a: "Adults 19+ can compare flower tiers, pre-rolls, edibles, vapes, concentrates, accessories, and listed cigarettes — including Native cigarettes as a merchandise category on the cigarette shelf. Names, packages, and posted prices change; ask staff before you travel for one item.",
+    a: "Adults 19+ can compare flower tiers, pre-rolls, edibles, vapes, concentrates, accessories, and listed cigarettes — including Native cigarettes as a merchandise category on the cigarette shelf. Neighbourhood notes for cannabis delivery, Native cigarettes, and nicotine vapes (current shelf at /items/vapes) live on their own Eglinton West pages. Names, packages, and posted prices change; ask staff before you travel for one item.",
   },
 ];
 

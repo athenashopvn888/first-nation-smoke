@@ -382,10 +382,24 @@ export default function HomePage() {
               page.
             </p>
             <p className={styles.seoPanelText}>
-              Menu categories live on this site so you can plan the stop. Posted
-              names and prices change; ask at the counter before you travel for
-              one item. Listed cigarettes include Native cigarettes as a
-              merchandise category only. No medical claims — adult retail only.
+            Menu categories live on this site so you can plan the stop. Posted
+            names and prices change; ask at the counter before you travel for
+            one item. Listed cigarettes include Native cigarettes as a
+            merchandise category only — neighbourhood notes sit on the{" "}
+            <Link href="/native-cigarettes-eglinton-west">
+              Native cigarettes on Eglinton West
+            </Link>{" "}
+            page. For this corridor only, also use{" "}
+            <Link href="/cannabis-delivery-eglinton-west">
+              cannabis delivery on Eglinton West
+            </Link>{" "}
+            and{" "}
+            <Link href="/nicotine-vape-eglinton-west">
+              nicotine vapes on Eglinton West
+            </Link>{" "}
+            (current nicotine shelf at{" "}
+            <Link href="/items/vapes">/items/vapes</Link>). No medical
+            claims — adult retail only.
             </p>
           </div>
         </div>
@@ -482,6 +496,13 @@ export default function HomePage() {
           <div className={styles.weedModuleLinks}>
             <Link href="/visit">Explore Weed &amp; Cannabis</Link>
             <Link href={TWENTY_FOUR_HOUR_HREF}>24-Hour Eglinton West</Link>
+            <Link href="/cannabis-delivery-eglinton-west">
+              Eglinton West Delivery
+            </Link>
+            <Link href="/native-cigarettes-eglinton-west">
+              Native Cigarettes
+            </Link>
+            <Link href="/nicotine-vape-eglinton-west">Nicotine Vapes</Link>
             <Link href="/resources/flower-guide">Explore the Flower Guide</Link>
           </div>
           <LocalSeoMesh currentPath="/" tone="dark" />
@@ -532,6 +553,10 @@ export default function HomePage() {
             <Link href="/visit">How to reach 1504 Eglinton Ave W</Link>
             {" · "}
             <Link href={TWENTY_FOUR_HOUR_HREF}>24-hour Eglinton West walk-in</Link>
+            {" · "}
+            <Link href="/cannabis-delivery-eglinton-west">
+              Neighbourhood delivery
+            </Link>
           </p>
 
           <div className={styles.mapWrap}>

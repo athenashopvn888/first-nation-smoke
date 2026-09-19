@@ -1,9 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import LocalSeoMesh from "../components/LocalSeoMesh";
 import menu from "./delivery-menu.json";
 import styles from "./delivery.module.css";
 import FirstNationSmokeWebChat from "./FirstNationSmokeWebChat";
@@ -103,7 +105,7 @@ export default function DeliveryContent() {
   return <main className={styles.main}>
     <Navbar />
     <section className={`${styles.hero} ${styles.heroPlain}`}>
-      <div><p>First Nation Smoke · Eglinton West</p><h1>Weed Delivery for Eglinton West / Little Jamaica</h1><span>Neighbourhood catalog for the 1504 Eglinton Ave W walk-in. The store confirms current availability and delivery details before an order is accepted. This is not a city-wide Toronto delivery page.</span></div>
+      <div><p>First Nation Smoke · Eglinton West</p><h1>Weed Delivery for Eglinton West / Little Jamaica</h1><span>Neighbourhood catalog for the 1504 Eglinton Ave W walk-in. Corridor notes and FAQ live on the <Link href="/cannabis-delivery-eglinton-west">Eglinton West cannabis delivery</Link> page — this city URL is the noindex catalog, not the owner. The store confirms current availability and delivery details before an order is accepted.</span></div>
     </section>
     <section className={styles.deliveryDetails} aria-label="First Nation Smoke Cannabis Dispensary Toronto delivery details">
       <strong>$60 PRODUCT MINIMUM</strong>
@@ -147,6 +149,7 @@ export default function DeliveryContent() {
       {emailStatus === "success" && <p role="status">You&apos;re on the delivery update list.</p>}
     </section>
     <div className={styles.ctaSection}><p>Visit us in-store at <strong>1504 Eglinton Ave W, Toronto, ON M6E 2G5</strong>. We are <strong>Open 24 Hours</strong>. Call <strong>+1 289 819 5073</strong>.</p></div>
+    <div className={styles.ctaSection}><LocalSeoMesh currentPath="/weed-delivery-toronto" tone="light" /></div>
     {selected && <div className={styles.backdrop} onMouseDown={(event) => { if (event.target === event.currentTarget) setSelected(null); }}><section className={styles.drawer} role="dialog" aria-modal="true" aria-labelledby="product-title"><header><strong>Product details</strong><button type="button" onClick={() => setSelected(null)} aria-label="Close product details">×</button></header><div className={styles.drawerContent}>{selected.images.map((src, index) => <div className={styles.drawerImage} key={src}><Image src={src} alt={`${selected.name}${index ? ` alternate ${index + 1}` : ""}`} fill sizes="(max-width: 720px) 100vw, 420px" unoptimized /></div>)}<h2 id="product-title">{selected.name}</h2><p>{selected.description || "Ask the store for current product details."}</p>{selected.effects.length > 0 && <div className={styles.effects}>{selected.effects.map((effect) => <span key={effect}>{effect}</span>)}</div>}<ProductPricing product={selected} /></div></section></div>}
     <FirstNationSmokeWebChat />
     <Footer />

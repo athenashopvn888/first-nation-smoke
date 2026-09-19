@@ -116,7 +116,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Link className="deliveryHoursAnnouncement" href="/weed-delivery-toronto">
+        <Link className="deliveryHoursAnnouncement" href="/cannabis-delivery-eglinton-west">
           NEW WEED DELIVERY 10am -10pm
         </Link>
         <div className="deliveryAnnouncement" role="status" aria-label="Store welcome announcement">

@@ -222,14 +222,22 @@ export default function VisitPage() {
             <Link href={TWENTY_FOUR_HOUR_HREF}>
               24-hour Eglinton West
             </Link>{" "}
-            page. Flower comparison stays on{" "}
+            page.             Flower comparison stays on{" "}
             <Link href="/exotic-weed">Exotic</Link>,{" "}
             <Link href="/premium-weed">Premium</Link>,{" "}
             <Link href="/aaa-weed">AAA+</Link>,{" "}
             <Link href="/aa-weed">AA</Link>, and{" "}
-            <Link href="/budget-weed">Budget</Link>. Delivery, when you want
-            it, stays on a separate URL and is scoped to this neighbourhood
-            — it is not a city-wide Toronto delivery war.
+            <Link href="/budget-weed">Budget</Link>. Neighbourhood{" "}
+            <Link href="/cannabis-delivery-eglinton-west">
+              cannabis delivery on Eglinton West
+            </Link>
+            ,{" "}
+            <Link href="/native-cigarettes-eglinton-west">
+              Native cigarettes
+            </Link>
+            , and{" "}
+            <Link href="/nicotine-vape-eglinton-west">nicotine vapes</Link>{" "}
+            have their own corridor pages — not city-wide Toronto spam.
           </p>
         </section>
 

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Neighbourhood delivery notes from First Nation Smoke at 1504 Eglinton Ave W, Little Jamaica / Fairbank. Confirm current availability before an order is accepted. This is not a city-wide Toronto delivery page.",
   alternates: {
-    canonical: "https://www.firstnationsmokez.com/weed-delivery-toronto",
+    canonical: "https://www.firstnationsmokez.com/cannabis-delivery-eglinton-west",
   },
   robots: {
     index: false,

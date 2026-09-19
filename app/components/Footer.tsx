@@ -64,20 +64,22 @@ export default function Footer() {
               <Link href="/items/edibles">Edibles</Link>
               <Link href="/items/cigarettes">Cigarettes</Link>
               <Link href="/items/vapes">Vape Pens</Link>
-              <Link href="/info/nicotine-vapes-toronto">
-                Nicotine Vapes Toronto
+              <Link href="/nicotine-vape-eglinton-west">
+                Nicotine Vapes on Eglinton West
               </Link>
               <Link href="/resources">Resources</Link>
               <Link href="/faq">FAQ</Link>
-              <Link href="/weed-delivery-toronto">Weed Delivery</Link>
+              <Link href="/cannabis-delivery-eglinton-west">
+                Cannabis Delivery on Eglinton West
+              </Link>
               <Link href="/info/toronto-weed-dispensary">
                 Little Jamaica Dispensary
               </Link>
               <Link href="/info/cheap-weed-toronto">
                 Cheap Weed Little Jamaica
               </Link>
-              <Link href="/info/native-cigarettes-toronto">
-                Native Cigarettes Little Jamaica
+              <Link href="/native-cigarettes-eglinton-west">
+                Native Cigarettes on Eglinton West
               </Link>
               <Link href="/info/weed-store-near-little-jamaica-fairbank">
                 Weed Store Near Little Jamaica

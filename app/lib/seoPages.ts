@@ -16,6 +16,8 @@ export interface SeoPageData {
   h1: string;
   icon: string;
   heroTagline: string;
+  canonicalUrl?: string;
+  robots?: { index: boolean; follow: boolean };
   heroPreview?: {
     eyebrow: string;
     intro: string;
@@ -119,6 +121,9 @@ export const SEO_PAGES: SeoPageData[] = [
     h1: "First Nation Smoke Cannabis Dispensary Toronto Native Cigarettes Guide",
     icon: "*",
     heroTagline: "Cigarette category notes for local shoppers",
+    canonicalUrl:
+      "https://www.firstnationsmokez.com/native-cigarettes-eglinton-west",
+    robots: { index: false, follow: true },
     heroPreview: {
       eyebrow: "First Nation Smoke · 1504 Eglinton Ave W, Toronto",
       intro: "Cigarette category notes for local shoppers",
@@ -136,7 +141,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Keep The Visit On This Corridor",
-        body: "This cigarette guide is for the First Nation Smoke walk-in at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank. Native cigarettes here means the cigarette merchandise category, not a cultural or medical claim.",
+        body: "This thin city URL is not the owner. Use /native-cigarettes-eglinton-west for neighbourhood Native cigarettes notes at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank. Native cigarettes here means the cigarette merchandise category, not a cultural or medical claim.",
       },
     ],
     faqs: [
@@ -300,6 +305,10 @@ export const SEO_PAGES: SeoPageData[] = [
       {
         heading: "Review the Current Toronto Category",
         body: "Before choosing, open /items/vapes and the individual product page for current supported details. This guide does not claim prices, stock or guaranteed availability.",
+      },
+      {
+        heading: "Neighbourhood Owner On Eglinton West",
+        body: "Area-scoped nicotine vape notes live on /nicotine-vape-eglinton-west. This city info URL is a product-reading guide only. The current shelf remains /items/vapes.",
       },
     ],
     faqs: [
