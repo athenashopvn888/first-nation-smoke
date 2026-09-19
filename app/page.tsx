@@ -375,11 +375,11 @@ export default function HomePage() {
               TTC from Eglinton West Station, the 32 Eglinton West bus, curb
               parking, and the last-block approach, open the{" "}
               <Link href="/visit">how to reach First Nation Smoke</Link> page.
-              Overnight and “open now” intent for this corridor only sits on the{" "}
+              Open-now / 24h-near-me intent is a first-class corridor page — the{" "}
               <Link href={TWENTY_FOUR_HOUR_HREF}>
-                24-hour Eglinton West dispensary
-              </Link>{" "}
-              page.
+                24-hour dispensary on Eglinton West
+              </Link>
+              — equal to delivery, Native cigarettes, and nicotine vapes.
             </p>
             <p className={styles.seoPanelText}>
               Four equal corridor pages sit beside this hub: the{" "}

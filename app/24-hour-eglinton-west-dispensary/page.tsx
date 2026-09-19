@@ -109,7 +109,7 @@ export default function TwentyFourHourEglintonWestPage() {
         </p>
 
         <section className={styles.nap} aria-label="Store name, address, hours, and phone">
-          <h2>Overnight NAP on Eglinton Avenue West</h2>
+          <h2>Open-now NAP on Eglinton Avenue West</h2>
           <p>
             <strong>{STORE.name}</strong>
             <br />
@@ -260,6 +260,15 @@ export default function TwentyFourHourEglintonWestPage() {
           </Link>
           <Link href="/visit" className={styles.secondary}>
             How to reach 1504
+          </Link>
+          <Link href={PATHS.deliveryLp} className={styles.secondary}>
+            Cannabis delivery
+          </Link>
+          <Link href={PATHS.nativeCigarettesLp} className={styles.secondary}>
+            Native cigarettes
+          </Link>
+          <Link href={PATHS.nicotineVapeLp} className={styles.secondary}>
+            Nicotine vapes
           </Link>
         </p>
       </article>

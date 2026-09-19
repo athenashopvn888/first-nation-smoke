@@ -207,6 +207,9 @@ export default function NicotineVapeEglintonWestPage() {
           <Link href={PATHS.itemsVapes} className={styles.primary}>
             Current nicotine vape shelf
           </Link>
+          <Link href={PATHS.twentyFour} className={styles.secondary}>
+            Open now / 24-hour
+          </Link>
           <Link href="/#contact" className={styles.secondary}>
             Homepage map &amp; hours
           </Link>

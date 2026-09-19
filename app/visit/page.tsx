@@ -27,7 +27,7 @@ const VISIT_FAQS = [
   },
   {
     q: "Is First Nation Smoke a walk-in for adults 19+?",
-    a: "Yes. Bring government-issued photo ID. No appointment is required. Hours on this page match the homepage hub: Open 24 Hours. Overnight and open-now notes for this corridor sit on the 24-hour Eglinton West page.",
+    a: "Yes. Bring government-issued photo ID. No appointment is required. Hours on this page match the homepage hub: Open 24 Hours. Open-now / 24h-near-me notes live on the first-class 24-hour Eglinton West page, equal to the neighbourhood delivery, Native cigarettes, and nicotine vape pages.",
   },
 ];
 
@@ -93,11 +93,12 @@ export default function VisitPage() {
           name-address-phone block stay on the{" "}
           <Link href="/#contact">homepage visit hub</Link>. Use these notes
           when you are coming along Eglinton West, Dufferin, or Oakwood.
-          Overnight and “open now” visits use the{" "}
+          Open-now / 24h-near-me visits use the first-class{" "}
           <Link href={TWENTY_FOUR_HOUR_HREF}>
-            24-hour Eglinton West dispensary
+            24-hour dispensary on Eglinton West
           </Link>{" "}
-          page — this URL stays the how-to-reach owner.
+          page, equal to the neighbourhood delivery, Native cigarettes, and
+          nicotine vape pages. This URL stays the how-to-reach owner.
         </p>
 
         <section className={styles.nap} aria-label="Store name, address, and phone">
@@ -272,7 +273,7 @@ export default function VisitPage() {
             Homepage map &amp; hours
           </Link>
           <Link href={TWENTY_FOUR_HOUR_HREF} className={styles.secondary}>
-            24-hour Eglinton West
+            Open now / 24-hour
           </Link>
         </p>
       </article>

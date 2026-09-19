@@ -159,7 +159,7 @@ export default function CannabisDeliveryEglintonWestPage() {
             Prefer the counter? The door at 1504 is listed Open 24 Hours.
             <Link href={PATHS.visit}> How to reach 1504</Link> covers TTC from
             Eglinton West Station, the 32 Eglinton West bus, driving, and
-            curb parking.             Overnight and “open now” intent stays on the equal{" "}
+            curb parking. Overnight and “open now” intent stays on the equal{" "}
             <Link href={PATHS.twentyFour}>
               24-hour / open-now Eglinton West
             </Link>{" "}
@@ -213,6 +213,9 @@ export default function CannabisDeliveryEglintonWestPage() {
         <p className={styles.ctaRow}>
           <Link href={PATHS.deliveryCatalog} className={styles.primary}>
             Browse delivery catalog
+          </Link>
+          <Link href={PATHS.twentyFour} className={styles.secondary}>
+            Open now / 24-hour
           </Link>
           <Link href="/#contact" className={styles.secondary}>
             Homepage map &amp; hours

@@ -208,6 +208,9 @@ export default function NativeCigarettesEglintonWestPage() {
           <Link href={PATHS.itemsCigarettes} className={styles.primary}>
             Current cigarette shelf
           </Link>
+          <Link href={PATHS.twentyFour} className={styles.secondary}>
+            Open now / 24-hour
+          </Link>
           <Link href="/#contact" className={styles.secondary}>
             Homepage map &amp; hours
           </Link>

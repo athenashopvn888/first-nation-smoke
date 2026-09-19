@@ -76,6 +76,9 @@ test("door-test 24h page owns open-now / near-me for this corridor", () => {
   assert.match(twentyFour, /Open now \/ 24h near me on this block/);
   assert.match(twentyFour, /24-Hour Dispensary Open Now on Eglinton West/);
   assert.match(twentyFour, /first-class/);
+  assert.match(twentyFour, /PATHS\.deliveryLp/);
+  assert.match(twentyFour, /PATHS\.nativeCigarettesLp/);
+  assert.match(twentyFour, /PATHS\.nicotineVapeLp/);
   assert.match(twentyFour, /Little Jamaica/);
   assert.match(twentyFour, /Fairbank/);
   assert.doesNotMatch(twentyFour, /Toronto-wide 24-hour dispensary directory/i);
@@ -112,6 +115,13 @@ test("nicotine vape LP points at /items/vapes without inventing stock", () => {
   assert.match(nicotine, /does not invent puff counts/);
   assert.match(nicotine, /\/items\/vape-disposables/);
   assert.doesNotMatch(nicotine, /\$\d+/);
+});
+
+test("Big Three pages mesh 24h as an equal sibling, not a side note", () => {
+  for (const source of [delivery, nativeCigs, nicotine]) {
+    assert.match(source, /PATHS\.twentyFour/);
+    assert.match(source, /Open now \/ 24-hour/);
+  }
 });
 
 test("hub, visit, footer, and mesh include Big Three", () => {
