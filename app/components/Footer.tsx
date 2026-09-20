@@ -72,8 +72,8 @@ export default function Footer() {
               <Link href="/cannabis-delivery-eglinton-west">
                 Cannabis Delivery on Eglinton West
               </Link>
-              <Link href="/info/toronto-weed-dispensary">
-                Little Jamaica Dispensary
+              <Link href="/weed-dispensary-eglinton-west">
+                Weed Dispensary on Eglinton West
               </Link>
               <Link href="/info/cheap-weed-toronto">
                 Cheap Weed Little Jamaica

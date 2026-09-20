@@ -27,6 +27,10 @@ const nicotineLp = readFileSync(
   "app/nicotine-vape-eglinton-west/page.tsx",
   "utf8",
 );
+const weedDispensaryLp = readFileSync(
+  "app/weed-dispensary-eglinton-west/page.tsx",
+  "utf8",
+);
 
 const WAVE1_BUNDLE = [
   home,
@@ -41,6 +45,7 @@ const WAVE1_BUNDLE = [
   deliveryLp,
   nativeCigsLp,
   nicotineLp,
+  weedDispensaryLp,
 ].join("\n");
 
 test("homepage stays the NAP / hours / map hub", () => {
@@ -103,6 +108,7 @@ test("internal mesh links homepage, visit, 24h, Big Three, and canonical tiers",
   assert.match(mesh, /PATHS\.deliveryLp/);
   assert.match(mesh, /PATHS\.nativeCigarettesLp/);
   assert.match(mesh, /PATHS\.nicotineVapeLp/);
+  assert.match(mesh, /PATHS\.weedDispensaryLp/);
   assert.match(mesh, /TIER_CONFIG/);
   assert.match(home, /TWENTY_FOUR_HOUR_HREF/);
   assert.match(home, /href="\/visit"/);

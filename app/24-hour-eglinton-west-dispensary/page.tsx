@@ -36,7 +36,7 @@ const TWENTY_FOUR_FAQS = [
   },
   {
     q: "If I searched “24 hour dispensary near me,” is this the Little Jamaica door?",
-    a: "Only if you mean Eglinton West through Little Jamaica and Fairbank. Match 1504 Eglinton Ave W, then use the homepage map if neighbouring retail hides the door. Delivery, Native cigarettes, and nicotine vapes have equal neighbourhood pages — they do not replace this open-now URL.",
+    a: "Only if you mean Eglinton West through Little Jamaica and Fairbank. Match 1504 Eglinton Ave W, then use the homepage map if neighbouring retail hides the door. The weed dispensary, delivery, Native cigarettes, and nicotine vape pages are equal neighbours — they do not replace this open-now URL.",
   },
 ];
 
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
       "24-Hour Dispensary Open Now on Eglinton West | First Nation Smoke",
   },
   description:
-    "Open now: First Nation Smoke at 1504 Eglinton Ave W is listed Open 24 Hours on the Little Jamaica / Fairbank stretch of Eglinton West. Adults 19+. Equal corridor page with delivery, Native cigarettes, and nicotine vapes. Homepage keeps the map hub.",
+    "Open now: First Nation Smoke at 1504 Eglinton Ave W is listed Open 24 Hours on the Little Jamaica / Fairbank stretch of Eglinton West. Adults 19+. Equal corridor page with the weed dispensary, delivery, Native cigarettes, and nicotine vapes. Homepage keeps the map hub.",
   alternates: {
     canonical: PAGE_URL,
   },
@@ -98,8 +98,9 @@ export default function TwentyFourHourEglintonWestPage() {
         <p className={styles.lede}>
           First Nation Smoke lists <strong>{STORE.hoursDetail}</strong> at{" "}
           <strong>{STORE.addressLine}</strong>. This is a first-class
-          corridor page — equal to neighbourhood delivery, Native cigarettes,
-          and nicotine vapes — and it owns “open now” / 24-hour-near-me
+          corridor page — equal to the neighbourhood weed dispensary,
+          delivery, Native cigarettes, and nicotine vapes — and it owns
+          “open now” / 24-hour-near-me
           intent for Little Jamaica / Fairbank. It is not a city-wide
           Toronto 24-hour list. Hours, phone {STORE.phoneDisplay}, and the
           map pin stay on the{" "}
@@ -209,7 +210,11 @@ export default function TwentyFourHourEglintonWestPage() {
             <Link href="/aaa-weed">AAA+</Link>,{" "}
             <Link href="/aa-weed">AA</Link>, or{" "}
             <Link href="/budget-weed">Budget</Link> — then the live card in
-            store. Neighbourhood notes for{" "}
+            store.             Neighbourhood notes for the{" "}
+            <Link href={PATHS.weedDispensaryLp}>
+              weed dispensary on Eglinton West
+            </Link>
+            ,{" "}
             <Link href={PATHS.deliveryLp}>
               cannabis delivery on Eglinton West
             </Link>
@@ -260,6 +265,9 @@ export default function TwentyFourHourEglintonWestPage() {
           </Link>
           <Link href="/visit" className={styles.secondary}>
             How to reach 1504
+          </Link>
+          <Link href={PATHS.weedDispensaryLp} className={styles.secondary}>
+            Weed dispensary
           </Link>
           <Link href={PATHS.deliveryLp} className={styles.secondary}>
             Cannabis delivery

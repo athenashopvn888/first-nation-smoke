@@ -14,6 +14,7 @@ const HUB_LINKS = [
   { href: PATHS.deliveryLp, label: "Cannabis delivery on Eglinton West" },
   { href: PATHS.nativeCigarettesLp, label: "Native cigarettes on Eglinton West" },
   { href: PATHS.nicotineVapeLp, label: "Nicotine vapes on Eglinton West" },
+  { href: PATHS.weedDispensaryLp, label: "Weed dispensary on Eglinton West" },
 ] as const;
 
 type Tone = "light" | "dark";

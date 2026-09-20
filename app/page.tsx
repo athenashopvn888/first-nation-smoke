@@ -379,10 +379,15 @@ export default function HomePage() {
               <Link href={TWENTY_FOUR_HOUR_HREF}>
                 24-hour dispensary on Eglinton West
               </Link>
-              — equal to delivery, Native cigarettes, and nicotine vapes.
+              — equal to the weed dispensary, delivery, Native cigarettes, and
+              nicotine vape pages.
             </p>
             <p className={styles.seoPanelText}>
-              Four equal corridor pages sit beside this hub: the{" "}
+              Five equal corridor pages sit beside this hub: the{" "}
+              <Link href="/weed-dispensary-eglinton-west">
+                weed dispensary on Eglinton West
+              </Link>
+              , the{" "}
               <Link href={TWENTY_FOUR_HOUR_HREF}>
                 24-hour / open-now Eglinton West
               </Link>{" "}
@@ -496,6 +501,9 @@ export default function HomePage() {
             map as the visit hub.
           </p>
           <div className={styles.weedModuleLinks}>
+            <Link href="/weed-dispensary-eglinton-west">
+              Weed Dispensary
+            </Link>
             <Link href={TWENTY_FOUR_HOUR_HREF}>Open Now / 24-Hour</Link>
             <Link href="/cannabis-delivery-eglinton-west">
               Eglinton West Delivery
@@ -553,6 +561,10 @@ export default function HomePage() {
           <p className={styles.visitHubCta}>
             Need TTC, driving, or parking notes for this corridor?{" "}
             <Link href="/visit">How to reach 1504 Eglinton Ave W</Link>
+            {" · "}
+            <Link href="/weed-dispensary-eglinton-west">
+              Weed dispensary on Eglinton West
+            </Link>
             {" · "}
             <Link href={TWENTY_FOUR_HOUR_HREF}>24-hour Eglinton West walk-in</Link>
             {" · "}

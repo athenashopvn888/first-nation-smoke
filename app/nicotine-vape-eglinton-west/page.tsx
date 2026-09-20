@@ -165,10 +165,14 @@ export default function NicotineVapeEglintonWestPage() {
             <Link href="/aaa-weed">AAA+</Link>,{" "}
             <Link href="/aa-weed">AA</Link>, and{" "}
             <Link href="/budget-weed">Budget</Link>. Neighbourhood{" "}
+            <Link href={PATHS.weedDispensaryLp}>
+              weed dispensary on Eglinton West
+            </Link>
+            ,{" "}
             <Link href={PATHS.deliveryLp}>
               cannabis delivery on Eglinton West
-            </Link>{" "}
-            and{" "}
+            </Link>
+            , and{" "}
             <Link href={PATHS.nativeCigarettesLp}>
               Native cigarettes on Eglinton West
             </Link>{" "}
