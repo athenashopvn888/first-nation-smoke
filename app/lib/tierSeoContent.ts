@@ -23,7 +23,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       },
       {
         heading: "After Exotic: hours, door, or a sibling tier",
-        body: "Hours, phone, and the map pin stay on the homepage hub. TTC, driving, and parking sit on /visit. Overnight walk-ins use the 24-hour Eglinton West page. If Exotic is close but not the fit, compare Premium next — not a jump straight to Budget.",
+        body: "Hours, phone, and the map pin stay on the homepage hub. TTC, driving, and parking sit on /visit. Overnight walk-ins use the 24-hour Eglinton West page. The neighbourhood weed dispensary owner is /weed-dispensary-eglinton-west. If Exotic is close but not the fit, compare Premium next — not a jump straight to Budget.",
       },
     ],
     faqs: [
@@ -57,7 +57,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       },
       {
         heading: "Next step after Premium",
-        body: "Move up to Exotic only if you want the upper wall. Move down to AAA+ if Premium is more than the visit needs. For how to reach the door, open /visit. For overnight hours on this corridor, open the 24-hour Eglinton West page. The homepage keeps NAP and the pin.",
+        body: "Move up to Exotic only if you want the upper wall. Move down to AAA+ if Premium is more than the visit needs. For how to reach the door, open /visit. For overnight hours on this corridor, open the 24-hour Eglinton West page. The neighbourhood weed dispensary owner is /weed-dispensary-eglinton-west. The homepage keeps NAP and the pin.",
       },
     ],
     faqs: [
@@ -91,7 +91,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       },
       {
         heading: "AAA+ after hours and what to open next",
-        body: "The store lists Open 24 Hours. Overnight geometry is on the 24-hour Eglinton West page. After you shortlist AAA+, either walk in with photo ID, call +1 289 819 5073, or switch to Premium or AA if the middle lane is not the fit.",
+        body: "The store lists Open 24 Hours. Overnight geometry is on the 24-hour Eglinton West page. The neighbourhood weed dispensary owner is /weed-dispensary-eglinton-west. After you shortlist AAA+, either walk in with photo ID, call +1 289 819 5073, or switch to Premium or AA if the middle lane is not the fit.",
       },
     ],
     faqs: [
@@ -125,7 +125,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       },
       {
         heading: "AA overnight and sibling lanes",
-        body: "AA stays on the menu whenever the door is listed open, including the 24-hour Eglinton West walk-in. After AA, Budget is the cheaper filter and AAA+ is the step up. Phone +1 289 819 5073 before travelling for one listing.",
+        body: "AA stays on the menu whenever the door is listed open, including the 24-hour Eglinton West walk-in. After AA, Budget is the cheaper filter and AAA+ is the step up. The neighbourhood weed dispensary owner is /weed-dispensary-eglinton-west. Phone +1 289 819 5073 before travelling for one listing.",
       },
     ],
     faqs: [
@@ -159,7 +159,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       },
       {
         heading: "When to leave Budget for AA or overnight notes",
-        body: "If Budget is too thin for the visit, step to AA next — not a leap to Exotic. Overnight walk-ins still use the same Budget lane; open the 24-hour Eglinton West page for after-midnight corridor notes, then return here to compare cards.",
+        body: "If Budget is too thin for the visit, step to AA next — not a leap to Exotic. Overnight walk-ins still use the same Budget lane; open the 24-hour Eglinton West page for after-midnight corridor notes, then return here to compare cards. The neighbourhood weed dispensary owner is /weed-dispensary-eglinton-west.",
       },
     ],
     faqs: [

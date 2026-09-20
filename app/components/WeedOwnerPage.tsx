@@ -66,7 +66,7 @@ export function WeedOwnerPage() {
         <h2>Weed and Cannabis on Eglinton Avenue West</h2>
         <p>{storeName} is the walk-in at {STORE.addressLine}, open 24 hours a day, seven days a week.</p>
         <p>Adults 19+ can begin with flower information, compare broader cannabis choices, or focus on pre-rolls when that is the format they are interested in.</p>
-        <p>For one specific item, call <a href={`tel:${STORE.phoneE164}`}>{STORE.phoneDisplay}</a> before making a special trip. For TTC, parking, and last-block notes, use the <Link href="/visit">how-to-reach page</Link>. Open-now / 24h-near-me lives on the first-class <Link href="/24-hour-eglinton-west-dispensary">24-hour Eglinton West</Link> page, equal to neighbourhood delivery, Native cigarettes, and nicotine vapes.</p>
+        <p>For one specific item, call <a href={`tel:${STORE.phoneE164}`}>{STORE.phoneDisplay}</a> before making a special trip. For TTC, parking, and last-block notes, use the <Link href="/visit">how-to-reach page</Link>. The neighbourhood weed dispensary owner is <Link href="/weed-dispensary-eglinton-west">/weed-dispensary-eglinton-west</Link>. Open-now / 24h-near-me lives on the first-class <Link href="/24-hour-eglinton-west-dispensary">24-hour Eglinton West</Link> page, equal to neighbourhood delivery, Native cigarettes, and nicotine vapes.</p>
       </section>
 
       <section className={styles.section}>

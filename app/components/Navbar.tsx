@@ -24,6 +24,7 @@ const ALL_LINKS: { href: string; label: string; featured?: boolean }[] = [
 
   { href: "/visit", label: "Visit" },
   { href: "/24-hour-eglinton-west-dispensary", label: "Open Now / 24h" },
+  { href: "/weed-dispensary-eglinton-west", label: "Weed Dispensary" },
   { href: "/faq", label: "FAQ" },
   { href: "/resources", label: "Resources" },
 ];

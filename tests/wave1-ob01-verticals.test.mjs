@@ -11,6 +11,10 @@ const nativeCigs = readFileSync(
   "utf8",
 );
 const nicotine = readFileSync("app/nicotine-vape-eglinton-west/page.tsx", "utf8");
+const weedDispensary = readFileSync(
+  "app/weed-dispensary-eglinton-west/page.tsx",
+  "utf8",
+);
 const twentyFour = readFileSync(
   "app/24-hour-eglinton-west-dispensary/page.tsx",
   "utf8",
@@ -27,6 +31,7 @@ const VERTICAL_BUNDLE = [
   delivery,
   nativeCigs,
   nicotine,
+  weedDispensary,
   twentyFour,
   home,
   visit,
@@ -45,6 +50,9 @@ const H1S = [
   [...nicotine.matchAll(/<h1 className=\{styles\.h1\}>\s*([^<]+)/g)].map((m) =>
     m[1].trim(),
   ),
+  [...weedDispensary.matchAll(/<h1 className=\{styles\.h1\}>\s*([^<]+)/g)].map(
+    (m) => m[1].trim(),
+  ),
   [...twentyFour.matchAll(/<h1 className=\{styles\.h1\}>\s*([^<]+)/g)].map(
     (m) => m[1].trim(),
   ),
@@ -55,20 +63,31 @@ test("Big Three neighbourhood LPs have unique H1 and title", () => {
     "Cannabis Delivery on Eglinton West",
     "Native Cigarettes on Eglinton West",
     "Nicotine Vapes on Eglinton West",
+    "Weed Dispensary on Eglinton West",
     "24-Hour Dispensary Open Now on Eglinton West",
   ]);
-  assert.equal(new Set(H1S).size, 4);
+  assert.equal(new Set(H1S).size, 5);
   assert.match(delivery, /Cannabis Delivery on Eglinton West \| First Nation Smoke/);
   assert.match(nativeCigs, /Native Cigarettes on Eglinton West \| First Nation Smoke/);
   assert.match(nicotine, /Nicotine Vapes on Eglinton West \| First Nation Smoke/);
+  assert.match(
+    weedDispensary,
+    /Weed Dispensary on Eglinton West \| First Nation Smoke/,
+  );
 });
 
 test("FAQ questions are unique across 24h and Big Three", () => {
-  const questions = [delivery, nativeCigs, nicotine, twentyFour].flatMap(
-    (source) => [...source.matchAll(/q: "([^"]+)"/g)].map((m) => m[1]),
+  const questions = [
+    delivery,
+    nativeCigs,
+    nicotine,
+    weedDispensary,
+    twentyFour,
+  ].flatMap((source) =>
+    [...source.matchAll(/q: "([^"]+)"/g)].map((m) => m[1]),
   );
-  assert.equal(questions.length, 18);
-  assert.equal(new Set(questions).size, 18, `duplicate FAQ: ${questions.join(" | ")}`);
+  assert.equal(questions.length, 22);
+  assert.equal(new Set(questions).size, 22, `duplicate FAQ: ${questions.join(" | ")}`);
 });
 
 test("door-test 24h page owns open-now / near-me for this corridor", () => {
@@ -79,6 +98,7 @@ test("door-test 24h page owns open-now / near-me for this corridor", () => {
   assert.match(twentyFour, /PATHS\.deliveryLp/);
   assert.match(twentyFour, /PATHS\.nativeCigarettesLp/);
   assert.match(twentyFour, /PATHS\.nicotineVapeLp/);
+  assert.match(twentyFour, /PATHS\.weedDispensaryLp/);
   assert.match(twentyFour, /Little Jamaica/);
   assert.match(twentyFour, /Fairbank/);
   assert.doesNotMatch(twentyFour, /Toronto-wide 24-hour dispensary directory/i);
@@ -129,6 +149,7 @@ test("hub, visit, footer, and mesh include Big Three", () => {
     assert.match(source, /cannabis-delivery-eglinton-west|PATHS\.deliveryLp/);
     assert.match(source, /native-cigarettes-eglinton-west|PATHS\.nativeCigarettesLp/);
     assert.match(source, /nicotine-vape-eglinton-west|PATHS\.nicotineVapeLp/);
+    assert.match(source, /weed-dispensary-eglinton-west|PATHS\.weedDispensaryLp/);
   }
 });
 

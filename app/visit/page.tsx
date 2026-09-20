@@ -27,7 +27,7 @@ const VISIT_FAQS = [
   },
   {
     q: "Is First Nation Smoke a walk-in for adults 19+?",
-    a: "Yes. Bring government-issued photo ID. No appointment is required. Hours on this page match the homepage hub: Open 24 Hours. Open-now / 24h-near-me notes live on the first-class 24-hour Eglinton West page, equal to the neighbourhood delivery, Native cigarettes, and nicotine vape pages.",
+    a: "Yes. Bring government-issued photo ID. No appointment is required. Hours on this page match the homepage hub: Open 24 Hours. Open-now / 24h-near-me notes live on the first-class 24-hour Eglinton West page, equal to the neighbourhood weed dispensary, delivery, Native cigarettes, and nicotine vape pages.",
   },
 ];
 
@@ -97,8 +97,9 @@ export default function VisitPage() {
           <Link href={TWENTY_FOUR_HOUR_HREF}>
             24-hour dispensary on Eglinton West
           </Link>{" "}
-          page, equal to the neighbourhood delivery, Native cigarettes, and
-          nicotine vape pages. This URL stays the how-to-reach owner.
+          page, equal to the neighbourhood weed dispensary, delivery, Native
+          cigarettes, and nicotine vape pages. This URL stays the
+          how-to-reach owner.
         </p>
 
         <section className={styles.nap} aria-label="Store name, address, and phone">
@@ -228,7 +229,11 @@ export default function VisitPage() {
             <Link href="/premium-weed">Premium</Link>,{" "}
             <Link href="/aaa-weed">AAA+</Link>,{" "}
             <Link href="/aa-weed">AA</Link>, and{" "}
-            <Link href="/budget-weed">Budget</Link>. Neighbourhood{" "}
+            <Link href="/budget-weed">Budget</Link>.             Neighbourhood{" "}
+            <Link href="/weed-dispensary-eglinton-west">
+              weed dispensary on Eglinton West
+            </Link>
+            ,{" "}
             <Link href="/cannabis-delivery-eglinton-west">
               cannabis delivery on Eglinton West
             </Link>

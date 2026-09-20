@@ -17,7 +17,7 @@ const FAQ_CATEGORIES = [
     title: "Location and Hours",
     faqs: [
       { q: "Where is First Nation Smoke Cannabis Dispensary Toronto located?", a: "First Nation Smoke is at 1504 Eglinton Ave W, Toronto, ON M6E 2G5, on Eglinton West through Little Jamaica and Fairbank, near Dufferin Street and Oakwood Avenue. Call +1 289 819 5073. Use the homepage map or /visit for how to reach the door." },
-      { q: "What are the listed hours?", a: "Open 24 Hours, seven days a week, matching the homepage hub. Open-now / 24h-near-me notes live on the first-class 24-hour Eglinton West page, equal to the neighbourhood delivery, Native cigarettes, and nicotine vape pages. Call +1 289 819 5073 if your timing is unusual." },
+      { q: "What are the listed hours?", a: "Open 24 Hours, seven days a week, matching the homepage hub. Open-now / 24h-near-me notes live on the first-class 24-hour Eglinton West page, equal to the neighbourhood weed dispensary, delivery, Native cigarettes, and nicotine vape pages. Call +1 289 819 5073 if your timing is unusual." },
       { q: "What is the best way to plan the visit?", a: "Confirm 1504 Eglinton Ave W and the homepage hours, then open /visit if you need TTC from Eglinton West Station, the 32 Eglinton West bus, driving from Dufferin or Oakwood, or curb-parking notes." },
     ],
   },
@@ -51,6 +51,7 @@ const FAQ_CATEGORIES = [
       { q: "Where is the Eglinton West cannabis delivery page?", a: "Corridor delivery notes live on /cannabis-delivery-eglinton-west. That page is the neighbourhood owner. The city /weed-delivery-toronto URL is a noindex catalog only." },
       { q: "Where should nicotine vape shoppers start on this corridor?", a: "Use /nicotine-vape-eglinton-west for neighbourhood notes, then /items/vapes for the current shelf. Adults 19+. Nicotine is addictive. This is not a city-wide Toronto vape list." },
       { q: "Where is the Native cigarettes neighbourhood page?", a: "Use /native-cigarettes-eglinton-west, then /items/cigarettes for the listed shelf. Native cigarettes is merchandise-category language only." },
+      { q: "Where is the Eglinton West weed dispensary neighbourhood page?", a: "Use /weed-dispensary-eglinton-west for the corridor walk-in owner at 1504 Eglinton Ave W. The city /info/toronto-weed-dispensary URL is a supporting page only. Adults 19+." },
     ],
   },
 ];

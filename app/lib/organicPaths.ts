@@ -6,6 +6,7 @@ export const PATHS = {
   deliveryLp: "/cannabis-delivery-eglinton-west",
   nativeCigarettesLp: "/native-cigarettes-eglinton-west",
   nicotineVapeLp: "/nicotine-vape-eglinton-west",
+  weedDispensaryLp: "/weed-dispensary-eglinton-west",
   deliveryCatalog: "/weed-delivery-toronto",
   itemsVapes: "/items/vapes",
   itemsCigarettes: "/items/cigarettes",

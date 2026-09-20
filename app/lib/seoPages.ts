@@ -44,10 +44,13 @@ export const SEO_PAGES: SeoPageData[] = [
     title:
       "First Nation Smoke Cannabis Dispensary Toronto Weed Dispensary in Toronto",
     metaDescription:
-      "First Nation Smoke is the Eglinton West walk-in at 1504 Eglinton Ave W through Little Jamaica and Fairbank, with shopper resources for flower, pre-rolls, edibles, vapes, concentrates, accessories, and listed cigarettes.",
+      "First Nation Smoke is the Eglinton West walk-in at 1504 Eglinton Ave W through Little Jamaica and Fairbank. This city URL is not the owner — use /weed-dispensary-eglinton-west for neighbourhood notes.",
     h1: "First Nation Smoke Cannabis Dispensary Toronto Weed Dispensary in Toronto",
     icon: "*",
     heroTagline: "Eglinton West walk-in through Little Jamaica and Fairbank",
+    canonicalUrl:
+      "https://www.firstnationsmokez.com/weed-dispensary-eglinton-west",
+    robots: { index: false, follow: true },
     sections: [
       {
         heading:
@@ -57,6 +60,10 @@ export const SEO_PAGES: SeoPageData[] = [
       {
         heading: "Local Notes For Eglinton West, Little Jamaica, and Fairbank",
         body: "If you searched for a cannabis shop near Little Jamaica or Fairbank, confirm civic number 1504 on Eglinton Avenue West — near Dufferin Street and Oakwood Avenue. The /visit page covers TTC from Eglinton West Station and curb parking on this corridor only.",
+      },
+      {
+        heading: "Neighbourhood Owner On Eglinton West",
+        body: "This thin city URL is not the owner. Use /weed-dispensary-eglinton-west for neighbourhood weed dispensary notes at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank. Adults 19+. This page does not invent stock or prices.",
       },
       {
         heading: "What To Check Before Visiting",
@@ -73,8 +80,8 @@ export const SEO_PAGES: SeoPageData[] = [
         a: "Check the current menu, category pages, /visit for the last block, and +1 289 819 5073 before visiting. Product details can change.",
       },
       {
-        q: "Does the site show current product categories?",
-        a: "The site includes menu categories for flower tiers, pre-rolls, edibles, vapes, concentrates, accessories, and cigarettes where listed.",
+        q: "Where is the Eglinton West weed dispensary neighbourhood page?",
+        a: "Use /weed-dispensary-eglinton-west. That corridor URL is the neighbourhood owner. This city info page is a supporting Toronto URL only.",
       },
     ],
   },
