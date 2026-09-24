@@ -15,6 +15,7 @@ import {
   type ItemProduct,
 } from "../../lib/products";
 import styles from "./items.module.css";
+import { resolveDocumentTitle } from "../../lib/storeIdentity";
 
 /* ── Generate all category pages ── */
 export function generateStaticParams() {
@@ -33,7 +34,9 @@ export async function generateMetadata({
   const items = getItemsByCategory(catInfo.key);
 
   return {
-    title: catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products`,
+    title: resolveDocumentTitle(
+      catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products`,
+    ),
     description: catInfo.config.seoIntro || `Shop ${items.length} ${catInfo.config.name.toLowerCase()} at First Nation Smoke Cannabis Dispensary Toronto.`,
     alternates: {
       canonical: `https://www.firstnationsmokez.com/items/${catSlug}`,

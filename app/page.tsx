@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 import FlowerCard from "./components/FlowerCard";
 import { allFlowers } from "./lib/products";
 import Papa from "papaparse";
-import { HOME_FAQS, STORE } from "./lib/storeIdentity";
+import { HOME_FAQS, STORE, storeClaimsOpen24Hours } from "./lib/storeIdentity";
 import LocalSeoMesh, {
   TWENTY_FOUR_HOUR_HREF,
 } from "./components/LocalSeoMesh";
@@ -105,6 +105,46 @@ const EXPLORE_CATEGORIES = [
     icon: "🍄",
   },
 ];
+
+const NEIGHBOURHOOD_HUB_CARDS = [
+  {
+    href: "/weed-dispensary-eglinton-west",
+    kicker: "Neighbourhood",
+    title: "Weed dispensary Eglinton West",
+    text: "The walk-in at 1504 Eglinton Ave W on the Little Jamaica and Fairbank stretch, near Dufferin and Oakwood.",
+  },
+  {
+    href: "/24-hour-eglinton-west-dispensary",
+    kicker: "Hours",
+    title: "Open 24 hours",
+    text: "This storefront is listed Open 24 Hours. Delivery ordering on the site is a separate 10am–10pm path.",
+    onlyWhen24h: true,
+  },
+  {
+    href: "/cannabis-delivery-eglinton-west",
+    kicker: "Delivery",
+    title: "Cannabis delivery Eglinton West",
+    text: "Neighbourhood delivery notes for this corridor. The dispatcher confirms whether an address can be served.",
+  },
+  {
+    href: "/native-cigarettes-eglinton-west",
+    kicker: "Cigarettes",
+    title: "Native cigarettes",
+    text: "A merchandise category on the cigarette shelf at 1504. Current packs stay on the cigarette menu.",
+  },
+  {
+    href: "/nicotine-vape-eglinton-west",
+    kicker: "Nicotine",
+    title: "Nicotine vape Eglinton West",
+    text: "Nicotine vapes for the Little Jamaica walk-in. Nicotine is addictive. Adults 19+.",
+  },
+  {
+    href: "/visit",
+    kicker: "Arrival",
+    title: "Visit",
+    text: "Line 1 to Eglinton West Station, the 32 Eglinton West bus, Dufferin, and curb parking at 1504.",
+  },
+] as const;
 
 interface Review {
   name: string;
@@ -292,6 +332,28 @@ export default function HomePage() {
                   <span className={styles.bentoLabel}>{tier.name}</span>
                   <span className={styles.bentoPrice}>{tier.price}</span>
                 </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.hubSection} aria-label="Eglinton West neighbourhood guides">
+        <div className={styles.container}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Eglinton West guides</h2>
+            <p className={styles.sectionSubtitle}>
+              Neighbourhood pages for this one shop at 1504 Eglinton Ave W. Adults 19+.
+            </p>
+          </div>
+          <div className={styles.hubGrid}>
+            {NEIGHBOURHOOD_HUB_CARDS.filter(
+              (card) => !("onlyWhen24h" in card) || storeClaimsOpen24Hours(),
+            ).map((card) => (
+              <Link key={card.href} href={card.href} className={styles.hubCard}>
+                <span className={styles.hubKicker}>{card.kicker}</span>
+                <strong className={styles.hubTitle}>{card.title}</strong>
+                <span className={styles.hubText}>{card.text}</span>
               </Link>
             ))}
           </div>

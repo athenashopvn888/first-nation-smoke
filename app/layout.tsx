@@ -12,8 +12,10 @@ import {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.firstnationsmokez.com"),
   title: {
-    default: "First Nation Smoke Cannabis | Toronto Dispensary",
-    template: "%s | First Nation Smoke Cannabis Dispensary Toronto",
+    default: "First Nation Smoke | Eglinton West / Little Jamaica",
+    // Child titles that already include the brand must use resolveDocumentTitle()
+    // so this template does not append "First Nation Smoke" a second time.
+    template: "%s | First Nation Smoke",
   },
   description:
     "Walk into First Nation Smoke at 1504 Eglinton Ave W, Toronto, on Eglinton West through Little Jamaica and Fairbank, near Dufferin and Oakwood. Adults 19+. Open 24 Hours. Current menu in store — no medical claims.",
@@ -33,7 +35,7 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "https://www.firstnationsmokez.com",
     siteName: "First Nation Smoke Cannabis Dispensary Toronto",
-    title: "First Nation Smoke Cannabis | Toronto Dispensary",
+    title: "First Nation Smoke | Eglinton West / Little Jamaica",
     description:
       "Adult 19+ walk-in at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank. Open 24 Hours.",
     images: [
@@ -47,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "First Nation Smoke Cannabis | Toronto Dispensary",
+    title: "First Nation Smoke | Eglinton West / Little Jamaica",
     description:
       "Adult 19+ walk-in at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank. Open 24 Hours.",
     images: [
