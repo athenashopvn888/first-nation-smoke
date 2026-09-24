@@ -6,10 +6,10 @@ export const metadata: Metadata = {
   description:
     "First Nation Smoke is the Eglinton West walk-in at 1504 Eglinton Ave W through Little Jamaica and Fairbank. Use the homepage for hours and the map; use /visit for how to reach the door.",
   alternates: {
-    canonical: "https://www.firstnationsmokez.com/",
+    canonical: "https://www.firstnationsmokez.com/weed-dispensary-toronto",
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
 };
