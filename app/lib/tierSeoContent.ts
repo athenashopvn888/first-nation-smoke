@@ -76,8 +76,8 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     ],
   },
   "AAA+": {
-    seoTitle: "AAA+ Weed near Oakwood",
-    h1Place: "near Oakwood and Dufferin",
+    seoTitle: "AAA+ Weed on Eglinton West in Little Jamaica",
+    h1Place: "on Eglinton West in Little Jamaica",
     seoIntro:
       "AAA+ is the middle flower lane at First Nation Smoke, the walk-in near Oakwood Avenue and Dufferin Street on Eglinton West. Compare AAA+ cards here, then confirm the package at 1504 — not on a city-wide Toronto blog.",
     sections: [

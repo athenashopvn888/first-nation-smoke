@@ -15,20 +15,20 @@ const PAGE_URL = `${STORE.url}${PATHS.nativeCigarettesLp}`;
 
 const NATIVE_CIG_FAQS = [
   {
-    q: "Does the Eglinton West counter list Native cigarettes?",
-    a: "The cigarette shelf at 1504 Eglinton Ave W includes Native cigarettes as a merchandise category when those items are listed. That is retail category language only. Confirm the current card on the cigarette shelf or ask staff before you travel for one brand.",
+    q: "Where along Eglinton West is the Native cigarettes shelf?",
+    a: "It is inside the same First Nation Smoke walk-in at 1504 Eglinton Ave W, on the Little Jamaica and Fairbank frontage near Oakwood and Dufferin. Native cigarettes is the merchandise category name for that shelf when those packs are listed. Ask at the counter if a sleeve is hard to read.",
   },
   {
-    q: "What does “Native cigarettes” mean on this page?",
-    a: "It means the cigarette merchandise category already used on this site — retail shelf language only, not a medical claim, and not a second shop. The brand name of the store stays First Nation Smoke.",
+    q: "Does that merchandise label mean a second shop on this block?",
+    a: "No. Native cigarettes names a merchandise category at the one 1504 door. The business name stays First Nation Smoke. This note does not describe ownership, a medical purpose, or another address.",
   },
   {
-    q: "Where do I check the current cigarette shelf at 1504?",
-    a: "Open /items/cigarettes for the listed cigarette category, then match the package at the Little Jamaica / Fairbank counter. This neighbourhood page does not invent stock, carton counts, or prices. Call +1 289 819 5073 if one label is the only reason for the trip.",
+    q: "How can I see listed packs before I board the 32 Eglinton West bus?",
+    a: "Open the cigarette category, then match the sleeve at the Little Jamaica counter. Names and carton notes change, so this page does not publish a fixed pack count or a fixed price. Call +1 289 819 5073 when one printed name is the only reason to leave Fairbank.",
   },
   {
-    q: "Can adults 19+ buy listed cigarettes after midnight on this corridor?",
-    a: "Yes, when the homepage still lists Open 24 Hours. Bring government-issued photo ID. Overnight geometry sits on the 24-hour Eglinton West page. This URL stays the Native cigarettes neighbourhood owner — not the open-now page.",
+    q: "Is the cigarette shelf on the same Open 24 Hours walk-in as the rest of 1504?",
+    a: "Yes, while the homepage hours card still says Open 24 Hours. Adults 19+ need government photo ID. Night-time door notes sit on the 24-hour Eglinton West page. This URL only covers the cigarette category.",
   },
 ];
 
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
     absolute: "Native Cigarettes on Eglinton West | First Nation Smoke",
   },
   description:
-    "Native cigarettes as a listed merchandise category at First Nation Smoke, 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank. Adults 19+. Check the current cigarette shelf. No medical claims.",
+    "Native cigarettes are a merchandise category on the cigarette shelf at First Nation Smoke, 1504 Eglinton Ave W, Little Jamaica on Eglinton West. Adults 19+. Read the live cigarette cards before you ride the 32.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
     title: "Native Cigarettes on Eglinton West",
     description:
-      "Retail category notes for listed Native cigarettes at 1504 Eglinton Ave W. Adults 19+. Current shelf at /items/cigarettes.",
+      "Merchandise-category notes for the cigarette shelf at 1504 Eglinton Ave W in Little Jamaica. Adults 19+.",
     url: PAGE_URL,
   },
   robots: { index: true, follow: true },
@@ -57,7 +57,7 @@ export default function NativeCigarettesEglintonWestPage() {
     name: "Native Cigarettes on Eglinton West",
     url: PAGE_URL,
     description:
-      "Neighbourhood notes for listed Native cigarettes at First Nation Smoke, 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank.",
+      "Merchandise-category notes for cigarettes at First Nation Smoke, 1504 Eglinton Ave W, on Eglinton West through Little Jamaica and Fairbank.",
     isPartOf: { "@id": `${STORE.url}/#cannabis-store` },
     about: { "@id": `${STORE.url}/#cannabis-store` },
     primaryImageOfPage: STORE.image,
@@ -86,18 +86,18 @@ export default function NativeCigarettesEglintonWestPage() {
         </p>
         <h1 className={styles.h1}>Native Cigarettes on Eglinton West</h1>
         <p className={styles.lede}>
-          First Nation Smoke lists Native cigarettes as a merchandise
-          category on the cigarette shelf at{" "}
-          <strong>{STORE.addressLine}</strong>. This page owns that
-          neighbourhood query for the Little Jamaica / Fairbank stretch of
-          Eglinton West. It is stronger than the thin city info URL. Retail
-          category language only — no medical claims. Hours, phone{" "}
-          {STORE.phoneDisplay}, and the map pin stay on the{" "}
-          <Link href="/#contact">homepage visit hub</Link>.
+          The cigarette lane at First Nation Smoke is inside the walk-in at{" "}
+          <strong>{STORE.addressLine}</strong>, on the Little Jamaica stretch
+          of Eglinton West between the Oakwood and Dufferin corners. When the
+          shelf lists them, Native cigarettes are a merchandise category on
+          that lane — shelf wording only. Phone {STORE.phoneDisplay} and the
+          Open 24 Hours card live on the{" "}
+          <Link href="/#contact">homepage visit hub</Link>, next to the map
+          pin for this Fairbank frontage.
         </p>
 
         <section className={styles.nap} aria-label="Store name, address, hours, and phone">
-          <h2>The shelf is at 1504 Eglinton Ave W</h2>
+          <h2>1504 on the Little Jamaica frontage</h2>
           <p>
             <strong>{STORE.name}</strong>
             <br />
@@ -118,67 +118,58 @@ export default function NativeCigarettesEglintonWestPage() {
         </section>
 
         <section>
-          <h2>Retail category language only</h2>
+          <h2>Merchandise category, nothing further</h2>
           <p>
-            On this site, “Native cigarettes” means the cigarette merchandise
-            category — the same wording already used on the homepage and
-            cigarette lane. The store brand stays First Nation Smoke. This
-            page does not add ownership stories or medical claims. Adults
-            19+ with photo ID.
+            At civic 1504, “Native cigarettes” only names a merchandise
+            category on the cigarette shelf, the same label already used
+            beside the flower wall. The shop name remains First Nation Smoke.
+            This Eglinton West note does not add an ownership story, a
+            medical purpose, or a second door on Oakwood or Dufferin.
           </p>
           <p>
-            Brand names, carton notes, and posted prices change. This URL
-            does not lock a carton price, a pack deal, or a guaranteed
-            brand. Open the{" "}
+            Sleeves and carton notes move. A name you saw before the 32
+            Eglinton West bus left Eglinton West Station can be off the rack
+            by the time you reach Little Jamaica. Read the{" "}
             <Link href={PATHS.itemsCigarettes}>current cigarette category</Link>{" "}
-            and match the package at the counter.
+            and compare the sleeve in your hand at the counter.
           </p>
         </section>
 
         <section>
-          <h2>How to use this page on a Little Jamaica stop</h2>
+          <h2>From the 32 bus to the cigarette cards</h2>
           <p>
-            If the visit is about listed cigarettes, start here for the
-            neighbourhood note, then finish on{" "}
-            <Link href={PATHS.itemsCigarettes}>/items/cigarettes</Link>. If
-            one exact label is the only reason to come out, call{" "}
-            <a href={`tel:${STORE.phoneE164}`}>{STORE.phoneDisplay}</a> first.
-            Neighbourhood notes live here, not on a city-wide Toronto page.
+            If the errand is a listed pack, start with this Little Jamaica
+            note, then open{" "}
+            <Link href={PATHS.itemsCigarettes}>/items/cigarettes</Link>. Call{" "}
+            <a href={`tel:${STORE.phoneE164}`}>{STORE.phoneDisplay}</a> before
+            you leave Fairbank when one printed name is the whole trip.
+            Neighbourhood detail for this frontage stays here.
           </p>
           <p>
-            Finding the door is still a how-to-reach job: use{" "}
-            <Link href={PATHS.visit}>/visit</Link> for TTC from Eglinton West
-            Station, the 32 Eglinton West bus, Dufferin, Oakwood, and curb
-            parking. Overnight walk-ins use the{" "}
+            Curb signs along Eglinton Avenue West, plus the Dufferin and
+            Oakwood approaches, are written on{" "}
+            <Link href={PATHS.visit}>/visit</Link>. After midnight, door
+            notes move to the{" "}
             <Link href={PATHS.twentyFour}>24-hour Eglinton West</Link> page.
+            The cigarette URL does not take over that job.
           </p>
         </section>
 
         <section>
-          <h2>Same counter as flower, delivery, and nicotine vapes</h2>
+          <h2>Same 1504 counter, other errands</h2>
           <p>
-            Cigarettes are one lane at the same 1504 counter. Flower
-            comparison stays on{" "}
-            <Link href="/exotic-weed">Exotic</Link>,{" "}
-            <Link href="/premium-weed">Premium</Link>,{" "}
+            Flower shoppers use the{" "}
+            <Link href="/exotic-weed">exotic</Link>,{" "}
+            <Link href="/premium-weed">premium</Link>,{" "}
             <Link href="/aaa-weed">AAA+</Link>,{" "}
             <Link href="/aa-weed">AA</Link>, and{" "}
-            <Link href="/budget-weed">Budget</Link>. Neighbourhood{" "}
-            <Link href={PATHS.weedDispensaryLp}>
-              weed dispensary on Eglinton West
-            </Link>
-            ,{" "}
-            <Link href={PATHS.deliveryLp}>
-              cannabis delivery on Eglinton West
-            </Link>
-            , and{" "}
-            <Link href={PATHS.nicotineVapeLp}>
-              nicotine vapes on Eglinton West
-            </Link>{" "}
-            (current nicotine shelf at{" "}
-            <Link href={PATHS.itemsVapes}>/items/vapes</Link>) have their own
-            URLs. This page does not replace those lanes. The 24-hour /
-            open-now page is equal, not a side note.
+            <Link href="/budget-weed">budget</Link> walls at this door.
+            Separate Eglinton West notes cover the{" "}
+            <Link href={PATHS.weedDispensaryLp}>weed dispensary</Link>,{" "}
+            <Link href={PATHS.deliveryLp}>cannabis delivery</Link>, and{" "}
+            <Link href={PATHS.nicotineVapeLp}>nicotine vapes</Link>. Nicotine
+            cards themselves are filed at{" "}
+            <Link href={PATHS.itemsVapes}>/items/vapes</Link>.
           </p>
         </section>
 
@@ -194,12 +185,13 @@ export default function NativeCigarettesEglintonWestPage() {
           />
         </div>
         <p className={styles.mapNote}>
-          Map preview for the Eglinton West pin. The homepage remains the
-          visit hub for name, address, phone, and hours.
+          The frame marks 1504 on Eglinton Avenue West through Little
+          Jamaica. For the phone line and the Open 24 Hours card, return to
+          the homepage hub.
         </p>
 
         <section className={styles.faq}>
-          <h2>Native cigarettes on this corridor — quick answers</h2>
+          <h2>Cigarette-shelf questions for this Little Jamaica door</h2>
           {NATIVE_CIG_FAQS.map((faq) => (
             <details key={faq.q}>
               <summary>{faq.q}</summary>
