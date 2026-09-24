@@ -12,7 +12,7 @@ import {
 } from "../lib/products";
 import { TIER_SEO } from "../lib/tierSeoContent";
 import LocalSeoMesh from "../components/LocalSeoMesh";
-import { faqPageJsonLd, stringifyJsonLd } from "../lib/storeIdentity";
+import { STORE, faqPageJsonLd, resolveDocumentTitle, stringifyJsonLd } from "../lib/storeIdentity";
 import styles from "./tier.module.css";
 
 /* -- Generate all tier pages at build -- */
@@ -33,7 +33,9 @@ export async function generateMetadata({
   const seo = TIER_SEO[tierInfo.key];
 
   return {
-    title: seo?.seoTitle || `${tierInfo.config.name} Cannabis Flower — ${flowers.length} Strains`,
+    title: resolveDocumentTitle(
+      seo?.seoTitle || `${tierInfo.config.name} Cannabis Flower — ${flowers.length} Strains`,
+    ),
     description: seo?.seoIntro || `Shop ${flowers.length} ${tierInfo.config.name.toLowerCase()} cannabis strains at First Nation Smoke Cannabis Dispensary Toronto.`,
     alternates: {
       canonical: `https://www.firstnationsmokez.com/${tierSlug}`,
@@ -70,8 +72,38 @@ export default async function TierPage({
     ? fs.existsSync(path.join(process.cwd(), "public", config.banner))
     : false;
 
+  const pageUrl = `${STORE.url}/${tierSlug}`;
+  const collectionJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: seo?.seoTitle || config.name,
+    description:
+      seo?.seoIntro ||
+      `${config.name} flower at First Nation Smoke on Eglinton West in Little Jamaica.`,
+    isPartOf: { "@type": "WebSite", url: STORE.url },
+    about: { "@id": `${STORE.url}/#cannabis-store` },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: flowers.length,
+      itemListElement: flowers.map((flower, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: flower.name,
+        url: `${STORE.url}/flower/${flower.slug}`,
+      })),
+    },
+  };
+
   return (
     <main className={styles.main}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: stringifyJsonLd(collectionJsonLd),
+        }}
+      />
       {seo?.faqs?.length ? (
         <script
           type="application/ld+json"

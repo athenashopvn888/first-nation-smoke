@@ -8,6 +8,7 @@ import { getItemData } from "../../lib/itemData";
 import { getItemPriceDisplay } from "../../lib/itemPricing";
 import Magnifier from "../../components/Magnifier";
 import styles from "../../flower/[slug]/flower.module.css";
+import { resolveDocumentTitle } from "../../lib/storeIdentity";
 
 /* -- Pre-generate all item pages -- */
 export function generateStaticParams() {
@@ -27,7 +28,7 @@ export async function generateMetadata({
   const itemData = getItemData(item.category, item.name);
 
   return {
-    title: `${item.name} | ${item.category} | First Nation Smoke Cannabis Dispensary Toronto Toronto`,
+    title: resolveDocumentTitle(`${item.name} | ${item.category}`),
     description: itemData.metaDescription,
     alternates: {
       canonical: `https://www.firstnationsmokez.com/item/${slug}`,

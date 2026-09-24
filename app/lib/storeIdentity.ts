@@ -26,6 +26,51 @@ export const STORE = {
   gbpWebsitePolicy: "https://www.firstnationsmokez.com/",
 } as const;
 
+/** Child `<title>` brand. Appears once. The longer store name stays in schema. */
+export const DOCUMENT_TITLE_BRAND = "First Nation Smoke";
+const DOCUMENT_TITLE_SUFFIX = ` | ${DOCUMENT_TITLE_BRAND}`;
+const LEGACY_TITLE_SUFFIX = " | First Nation Smoke Cannabis Dispensary Toronto";
+
+/**
+ * Root layout title template is `%s | First Nation Smoke`.
+ * A child title that already names the brand must be absolute, or the
+ * template appends the brand a second time.
+ */
+export function resolveDocumentTitle(
+  title: string,
+  options?: { absolute?: boolean },
+): string | { absolute: string } {
+  let normalized = title.replace(/\s+/g, " ").trim();
+  const suffixes = [DOCUMENT_TITLE_SUFFIX, LEGACY_TITLE_SUFFIX];
+  let stripped = true;
+  while (stripped) {
+    stripped = false;
+    for (const suffix of suffixes) {
+      if (
+        normalized.endsWith(suffix) &&
+        normalized.slice(0, -suffix.length).includes(DOCUMENT_TITLE_BRAND)
+      ) {
+        normalized = normalized.slice(0, -suffix.length).trim();
+        stripped = true;
+      }
+    }
+  }
+  if (options?.absolute || normalized.includes(DOCUMENT_TITLE_BRAND)) {
+    return { absolute: normalized };
+  }
+  return normalized;
+}
+
+/** Title text after the root template is applied. Brand appears at most once. */
+export function renderedDocumentTitle(
+  title: string,
+  options?: { absolute?: boolean },
+): string {
+  const resolved = resolveDocumentTitle(title, options);
+  if (typeof resolved === "string") return `${resolved}${DOCUMENT_TITLE_SUFFIX}`;
+  return resolved.absolute;
+}
+
 /** OpeningHoursSpecification 00:00–23:59 matches the live www site and 17 Sep 2026 FMD snapshot (Open 24 Hours). GBP Website is not edited from this site PR. */
 export const DAYS_OF_WEEK = [
   "Monday",
@@ -127,4 +172,17 @@ export function faqPageJsonLd(faqs: { q: string; a: string }[] = HOME_FAQS) {
 
 export function stringifyJsonLd(data: unknown) {
   return JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
+/**
+ * True only when this site's own hours label, hours detail, and schema
+ * all say 24 hours. Delivery 10am–10pm is a separate path and is not a
+ * store-hours contradiction. Do not invent a different schedule here.
+ */
+export function storeClaimsOpen24Hours() {
+  const spec = cannabisStoreJsonLd().openingHoursSpecification[0];
+  const labelIs24 = /open 24 hours/i.test(STORE.hoursLabel);
+  const detailIs24 = /open 24 hours/i.test(STORE.hoursDetail);
+  const schemaIs24 = spec?.opens === "00:00" && spec?.closes === "23:59";
+  return labelIs24 && detailIs24 && schemaIs24;
 }

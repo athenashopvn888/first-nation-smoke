@@ -13,6 +13,18 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/",
+        has: [{ type: "host", value: "firstnationsmokez.com" }],
+        destination: "https://www.firstnationsmokez.com",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "firstnationsmokez.com" }],
+        destination: "https://www.firstnationsmokez.com/:path*",
+        permanent: true,
+      },
+      {
         source: "/delivery",
         destination: "/weed-delivery-toronto",
         permanent: true,

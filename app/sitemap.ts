@@ -7,6 +7,7 @@ import {
 } from "./lib/products";
 import { SEO_PAGES } from "./lib/seoPages";
 import { RESOURCE_PAGES } from "./resources/resourceData";
+import { storeClaimsOpen24Hours } from "./lib/storeIdentity";
 
 const BASE = "https://www.firstnationsmokez.com";
 
@@ -34,12 +35,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.85,
     },
-    {
-      url: `${BASE}/24-hour-eglinton-west-dispensary`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.85,
-    },
+    ...(storeClaimsOpen24Hours()
+      ? [
+          {
+            url: `${BASE}/24-hour-eglinton-west-dispensary`,
+            lastModified: now,
+            changeFrequency: "weekly" as const,
+            priority: 0.85,
+          },
+        ]
+      : []),
     {
       url: `${BASE}/cannabis-delivery-eglinton-west`,
       lastModified: now,

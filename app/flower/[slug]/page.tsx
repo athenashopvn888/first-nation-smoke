@@ -8,6 +8,7 @@ import { getStrainData } from "../../lib/strainData";
 import RelatedScroll from "./RelatedScroll";
 import Magnifier from "../../components/Magnifier";
 import styles from "./flower.module.css";
+import { resolveDocumentTitle } from "../../lib/storeIdentity";
 
 /* -- Pre-generate all flower pages -- */
 export function generateStaticParams() {
@@ -28,7 +29,9 @@ export async function generateMetadata({
   const strainData = getStrainData(flower.name, flower.type, flower.tier, flower.thc);
 
   return {
-    title: `${flower.name} | ${tierName} ${flower.type === "indica" ? "Indica" : flower.type === "sativa" ? "Sativa" : "Hybrid"} | THC ${flower.thc} | First Nation Smoke Cannabis Dispensary Toronto Toronto`,
+    title: resolveDocumentTitle(
+      `${flower.name} | ${tierName} ${flower.type === "indica" ? "Indica" : flower.type === "sativa" ? "Sativa" : "Hybrid"} | THC ${flower.thc}`,
+    ),
     description: strainData.metaDescription,
     alternates: {
       canonical: `https://www.firstnationsmokez.com/flower/${slug}`,

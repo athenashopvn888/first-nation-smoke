@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import DeliveryContent from "./DeliveryContent";
 import menu from "./delivery-menu.json";
+import { resolveDocumentTitle } from "../lib/storeIdentity";
 
 export const metadata: Metadata = {
-  title: "Delivery Menu | First Nation Smoke Cannabis Dispensary Toronto",
+  title: resolveDocumentTitle("Delivery Menu"),
   description: "Browse the First Nation Smoke Cannabis Dispensary Toronto delivery product catalog and compare flower tiers and prices.",
   alternates: { canonical: "https://www.firstnationsmokez.com/delivery" },
 };

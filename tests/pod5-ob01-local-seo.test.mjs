@@ -53,7 +53,7 @@ test("homepage is the visit hub with unique Eglinton West corridor copy", () => 
   assert.match(home, /STORE\.mapEmbedUrl/);
   assert.match(home, /href="\/visit"/);
   assert.match(home, /id="contact"/);
-  assert.match(layout, /Toronto Dispensary/);
+  assert.match(layout, /First Nation Smoke \| Eglinton West \/ Little Jamaica/);
   assert.doesNotMatch(home, /Shop The Menu With A Plan/);
   assert.doesNotMatch(home, /Premium Cannabis Dispensary/);
   assert.doesNotMatch(

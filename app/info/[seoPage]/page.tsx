@@ -8,7 +8,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { SEO_PAGES, getSeoPageBySlug } from "../../lib/seoPages";
 import { TIER_CONFIG } from "../../lib/products";
-import { STORE } from "../../lib/storeIdentity";
+import { STORE, resolveDocumentTitle } from "../../lib/storeIdentity";
 import LocalSeoMesh from "../../components/LocalSeoMesh";
 import styles from "./seo.module.css";
 
@@ -28,7 +28,7 @@ export async function generateMetadata({
   if (!page) return {};
 
   return {
-    title: page.absoluteTitle ? { absolute: page.title } : page.title,
+    title: resolveDocumentTitle(page.title, page.absoluteTitle ? { absolute: true } : undefined),
     description: page.metaDescription,
     alternates: {
       canonical:
