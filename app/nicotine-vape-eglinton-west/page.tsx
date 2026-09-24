@@ -15,20 +15,20 @@ const PAGE_URL = `${STORE.url}${PATHS.nicotineVapeLp}`;
 
 const NICOTINE_FAQS = [
   {
-    q: "Where should I check nicotine vapes at First Nation Smoke on Eglinton West?",
-    a: "Use /items/vapes for the current nicotine vape category at 1504 Eglinton Ave W. This neighbourhood page explains the Little Jamaica / Fairbank shelf. It does not replace the live category listing.",
+    q: "Which list shows nicotine devices for the Little Jamaica counter?",
+    a: "Open the vape category for names currently filed at 1504 Eglinton Ave W. This Eglinton West page only places that shelf on the Fairbank frontage. It does not stand in for the category list. Nicotine is addictive.",
   },
   {
-    q: "Does this neighbourhood page guarantee stock or prices?",
-    a: "No. Names, formats, and posted prices change. This page does not invent puff counts, flavours, or a sale price. Compare the current /items/vapes cards, then ask staff or call +1 289 819 5073 before travelling for one device.",
+    q: "Does the Eglinton West nicotine note quote a price or a puff count?",
+    a: "No. The Little Jamaica note does not invent puff counts, and it does not print a flavour board or a discount. Read the vape category, then ask at the 1504 counter or call +1 289 819 5073 before you travel for one device.",
   },
   {
-    q: "Are nicotine vapes the same as the THC vape shelf?",
-    a: "No. Nicotine vapes live under /items/vapes. THC and cannabis vape products sit under /items/vape-disposables. Keep those lanes separate. Adults 19+. Nicotine is addictive.",
+    q: "How is the nicotine shelf different from cannabis vapes at this door?",
+    a: "Nicotine devices are filed on the vape category. Cannabis and THC devices are filed on the disposable vape category at /items/vape-disposables. Treat those as two errands at 1504. Adults 19+. Nicotine is addictive.",
   },
   {
-    q: "Can I look at nicotine vapes if I walk in overnight?",
-    a: "Yes, when the homepage lists Open 24 Hours. Bring photo ID. Overnight corridor notes sit on the 24-hour Eglinton West page. This URL stays the nicotine vape neighbourhood owner.",
+    q: "Can I look at nicotine devices after the subway has stopped?",
+    a: "While the homepage hours card still says Open 24 Hours, adults 19+ with photo ID can walk into 1504 on Eglinton West. Night-time approach notes are on the 24-hour Eglinton West page. This URL stays with the nicotine shelf.",
   },
 ];
 
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
     absolute: "Nicotine Vapes on Eglinton West | First Nation Smoke",
   },
   description:
-    "Nicotine vapes at First Nation Smoke, 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank. Adults 19+. Current shelf at /items/vapes. Nicotine is addictive. No stock or price promises.",
+    "Nicotine vapes at First Nation Smoke sit on a separate shelf at 1504 Eglinton Ave W, Little Jamaica on Eglinton West. Adults 19+. Nicotine is addictive. Compare the vape category before you ride the 32.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
     title: "Nicotine Vapes on Eglinton West",
     description:
-      "Neighbourhood notes for the nicotine vape shelf at 1504 Eglinton Ave W. Adults 19+. Check /items/vapes. Nicotine is addictive.",
+      "Neighbourhood note for the nicotine shelf at 1504 Eglinton Ave W in Little Jamaica. Adults 19+. Nicotine is addictive.",
     url: PAGE_URL,
   },
   robots: { index: true, follow: true },
@@ -57,7 +57,7 @@ export default function NicotineVapeEglintonWestPage() {
     name: "Nicotine Vapes on Eglinton West",
     url: PAGE_URL,
     description:
-      "Neighbourhood nicotine vape notes for First Nation Smoke at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank.",
+      "Nicotine shelf notes for First Nation Smoke at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank.",
     isPartOf: { "@id": `${STORE.url}/#cannabis-store` },
     about: { "@id": `${STORE.url}/#cannabis-store` },
     primaryImageOfPage: STORE.image,
@@ -86,19 +86,18 @@ export default function NicotineVapeEglintonWestPage() {
         </p>
         <h1 className={styles.h1}>Nicotine Vapes on Eglinton West</h1>
         <p className={styles.lede}>
-          First Nation Smoke keeps a nicotine vape lane at{" "}
-          <strong>{STORE.addressLine}</strong> on the Little Jamaica /
-          Fairbank stretch of Eglinton West. This page owns that
-          neighbourhood query. The current category is{" "}
-          <Link href={PATHS.itemsVapes}>/items/vapes</Link> — open that shelf
-          for listed names, then confirm the device at the counter. Adults
-          19+. Nicotine is addictive. Hours, phone {STORE.phoneDisplay}, and
-          the map pin stay on the{" "}
+          Nicotine devices at First Nation Smoke occupy their own shelf,
+          apart from flower, inside the Little Jamaica walk-in at{" "}
+          <strong>{STORE.addressLine}</strong>. This page is the Eglinton
+          West neighbourhood note for that shelf. Names you can actually
+          compare are on <Link href={PATHS.itemsVapes}>/items/vapes</Link>.
+          Adults 19+. Nicotine is addictive. The Open 24 Hours card and the
+          map pin stay on the{" "}
           <Link href="/#contact">homepage visit hub</Link>.
         </p>
 
         <section className={styles.nap} aria-label="Store name, address, hours, and phone">
-          <h2>Nicotine shelf at the 1504 walk-in</h2>
+          <h2>Nicotine shelf on the Fairbank side of 1504</h2>
           <p>
             <strong>{STORE.name}</strong>
             <br />
@@ -119,64 +118,58 @@ export default function NicotineVapeEglintonWestPage() {
         </section>
 
         <section>
-          <h2>Use /items/vapes — do not treat this page as a stock list</h2>
+          <h2>Read the vape category, then the Little Jamaica counter</h2>
           <p>
-            Formats, flavours, and posted prices move. This neighbourhood
-            page does not invent puff counts, a featured six-pack, or a sale
-            price. Compare the live cards on{" "}
-            <Link href={PATHS.itemsVapes}>/items/vapes</Link>, then ask staff
-            before you travel for one device. If a single listing is the only
-            reason for the trip, call{" "}
-            <a href={`tel:${STORE.phoneE164}`}>{STORE.phoneDisplay}</a>.
+            Listed nicotine devices are named on the vape category. This
+            Eglinton West note does not invent puff counts, and it does not
+            publish a flavour board or a discount for the 1504 shelf. If you
+            are riding the 32 Eglinton West bus for one device, call{" "}
+            <a href={`tel:${STORE.phoneE164}`}>{STORE.phoneDisplay}</a> and
+            ask whether that name is still on the Fairbank rack.
           </p>
           <p>
-            Keep nicotine and cannabis vape routes separate. THC vape
-            products live under{" "}
+            Cannabis vapes are a different errand, filed under{" "}
             <Link href="/items/vape-disposables">/items/vape-disposables</Link>.
-            Do not relabel one lane as the other.
+            Do not treat a nicotine device and a THC device as the same stop
+            between Oakwood and Dufferin.
           </p>
         </section>
 
         <section>
-          <h2>Near-me nicotine vapes on this corridor only</h2>
+          <h2>Little Jamaica, Fairbank, and the nearby handles</h2>
           <p>
-            If you searched nicotine vape near me around Little Jamaica,
-            Fairbank, Oakwood, or Dufferin, this is the 1504 door — not a
-            city-wide Toronto vape directory. Oakwood Village, Caledonia, and
-            Marlee are local handles for the same frontage.
+            A search that names Little Jamaica, Fairbank, Oakwood Village,
+            Caledonia, or Marlee still lands on one door: 1504 Eglinton Ave
+            W. This is the nicotine note for that frontage, not a city-wide
+            directory of devices.
           </p>
           <p>
-            Last-block TTC and parking stay on{" "}
-            <Link href={PATHS.visit}>how to reach 1504</Link>. Overnight and
-            “open now” walk-ins use the equal{" "}
+            The walk from Eglinton West Station and the curb signs are on{" "}
+            <Link href={PATHS.visit}>how to reach 1504</Link>. The open-now
+            writeup is the{" "}
             <Link href={PATHS.twentyFour}>
               24-hour / open-now Eglinton West
             </Link>{" "}
-            page. This URL does not steal that job.
+            page, which sits beside this note.
           </p>
         </section>
 
         <section>
-          <h2>Other neighbourhood lanes at the same counter</h2>
+          <h2>Other errands at the same civic number</h2>
           <p>
-            Flower tiers stay on{" "}
-            <Link href="/exotic-weed">Exotic</Link>,{" "}
-            <Link href="/premium-weed">Premium</Link>,{" "}
+            Flower comparisons use the{" "}
+            <Link href="/exotic-weed">exotic</Link>,{" "}
+            <Link href="/premium-weed">premium</Link>,{" "}
             <Link href="/aaa-weed">AAA+</Link>,{" "}
             <Link href="/aa-weed">AA</Link>, and{" "}
-            <Link href="/budget-weed">Budget</Link>. Neighbourhood{" "}
-            <Link href={PATHS.weedDispensaryLp}>
-              weed dispensary on Eglinton West
-            </Link>
-            ,{" "}
-            <Link href={PATHS.deliveryLp}>
-              cannabis delivery on Eglinton West
-            </Link>
-            , and{" "}
+            <Link href="/budget-weed">budget</Link> pages. The{" "}
+            <Link href={PATHS.weedDispensaryLp}>weed dispensary</Link> note, the{" "}
+            <Link href={PATHS.deliveryLp}>delivery</Link> note, and the{" "}
             <Link href={PATHS.nativeCigarettesLp}>
-              Native cigarettes on Eglinton West
+              Native cigarettes
             </Link>{" "}
-            have their own pages. The cigarette shelf is{" "}
+            note (a merchandise category only) are separate Eglinton West
+            URLs. Packs, when that is the errand, are on{" "}
             <Link href={PATHS.itemsCigarettes}>/items/cigarettes</Link>.
           </p>
         </section>
@@ -193,12 +186,13 @@ export default function NicotineVapeEglintonWestPage() {
           />
         </div>
         <p className={styles.mapNote}>
-          Map preview for the Eglinton West pin. The homepage remains the
-          visit hub for name, address, phone, and hours.
+          This frame shows the 1504 pin on Eglinton Avenue West through
+          Little Jamaica. Phone and the Open 24 Hours line are on the
+          homepage hub.
         </p>
 
         <section className={styles.faq}>
-          <h2>Nicotine vapes on Eglinton West — quick answers</h2>
+          <h2>Nicotine questions for the Eglinton West shelf</h2>
           {NICOTINE_FAQS.map((faq) => (
             <details key={faq.q}>
               <summary>{faq.q}</summary>

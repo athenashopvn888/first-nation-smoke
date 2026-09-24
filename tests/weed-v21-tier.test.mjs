@@ -32,7 +32,7 @@ test("tier metadata titles stay unique, name-first, and brand-free", () => {
   const titles = {
     "Exotic Weed": "Exotic Weed on Eglinton West",
     "Premium Weed": "Premium Weed in Little Jamaica",
-    "AAA+ Weed": "AAA+ Weed near Oakwood",
+    "AAA+ Weed": "AAA+ Weed on Eglinton West in Little Jamaica",
     "AA Weed": "AA Weed on Fairbank",
     "Budget Weed": "Budget Weed at 1504 Eglinton Ave W",
   };

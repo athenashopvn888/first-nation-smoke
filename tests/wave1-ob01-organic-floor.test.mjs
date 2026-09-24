@@ -94,7 +94,7 @@ test("five flower tiers have unique H1 place, title, and FAQ questions", () => {
   assert.equal(new Set(questions).size, 15, "FAQ questions must be unique across tiers");
   assert.match(tierSeo, /Exotic Weed on Eglinton West/);
   assert.match(tierSeo, /Premium Weed in Little Jamaica/);
-  assert.match(tierSeo, /AAA\+ Weed near Oakwood/);
+  assert.match(tierSeo, /AAA\+ Weed on Eglinton West in Little Jamaica/);
   assert.match(tierSeo, /AA Weed on Fairbank/);
   assert.match(tierSeo, /Budget Weed at 1504 Eglinton Ave W/);
   assert.match(tierPage, /seo\?\.h1Place/);
