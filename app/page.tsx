@@ -1,4 +1,8 @@
 "use client";
+import { HOME_TITLE } from "./lib/homeDelivery";
+import CohortDeliveryActions from "./components/CohortDeliveryActions";
+import HomeDeliverySection from "./components/HomeDeliverySection";
+import HomepageTopNotices from "./components/HomepageTopNotices";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -253,9 +257,11 @@ export default function HomePage() {
 
   return (
     <main className={styles.main}>
+      <Navbar />
+      <HomepageTopNotices />
       <FleetAnnouncementBanner />
       {/* ── NAVBAR ── */}
-      <Navbar />
+
 
       {/* ── WELCOME BANNER ── */}
       {hasWelcomeBanner && !welcomeBannerError && (
@@ -304,9 +310,8 @@ export default function HomePage() {
                 marginBottom: "8px",
               }}
             />
-            <h1 className={styles.brandTitle}>
-              FIRST NATION SMOKE CANNABIS DISPENSARY TORONTO
-            </h1>
+            <h1 className={styles.brandTitle}>{HOME_TITLE}</h1>
+            <CohortDeliveryActions variant="hero" />
             <p className={styles.brandSub}>
               Eglinton West walk-in · Little Jamaica · Fairbank
             </p>
@@ -337,6 +342,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <HomeDeliverySection />
 
       <section className={styles.hubSection} aria-label="Eglinton West neighbourhood guides">
         <div className={styles.container}>
