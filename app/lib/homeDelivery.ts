@@ -1,4 +1,4 @@
-export const HOME_TITLE = "First Nation Smoke Cannabis Dispensary Toronto - Cannabis Delivery in Eglinton West";
+export const HOME_TITLE = "First Nation Smoke Cannabis Dispensary Toronto - Weed Delivery in Eglinton West";
 export const HOME_MENU_HREF = "/exotic-weed";
 export const HOME_DELIVERY_HREF = "/delivery";
 export const HOME_DELIVERY_H2 = "Cannabis Delivery in Eglinton West";
