@@ -2,7 +2,6 @@ import { HOME_TITLE } from "./lib/homeDelivery";
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
-import AgeGate from "./components/AgeGate";
 import {
   HOME_FAQS,
   cannabisStoreJsonLd,
@@ -126,7 +125,6 @@ export default function RootLayout({
           WELCOME TO FIRST NATION SMOKE
         </div>
         {children}
-        <AgeGate />
       </body>
     </html>
   );
