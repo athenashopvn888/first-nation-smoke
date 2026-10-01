@@ -7,6 +7,7 @@ import {
 } from "./lib/products";
 import { SEO_PAGES } from "./lib/seoPages";
 import { RESOURCE_PAGES } from "./resources/resourceData";
+import { GUIDE_REGISTRY } from "./lib/guideRegistry";
 import { storeClaimsOpen24Hours } from "./lib/storeIdentity";
 
 const BASE = "https://www.firstnationsmokez.com";
@@ -132,7 +133,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: page.slug ? 0.6 : 0.7,
   }));
 
+  const guidePages: MetadataRoute.Sitemap = GUIDE_REGISTRY.map((guide) => ({
+    url: `${BASE}/guides/${guide.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.75,
+  }));
+
   return [
+    ...guidePages,
     ...staticPages,
     ...tierPages,
     ...itemPages,
