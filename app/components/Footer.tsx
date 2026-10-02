@@ -68,6 +68,7 @@ export default function Footer() {
                 Nicotine Vapes on Eglinton West
               </Link>
               <Link href="/resources">Resources</Link>
+              <Link href="/guides">Guides</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/cannabis-delivery-eglinton-west">
                 Cannabis Delivery on Eglinton West
