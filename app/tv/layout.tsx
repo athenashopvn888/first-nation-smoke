@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import TvReviewQr from "../TvReviewQr";
 
 export const metadata: Metadata = {
   title: { absolute: "First Nation Smoke In-Store Flower Display" },
@@ -11,5 +12,10 @@ export const metadata: Metadata = {
 };
 
 export default function TvLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return children;
+  return (
+    <>
+      {children}
+      <TvReviewQr storeName="First Nation Smoke Cannabis Dispensary Toronto" />
+    </>
+  );
 }
