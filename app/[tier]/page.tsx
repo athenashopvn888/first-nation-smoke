@@ -6,16 +6,15 @@ import path from "path";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FlowerCard from "../components/FlowerCard";
-import {
-  getFlowersByTier,
-  getTierFromSlug,
-  TIER_CONFIG,
-} from "../lib/products";
+import { getTierFromSlug, TIER_CONFIG } from "../lib/products";
+import { getWebMenuData } from "../lib/webMenu";
 import { TIER_SEO } from "../lib/tierSeoContent";
 import LocalSeoMesh from "../components/LocalSeoMesh";
 import { STORE, faqPageJsonLd, resolveDocumentTitle, stringifyJsonLd } from "../lib/storeIdentity";
 import styles from "./tier.module.css";
 import { getTierGuideLinks } from "../lib/guideRegistry";
+
+export const revalidate = 300;
 
 /* -- Generate all tier pages at build -- */
 export function generateStaticParams() {
@@ -31,7 +30,8 @@ export async function generateMetadata({
   const { tier: tierSlug } = await params;
   const tierInfo = getTierFromSlug(tierSlug);
   if (!tierInfo) return {};
-  const flowers = getFlowersByTier(tierInfo.key);
+  const { flowers: menuFlowers } = await getWebMenuData();
+  const flowers = menuFlowers.filter((flower) => flower.tier.toUpperCase() === tierInfo.key.toUpperCase());
   const seo = TIER_SEO[tierInfo.key];
 
   return {
@@ -61,7 +61,8 @@ export default async function TierPage({
   const tierInfo = getTierFromSlug(tierSlug);
   if (!tierInfo) notFound();
 
-  const flowers = getFlowersByTier(tierInfo.key);
+  const { flowers: menuFlowers } = await getWebMenuData();
+  const flowers = menuFlowers.filter((flower) => flower.tier.toUpperCase() === tierInfo.key.toUpperCase());
   const { config } = tierInfo;
   const guideLinks = getTierGuideLinks(`/${tierSlug}`);
   const seo = TIER_SEO[tierInfo.key];
