@@ -4,10 +4,13 @@ import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { allItems, CATEGORY_CONFIG, type ItemProduct } from "../../lib/products";
+import { getWebMenuData } from "../../lib/webMenu";
 import { getItemData } from "../../lib/itemData";
 import { getItemPriceDisplay } from "../../lib/itemPricing";
 import Magnifier from "../../components/Magnifier";
 import styles from "../../flower/[slug]/flower.module.css";
+
+export const revalidate = 300;
 import { resolveDocumentTitle } from "../../lib/storeIdentity";
 
 /* -- Pre-generate all item pages -- */
@@ -22,7 +25,8 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const item = allItems.find((i) => i.slug === slug);
+  const { items } = await getWebMenuData();
+  const item = items.find((i) => i.slug === slug);
   if (!item) return {};
 
   const itemData = getItemData(item.category, item.name);
@@ -54,7 +58,7 @@ function getJsonLd(item: ItemProduct) {
   const itemData = getItemData(item.category, item.name);
   const priceNum = item.price ? parseFloat(item.price.replace('$', '')) : 0;
 
-  const offers: any = {
+  const offers: Record<string, unknown> = {
     "@type": "Offer",
     url: `https://www.firstnationsmokez.com/item/${item.slug}`,
     priceCurrency: "CAD",
@@ -119,7 +123,8 @@ export default async function ItemPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const item = allItems.find((i) => i.slug === slug);
+  const { items } = await getWebMenuData();
+  const item = items.find((i) => i.slug === slug);
   if (!item) notFound();
 
   const catInfo = Object.values(CATEGORY_CONFIG).find(c => c.name.toUpperCase() === item.category.toUpperCase() || c.name === item.category);
