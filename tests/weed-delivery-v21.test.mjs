@@ -36,11 +36,14 @@ test("navigation, footer, announcement, and sitemap promote the neighbourhood ow
   assert.doesNotMatch(`${navbar}\n${footer}\n${layout}`, /href="\/delivery"/);
 });
 
+test("no public delivery text number is listed", () => {
+  assert.ok(!content.includes("523-9104") && !content.includes("5239104") && !content.includes("DELIVERY TEXT NUMBER"));
+});
+
 test("delivery mechanics and protected facts remain present", () => {
   for (const required of [
     "FirstNationSmokeWebChat",
     "$60 PRODUCT MINIMUM",
-    "+1 (437) 523-9104",
     "1504 Eglinton Ave W",
     "+1 289 819 5073",
     "confirms current availability and delivery details before an order is accepted",

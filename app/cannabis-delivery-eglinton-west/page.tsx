@@ -24,7 +24,7 @@ const DELIVERY_FAQS = [
   },
   {
     q: "What should I confirm before a Little Jamaica / Fairbank delivery?",
-    a: "Confirm you are ordering for this corridor, that you are 19+ with photo ID, and that the dispatcher has accepted the order. The live catalog lists a $60 product minimum and the delivery text number +1 (437) 523-9104. Names and posted prices on the catalog can change.",
+    a: "Confirm you are ordering for this corridor, that you are 19+ with photo ID, and that the dispatcher has accepted the order. The live catalog lists a $60 product minimum. Names and posted prices on the catalog can change.",
   },
   {
     q: "Can I still walk in 24 hours if I do not want delivery?",
@@ -139,8 +139,7 @@ export default function CannabisDeliveryEglintonWestPage() {
             Open the{" "}
             <Link href={PATHS.deliveryCatalog}>current delivery catalog</Link>{" "}
             to note product names and weights. The catalog lists a{" "}
-            <strong>$60 product minimum</strong> and the delivery text number{" "}
-            <a href="sms:+14375239104">+1 (437) 523-9104</a>. The site
+            <strong>$60 product minimum</strong>. The site
             announcement lists delivery hours as 10am–10pm — that window is
             separate from the 24-hour walk-in.
           </p>
