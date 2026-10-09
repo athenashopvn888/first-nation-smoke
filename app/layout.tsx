@@ -1,4 +1,4 @@
-import { HOME_TITLE } from "./lib/homeDelivery";
+import { HOME_DOC_TITLE } from "./lib/homeDelivery";
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.firstnationsmokez.com"),
   title: {
-    default: HOME_TITLE,
+    default: HOME_DOC_TITLE,
     // Child titles that already include the brand must use resolveDocumentTitle()
     // so this template does not append "First Nation Smoke" a second time.
     template: "%s | First Nation Smoke",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "https://www.firstnationsmokez.com",
     siteName: "First Nation Smoke Cannabis Dispensary Toronto",
-    title: HOME_TITLE,
+    title: HOME_DOC_TITLE,
     description:
       "Adult 19+ walk-in at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank. Open 24 Hours.",
     images: [
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: HOME_TITLE,
+    title: HOME_DOC_TITLE,
     description:
       "Adult 19+ walk-in at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank. Open 24 Hours.",
     images: [

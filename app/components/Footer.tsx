@@ -70,6 +70,7 @@ export default function Footer() {
               <Link href="/resources">Resources</Link>
               <Link href="/guides">Guides</Link>
               <Link href="/faq">FAQ</Link>
+              <Link href="/hours">Store Hours</Link>
               <Link href="/cannabis-delivery-eglinton-west">
                 Cannabis Delivery on Eglinton West
               </Link>
