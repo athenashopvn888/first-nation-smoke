@@ -18,7 +18,7 @@ import styles from "./items.module.css";
 import { getCategoryGuideGroups } from "../../lib/guideRegistry";
 import { resolveDocumentTitle } from "../../lib/storeIdentity";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 /* ── Generate all category pages ── */
 export function generateStaticParams() {
