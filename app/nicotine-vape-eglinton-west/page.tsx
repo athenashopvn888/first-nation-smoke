@@ -10,6 +10,7 @@ import {
   stringifyJsonLd,
 } from "../lib/storeIdentity";
 import styles from "../visit/visit.module.css";
+import VapeActionPanel from "../components/VapeActionPanel";
 
 const PAGE_URL = `${STORE.url}${PATHS.nicotineVapeLp}`;
 
@@ -95,6 +96,8 @@ export default function NicotineVapeEglintonWestPage() {
           map pin stay on the{" "}
           <Link href="/#contact">homepage visit hub</Link>.
         </p>
+
+        <VapeActionPanel compact />
 
         <section className={styles.nap} aria-label="Store name, address, hours, and phone">
           <h2>Nicotine shelf on the Fairbank side of 1504</h2>
