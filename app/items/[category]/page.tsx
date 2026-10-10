@@ -17,6 +17,7 @@ import { getWebMenuData } from "../../lib/webMenu";
 import styles from "./items.module.css";
 import { getCategoryGuideGroups } from "../../lib/guideRegistry";
 import { resolveDocumentTitle } from "../../lib/storeIdentity";
+import VapeActionPanel from "../../components/VapeActionPanel";
 
 export const dynamic = "force-dynamic";
 
@@ -101,6 +102,8 @@ export default async function ItemsCategoryPage({
           </div>
         )}
       </section>
+
+      {(catSlug === "vapes" || catSlug === "vape-disposables") && <VapeActionPanel compact />}
 
       {guideGroups.length > 0 && (
         <nav className={styles.guideStrip} aria-label={`${config.name} guides`}>
