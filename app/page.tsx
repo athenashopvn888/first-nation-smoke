@@ -17,6 +17,7 @@ import LocalSeoMesh, {
   TWENTY_FOUR_HOUR_HREF,
 } from "./components/LocalSeoMesh";
 import { useLiveFlowers } from "./lib/useLiveMenu";
+import { storeTierRange, tierRangeText } from "./lib/tierPriceRanges";
 
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
@@ -63,6 +64,19 @@ const BENTO_TIERS = [
     className: styles.bentoEdibles,
   },
 ];
+
+const TIER_KEY_BY_SLUG: Record<string, string> = {
+  exotic: "EXOTIC",
+  "exotic-weed": "EXOTIC",
+  premium: "PREMIUM",
+  "premium-weed": "PREMIUM",
+  aaa: "AAA+",
+  "aaa-weed": "AAA+",
+  aa: "AA",
+  "aa-weed": "AA",
+  budget: "BUDGET",
+  "budget-weed": "BUDGET",
+};
 
 /* ── Explore Categories Config (New Banners) ── */
 const EXPLORE_CATEGORIES = [
@@ -322,6 +336,7 @@ export default function HomePage() {
           </div>
 
           {/* Bento Grid */}
+          <p className="price-rule-notice"><strong>IN-STORE PRICES ONLY.</strong> These prices do not apply to delivery orders. Delivery has its own prices. Why? <Link href="/faq#delivery-price-rule">See the FAQ</Link></p>
           <div className={styles.bentoGrid}>
             {BENTO_TIERS.map((tier) => (
               <Link
@@ -336,7 +351,7 @@ export default function HomePage() {
                 <div className={styles.bentoTileOverlay} />
                 <div className={styles.bentoTileContent}>
                   <span className={styles.bentoLabel}>{tier.name}</span>
-                  <span className={styles.bentoPrice}>{tier.price}</span>
+                  {TIER_KEY_BY_SLUG[tier.slug] ? (() => { const line = tierRangeText(storeTierRange(__liveFlowers, TIER_KEY_BY_SLUG[tier.slug])); return line ? <span className={styles.bentoPrice}><small className="price-scope-label">In-store price</small>{line}</span> : null; })() : <span className={styles.bentoPrice}>{tier.price}</span>}
                 </div>
               </Link>
             ))}
