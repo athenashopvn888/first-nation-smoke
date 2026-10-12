@@ -4,6 +4,7 @@ import Link from "next/link";
 import fs from "fs";
 import path from "path";
 import Navbar from "../components/Navbar";
+import { isReplacementCategory, resolveTierBanner } from "../lib/corePromotionBanners";
 import Footer from "../components/Footer";
 import FlowerCard from "../components/FlowerCard";
 import { storeTierRange, tierRangeText } from "../lib/tierPriceRanges";
@@ -71,6 +72,7 @@ export default async function TierPage({
   const { flowers: menuFlowers } = await getWebMenuData();
   const flowers = menuFlowers.filter((flower) => flower.tier.toUpperCase() === tierInfo.key.toUpperCase());
   const { config } = tierInfo;
+  const categoryBanner = resolveTierBanner(tierSlug, config.banner);
   const guideLinks = getTierGuideLinks(`/${tierSlug}`);
   const seo = TIER_SEO[tierInfo.key];
 
@@ -80,8 +82,8 @@ export default async function TierPage({
   const hotFlowers = flowers.filter((f) => f.isHot);
 
   // Check if banner file exists in the public folder
-  const bannerExists = config.banner
-    ? fs.existsSync(path.join(process.cwd(), "public", config.banner))
+  const bannerExists = categoryBanner
+    ? fs.existsSync(path.join(process.cwd(), "public", categoryBanner))
     : false;
 
   const pageUrl = `${STORE.url}/${tierSlug}`;
@@ -128,9 +130,9 @@ export default async function TierPage({
 
       {/* ── Banner Image (standalone, no overlay text) ── */}
       {bannerExists && (
-        <section className={styles.bannerSection}>
+        <section className={styles.bannerSection} data-category-banner-replacement={isReplacementCategory(tierSlug) ? "true" : undefined}>
           <img
-            src={config.banner}
+          src={categoryBanner}
             alt={`${config.name} Cannabis Flower — ${config.tagline}`}
             className={styles.bannerImg}
           />
