@@ -273,6 +273,7 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
   return (
     <main className={styles.main}>
       <Navbar />
+      <h1 data-home-store-title="" style={{ margin: 0, padding: "14px 16px", background: "#111827", color: "#ffffff", textAlign: "center", fontSize: "clamp(1.1rem, 3vw, 2rem)", fontWeight: 900, lineHeight: 1.2, position: "relative", zIndex: 60 }}>{HOME_TITLE}</h1>
       <HomepageTopNotices />
       <FleetAnnouncementBanner />
       {/* ── NAVBAR ── */}
@@ -325,7 +326,6 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
                 marginBottom: "8px",
               }}
             />
-            <h1 className={styles.brandTitle}>{HOME_TITLE}</h1>
             <CohortDeliveryActions variant="hero" />
             <p className={styles.brandSub}>
               Eglinton West walk-in · Little Jamaica · Fairbank
