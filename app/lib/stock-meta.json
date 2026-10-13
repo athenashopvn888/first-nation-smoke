@@ -1,4 +1,5 @@
 {
-  "stockDate": "2026-10-12T16:07:46.000Z",
-  "fetchedAt": "2026-10-12T23:59:39.788Z"
+  "stockDate": "",
+  "fetchedAt": "",
+  "note": "Written by scripts/prebuild-stock.js on each successful build-time feed fetch."
 }
