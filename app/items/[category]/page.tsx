@@ -4,7 +4,6 @@ import fs from "fs";
 import path from "path";
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
-import { resolveItemBanner } from "../../lib/corePromotionBanners";
 import Footer from "../../components/Footer";
 import LocalSeoMesh from "../../components/LocalSeoMesh";
 import SafeImage from "../../components/SafeImage";
@@ -69,12 +68,11 @@ export default async function ItemsCategoryPage({
     items = [...items, ...uniqueAccessories];
   }
   const { config } = catInfo;
-  const categoryBanner = resolveItemBanner(catSlug, config.banner);
   const guideGroups = getCategoryGuideGroups(`/items/${catSlug}`);
 
   // Check if banner file exists in the public folder
-  const bannerExists = categoryBanner
-    ? fs.existsSync(path.join(process.cwd(), "public", categoryBanner))
+  const bannerExists = config.banner
+    ? fs.existsSync(path.join(process.cwd(), "public", config.banner))
     : false;
 
   return (
@@ -86,7 +84,7 @@ export default async function ItemsCategoryPage({
         {config.banner && bannerExists ? (
           <>
             <img
-              src={categoryBanner}
+              src={config.banner}
               alt={config.name}
               style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
             />
