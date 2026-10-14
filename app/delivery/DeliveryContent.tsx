@@ -10,6 +10,8 @@ import menu from "./delivery-menu.json";
 import styles from "./delivery.module.css";
 import { deliveryTierRanges, tierRangeText } from "../lib/tierPriceRanges";
 import FirstNationSmokeWebChat from "./FirstNationSmokeWebChat";
+import NearMeFaq from "../components/NearMeFaq";
+import nearMeFaq from "../lib/nearMeFaq.json";
 
 type Tier = "SHREDS" | "Budget" | "BC Premium" | "CRAFTS" | "Exotics";
 type PriceOption = { key: string; label: string; price: number };
@@ -161,6 +163,7 @@ export default function DeliveryContent() {
     <div className={styles.ctaSection}><LocalSeoMesh currentPath="/weed-delivery-toronto" tone="light" /></div>
     {selected && <div className={styles.backdrop} onMouseDown={(event) => { if (event.target === event.currentTarget) setSelected(null); }}><section className={styles.drawer} role="dialog" aria-modal="true" aria-labelledby="product-title"><header><strong>Product details</strong><button type="button" onClick={() => setSelected(null)} aria-label="Close product details">×</button></header><div className={styles.drawerContent}>{selected.images.map((src, index) => <div className={styles.drawerImage} key={src}><Image src={src} alt={`${selected.name}${index ? ` alternate ${index + 1}` : ""}`} fill sizes="(max-width: 720px) 100vw, 420px" unoptimized /></div>)}<h2 id="product-title">{selected.name}</h2><p>{selected.description || "Ask the store for current product details."}</p>{selected.effects.length > 0 && <div className={styles.effects}>{selected.effects.map((effect) => <span key={effect}>{effect}</span>)}</div>}<ProductPricing product={selected} /></div></section></div>}
     <FirstNationSmokeWebChat />
+    <NearMeFaq id="delivery-near-me" q={nearMeFaq.delivery!.q} a={nearMeFaq.delivery!.a} />
     <Footer />
   </main>;
 }

@@ -85,6 +85,10 @@ export const DAYS_OF_WEEK = [
 /** Visible homepage FAQs — also emitted as FAQPage JSON-LD. Location/hours/products only. */
 export const HOME_FAQS: { q: string; a: string }[] = [
   {
+    q: "Searching for a weed store near me on Eglinton West?",
+    a: "First Nation Smoke is at 1504 Eglinton Ave W, Toronto, on Eglinton West through Little Jamaica and Fairbank. We're open 24 hours, adults 19+ with valid photo ID.",
+  },
+  {
     q: "Where is First Nation Smoke on Eglinton Avenue West?",
     a: "First Nation Smoke is at 1504 Eglinton Ave W, Toronto, ON M6E 2G5, on the Eglinton West stretch through Little Jamaica and Fairbank, near Dufferin Street and Oakwood Avenue. Call +1 289 819 5073 if the last block is unclear.",
   },
