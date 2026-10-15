@@ -2,6 +2,7 @@ import { HOME_DOC_TITLE } from "./lib/homeDelivery";
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
+import PinnedNavClearance from "./components/PinnedNavClearance";
 import {
   HOME_FAQS,
   cannabisStoreJsonLd,
@@ -125,6 +126,7 @@ export default function RootLayout({
           WELCOME TO FIRST NATION SMOKE
         </div>
         {children}
+        <PinnedNavClearance />
       </body>
     </html>
   );

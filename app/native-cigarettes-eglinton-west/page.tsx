@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
+import CigaretteSeasonalNotice from "../components/CigaretteSeasonalNotice";
 import Footer from "../components/Footer";
 import LocalSeoMesh from "../components/LocalSeoMesh";
 import { PATHS } from "../lib/organicPaths";
@@ -78,6 +79,7 @@ export default function NativeCigarettesEglintonWestPage() {
         }}
       />
       <Navbar />
+      <CigaretteSeasonalNotice sticky />
 
       <article className={styles.article}>
         <p className={styles.eyebrow}>
