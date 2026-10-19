@@ -27,4 +27,4 @@ export const HOME_DELIVERY_FAQS = [
 ] as const;
 
 // Document <title> only (exact Google name | area). H1 keeps HOME_TITLE.
-export const HOME_DOC_TITLE = "First Nation Smoke Cannabis Dispensary Toronto | Weed Delivery in Eglinton West";
+export const HOME_DOC_TITLE = "First Nation Smoke Cannabis Dispensary Weed Delivery | Toronto, Eglinton West";
