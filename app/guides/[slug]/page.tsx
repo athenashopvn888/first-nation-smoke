@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import { DELIVERY_GUIDE_REGISTRY, getDeliveryGuide } from "../../lib/deliveryGuideRegistry";
 import { GUIDE_REGISTRY, GUIDE_STORE, getGuide, resolveGuideProduct, type GuideEntry } from "../../lib/guideRegistry";
+import { SHOW_CIGARETTES, VAPE_PAGE_PATH, isExemptGuideSlug } from "../../lib/showCigarettes";
 import GuideBody, { stripMarkdown } from "./GuideBody";
 import DeliveryGuidePage from "./DeliveryGuidePage";
 import styles from "./guide.module.css";
@@ -24,9 +25,12 @@ export function generateStaticParams() { return [...GUIDE_REGISTRY, ...DELIVERY_
 export async function generateMetadata({ params }: GuidePageProps): Promise<Metadata> {
   const slug = (await params).slug;
   const deliveryGuide = getDeliveryGuide(slug);
-  if (deliveryGuide) return { title: { absolute: deliveryGuide.title }, description: deliveryGuide.description, alternates: { canonical: `${BASE}/guides/${deliveryGuide.slug}` }, robots: { index: true, follow: true }, openGraph: { title: deliveryGuide.title, description: deliveryGuide.description, url: `${BASE}/guides/${deliveryGuide.slug}`, type: "website" } };
+  if (deliveryGuide) {
+    if (hideCigaretteGuide(deliveryGuide.lane, deliveryGuide.slug)) return {};
+    return { title: { absolute: deliveryGuide.title }, description: deliveryGuide.description, alternates: { canonical: `${BASE}/guides/${deliveryGuide.slug}` }, robots: { index: true, follow: true }, openGraph: { title: deliveryGuide.title, description: deliveryGuide.description, url: `${BASE}/guides/${deliveryGuide.slug}`, type: "website" } };
+  }
   const guide = getGuide(slug);
-  if (!guide) return {};
+  if (!guide || hideCigaretteGuide(guide.lane, guide.slug)) return {};
   const description = stripMarkdown(guide.description);
   return {
     title: { absolute: guide.title },
@@ -38,13 +42,21 @@ export async function generateMetadata({ params }: GuidePageProps): Promise<Meta
   };
 }
 
-const relatedEntries = (guide: GuideEntry) => guide.relatedSlugs.map(getGuide).filter((entry): entry is GuideEntry => Boolean(entry));
+const relatedEntries = (guide: GuideEntry) => guide.relatedSlugs.map(getGuide).filter((entry): entry is GuideEntry => Boolean(entry)).filter((entry) => SHOW_CIGARETTES || entry.lane !== "native_cig" || isExemptGuideSlug(entry.slug));
+
+function hideCigaretteGuide(lane: string, slug: string) {
+  return !SHOW_CIGARETTES && lane === "native_cig" && !isExemptGuideSlug(slug);
+}
 
 export default async function GuidePage({ params }: GuidePageProps) {
   const slug = (await params).slug;
   const deliveryGuide = getDeliveryGuide(slug);
-  if (deliveryGuide) return <DeliveryGuidePage guide={deliveryGuide} />;
+  if (deliveryGuide) {
+    if (hideCigaretteGuide(deliveryGuide.lane, deliveryGuide.slug)) redirect(VAPE_PAGE_PATH);
+    return <DeliveryGuidePage guide={deliveryGuide} />;
+  }
   const guide = getGuide(slug);
+  if (guide && hideCigaretteGuide(guide.lane, guide.slug)) redirect(VAPE_PAGE_PATH);
   if (!guide) notFound();
   const product = resolveGuideProduct(guide);
   const productHref = product ? `${guide.lane === "strain" ? "/flower" : "/item"}/${product.slug}` : undefined;

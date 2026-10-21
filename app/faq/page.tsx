@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { SHOW_CIGARETTES, publicFaqs } from "../lib/showCigarettes";
 import styles from "./faq.module.css";
 
 export const metadata: Metadata = {
@@ -62,11 +63,19 @@ const FAQ_CATEGORIES = [
   },
 ];
 
+function visibleFaqCategories() {
+  if (SHOW_CIGARETTES) return FAQ_CATEGORIES;
+  return FAQ_CATEGORIES
+    .filter((cat) => !/cigarette|native smoke/i.test(cat.title))
+    .map((cat) => ({ ...cat, faqs: publicFaqs(cat.faqs) }));
+}
+
 export default function FAQPage() {
+  const categories = visibleFaqCategories();
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: FAQ_CATEGORIES.flatMap((cat) =>
+    mainEntity: categories.flatMap((cat) =>
       cat.faqs.map((faq) => ({
         "@type": "Question",
         name: faq.q,
@@ -92,7 +101,7 @@ export default function FAQPage() {
             Straight answers for an Eglinton West visit: homepage hub first, /visit for the last block, menu category second, staff when a current detail matters.
           </p>
 
-          {FAQ_CATEGORIES.map((cat) => (
+          {categories.map((cat) => (
             <div key={cat.title} className={styles.category}>
               <h2 className={styles.categoryTitle}>{cat.title}</h2>
               {cat.faqs.map((faq) => (

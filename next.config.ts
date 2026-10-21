@@ -1,4 +1,31 @@
 import type { NextConfig } from "next";
+import { cigaretteRedirectSources, VAPE_PAGE_PATH } from "./app/lib/cigaretteRedirects";
+import { SHOW_CIGARETTES } from "./app/lib/showCigarettes";
+
+/** Original cigarette aliases. While cigarettes are hidden, these are replaced by temporary 302s to the vape page. */
+const legacyCigaretteRedirects = [
+  {
+    source: "/info/native-cigarettes-york",
+    destination: "/native-cigarettes-eglinton-west",
+    permanent: true,
+  },
+  {
+    source: "/info/native-cigarettes-toronto",
+    destination: "/native-cigarettes-eglinton-west",
+    permanent: true,
+  },
+  {
+    source: "/cigarettes",
+    destination: "/items/cigarettes",
+    permanent: true,
+  },
+];
+
+const hiddenCigaretteRedirects = cigaretteRedirectSources().map((source) => ({
+  source,
+  destination: VAPE_PAGE_PATH,
+  statusCode: 302 as const,
+}));
 
 const nextConfig: NextConfig = {
   images: {
@@ -45,16 +72,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/info/native-cigarettes-york",
-        destination: "/native-cigarettes-eglinton-west",
-        permanent: true,
-      },
-      {
-        source: "/info/native-cigarettes-toronto",
-        destination: "/native-cigarettes-eglinton-west",
-        permanent: true,
-      },
-      {
         source: "/info/weed-store-near-brampton",
         destination: "/info/weed-store-near-little-jamaica-fairbank",
         permanent: true,
@@ -85,12 +102,8 @@ const nextConfig: NextConfig = {
       },
       { source: "/prerolls", destination: "/items/prerolls", permanent: true },
       { source: "/add-ons", destination: "/items/add-ons", permanent: true },
-      {
-        source: "/cigarettes",
-        destination: "/items/cigarettes",
-        permanent: true,
-      },
       { source: "/magic", destination: "/items/magic", permanent: true },
+      ...(SHOW_CIGARETTES ? legacyCigaretteRedirects : hiddenCigaretteRedirects),
     ];
   },
 };

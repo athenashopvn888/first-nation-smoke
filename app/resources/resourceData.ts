@@ -1,3 +1,5 @@
+import { SHOW_CIGARETTES, isCigaretteResourceSlug, publicText } from "../lib/showCigarettes";
+
 export interface ResourceCard {
   title: string;
   href: string;
@@ -418,4 +420,21 @@ export const RESOURCE_HOME = RESOURCE_PAGES[0];
 export function getResourcePage(slug: string) {
   const cleanSlug = slug.replace(/^\/+|\/+$/g, "");
   return RESOURCE_PAGES.find((page) => page.slug === cleanSlug);
+}
+
+const CIGARETTE_RESOURCE_HREF = /\/items\/cigarettes|native-smokes|native-cigarettes/;
+
+export function presentResource(page: ResourcePage): ResourcePage {
+  if (SHOW_CIGARETTES || isCigaretteResourceSlug(page.slug)) return page;
+  return {
+    ...page,
+    description: publicText(page.description),
+    intro: publicText(page.intro),
+    cards: page.cards
+      .filter((card) => !CIGARETTE_RESOURCE_HREF.test(card.href))
+      .map((card) => ({ ...card, text: publicText(card.text) })),
+    sections: page.sections
+      .filter((section) => !/cigarette|native smoke/i.test(section.heading))
+      .map((section) => ({ ...section, body: publicText(section.body) })),
+  };
 }

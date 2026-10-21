@@ -11,6 +11,7 @@ import {
 } from "../lib/storeIdentity";
 import styles from "../visit/visit.module.css";
 import VapeActionPanel from "../components/VapeActionPanel";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 
 const PAGE_URL = `${STORE.url}${PATHS.nicotineVapeLp}`;
 
@@ -166,14 +167,23 @@ export default function NicotineVapeEglintonWestPage() {
             <Link href="/aaa-weed">AAA+</Link>,{" "}
             <Link href="/aa-weed">AA</Link>, and{" "}
             <Link href="/budget-weed">budget</Link> pages. The{" "}
-            <Link href={PATHS.weedDispensaryLp}>weed dispensary</Link> note, the{" "}
-            <Link href={PATHS.deliveryLp}>delivery</Link> note, and the{" "}
-            <Link href={PATHS.nativeCigarettesLp}>
-              Native cigarettes
-            </Link>{" "}
-            note (a merchandise category only) are separate Eglinton West
-            URLs. Packs, when that is the errand, are on{" "}
-            <Link href={PATHS.itemsCigarettes}>/items/cigarettes</Link>.
+            <Link href={PATHS.weedDispensaryLp}>weed dispensary</Link>
+            {SHOW_CIGARETTES ? (
+              <>
+                {" "}note, the{" "}
+                <Link href={PATHS.deliveryLp}>delivery</Link> note, and the{" "}
+                <Link href={PATHS.nativeCigarettesLp}>
+                  Native cigarettes
+                </Link>{" "}
+                note (a merchandise category only) are separate Eglinton West
+                URLs. Packs, when that is the errand, are on{" "}
+                <Link href={PATHS.itemsCigarettes}>/items/cigarettes</Link>.
+              </>
+            ) : (
+              <>
+                {" "}note and the <Link href={PATHS.deliveryLp}>delivery</Link> note are separate Eglinton West URLs.
+              </>
+            )}
           </p>
         </section>
 

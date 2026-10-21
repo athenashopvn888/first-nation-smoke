@@ -10,6 +10,7 @@ import {
   stringifyJsonLd,
 } from "../lib/storeIdentity";
 import styles from "../visit/visit.module.css";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 
 const PAGE_URL = `${STORE.url}${PATHS.deliveryLp}`;
 
@@ -174,11 +175,13 @@ export default function CannabisDeliveryEglintonWestPage() {
             <Link href={PATHS.weedDispensaryLp}>
               weed dispensary on Eglinton West
             </Link>
-            , listed{" "}
+            {SHOW_CIGARETTES ? ", listed " : " and "}
+            {SHOW_CIGARETTES && (
             <Link href={PATHS.nativeCigarettesLp}>
               Native cigarettes on Eglinton West
             </Link>
-            , and{" "}
+            )}
+            {SHOW_CIGARETTES ? ", and " : ""}
             <Link href={PATHS.nicotineVapeLp}>
               nicotine vapes on Eglinton West
             </Link>{" "}

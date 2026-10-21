@@ -10,6 +10,7 @@ import {
   stringifyJsonLd,
 } from "../lib/storeIdentity";
 import styles from "../visit/visit.module.css";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 
 const PAGE_URL = `${STORE.url}${PATHS.weedDispensaryLp}`;
 
@@ -164,19 +165,26 @@ export default function WeedDispensaryEglintonWestPage() {
         </section>
 
         <section>
-          <h2>Same counter as delivery, cigarettes, and nicotine vapes</h2>
+          <h2>Same counter as delivery{SHOW_CIGARETTES ? ", cigarettes," : ""} and nicotine vapes</h2>
           <p>
             This is the walk-in weed dispensary owner for the corridor.
             Neighbourhood{" "}
             <Link href={PATHS.deliveryLp}>
               cannabis delivery on Eglinton West
             </Link>
-            ,{" "}
+            {SHOW_CIGARETTES ? ", " : " and "}
+            {SHOW_CIGARETTES && (
             <Link href={PATHS.nativeCigarettesLp}>
               Native cigarettes on Eglinton West
-            </Link>{" "}
+            </Link>
+            )}
+            {SHOW_CIGARETTES ? (
+            <>
+            {" "}
             (merchandise category only; shelf at{" "}
             <Link href={PATHS.itemsCigarettes}>/items/cigarettes</Link>), and{" "}
+            </>
+            ) : null}
             <Link href={PATHS.nicotineVapeLp}>
               nicotine vapes on Eglinton West
             </Link>{" "}

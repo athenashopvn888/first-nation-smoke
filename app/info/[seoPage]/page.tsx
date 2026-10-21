@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 import fs from "fs";
 import path from "path";
@@ -7,6 +7,8 @@ import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { SEO_PAGES, getSeoPageBySlug } from "../../lib/seoPages";
+import { presentSeoPage } from "../../lib/presentSeoPage";
+import { SHOW_CIGARETTES, VAPE_PAGE_PATH } from "../../lib/showCigarettes";
 import { TIER_CONFIG } from "../../lib/products";
 import { STORE, resolveDocumentTitle } from "../../lib/storeIdentity";
 import LocalSeoMesh from "../../components/LocalSeoMesh";
@@ -24,8 +26,10 @@ export async function generateMetadata({
   params: Promise<{ seoPage: string }>;
 }): Promise<Metadata> {
   const { seoPage: slug } = await params;
-  const page = getSeoPageBySlug(slug);
-  if (!page) return {};
+  const found = getSeoPageBySlug(slug);
+  if (!found) return {};
+  if (!SHOW_CIGARETTES && found.slug === "native-cigarettes-toronto") return { robots: { index: false, follow: false } };
+  const page = presentSeoPage(found);
 
   return {
     title: resolveDocumentTitle(page.title, page.absoluteTitle ? { absolute: true } : undefined),
@@ -45,8 +49,10 @@ export default async function SeoLandingPage({
   params: Promise<{ seoPage: string }>;
 }) {
   const { seoPage: slug } = await params;
-  const page = getSeoPageBySlug(slug);
-  if (!page) notFound();
+  const found = getSeoPageBySlug(slug);
+  if (!found) notFound();
+  if (!SHOW_CIGARETTES && found.slug === "native-cigarettes-toronto") redirect(VAPE_PAGE_PATH);
+  const page = presentSeoPage(found);
 
   const tiers = Object.values(TIER_CONFIG);
   const heroPreview = page.heroPreview;
