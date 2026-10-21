@@ -1,3 +1,5 @@
+import { SHOW_CIGARETTES } from "./showCigarettes";
+
 const TOP_TIER_IMAGE = "/banners/core-top-weed.webp";
 const VAPE_IMAGE = "/banners/core-vapes-nicotine-thc.webp";
 const CIGARETTE_IMAGE = "/banners/core-cigarette-mix-match.webp";
@@ -11,7 +13,7 @@ export function resolveTierBanner(slug: string, fallback?: string) {
 
 export function resolveItemBanner(slug: string, fallback?: string) {
   if (VAPE_SLUGS.has(slug)) return VAPE_IMAGE;
-  if (slug === "cigarettes") return CIGARETTE_IMAGE;
+  if (slug === "cigarettes") return SHOW_CIGARETTES ? CIGARETTE_IMAGE : (fallback || "");
   return fallback || "";
 }
 

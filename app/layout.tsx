@@ -10,6 +10,7 @@ import {
   faqPageJsonLd,
   stringifyJsonLd,
 } from "./lib/storeIdentity";
+import { SHOW_CIGARETTES, publicFaqs } from "./lib/showCigarettes";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.firstnationsmokez.com"),
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     "Oakwood Eglinton walk-in",
     "Dufferin Eglinton dispensary",
     "Toronto Dispensary",
-    "native cigarettes Toronto",
+    ...(SHOW_CIGARETTES ? ["native cigarettes Toronto"] : []),
   ],
   openGraph: {
     type: "website",
@@ -101,7 +102,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: stringifyJsonLd(faqPageJsonLd(HOME_FAQS)),
+            __html: stringifyJsonLd(SHOW_CIGARETTES ? faqPageJsonLd(HOME_FAQS) : faqPageJsonLd(publicFaqs(HOME_FAQS))),
           }}
         />
         <script

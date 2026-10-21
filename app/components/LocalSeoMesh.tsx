@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { TIER_CONFIG } from "../lib/products";
 import { PATHS, TWENTY_FOUR_HOUR_HREF } from "../lib/organicPaths";
+import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 import styles from "./LocalSeoMesh.module.css";
 
 export { TWENTY_FOUR_HOUR_HREF };
@@ -12,7 +13,7 @@ const HUB_LINKS = [
   { href: PATHS.visit, label: "How to reach 1504" },
   { href: PATHS.twentyFour, label: "Open now / 24-hour Eglinton West" },
   { href: PATHS.deliveryLp, label: "Cannabis delivery on Eglinton West" },
-  { href: PATHS.nativeCigarettesLp, label: "Native cigarettes on Eglinton West" },
+  ...(SHOW_CIGARETTES ? [{ href: PATHS.nativeCigarettesLp, label: "Native cigarettes on Eglinton West" }] : []),
   { href: PATHS.nicotineVapeLp, label: "Nicotine vapes on Eglinton West" },
   { href: PATHS.weedDispensaryLp, label: "Weed dispensary on Eglinton West" },
 ] as const;

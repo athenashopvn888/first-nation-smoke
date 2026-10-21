@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { allFlowers, allItems } from "../../lib/products";
+import { SHOW_CIGARETTES, isHiddenCigaretteItem } from "../../lib/showCigarettes";
 import { getTvData } from "../../lib/tvStock";
 
 export const runtime = "nodejs";
@@ -15,6 +16,9 @@ export async function GET(request: Request) {
     staticFlowers: allFlowers,
     staticItems: allItems,
   });
+  const payload = type === "items" && !SHOW_CIGARETTES && Array.isArray(body)
+    ? body.filter((item) => !isHiddenCigaretteItem(item as { name?: string; slug?: string; category?: string }))
+    : body;
 
-  return NextResponse.json(body, { headers });
+  return NextResponse.json(payload, { headers });
 }

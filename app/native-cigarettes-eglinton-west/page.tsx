@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import CigaretteSeasonalNotice from "../components/CigaretteSeasonalNotice";
+import { SHOW_CIGARETTES, VAPE_PAGE_PATH } from "../lib/showCigarettes";
 import Footer from "../components/Footer";
 import LocalSeoMesh from "../components/LocalSeoMesh";
 import { PATHS } from "../lib/organicPaths";
@@ -52,6 +54,7 @@ export const metadata: Metadata = {
 };
 
 export default function NativeCigarettesEglintonWestPage() {
+  if (!SHOW_CIGARETTES) redirect(VAPE_PAGE_PATH);
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",

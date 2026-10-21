@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import FlowerCard from "./components/FlowerCard";
 import Papa from "papaparse";
 import { HOME_FAQS, STORE, storeClaimsOpen24Hours } from "./lib/storeIdentity";
+import { SHOW_CIGARETTES, publicFaqs } from "./lib/showCigarettes";
 import LocalSeoMesh, {
   TWENTY_FOUR_HOUR_HREF,
 } from "./components/LocalSeoMesh";
@@ -373,7 +374,8 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
           </div>
           <div className={styles.hubGrid}>
             {NEIGHBOURHOOD_HUB_CARDS.filter(
-              (card) => !("onlyWhen24h" in card) || storeClaimsOpen24Hours(),
+              (card) => (!("onlyWhen24h" in card) || storeClaimsOpen24Hours())
+                && (SHOW_CIGARETTES || card.href !== "/native-cigarettes-eglinton-west"),
             ).map((card) => (
               <Link key={card.href} href={card.href} className={styles.hubCard}>
                 <span className={styles.hubKicker}>{card.kicker}</span>
@@ -397,7 +399,7 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
           </div>
 
           <div className={styles.categoriesGrid}>
-            {EXPLORE_CATEGORIES.map((cat) => (
+            {EXPLORE_CATEGORIES.filter((cat) => SHOW_CIGARETTES || cat.slug !== "items/cigarettes").map((cat) => (
               <Link
                 key={cat.slug}
                 href={`/${cat.slug}`}
@@ -466,11 +468,11 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
               <Link href={TWENTY_FOUR_HOUR_HREF}>
                 24-hour dispensary on Eglinton West
               </Link>
-              — equal to the weed dispensary, delivery, Native cigarettes, and
+              — equal to the weed dispensary, delivery{SHOW_CIGARETTES ? ", Native cigarettes," : ""} and
               nicotine vape pages.
             </p>
             <p className={styles.seoPanelText}>
-              Five equal corridor pages sit beside this hub: the{" "}
+              {SHOW_CIGARETTES ? "Five" : "Four"} equal corridor pages sit beside this hub: the{" "}
               <Link href="/weed-dispensary-eglinton-west">
                 weed dispensary on Eglinton West
               </Link>
@@ -482,11 +484,13 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
               <Link href="/cannabis-delivery-eglinton-west">
                 cannabis delivery on Eglinton West
               </Link>
-              ,{" "}
+              {SHOW_CIGARETTES ? ", " : " and "}
+              {SHOW_CIGARETTES && (
               <Link href="/native-cigarettes-eglinton-west">
                 Native cigarettes on Eglinton West
-              </Link>{" "}
-              (merchandise category only), and{" "}
+              </Link>
+              )}
+              {SHOW_CIGARETTES ? " (merchandise category only), and " : ""}
               <Link href="/nicotine-vape-eglinton-west">
                 nicotine vapes on Eglinton West
               </Link>{" "}
@@ -569,7 +573,7 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
           >
             Frequently Asked Questions
           </h2>
-          {HOME_FAQS.map((faq) => (
+          {publicFaqs(HOME_FAQS).map((faq) => (
             <details key={faq.q} className={styles.faqItem}>
               <summary className={styles.faqQuestion}>{faq.q}</summary>
               <p className={styles.faqAnswer}>{faq.a}</p>
@@ -595,9 +599,11 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
             <Link href="/cannabis-delivery-eglinton-west">
               Eglinton West Delivery
             </Link>
+            {SHOW_CIGARETTES && (
             <Link href="/native-cigarettes-eglinton-west">
               Native Cigarettes
             </Link>
+            )}
             <Link href="/nicotine-vape-eglinton-west">Nicotine Vapes</Link>
             <Link href="/visit">Explore Weed &amp; Cannabis</Link>
             <Link href="/resources/flower-guide">Explore the Flower Guide</Link>

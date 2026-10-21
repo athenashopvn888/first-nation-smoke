@@ -2,6 +2,7 @@
 import Link from "next/link";
 import styles from "./GBPLandingPage.module.css";
 import { gbpLocation } from "../lib/gbp-location";
+import { publicText } from "../lib/showCigarettes";
 import PreferredSourceButton from "./PreferredSourceButton";
 
 // Dictionary mapping category names to their respective paths
@@ -104,7 +105,7 @@ export function GBPLandingPage() {
       {/* Intro Section */}
       <section className={styles.section}>
         <h2 className={styles.h2}>Your Local Weed Dispensary</h2>
-        <p className={styles.introText}>{gbpLocation.introVariant}</p>
+        <p className={styles.introText}>{publicText(gbpLocation.introVariant)}</p>
       </section>
 
       {/* Product Section */}

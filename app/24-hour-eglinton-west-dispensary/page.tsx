@@ -12,6 +12,7 @@ import {
   stringifyJsonLd,
 } from "../lib/storeIdentity";
 import styles from "../visit/visit.module.css";
+import { SHOW_CIGARETTES, publicFaqs, publicText } from "../lib/showCigarettes";
 
 const PAGE_URL = `${STORE.url}${TWENTY_FOUR_HOUR_HREF}`;
 
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
       "24-Hour Dispensary Open Now on Eglinton West | First Nation Smoke",
   },
   description:
-    "Open now: First Nation Smoke at 1504 Eglinton Ave W is listed Open 24 Hours on the Little Jamaica / Fairbank stretch of Eglinton West. Adults 19+. Equal corridor page with the weed dispensary, delivery, Native cigarettes, and nicotine vapes. Homepage keeps the map hub.",
+    publicText("Open now: First Nation Smoke at 1504 Eglinton Ave W is listed Open 24 Hours on the Little Jamaica / Fairbank stretch of Eglinton West. Adults 19+. Equal corridor page with the weed dispensary, delivery, Native cigarettes, and nicotine vapes. Homepage keeps the map hub."),
   alternates: {
     canonical: PAGE_URL,
   },
@@ -87,7 +88,7 @@ export default function TwentyFourHourEglintonWestPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: stringifyJsonLd(faqPageJsonLd(TWENTY_FOUR_FAQS)),
+          __html: stringifyJsonLd(SHOW_CIGARETTES ? faqPageJsonLd(TWENTY_FOUR_FAQS) : faqPageJsonLd(publicFaqs(TWENTY_FOUR_FAQS))),
         }}
       />
       <Navbar />
@@ -103,7 +104,7 @@ export default function TwentyFourHourEglintonWestPage() {
           First Nation Smoke lists <strong>{STORE.hoursDetail}</strong> at{" "}
           <strong>{STORE.addressLine}</strong>. This is a first-class
           corridor page — equal to the neighbourhood weed dispensary,
-          delivery, Native cigarettes, and nicotine vapes — and it owns
+          delivery{SHOW_CIGARETTES ? ", Native cigarettes" : ""}, and nicotine vapes — and it owns
           “open now” / 24-hour-near-me
           intent for Little Jamaica / Fairbank. It is not a city-wide
           Toronto 24-hour list. Hours, phone {STORE.phoneDisplay}, and the
@@ -201,8 +202,7 @@ export default function TwentyFourHourEglintonWestPage() {
           <h2>What to browse when the door is open</h2>
           <p>
             The overnight counter is the same menu lanes as daytime: flower
-            tiers, pre-rolls, edibles, vapes, concentrates, accessories, and
-            listed cigarettes. Names and posted prices move; call{" "}
+            tiers, pre-rolls, edibles, vapes, concentrates{SHOW_CIGARETTES ? ", accessories, and listed cigarettes" : ", and accessories"}. Names and posted prices move; call{" "}
             <a href={`tel:${STORE.phoneE164}`}>{STORE.phoneDisplay}</a> if
             one item is the only reason to come out. No medical claims —
             adult retail only.
@@ -222,11 +222,13 @@ export default function TwentyFourHourEglintonWestPage() {
             <Link href={PATHS.deliveryLp}>
               cannabis delivery on Eglinton West
             </Link>
-            ,{" "}
+            {SHOW_CIGARETTES ? ", " : " and "}
+            {SHOW_CIGARETTES && (
             <Link href={PATHS.nativeCigarettesLp}>
               Native cigarettes on Eglinton West
             </Link>
-            , and{" "}
+            )}
+            {SHOW_CIGARETTES ? ", and " : ""}
             <Link href={PATHS.nicotineVapeLp}>
               nicotine vapes on Eglinton West
             </Link>{" "}
@@ -255,7 +257,7 @@ export default function TwentyFourHourEglintonWestPage() {
 
         <section className={styles.faq}>
           <h2>Open now / 24-hour near me — quick answers</h2>
-          {TWENTY_FOUR_FAQS.map((faq) => (
+          {publicFaqs(TWENTY_FOUR_FAQS).map((faq) => (
             <details key={faq.q}>
               <summary>{faq.q}</summary>
               <p>{faq.a}</p>
@@ -276,9 +278,11 @@ export default function TwentyFourHourEglintonWestPage() {
           <Link href={PATHS.deliveryLp} className={styles.secondary}>
             Cannabis delivery
           </Link>
+          {SHOW_CIGARETTES && (
           <Link href={PATHS.nativeCigarettesLp} className={styles.secondary}>
             Native cigarettes
           </Link>
+          )}
           <Link href={PATHS.nicotineVapeLp} className={styles.secondary}>
             Nicotine vapes
           </Link>

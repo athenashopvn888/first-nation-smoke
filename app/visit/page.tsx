@@ -11,6 +11,7 @@ import LocalSeoMesh, {
   TWENTY_FOUR_HOUR_HREF,
 } from "../components/LocalSeoMesh";
 import styles from "./visit.module.css";
+import { SHOW_CIGARETTES, publicFaqs } from "../lib/showCigarettes";
 
 const VISIT_FAQS = [
   {
@@ -73,7 +74,7 @@ export default function VisitPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: stringifyJsonLd(faqPageJsonLd(VISIT_FAQS)),
+          __html: stringifyJsonLd(SHOW_CIGARETTES ? faqPageJsonLd(VISIT_FAQS) : faqPageJsonLd(publicFaqs(VISIT_FAQS))),
         }}
       />
       <Navbar />
@@ -97,8 +98,7 @@ export default function VisitPage() {
           <Link href={TWENTY_FOUR_HOUR_HREF}>
             24-hour dispensary on Eglinton West
           </Link>{" "}
-          page, equal to the neighbourhood weed dispensary, delivery, Native
-          cigarettes, and nicotine vape pages. This URL stays the
+          page, equal to the neighbourhood weed dispensary, delivery{SHOW_CIGARETTES ? ", Native cigarettes" : ""}, and nicotine vape pages. This URL stays the
           how-to-reach owner.
         </p>
 
@@ -209,8 +209,10 @@ export default function VisitPage() {
             First Nation Smoke is a walk-in for adults 19+. Bring
             government-issued photo ID. Staff can show the current menu
             categories — flower, pre-rolls, edibles, vapes, concentrates,
-            accessories, and listed cigarettes (Native cigarettes are a
-            merchandise category on that shelf, not a cultural claim). This
+            {SHOW_CIGARETTES
+              ? "accessories, and listed cigarettes (Native cigarettes are a merchandise category on that shelf, not a cultural claim)."
+              : "and accessories."}{" "}
+            This
             page does not claim stock, sale prices, or a medical benefit. If
             one product is the only reason for the trip, call{" "}
             <a href={`tel:${STORE.phoneE164}`}>{STORE.phoneDisplay}</a> first.
@@ -237,11 +239,13 @@ export default function VisitPage() {
             <Link href="/cannabis-delivery-eglinton-west">
               cannabis delivery on Eglinton West
             </Link>
-            ,{" "}
+            {SHOW_CIGARETTES ? ", " : " and "}
+            {SHOW_CIGARETTES && (
             <Link href="/native-cigarettes-eglinton-west">
               Native cigarettes
             </Link>
-            , and{" "}
+            )}
+            {SHOW_CIGARETTES ? ", and " : ""}
             <Link href="/nicotine-vape-eglinton-west">nicotine vapes</Link>{" "}
             have their own corridor pages — not city-wide Toronto spam.
           </p>
@@ -265,7 +269,7 @@ export default function VisitPage() {
 
         <section className={styles.faq}>
           <h2>Getting here — quick answers</h2>
-          {VISIT_FAQS.map((faq) => (
+          {publicFaqs(VISIT_FAQS).map((faq) => (
             <details key={faq.q}>
               <summary>{faq.q}</summary>
               <p>{faq.a}</p>
