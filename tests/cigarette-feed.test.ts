@@ -6,6 +6,7 @@ import {
   decideCigaretteSurface,
   reconcileSurfaceItems,
   resolveCigWording,
+  cigarettePageAction,
   resolveSurfaceFlag,
 } from "../app/lib/cigDecision.ts";
 
@@ -88,4 +89,16 @@ test("each surface hides real cigarettes itself and always keeps wraps and pouch
   assert.deepEqual(hidden.map((item) => item.slug), [vape.slug, backwoods.slug, pouch.slug]);
   const shown = reconcileSurfaceItems([vape, backwoods], [carton, backwoods], true);
   assert.deepEqual(shown.map((item) => item.slug), [vape.slug, backwoods.slug, carton.slug]);
+});
+
+test("an explicit web off uses the coded 302, including when the env switch is open", () => {
+  const off = decideCigaretteSurface({ cig: cig({ on: true, webOn: false, tvOn: true }), items: [carton], surface: "web" });
+  assert.equal(off.reason, "off");
+  assert.equal(cigarettePageAction(off, true), "redirect");
+  assert.equal(cigarettePageAction(off, false), "redirect");
+  const missing = decideCigaretteSurface({ cig: null, items: [carton], surface: "web" });
+  assert.equal(cigarettePageAction(missing, false), "redirect");
+  assert.equal(cigarettePageAction(missing, true), "show");
+  const empty = decideCigaretteSurface({ cig: cig({ on: true, webOn: true, tvOn: true }), items: [backwoods], surface: "web" });
+  assert.equal(cigarettePageAction(empty, true), "unavailable");
 });

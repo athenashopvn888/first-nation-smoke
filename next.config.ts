@@ -103,9 +103,9 @@ const nextConfig: NextConfig = {
       { source: "/prerolls", destination: "/items/prerolls", permanent: true },
       { source: "/add-ons", destination: "/items/add-ons", permanent: true },
       { source: "/magic", destination: "/items/magic", permanent: true },
-      // Coded cigarette 302s are decided per request in proxy.ts so an explicit
-      // web off can stay on the same URL. The hidden list stays here as the
-      // path inventory those requests still cover.
+      // Coded cigarette 302s are decided per request in proxy.ts, including an
+      // explicit web off. The hidden list stays here as the path inventory
+      // those requests still cover.
       ...(SHOW_CIGARETTES ? legacyCigaretteRedirects : hiddenCigaretteRedirects.length ? [] : []),
     ];
   },
