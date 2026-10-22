@@ -33,6 +33,19 @@ export type CigaretteSurface = "web" | "tv";
 
 export type CigaretteReason = "env" | "error" | "missing" | "off" | "no-items" | "on";
 
+export type CigarettePageAction = "show" | "redirect" | "unavailable";
+
+/**
+ * Coded, missing, and errored feeds keep today's redirect when the env
+ * switch is off. An explicit web off uses that same 302. A shelf with no
+ * real cigarettes still stays on the URL.
+ */
+export function cigarettePageAction(decision: Pick<CigaretteSurfaceDecision, "reason">, codedOn: boolean): CigarettePageAction {
+  if (decision.reason === "off") return "redirect";
+  if (decision.reason === "no-items") return "unavailable";
+  return codedOn ? "show" : "redirect";
+}
+
 export type CigaretteSurfaceDecision = {
   show: boolean;
   reason: CigaretteReason;

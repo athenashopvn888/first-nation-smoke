@@ -1,9 +1,11 @@
 import { cache } from "react";
 import {
+  cigarettePageAction as resolveCigarettePageAction,
   cigarettePublicHeaders,
   decideCigaretteGuide,
   decideCigaretteSurface,
   reconcileSurfaceItems,
+  type CigarettePageAction,
   type CigaretteSurfaceDecision,
   type CigaretteWording,
 } from "./cigDecision.ts";
@@ -72,15 +74,11 @@ export function toPublicCigaretteState(snap: CigaretteSnapshot): PublicCigarette
   };
 }
 
-export type CigarettePageAction = "show" | "redirect" | "unavailable";
+export type { CigarettePageAction };
 
-/**
- * Coded, missing, and errored feeds keep today's redirect when the env
- * switch is off. An explicit web off stays on the same URL.
- */
+/** Env switch is the coded default. Callers that omit it use SHOW_CIGARETTES. */
 export function cigarettePageAction(decision: CigaretteSurfaceDecision, codedOn = SHOW_CIGARETTES): CigarettePageAction {
-  if (decision.reason === "off" || decision.reason === "no-items") return "unavailable";
-  return codedOn ? "show" : "redirect";
+  return resolveCigarettePageAction(decision, codedOn);
 }
 
 export function snapshotHeaders(snap: CigaretteSnapshot): Record<string, string> {
