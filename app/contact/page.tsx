@@ -3,9 +3,12 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./contact.module.css";
+import { getFleetContent } from "../lib/fleetContent";
 import { STORE } from "../lib/storeIdentity";
 
-export const metadata: Metadata = {
+export const dynamic = "force-dynamic";
+
+const CONTACT_METADATA: Metadata = {
   title: {
     absolute:
       "Contact Us — First Nation Smoke Cannabis Dispensary Toronto | 1504 Eglinton Ave W, Toronto",
@@ -23,7 +26,30 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const fleet = await getFleetContent();
+  if (!fleet.active) return CONTACT_METADATA;
+  const description = fleet.pages.Contact?.metaDescription || "";
+  if (!description || description === CONTACT_METADATA.description) return CONTACT_METADATA;
+  return {
+    ...CONTACT_METADATA,
+    description,
+    title: fleet.pages.Contact?.metaTitle
+      ? { absolute: fleet.pages.Contact.metaTitle }
+      : CONTACT_METADATA.title,
+    openGraph: { ...CONTACT_METADATA.openGraph, description },
+  };
+}
+
+export default async function ContactPage() {
+  const fleet = await getFleetContent();
+  const street = fleet.active ? fleet.nap.street : "1504 Eglinton Ave W";
+  const cityLine = fleet.active ? fleet.nap.cityLine : "Toronto, ON M6E 2G5";
+  const areaLine = fleet.active ? fleet.nap.areaLine : "Eglinton West · Little Jamaica / Fairbank";
+  const phoneDisplay = fleet.active ? fleet.nap.phoneDisplay : STORE.phoneDisplay;
+  const phoneTel = fleet.active ? fleet.nap.phoneTel : STORE.phoneE164;
+  const mapSrc = fleet.active ? fleet.nap.mapsEmbedUrl : STORE.mapEmbedUrl;
+  const hoursLabel = fleet.active ? fleet.nap.hours : "Open 24 Hours";
   return (
     <main className={styles.main}>
       <Navbar />
@@ -56,16 +82,16 @@ export default function ContactPage() {
               <div className={styles.infoIcon}>📍</div>
               <h2 className={styles.infoTitle}>Location</h2>
               <p className={styles.infoText}>
-                1504 Eglinton Ave W
+                {street}
                 <br />
-                Toronto, ON M6E 2G5
+                {cityLine}
                 <br />
                 <span className={styles.infoMuted}>
-                  Eglinton West · Little Jamaica / Fairbank
+                  {areaLine}
                 </span>
               </p>
               <p className={styles.infoText}>
-                <a href={`tel:${STORE.phoneE164}`}>{STORE.phoneDisplay}</a>
+                <a href={`tel:${phoneTel}`}>{phoneDisplay}</a>
                 <br />
                 <Link href="/visit">How to reach 1504 Eglinton Ave W</Link>
               </p>
@@ -78,36 +104,36 @@ export default function ContactPage() {
               <div className={styles.hoursTable}>
                 <div className={styles.hoursRow}>
                   <span>Monday</span>
-                  <span className={styles.hoursTime}>Open 24 Hours</span>
+                  <span className={styles.hoursTime}>{hoursLabel}</span>
                 </div>
                 <div className={styles.hoursRow}>
                   <span>Tuesday</span>
-                  <span className={styles.hoursTime}>Open 24 Hours</span>
+                  <span className={styles.hoursTime}>{hoursLabel}</span>
                 </div>
                 <div className={styles.hoursRow}>
                   <span>Wednesday</span>
-                  <span className={styles.hoursTime}>Open 24 Hours</span>
+                  <span className={styles.hoursTime}>{hoursLabel}</span>
                 </div>
                 <div className={styles.hoursRow}>
                   <span>Thursday</span>
-                  <span className={styles.hoursTime}>Open 24 Hours</span>
+                  <span className={styles.hoursTime}>{hoursLabel}</span>
                 </div>
                 <div className={styles.hoursRow}>
                   <span>Friday</span>
-                  <span className={styles.hoursTime}>Open 24 Hours</span>
+                  <span className={styles.hoursTime}>{hoursLabel}</span>
                 </div>
                 <div className={styles.hoursRow}>
                   <span>Saturday</span>
-                  <span className={styles.hoursTime}>Open 24 Hours</span>
+                  <span className={styles.hoursTime}>{hoursLabel}</span>
                 </div>
                 <div className={styles.hoursRow}>
                   <span>Sunday</span>
-                  <span className={styles.hoursTime}>Open 24 Hours</span>
+                  <span className={styles.hoursTime}>{hoursLabel}</span>
                 </div>
               </div>
               <div className={styles.openBadge}>
                 <div className={styles.openDot} />
-                Open 24 Hours
+                {hoursLabel}
               </div>
             </div>
 
@@ -147,7 +173,7 @@ export default function ContactPage() {
           <div className={styles.mapSection}>
             <iframe
               title="Map of First Nation Smoke at 1504 Eglinton Ave W, Toronto"
-              src={STORE.mapEmbedUrl}
+              src={mapSrc}
               className={styles.mapIframe}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import SheetAnnouncementBanners from "./fleet/FleetAnnouncementBanner";
+import type { ResolvedBanner } from "../lib/fleet/types";
 import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 
 const STORE_NAME = "First Nation Smoke";
@@ -21,7 +23,8 @@ const captionStyle = { margin: 0, padding: "10px 14px", background: "#111827", c
 import { Fragment } from "react";
 import CigaretteSeasonalNotice from "./CigaretteSeasonalNotice";
 
-export default function FleetAnnouncementBanner() {
+export default function FleetAnnouncementBanner({ banners }: { banners?: ResolvedBanner[] } = {}) {
+  if (banners) return <SheetAnnouncementBanners banners={banners} />;
   return (
     <aside data-fleet-homepage-announcement="" aria-label="Store promotions" style={{ display: "flex", flexDirection: "column", width: "100%", maxWidth: "100%", height: "auto", minHeight: 0, overflow: "visible", position: "relative", zIndex: 50 }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": bannerImageObjects }).replace(/</g, "\\u003c") }} />
