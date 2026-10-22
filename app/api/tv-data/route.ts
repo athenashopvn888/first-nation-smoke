@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getCigaretteSnapshot, snapshotHeaders } from "../../lib/cigaretteFeed";
 import { allFlowers, allItems } from "../../lib/products";
 import { SHOW_CIGARETTES, isHiddenCigaretteItem } from "../../lib/showCigarettes";
 import { getTvData } from "../../lib/tvStock";
@@ -20,5 +21,6 @@ export async function GET(request: Request) {
     ? body.filter((item) => !isHiddenCigaretteItem(item as { name?: string; slug?: string; category?: string }))
     : body;
 
-  return NextResponse.json(payload, { headers });
+  const snap = await getCigaretteSnapshot();
+  return NextResponse.json(payload, { headers: { ...headers, ...snapshotHeaders(snap) } });
 }

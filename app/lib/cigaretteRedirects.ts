@@ -39,8 +39,7 @@ export function cigaretteRedirectSources(): string[] {
   ];
 }
 
-export function isCigaretteRedirectPath(pathname: string): boolean {
-  if (SHOW_CIGARETTES) return false;
+export function isCigaretteContentPath(pathname: string): boolean {
   const path = pathname.length > 1 && pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
   if ((CIGARETTE_PAGE_PATHS as readonly string[]).includes(path)) return true;
   if (path.startsWith("/resources/native-smokes")) return true;
@@ -49,6 +48,11 @@ export function isCigaretteRedirectPath(pathname: string): boolean {
   const item = path.match(/^\/item\/([^/]+)$/);
   if (item && hiddenItemSlugs.has(item[1])) return true;
   return false;
+}
+
+export function isCigaretteRedirectPath(pathname: string): boolean {
+  if (SHOW_CIGARETTES) return false;
+  return isCigaretteContentPath(pathname);
 }
 
 export { VAPE_PAGE_PATH };

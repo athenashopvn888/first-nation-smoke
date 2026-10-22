@@ -1,4 +1,8 @@
+import CigaretteStateProvider from "./components/CigaretteStateProvider";
+import FleetContentProvider from "./components/FleetContentProvider";
 import FullNameNap from "./components/FullNameNap";
+import { getCigaretteSnapshot, toPublicCigaretteState } from "./lib/cigaretteFeed";
+import { getFleetContent } from "./lib/fleetContent";
 import { HOME_DOC_TITLE } from "./lib/homeDelivery";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -12,7 +16,9 @@ import {
 } from "./lib/storeIdentity";
 import { SHOW_CIGARETTES, publicFaqs } from "./lib/showCigarettes";
 
-export const metadata: Metadata = {
+export const dynamic = "force-dynamic";
+
+const ROOT_METADATA: Metadata = {
   metadataBase: new URL("https://www.firstnationsmokez.com"),
   title: {
     default: HOME_DOC_TITLE,
@@ -75,14 +81,54 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export async function generateMetadata(): Promise<Metadata> {
+  const fleet = await getFleetContent();
+  if (!fleet.active) return ROOT_METADATA;
+  const description = fleet.pages.Home?.metaDescription || "";
+  if (!description || description === ROOT_METADATA.description) return ROOT_METADATA;
+  return {
+    ...ROOT_METADATA,
+    description,
+    openGraph: { ...ROOT_METADATA.openGraph, description },
+    twitter: { ...ROOT_METADATA.twitter, description },
+  };
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [cigaretteSnapshot, fleet] = await Promise.all([getCigaretteSnapshot(), getFleetContent()]);
+  const cigarettes = toPublicCigaretteState(cigaretteSnapshot);
+  const baseStore = cannabisStoreJsonLd();
+  const storeJsonLd = fleet.active
+    ? {
+        ...baseStore,
+        name: fleet.nap.schemaName,
+        alternateName: fleet.nap.name,
+        telephone: fleet.nap.phoneTel,
+        url: fleet.nap.website,
+        hasMap: fleet.nap.mapsSearchUrl,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: fleet.nap.street,
+          addressLocality: fleet.nap.city,
+          addressRegion: fleet.nap.province,
+          postalCode: fleet.nap.postalCode,
+          addressCountry: "CA",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: Number(fleet.nap.lat),
+          longitude: Number(fleet.nap.lng),
+        },
+      }
+    : baseStore;
   return (
     <html lang="en">
       <head>
+        <meta name="fleet-content-version" content={fleet.version} />
         <meta name="geo.region" content="CA-ON" />
         <meta name="geo.placename" content="Little Jamaica" />
         <meta name="geo.position" content="43.6979500;-79.4409900" />
@@ -96,7 +142,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: stringifyJsonLd(cannabisStoreJsonLd()),
+            __html: stringifyJsonLd(storeJsonLd),
           }}
         />
         <script
@@ -127,9 +173,13 @@ export default function RootLayout({
         <div className="deliveryAnnouncement" role="status" aria-label="Store welcome announcement">
           WELCOME TO FIRST NATION SMOKE
         </div>
-        {children}
-        <FullNameNap />
-        <PinnedNavClearance />
+        <FleetContentProvider value={{ active: fleet.active, version: fleet.version, nap: fleet.nap }}>
+          <CigaretteStateProvider value={cigarettes}>
+            {children}
+            <FullNameNap />
+            <PinnedNavClearance />
+          </CigaretteStateProvider>
+        </FleetContentProvider>
       </body>
     </html>
   );

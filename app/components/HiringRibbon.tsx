@@ -3,8 +3,8 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { TvHiringConfig } from "../lib/tvHiring";
 import { TV_POLICY_MESSAGE } from "../lib/tvPolicy";
-import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 import { CIGARETTE_FLASH_MESSAGE, isCigaretteFlashWindow } from "../tv/flashMessages";
+import { useCigaretteState } from "./CigaretteStateProvider";
 import styles from "./HiringRibbon.module.css";
 
 const PHASE_CLASS = [styles.phaseHeadline, styles.phaseApply, styles.phaseUrl];
@@ -55,7 +55,9 @@ function fitPolicyLine(node: HTMLSpanElement) {
 }
 
 export default function HiringRibbon({ hiring }: { hiring: TvHiringConfig | null }) {
-  const [showCigaretteFlash, setShowCigaretteFlash] = useState(() => SHOW_CIGARETTES && isCigaretteFlashWindow());
+  const cig = useCigaretteState();
+  const [clock, setClock] = useState(0);
+  const showCigaretteFlash = cig.tv && isCigaretteFlashWindow() && clock >= 0;
   const policy = trimmed(TV_POLICY_MESSAGE);
   const hiringOn = hiring !== null && trimmed(hiring.displayUrl).length > 0;
   const messages = [
@@ -73,8 +75,7 @@ export default function HiringRibbon({ hiring }: { hiring: TvHiringConfig | null
   const policyRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const update = () => setShowCigaretteFlash(SHOW_CIGARETTES && isCigaretteFlashWindow());
-    const timer = window.setInterval(update, 60_000);
+    const timer = window.setInterval(() => setClock((value) => value + 1), 60_000);
     return () => window.clearInterval(timer);
   }, []);
 

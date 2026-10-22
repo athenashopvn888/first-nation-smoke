@@ -1,6 +1,11 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
 import styles from "./tv2.module.css";
+import { useCigaretteState } from "../components/CigaretteStateProvider";
+import FleetTvTakeover from "../components/fleet/FleetTvTakeover";
+import { useFleetTvManifest } from "../components/fleet/useFleetTvManifest";
+import { isRealCigaretteItem } from "../lib/cigMarkers";
+import { pickTv2Sheet } from "../lib/fleet/tv";
 import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 import { CIGARETTE_FLASH_MESSAGE, isCigaretteFlashWindow, isNicotineItem } from "../tv/flashMessages";
 import HiringRibbon from "../components/HiringRibbon";
@@ -184,12 +189,13 @@ const TICKER_SLIDES = [
 function VerticalTicker() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [exitIdx, setExitIdx] = useState(-1);
-  const [showCigaretteFlash, setShowCigaretteFlash] = useState(() => SHOW_CIGARETTES && isCigaretteFlashWindow());
+  const cig = useCigaretteState();
+  const [clock, setClock] = useState(0);
+  const showCigaretteFlash = cig.tv && isCigaretteFlashWindow() && clock >= 0;
   const slides = showCigaretteFlash ? [CIGARETTE_FLASH_MESSAGE, ...TICKER_SLIDES] : TICKER_SLIDES;
 
   useEffect(() => {
-    const update = () => setShowCigaretteFlash(SHOW_CIGARETTES && isCigaretteFlashWindow());
-    const iv = setInterval(update, 60_000);
+    const iv = setInterval(() => setClock((value) => value + 1), 60_000);
     return () => clearInterval(iv);
   }, []);
   useEffect(() => {
@@ -216,6 +222,9 @@ function VerticalTicker() {
 
 /* -- MAIN TV2 PAGE -- */
 export default function TV2Page() {
+  const cig = useCigaretteState();
+  const fleetTv = useFleetTvManifest();
+  const [sheetBroken, setSheetBroken] = useState<Record<string, { promo?: boolean; off?: boolean }>>({});
   const theme = getTvTheme(tvHiring?.store);
   const [bgUrl, setBgUrl] = useState("");
   useEffect(() => {
@@ -316,7 +325,36 @@ export default function TV2Page() {
           <HiringRibbon hiring={tvHiring} />
           <div className={styles.grid}>
             {CARD_CONFIG.filter((card) => SHOW_CIGARETTES || card.id !== "CIGARETTES").map(card => {
-              const filtered = items.filter(card.filter).filter(it => !(daytime && isNicotineItem(it)));
+              const isCig = card.id === "CIGARETTES";
+              const shelf = items.filter(card.filter).filter(it => !(daytime && isNicotineItem(it)));
+              const filtered = isCig && !cig.tv ? shelf.filter((it) => !isRealCigaretteItem(it)) : shelf;
+              const broken = sheetBroken[card.id] || {};
+              const sheet = pickTv2Sheet(fleetTv.cards[card.id], {
+                categoryOff: isCig && !cig.tv,
+                noItems: filtered.length === 0,
+                promoBroken: Boolean(broken.promo),
+                offBroken: Boolean(broken.off),
+              });
+              if (sheet) {
+                const markBroken = () => setSheetBroken((prev) => ({ ...prev, [card.id]: { ...prev[card.id], [sheet.kind]: true } }));
+                return (
+                  <div key={card.id} className={styles.card} data-fleet-tv-card={card.id} data-fleet-tv-kind={sheet.kind} style={{"--accent":card.accent} as React.CSSProperties}>
+                    <div className={styles.cardHeader}>{sheet.kind === "promo" ? "PROMO" : card.title}</div>
+                    <div className={styles.promoMain}>
+                      <div className={styles.promoViewport}>
+                        <img
+                          className={`${styles.promoImg} ${styles.promoActive}`}
+                          src={sheet.image}
+                          alt={sheet.alt}
+                          referrerPolicy="no-referrer"
+                          ref={(node) => { if (node?.complete && node.naturalWidth === 0) markBroken(); }}
+                          onError={markBroken}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
               const promo = getTv2DaytimePromo(card.id, daytime, promoElapsedMs);
 
               if (promo) {
@@ -363,6 +401,7 @@ export default function TV2Page() {
         
       </div>
       {lastUpdate ? <div className={styles.lastUpdated}>Refreshed {lastUpdate}</div> : null}
+      <FleetTvTakeover promos={fleetTv.fullscreenPromos} />
     </div>
   );
 }

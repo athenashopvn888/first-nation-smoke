@@ -1,9 +1,12 @@
 import HomePageClient from "./HomePageClient";
+import { CODED_BANNERS } from "./lib/fleet/config";
+import { getFleetContent } from "./lib/fleetContent";
 import { getLiveMenu } from "./lib/liveMenu";
 
 export const dynamic = "force-dynamic";
 
 export default async function Page() {
-  const { flowers } = await getLiveMenu();
-  return <HomePageClient initialFlowers={flowers} />;
+  const [{ flowers }, fleet] = await Promise.all([getLiveMenu(), getFleetContent()]);
+  const contentBanners = fleet.active && fleet.banners.some((banner, index) => banner !== CODED_BANNERS[index]) ? fleet.banners : undefined;
+  return <HomePageClient initialFlowers={flowers} contentBanners={contentBanners} />;
 }

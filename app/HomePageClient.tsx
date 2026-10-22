@@ -20,6 +20,7 @@ import LocalSeoMesh, {
 } from "./components/LocalSeoMesh";
 import { useLiveFlowers } from "./lib/useLiveMenu";
 import { storeTierRange, tierRangeText } from "./lib/tierPriceRanges";
+import type { ResolvedBanner } from "./lib/fleet/types";
 
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
@@ -177,7 +178,7 @@ interface ReviewStats {
   avg: number;
 }
 
-export default function HomePageClient({ initialFlowers }: { initialFlowers: Parameters<typeof storeTierRange>[0] }) {
+export default function HomePageClient({ initialFlowers, contentBanners }: { initialFlowers: Parameters<typeof storeTierRange>[0]; contentBanners?: ResolvedBanner[] }) {
     const __liveFlowers = useLiveFlowers();
   const [featuredStrains, setFeaturedStrains] = useState<any[]>([]);
   const [reviews, setReviews] = useState<Review[]>([]);
@@ -278,7 +279,7 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
       <h1 data-home-store-title="" style={{ margin: 0, padding: "14px 16px", background: "#111827", color: "#ffffff", textAlign: "center", fontSize: "clamp(1.1rem, 3vw, 2rem)", fontWeight: 900, lineHeight: 1.2, position: "relative", zIndex: 60 }}>{HOME_TITLE}</h1>
       <p data-fullname-subline="" style={{ margin: "4px 0 0", fontSize: "13px", fontWeight: 600, lineHeight: 1.35, opacity: 0.85, color: "inherit", overflowWrap: "anywhere" }}>{FULL_NAME_NAP.fullName}</p>
       <HomepageTopNotices />
-      <FleetAnnouncementBanner />
+      <FleetAnnouncementBanner banners={contentBanners} />
       {/* ── NAVBAR ── */}
 
 
