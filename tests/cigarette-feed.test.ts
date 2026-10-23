@@ -1,13 +1,18 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { readFileSync } from "node:fs";
 import {
   CIG_WORDING_FALLBACK,
+  cigarettePublicHeaders,
   decideCigaretteGuide,
   decideCigaretteSurface,
+  foldCigaretteFlag,
+  readCigaretteTvHeader,
   reconcileSurfaceItems,
   resolveCigWording,
   cigarettePageAction,
   resolveSurfaceFlag,
+  visibleTvCards,
 } from "../app/lib/cigDecision.ts";
 
 const carton = { category: "CIGARETTES", name: "BB FULL CARTON", slug: "bb-full-carton" };
@@ -89,6 +94,66 @@ test("each surface hides real cigarettes itself and always keeps wraps and pouch
   assert.deepEqual(hidden.map((item) => item.slug), [vape.slug, backwoods.slug, pouch.slug]);
   const shown = reconcileSurfaceItems([vape, backwoods], [carton, backwoods], true);
   assert.deepEqual(shown.map((item) => item.slug), [vape.slug, backwoods.slug, carton.slug]);
+});
+
+test("TV fold follows the feed and the coded switch still hides the website", () => {
+  const on = { show: true, reason: "on" as const };
+  const off = { show: false, reason: "off" as const };
+  assert.equal(foldCigaretteFlag(on, false, "tv"), true);
+  assert.equal(foldCigaretteFlag(off, false, "tv"), false);
+  assert.equal(foldCigaretteFlag({ show: false, reason: "env" }, false, "tv"), false);
+  assert.equal(foldCigaretteFlag({ show: true, reason: "error" }, false, "tv"), true);
+  assert.equal(foldCigaretteFlag(on, false, "web"), false);
+  assert.equal(foldCigaretteFlag(off, false, "web"), false);
+  assert.equal(foldCigaretteFlag({ show: true, reason: "error" }, false, "web"), false);
+  assert.equal(foldCigaretteFlag(on, false, "guides"), false);
+  assert.equal(foldCigaretteFlag(on, true, "web"), true);
+  assert.equal(foldCigaretteFlag(off, true, "web"), false);
+});
+
+test("a true TV flag shows the card and cigarette items; false hides them and keeps wraps", () => {
+  const cards = [{ id: "VAPES" }, { id: "CIGARETTES" }, { id: "MAGIC" }];
+  assert.deepEqual(visibleTvCards(cards, true).map((card) => card.id), ["VAPES", "CIGARETTES", "MAGIC"]);
+  assert.deepEqual(visibleTvCards(cards, false).map((card) => card.id), ["VAPES", "MAGIC"]);
+
+  const zyn = { category: "CIGARETTES", name: "ZYN CITRUS", slug: "zyn-citrus" };
+  const velo = { category: "CIGARETTES", name: "VELO", slug: "velo" };
+  const wrap = { category: "CIGARETTES", name: "HEMP WRAP", slug: "hemp-wrap" };
+  const paper = { category: "CIGARETTES", name: "ROLLING PAPER", slug: "rolling-paper" };
+  const cigarillo = { category: "CIGARETTES", name: "CIGARILLO", slug: "cigarillo" };
+  const menu = [vape, carton, grabba, backwoods, pouch, zyn, velo, wrap, paper, cigarillo];
+  const hidden = reconcileSurfaceItems(menu, menu, false);
+  assert.equal(hidden.some((item) => item.slug === carton.slug), false);
+  assert.equal(hidden.some((item) => item.slug === grabba.slug), false);
+  for (const kept of [vape, backwoods, pouch, zyn, velo, wrap, paper, cigarillo]) {
+    assert.equal(hidden.some((item) => item.slug === kept.slug), true, kept.slug);
+  }
+  const shown = reconcileSurfaceItems([vape, backwoods, zyn], [carton, zyn], true);
+  assert.deepEqual(shown.map((item) => item.slug), [vape.slug, backwoods.slug, zyn.slug, carton.slug]);
+
+  const headersOn = new Map(Object.entries(cigarettePublicHeaders({ web: false, tv: true, wording: CIG_WORDING_FALLBACK })));
+  assert.equal(readCigaretteTvHeader({ get: (name) => headersOn.get(name) ?? null }).show, true);
+  const headersOff = new Map(Object.entries(cigarettePublicHeaders({ web: true, tv: false, wording: CIG_WORDING_FALLBACK })));
+  const readOff = readCigaretteTvHeader({ get: (name) => headersOff.get(name) ?? null });
+  assert.equal(readOff.show, false);
+  assert.equal(headersOn.get("x-tv-data-cig-web"), "0");
+});
+
+test("TV pages and the items route follow the feed flag, not the coded switch", () => {
+  const tv2 = readFileSync(new URL("../app/tv2/page.tsx", import.meta.url), "utf8");
+  const tv = readFileSync(new URL("../app/tv/page.tsx", import.meta.url), "utf8");
+  const route = readFileSync(new URL("../app/api/tv-data/route.ts", import.meta.url), "utf8");
+  const feed = readFileSync(new URL("../app/lib/cigaretteFeed.ts", import.meta.url), "utf8");
+  assert.match(tv2, /visibleTvCards\(CARD_CONFIG, tvCig\.show\)/);
+  assert.match(tv2, /readCigaretteTvHeader\(res\.headers\)/);
+  assert.doesNotMatch(tv2, /SHOW_CIGARETTES/);
+  assert.match(tv, /readCigaretteTvHeader\(iRes\.headers\)/);
+  assert.doesNotMatch(tv, /SHOW_CIGARETTES/);
+  assert.match(route, /reconcileSurfaceItems\(/);
+  assert.match(route, /snap\.tv\.show/);
+  assert.doesNotMatch(route, /SHOW_CIGARETTES/);
+  assert.match(feed, /foldCigaretteFlag\(snap\.tv, SHOW_CIGARETTES, "tv"\)/);
+  assert.match(feed, /web: foldCigaretteFlag\(snap\.web\)/);
 });
 
 test("an explicit web off uses the coded 302, including when the env switch is open", () => {

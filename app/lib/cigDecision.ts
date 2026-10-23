@@ -164,3 +164,24 @@ export function readCigaretteTvHeader(headers: { get(name: string): string | nul
     return { show, wording: { ...CIG_WORDING_FALLBACK } };
   }
 }
+
+/**
+ * TV follows the feed decision only (`tvOn`, with the missing/error fallback
+ * already applied by decideCigaretteSurface). Web and guides keep the
+ * build-time coded switch. Env hard-off is already `show: false`.
+ */
+export function foldCigaretteFlag(
+  decision: Pick<CigaretteSurfaceDecision, "show" | "reason">,
+  codedOn: boolean,
+  surface: "web" | "tv" | "guides" = "web",
+): boolean {
+  if (surface === "tv") return decision.show;
+  if (!codedOn) return false;
+  if (decision.reason === "error" || decision.reason === "missing") return true;
+  return decision.show;
+}
+
+/** The cigarettes card is on the board only while the live TV flag is on. */
+export function visibleTvCards<T extends { id: string }>(cards: readonly T[], tvOn: boolean): T[] {
+  return cards.filter((card) => tvOn || card.id !== "CIGARETTES");
+}

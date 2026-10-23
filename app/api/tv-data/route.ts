@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
-import { getCigaretteSnapshot, snapshotHeaders } from "../../lib/cigaretteFeed";
+import { getCigaretteSnapshot, reconcileSurfaceItems, snapshotHeaders } from "../../lib/cigaretteFeed";
 import { allFlowers, allItems } from "../../lib/products";
-import { SHOW_CIGARETTES, isHiddenCigaretteItem } from "../../lib/showCigarettes";
 import { getTvData } from "../../lib/tvStock";
 
 export const runtime = "nodejs";
@@ -17,10 +16,18 @@ export async function GET(request: Request) {
     staticFlowers: allFlowers,
     staticItems: allItems,
   });
-  const payload = type === "items" && !SHOW_CIGARETTES && Array.isArray(body)
-    ? body.filter((item) => !isHiddenCigaretteItem(item as { name?: string; slug?: string; category?: string }))
-    : body;
-
   const snap = await getCigaretteSnapshot();
-  return NextResponse.json(payload, { headers: { ...headers, ...snapshotHeaders(snap) } });
+  const responseHeaders: Record<string, string> = { ...headers };
+  let payload: unknown = body;
+  if (type === "items" && Array.isArray(body)) {
+    const items = reconcileSurfaceItems(
+      body as Array<{ category?: string; name?: string; slug?: string; sku?: string }>,
+      snap.items,
+      snap.tv.show,
+    );
+    payload = items;
+    responseHeaders["x-tv-data-item-count"] = String(items.length);
+  }
+
+  return NextResponse.json(payload, { headers: { ...responseHeaders, ...snapshotHeaders(snap) } });
 }
