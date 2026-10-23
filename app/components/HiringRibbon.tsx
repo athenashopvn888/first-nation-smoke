@@ -54,10 +54,11 @@ function fitPolicyLine(node: HTMLSpanElement) {
   node.style.textOverflow = "";
 }
 
-export default function HiringRibbon({ hiring }: { hiring: TvHiringConfig | null }) {
+export default function HiringRibbon({ hiring, showCigarettes }: { hiring: TvHiringConfig | null; showCigarettes?: boolean }) {
   const cig = useCigaretteState();
   const [clock, setClock] = useState(0);
-  const showCigaretteFlash = cig.tv && isCigaretteFlashWindow() && clock >= 0;
+  const cigaretteOn = showCigarettes ?? cig.tv;
+  const showCigaretteFlash = cigaretteOn && isCigaretteFlashWindow() && clock >= 0;
   const policy = trimmed(TV_POLICY_MESSAGE);
   const hiringOn = hiring !== null && trimmed(hiring.displayUrl).length > 0;
   const messages = [

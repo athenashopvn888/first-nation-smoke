@@ -4,6 +4,7 @@ import {
   cigarettePublicHeaders,
   decideCigaretteGuide,
   decideCigaretteSurface,
+  foldCigaretteFlag as foldSurfaceFlag,
   reconcileSurfaceItems,
   type CigarettePageAction,
   type CigaretteSurfaceDecision,
@@ -56,20 +57,22 @@ export async function readCigaretteFeed(): Promise<CigaretteSnapshot> {
 export const getCigaretteSnapshot = cache(readCigaretteFeed);
 
 /**
- * The existing env switch stays the coded gate. A feed error or a missing
- * cig block fails open to that coded behaviour. An explicit off flag can
- * hide a surface only when the env switch is already open.
+ * Web and guides keep the build-time SHOW_CIGARETTES gate (`web` follows
+ * webOn only while that gate is open; env hard-off already wins inside
+ * the decision). TV ignores the coded gate and follows the feed flag.
  */
-export function foldCigaretteFlag(decision: CigaretteSurfaceDecision, codedOn = SHOW_CIGARETTES): boolean {
-  if (!codedOn) return false;
-  if (decision.reason === "error" || decision.reason === "missing") return true;
-  return decision.show;
+export function foldCigaretteFlag(
+  decision: CigaretteSurfaceDecision,
+  codedOn = SHOW_CIGARETTES,
+  surface: "web" | "tv" | "guides" = "web",
+): boolean {
+  return foldSurfaceFlag(decision, codedOn, surface);
 }
 
 export function toPublicCigaretteState(snap: CigaretteSnapshot): PublicCigaretteState {
   return {
     web: foldCigaretteFlag(snap.web),
-    tv: foldCigaretteFlag(snap.tv),
+    tv: foldCigaretteFlag(snap.tv, SHOW_CIGARETTES, "tv"),
     wording: snap.wording,
   };
 }

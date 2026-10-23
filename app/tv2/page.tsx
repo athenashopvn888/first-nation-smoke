@@ -4,9 +4,9 @@ import styles from "./tv2.module.css";
 import { useCigaretteState } from "../components/CigaretteStateProvider";
 import FleetTvTakeover from "../components/fleet/FleetTvTakeover";
 import { useFleetTvManifest } from "../components/fleet/useFleetTvManifest";
+import { readCigaretteTvHeader, visibleTvCards } from "../lib/cigDecision";
 import { isRealCigaretteItem } from "../lib/cigMarkers";
 import { pickTv2Sheet } from "../lib/fleet/tv";
-import { SHOW_CIGARETTES } from "../lib/showCigarettes";
 import { CIGARETTE_FLASH_MESSAGE, isCigaretteFlashWindow, isNicotineItem } from "../tv/flashMessages";
 import HiringRibbon from "../components/HiringRibbon";
 import TvStoreHeader from "../components/TvStoreHeader";
@@ -222,7 +222,8 @@ function VerticalTicker() {
 
 /* -- MAIN TV2 PAGE -- */
 export default function TV2Page() {
-  const cig = useCigaretteState();
+  const seeded = useCigaretteState();
+  const [tvCig, setTvCig] = useState({ show: seeded.tv, wording: seeded.wording });
   const fleetTv = useFleetTvManifest();
   const [sheetBroken, setSheetBroken] = useState<Record<string, { promo?: boolean; off?: boolean }>>({});
   const theme = getTvTheme(tvHiring?.store);
@@ -263,6 +264,7 @@ export default function TV2Page() {
     try {
       const res = await fetch("/api/tv-data?type=items");
       const data: Item[] = res.ok ? await res.json() : [];
+      setTvCig((prev) => res.ok ? readCigaretteTvHeader(res.headers) : { show: false, wording: prev.wording });
       setItems(data);
       setStockUpdated(readStockUpdatedAt(res, data));
       const hi: Record<string,number> = {};
@@ -322,15 +324,15 @@ export default function TV2Page() {
 
         {/* GRID */}
         <div className={styles.stage}>
-          <HiringRibbon hiring={tvHiring} />
+          <HiringRibbon hiring={tvHiring} showCigarettes={tvCig.show} />
           <div className={styles.grid}>
-            {CARD_CONFIG.filter((card) => SHOW_CIGARETTES || card.id !== "CIGARETTES").map(card => {
+            {visibleTvCards(CARD_CONFIG, tvCig.show).map(card => {
               const isCig = card.id === "CIGARETTES";
               const shelf = items.filter(card.filter).filter(it => !(daytime && isNicotineItem(it)));
-              const filtered = isCig && !cig.tv ? shelf.filter((it) => !isRealCigaretteItem(it)) : shelf;
+              const filtered = isCig && !tvCig.show ? shelf.filter((it) => !isRealCigaretteItem(it)) : shelf;
               const broken = sheetBroken[card.id] || {};
               const sheet = pickTv2Sheet(fleetTv.cards[card.id], {
-                categoryOff: isCig && !cig.tv,
+                categoryOff: isCig && !tvCig.show,
                 noItems: filtered.length === 0,
                 promoBroken: Boolean(broken.promo),
                 offBroken: Boolean(broken.off),
