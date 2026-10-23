@@ -102,15 +102,30 @@ export function decideCigaretteSurface(input: {
       : undefined,
   );
   if (cigaretteEnvHardOff(input.envRaw)) return { show: false, reason: "env", wording };
-  // A missing feed or a feed error shows cigarettes. Only an explicit false flag hides them.
-  if (input.errored) return { show: true, reason: "error", wording };
+  // TV hides on a feed error or a missing cig block. A present block still follows tvOn.
+  // The raw website decision stays open; publicWebsiteCigaretteFlag applies the static gate.
+  if (input.errored) return { show: input.surface !== "tv", reason: "error", wording };
   if (!input.cig || typeof input.cig !== "object" || Array.isArray(input.cig)) {
-    return { show: true, reason: "missing", wording };
+    return { show: input.surface !== "tv", reason: "missing", wording };
   }
   if (!resolveSurfaceFlag(input.cig, input.surface)) return { show: false, reason: "off", wording };
   const items = Array.isArray(input.items) ? input.items : [];
   if (!items.some((item) => isRealCigaretteItem(item))) return { show: false, reason: "no-items", wording };
   return { show: true, reason: "on", wording };
+}
+
+/**
+ * Website flag. The coded switch stays in front of the feed.
+ * A feed error or a missing block stays off, even when that switch is on.
+ * TV does not use this.
+ */
+export function publicWebsiteCigaretteFlag(
+  decision: Pick<CigaretteSurfaceDecision, "show" | "reason">,
+  codedOn: boolean,
+): boolean {
+  if (!codedOn) return false;
+  if (decision.reason === "error" || decision.reason === "missing") return false;
+  return decision.show;
 }
 
 /** Guide pages follow the master switch (`master`, otherwise `on`), not the web/TV split. */
@@ -166,9 +181,11 @@ export function readCigaretteTvHeader(headers: { get(name: string): string | nul
 }
 
 /**
- * TV follows the feed decision only (`tvOn`, with the missing/error fallback
- * already applied by decideCigaretteSurface). Web and guides keep the
- * build-time coded switch. Env hard-off is already `show: false`.
+ * TV follows the feed decision only (`tvOn`, with the missing/error hide
+ * already applied by decideCigaretteSurface). Website surfaces use
+ * publicWebsiteCigaretteFlag (`SHOW_CIGARETTES` in front, off on a feed
+ * error or a missing block). Guides keep the coded switch and stay open
+ * on a missing or errored feed. Env hard-off is already `show: false`.
  */
 export function foldCigaretteFlag(
   decision: Pick<CigaretteSurfaceDecision, "show" | "reason">,
@@ -176,6 +193,7 @@ export function foldCigaretteFlag(
   surface: "web" | "tv" | "guides" = "web",
 ): boolean {
   if (surface === "tv") return decision.show;
+  if (surface === "web") return publicWebsiteCigaretteFlag(decision, codedOn);
   if (!codedOn) return false;
   if (decision.reason === "error" || decision.reason === "missing") return true;
   return decision.show;
