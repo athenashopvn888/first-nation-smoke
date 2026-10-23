@@ -5,6 +5,7 @@ import {
   decideCigaretteGuide,
   decideCigaretteSurface,
   foldCigaretteFlag as foldSurfaceFlag,
+  publicWebsiteCigaretteFlag,
   reconcileSurfaceItems,
   type CigarettePageAction,
   type CigaretteSurfaceDecision,
@@ -47,7 +48,8 @@ export async function readCigaretteFeed(): Promise<CigaretteSnapshot> {
     const live = dataset?.source === "live";
     const items = Array.isArray(dataset?.items) ? dataset.items as ItemProduct[] : allItems;
     const cig = dataset?.cig ?? null;
-    // Last-good cig is kept on the dataset. A miss with no saved cig fails open.
+    // Last-good cig inside the cache window still follows its saved tvOn.
+    // A miss with no saved cig is an error. TV hides, and the website flag stays off.
     return snapshotFrom(cig, items.length ? items : allItems, live, !live && !cig);
   } catch {
     return snapshotFrom(null, allItems, false, true);
@@ -57,9 +59,9 @@ export async function readCigaretteFeed(): Promise<CigaretteSnapshot> {
 export const getCigaretteSnapshot = cache(readCigaretteFeed);
 
 /**
- * Web and guides keep the build-time SHOW_CIGARETTES gate (`web` follows
- * webOn only while that gate is open; env hard-off already wins inside
- * the decision). TV ignores the coded gate and follows the feed flag.
+ * Website surfaces follow `SHOW_CIGARETTES ? feed.web : false` and stay
+ * off on a feed error or a missing block. TV ignores the coded gate and
+ * follows the feed flag, which is already hidden on error or a missing block.
  */
 export function foldCigaretteFlag(
   decision: CigaretteSurfaceDecision,
@@ -71,7 +73,7 @@ export function foldCigaretteFlag(
 
 export function toPublicCigaretteState(snap: CigaretteSnapshot): PublicCigaretteState {
   return {
-    web: foldCigaretteFlag(snap.web),
+    web: publicWebsiteCigaretteFlag(snap.web, SHOW_CIGARETTES),
     tv: foldCigaretteFlag(snap.tv, SHOW_CIGARETTES, "tv"),
     wording: snap.wording,
   };
