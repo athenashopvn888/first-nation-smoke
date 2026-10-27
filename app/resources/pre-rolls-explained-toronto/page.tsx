@@ -13,11 +13,13 @@ const DESCRIPTION =
 const PUBLISHED = "2026-10-27";
 const PUBLISHER = "First Nation Smoke Cannabis Dispensary Toronto";
 
-type HeadingBlock = { type: "h1" | "h2"; text: string };
+type H1Block = { type: "h1"; text: string };
+type H2Block = { type: "h2"; text: string };
 type ParagraphBlock = { type: "p"; text: string };
-type ListBlock = { type: "ul" | "ol"; items: string[] };
+type UlBlock = { type: "ul"; items: string[] };
+type OlBlock = { type: "ol"; items: string[] };
 type TableBlock = { type: "table"; headers: string[]; rows: string[][] };
-type Block = HeadingBlock | ParagraphBlock | ListBlock | TableBlock;
+type Block = H1Block | H2Block | ParagraphBlock | UlBlock | OlBlock | TableBlock;
 
 function tableCells(row: string): string[] {
   return row.replace(/^\|/, "").replace(/\|$/, "").split("|").map((cell) => cell.trim());
@@ -111,7 +113,7 @@ function renderInline(text: string, keyPrefix: string): ReactNode[] {
 }
 
 const BLOCKS = parseArticle(ARTICLE_BODY);
-const titleBlock = BLOCKS.find((block): block is HeadingBlock => block.type === "h1");
+const titleBlock = BLOCKS.find((block): block is H1Block => block.type === "h1");
 if (!titleBlock) {
   throw new Error("Pre-rolls article is missing its heading");
 }
@@ -177,6 +179,7 @@ function ArticleBlock({ block, index }: { block: Block; index: number }) {
       </ListTag>
     );
   }
+  if (block.type !== "table") return null;
   return (
     <div className={styles.tableWrap}>
       <table>
