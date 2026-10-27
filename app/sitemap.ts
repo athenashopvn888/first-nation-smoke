@@ -204,6 +204,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...flowerPages,
     ...itemDetailPages,
     ...resourcePages,
+    {
+      url: `${BASE}/resources/pre-rolls-explained-toronto`,
+      lastModified: "2026-10-27",
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
     ...seoPages,
     ...fleetArticlePages,
   ];
