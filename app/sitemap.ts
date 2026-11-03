@@ -210,6 +210,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    {
+      url: `${BASE}/resources/cannabis-bud-anatomy-cola-calyx-pistils`,
+      lastModified: "2026-11-03",
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
     ...seoPages,
     ...fleetArticlePages,
   ];
