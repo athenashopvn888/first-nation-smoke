@@ -21,6 +21,8 @@ export interface ResourcePage {
   intro: string;
   cards: ResourceCard[];
   sections: ResourceSection[];
+  latestArticles?: ResourceCard[];
+  relatedLink?: ResourceCard;
 }
 
 export const RESOURCE_PAGES: ResourcePage[] = [
@@ -74,6 +76,19 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         heading: "Local Notes For Little Jamaica / Fairbank",
         body: "Shoppers searching around Eglinton Avenue West, Little Jamaica, Fairbank, or Oakwood Village can move through the site in three clear steps: store information, category guidance, then the current menu listing.",
+      },
+    ],
+    latestArticles: [
+      {
+        title:
+          "Cannabis Bud Anatomy: Colas, Calyxes, Pistils and the Orange Hairs Explained",
+        href: "/resources/cannabis-bud-anatomy-cola-calyx-pistils",
+        text: "Look closely at a bud and it stops being a green blob.",
+      },
+      {
+        title: "Pre-Rolls Toronto: Sizes, Papers and What the Pack Actually Tells You",
+        href: "/resources/pre-rolls-explained-toronto",
+        text: "If you're shopping pre-rolls Toronto-side and want to know what you're actually holding, this is the plain version.",
       },
     ],
   },
@@ -173,6 +188,12 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         body: "Move from one First Nation Smoke tier to another only when the current shelf does not fit the visit. Restarting the comparison keeps different price and shelf goals from blurring together.",
       },
     ],
+    relatedLink: {
+      title:
+        "Cannabis Bud Anatomy: Colas, Calyxes, Pistils and the Orange Hairs Explained",
+      href: "/resources/cannabis-bud-anatomy-cola-calyx-pistils",
+      text: "Look closely at a bud and it stops being a green blob.",
+    },
   },
   {
     slug: "value-guide",
@@ -433,6 +454,13 @@ export function presentResource(page: ResourcePage): ResourcePage {
     cards: page.cards
       .filter((card) => !CIGARETTE_RESOURCE_HREF.test(card.href))
       .map((card) => ({ ...card, text: publicText(card.text) })),
+    latestArticles: page.latestArticles
+      ?.filter((card) => !CIGARETTE_RESOURCE_HREF.test(card.href))
+      .map((card) => ({ ...card, text: publicText(card.text) })),
+    relatedLink:
+      page.relatedLink && !CIGARETTE_RESOURCE_HREF.test(page.relatedLink.href)
+        ? { ...page.relatedLink, text: publicText(page.relatedLink.text) }
+        : undefined,
     sections: page.sections
       .filter((section) => !/cigarette|native smoke/i.test(section.heading))
       .map((section) => ({ ...section, body: publicText(section.body) })),
