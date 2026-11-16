@@ -33,6 +33,22 @@ export default function ResourceView({ page }: ResourceViewProps) {
         </section>
       )}
 
+      {page.latestArticles && page.latestArticles.length > 0 && (
+        <section className={styles.latestSection} aria-labelledby="latest-articles-heading">
+          <div className={styles.latestInner}>
+            <h2 id="latest-articles-heading">Latest articles</h2>
+            <div className={styles.grid}>
+              {page.latestArticles.map((article) => (
+                <Link key={article.href} href={article.href} className={styles.card}>
+                  <span>{article.title}</span>
+                  <p>{article.text}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className={styles.body}>
         {page.sections.map((section) => (
           <article key={section.heading} className={styles.section}>
@@ -47,6 +63,15 @@ export default function ResourceView({ page }: ResourceViewProps) {
             )}
           </article>
         ))}
+        {page.relatedLink && (
+          <article className={styles.section}>
+            <h2>Related</h2>
+            <p>
+              <Link href={page.relatedLink.href}>{page.relatedLink.title}</Link>
+            </p>
+            <p>{page.relatedLink.text}</p>
+          </article>
+        )}
       </section>
       <Footer />
     </main>
