@@ -27,4 +27,7 @@ export const HOME_DELIVERY_FAQS = [
 ] as const;
 
 // Document <title> only (exact Google name | area). H1 keeps HOME_TITLE.
-export const HOME_DOC_TITLE = "First Nation Smoke Cannabis Dispensary Weed Delivery | Toronto, Eglinton West";
+export const HOME_DOC_TITLE = "First Nation Smoke Cannabis Dispensary near me | Weed Delivery | Toronto, Eglinton West";
+// Routes that omit og:title / twitter:title inherit the root social title.
+// Keep that rendered string on the previous document title.
+export const HOME_INHERITED_SOCIAL_TITLE = "First Nation Smoke Cannabis Dispensary Weed Delivery | Toronto, Eglinton West";

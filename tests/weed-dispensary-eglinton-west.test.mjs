@@ -33,7 +33,7 @@ const cityBlock = cityInfo.slice(
 
 test("corridor owner has unique H1, title, FAQ schema, and indexable canonical", () => {
   assert.match(page, /<h1 className=\{styles\.h1\}>Weed Dispensary on Eglinton West<\/h1>/);
-  assert.match(page, /Weed Dispensary on Eglinton West \| First Nation Smoke/);
+  assert.match(page, /Weed Dispensary near me on Eglinton West \| First Nation Smoke/);
   assert.match(page, /faqPageJsonLd\(WEED_DISPENSARY_FAQS\)/);
   assert.match(page, /"@type": "WebPage"/);
   assert.match(page, /name: "Weed Dispensary on Eglinton West"/);
