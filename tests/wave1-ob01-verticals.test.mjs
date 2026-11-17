@@ -72,7 +72,7 @@ test("Big Three neighbourhood LPs have unique H1 and title", () => {
   assert.match(nicotine, /Nicotine Vapes on Eglinton West \| First Nation Smoke/);
   assert.match(
     weedDispensary,
-    /Weed Dispensary on Eglinton West \| First Nation Smoke/,
+    /Weed Dispensary near me on Eglinton West \| First Nation Smoke/,
   );
 });
 

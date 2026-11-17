@@ -4,7 +4,7 @@ import FullNameNap from "./components/FullNameNap";
 import MobileBottomBar from "./components/MobileBottomBar";
 import { getCigaretteSnapshot, toPublicCigaretteState } from "./lib/cigaretteFeed";
 import { getFleetContent } from "./lib/fleetContent";
-import { HOME_DOC_TITLE } from "./lib/homeDelivery";
+import { HOME_INHERITED_SOCIAL_TITLE } from "./lib/homeDelivery";
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
@@ -22,7 +22,9 @@ export const dynamic = "force-dynamic";
 const ROOT_METADATA: Metadata = {
   metadataBase: new URL("https://www.firstnationsmokez.com"),
   title: {
-    default: HOME_DOC_TITLE,
+    // Untitled segments, including not-found, keep the previous document title.
+    // The homepage sets its own absolute title in app/page.tsx.
+    default: HOME_INHERITED_SOCIAL_TITLE,
     // Child titles that already include the brand must use resolveDocumentTitle()
     // so this template does not append "First Nation Smoke" a second time.
     template: "%s | First Nation Smoke",
@@ -45,7 +47,7 @@ const ROOT_METADATA: Metadata = {
     locale: "en_CA",
     url: "https://www.firstnationsmokez.com",
     siteName: "First Nation Smoke Cannabis Dispensary Toronto",
-    title: HOME_DOC_TITLE,
+    title: HOME_INHERITED_SOCIAL_TITLE,
     description:
       "Adult 19+ walk-in at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank. Open 24 Hours.",
     images: [
@@ -59,7 +61,7 @@ const ROOT_METADATA: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: HOME_DOC_TITLE,
+    title: HOME_INHERITED_SOCIAL_TITLE,
     description:
       "Adult 19+ walk-in at 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank. Open 24 Hours.",
     images: [

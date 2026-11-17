@@ -35,7 +35,7 @@ const WEED_DISPENSARY_FAQS = [
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Weed Dispensary on Eglinton West | First Nation Smoke",
+    absolute: "Weed Dispensary near me on Eglinton West | First Nation Smoke",
   },
   description:
     "Weed dispensary at First Nation Smoke, 1504 Eglinton Ave W on Eglinton West through Little Jamaica and Fairbank. Adults 19+. Walk-in retail only. No stock or price promises. Homepage keeps hours and the map.",
