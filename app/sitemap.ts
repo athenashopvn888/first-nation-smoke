@@ -216,6 +216,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    {
+      url: `${BASE}/resources/how-to-use-a-rolling-machine`,
+      lastModified: "2026-11-17",
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
     ...seoPages,
     ...fleetArticlePages,
   ];
