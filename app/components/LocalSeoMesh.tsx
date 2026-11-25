@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { TIER_CONFIG } from "../lib/products";
 import { PATHS, TWENTY_FOUR_HOUR_HREF } from "../lib/organicPaths";
-import { SHOW_CIGARETTES } from "../lib/showCigarettes";
+import { useCigaretteState } from "./CigaretteStateProvider";
 import styles from "./LocalSeoMesh.module.css";
 
 export { TWENTY_FOUR_HOUR_HREF };
@@ -13,7 +13,7 @@ const HUB_LINKS = [
   { href: PATHS.visit, label: "How to reach 1504" },
   { href: PATHS.twentyFour, label: "Open now / 24-hour Eglinton West" },
   { href: PATHS.deliveryLp, label: "Cannabis delivery on Eglinton West" },
-  ...(SHOW_CIGARETTES ? [{ href: PATHS.nativeCigarettesLp, label: "Native cigarettes on Eglinton West" }] : []),
+  { href: PATHS.nativeCigarettesLp, label: "Native cigarettes on Eglinton West" },
   { href: PATHS.nicotineVapeLp, label: "Nicotine vapes on Eglinton West" },
   { href: PATHS.weedDispensaryLp, label: "Weed dispensary on Eglinton West" },
 ] as const;
@@ -27,12 +27,13 @@ export default function LocalSeoMesh({
   currentPath: string;
   tone?: Tone;
 }) {
+  const showCigarettes = useCigaretteState().web;
   const tierLinks = Object.values(TIER_CONFIG).map((tier) => ({
     href: `/${tier.slug}`,
     label: tier.name,
   }));
   const links = [...HUB_LINKS, ...tierLinks].filter(
-    (link) => link.href !== currentPath,
+    (link) => link.href !== currentPath && (showCigarettes || link.href !== PATHS.nativeCigarettesLp),
   );
 
   return (

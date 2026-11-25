@@ -1,7 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import SheetAnnouncementBanners from "./fleet/FleetAnnouncementBanner";
 import type { ResolvedBanner } from "../lib/fleet/types";
-import { SHOW_CIGARETTES } from "../lib/showCigarettes";
+import { useCigaretteState } from "./CigaretteStateProvider";
 
 const STORE_NAME = "First Nation Smoke";
 const THEME = { accent: "#f97316", background: "#2b1507" };
@@ -13,8 +15,6 @@ const promos = [
 ] as const;
 
 const STORE_ORIGIN = "https://www.firstnationsmokez.com";
-const visiblePromos = SHOW_CIGARETTES ? promos : promos.filter((promo) => promo.key !== "cigarettes" && promo.key !== "premium-cigarettes");
-const bannerImageObjects = visiblePromos.map((promo) => ({ "@type": "ImageObject", name: promo.alt, contentUrl: `${STORE_ORIGIN}${promo.image}`, description: `${promo.alt} at ${STORE_NAME}.`, caption: promo.caption }));
 
 const figureStyle = { margin: 0, width: "100%" } as const;
 const imageStyle = { display: "block", width: "100%", maxWidth: "100%", height: "auto" } as const;
@@ -24,7 +24,10 @@ import { Fragment } from "react";
 import CigaretteSeasonalNotice from "./CigaretteSeasonalNotice";
 
 export default function FleetAnnouncementBanner({ banners }: { banners?: ResolvedBanner[] } = {}) {
+  const showCigarettes = useCigaretteState().web;
   if (banners) return <SheetAnnouncementBanners banners={banners} />;
+  const visiblePromos = showCigarettes ? promos : promos.filter((promo) => promo.key !== "cigarettes" && promo.key !== "premium-cigarettes");
+  const bannerImageObjects = visiblePromos.map((promo) => ({ "@type": "ImageObject", name: promo.alt, contentUrl: `${STORE_ORIGIN}${promo.image}`, description: `${promo.alt} at ${STORE_NAME}.`, caption: promo.caption }));
   return (
     <aside data-fleet-homepage-announcement="" aria-label="Store promotions" style={{ display: "flex", flexDirection: "column", width: "100%", maxWidth: "100%", height: "auto", minHeight: 0, overflow: "visible", position: "relative", zIndex: 50 }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": bannerImageObjects }).replace(/</g, "\\u003c") }} />

@@ -13,6 +13,7 @@ import styles from "../../flower/[slug]/flower.module.css";
 
 export const dynamic = "force-dynamic";
 import { resolveDocumentTitle } from "../../lib/storeIdentity";
+import { getCigaretteSnapshot, toPublicCigaretteState } from "../../lib/cigaretteFeed";
 import { VAPE_PAGE_PATH, isHiddenCigaretteItem } from "../../lib/showCigarettes";
 
 // ONE product loader (same as /api/tv-data), filled per request by __loadMenuData(). Grok 2026-10-09.
@@ -39,7 +40,7 @@ export async function generateMetadata({
   const { items } = await getWebMenuData();
   const item = items.find((i) => i.slug === slug);
   if (!item) return {};
-  if (isHiddenCigaretteItem(item)) return { robots: { index: false, follow: false } };
+  if (isHiddenCigaretteItem(item, toPublicCigaretteState(await getCigaretteSnapshot()).web)) return { robots: { index: false, follow: false } };
 
   const itemData = getItemData(item.category, item.name);
 
@@ -138,7 +139,7 @@ export default async function ItemPage({
   const { slug } = await params;
   const { items } = await getWebMenuData();
   const item = items.find((i) => i.slug === slug);
-  if (item && isHiddenCigaretteItem(item)) redirect(VAPE_PAGE_PATH);
+  if (item && isHiddenCigaretteItem(item, toPublicCigaretteState(await getCigaretteSnapshot()).web)) redirect(VAPE_PAGE_PATH);
   if (!item) notFound();
 
   const catInfo = Object.values(CATEGORY_CONFIG).find(c => c.name.toUpperCase() === item.category.toUpperCase() || c.name === item.category);

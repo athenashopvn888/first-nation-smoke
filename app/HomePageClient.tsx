@@ -14,7 +14,8 @@ import Footer from "./components/Footer";
 import FlowerCard from "./components/FlowerCard";
 import Papa from "papaparse";
 import { HOME_FAQS, STORE, storeClaimsOpen24Hours } from "./lib/storeIdentity";
-import { SHOW_CIGARETTES, publicFaqs } from "./lib/showCigarettes";
+import { publicFaqs } from "./lib/showCigarettes";
+import { useCigaretteState } from "./components/CigaretteStateProvider";
 import LocalSeoMesh, {
   TWENTY_FOUR_HOUR_HREF,
 } from "./components/LocalSeoMesh";
@@ -179,6 +180,7 @@ interface ReviewStats {
 }
 
 export default function HomePageClient({ initialFlowers, contentBanners }: { initialFlowers: Parameters<typeof storeTierRange>[0]; contentBanners?: ResolvedBanner[] }) {
+  const showCigarettes = useCigaretteState().web;
     const __liveFlowers = useLiveFlowers();
   const [featuredStrains, setFeaturedStrains] = useState<any[]>([]);
   const [reviews, setReviews] = useState<Review[]>([]);
@@ -376,7 +378,7 @@ export default function HomePageClient({ initialFlowers, contentBanners }: { ini
           <div className={styles.hubGrid}>
             {NEIGHBOURHOOD_HUB_CARDS.filter(
               (card) => (!("onlyWhen24h" in card) || storeClaimsOpen24Hours())
-                && (SHOW_CIGARETTES || card.href !== "/native-cigarettes-eglinton-west"),
+                && (showCigarettes || card.href !== "/native-cigarettes-eglinton-west"),
             ).map((card) => (
               <Link key={card.href} href={card.href} className={styles.hubCard}>
                 <span className={styles.hubKicker}>{card.kicker}</span>
@@ -400,7 +402,7 @@ export default function HomePageClient({ initialFlowers, contentBanners }: { ini
           </div>
 
           <div className={styles.categoriesGrid}>
-            {EXPLORE_CATEGORIES.filter((cat) => SHOW_CIGARETTES || cat.slug !== "items/cigarettes").map((cat) => (
+            {EXPLORE_CATEGORIES.filter((cat) => showCigarettes || cat.slug !== "items/cigarettes").map((cat) => (
               <Link
                 key={cat.slug}
                 href={`/${cat.slug}`}
@@ -469,11 +471,11 @@ export default function HomePageClient({ initialFlowers, contentBanners }: { ini
               <Link href={TWENTY_FOUR_HOUR_HREF}>
                 24-hour dispensary on Eglinton West
               </Link>
-              — equal to the weed dispensary, delivery{SHOW_CIGARETTES ? ", Native cigarettes," : ""} and
+              — equal to the weed dispensary, delivery{showCigarettes ? ", Native cigarettes," : ""} and
               nicotine vape pages.
             </p>
             <p className={styles.seoPanelText}>
-              {SHOW_CIGARETTES ? "Five" : "Four"} equal corridor pages sit beside this hub: the{" "}
+              {showCigarettes ? "Five" : "Four"} equal corridor pages sit beside this hub: the{" "}
               <Link href="/weed-dispensary-eglinton-west">
                 weed dispensary on Eglinton West
               </Link>
@@ -485,13 +487,13 @@ export default function HomePageClient({ initialFlowers, contentBanners }: { ini
               <Link href="/cannabis-delivery-eglinton-west">
                 cannabis delivery on Eglinton West
               </Link>
-              {SHOW_CIGARETTES ? ", " : " and "}
-              {SHOW_CIGARETTES && (
+              {showCigarettes ? ", " : " and "}
+              {showCigarettes && (
               <Link href="/native-cigarettes-eglinton-west">
                 Native cigarettes on Eglinton West
               </Link>
               )}
-              {SHOW_CIGARETTES ? " (merchandise category only), and " : ""}
+              {showCigarettes ? " (merchandise category only), and " : ""}
               <Link href="/nicotine-vape-eglinton-west">
                 nicotine vapes on Eglinton West
               </Link>{" "}
@@ -574,7 +576,7 @@ export default function HomePageClient({ initialFlowers, contentBanners }: { ini
           >
             Frequently Asked Questions
           </h2>
-          {publicFaqs(HOME_FAQS).map((faq) => (
+          {publicFaqs(HOME_FAQS, showCigarettes).map((faq) => (
             <details key={faq.q} className={styles.faqItem}>
               <summary className={styles.faqQuestion}>{faq.q}</summary>
               <p className={styles.faqAnswer}>{faq.a}</p>
@@ -600,7 +602,7 @@ export default function HomePageClient({ initialFlowers, contentBanners }: { ini
             <Link href="/cannabis-delivery-eglinton-west">
               Eglinton West Delivery
             </Link>
-            {SHOW_CIGARETTES && (
+            {showCigarettes && (
             <Link href="/native-cigarettes-eglinton-west">
               Native Cigarettes
             </Link>

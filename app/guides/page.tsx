@@ -3,7 +3,8 @@ import Link from "next/link";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { getGuidesByLane } from "../lib/guideRegistry";
-import { publicText } from "../lib/showCigarettes";
+import { getCigaretteSnapshot, toPublicCigaretteState } from "../lib/cigaretteFeed";
+import { isExemptGuideSlug, publicText } from "../lib/showCigarettes";
 import styles from "./guides-index.module.css";
 
 const BASE = "https://www.firstnationsmokez.com";
@@ -21,8 +22,13 @@ const jsonLd = { "@context": "https://schema.org", "@graph": [
   ] },
 ] };
 
-export default function GuidesPage() {
-  const guideGroups = getGuidesByLane();
+export default async function GuidesPage() {
+  const showCigarettes = toPublicCigaretteState(await getCigaretteSnapshot()).web;
+  const guideGroups = getGuidesByLane()
+    .map((group) => showCigarettes || group.lane !== "native_cig"
+      ? group
+      : { ...group, label: "Accessories", guides: group.guides.filter((guide) => isExemptGuideSlug(guide.slug)) })
+    .filter((group) => group.guides.length > 0);
   return <main className={styles.main}>
     <Navbar />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />

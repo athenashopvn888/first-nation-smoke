@@ -24,8 +24,8 @@ export function isCigaretteCategory(category?: string): boolean {
 }
 
 /** Product rows to withhold while the switch is off. Exempt accessories stay. */
-export function isHiddenCigaretteItem(item: { name?: string; slug?: string; category?: string }): boolean {
-  if (SHOW_CIGARETTES) return false;
+export function isHiddenCigaretteItem(item: { name?: string; slug?: string; category?: string }, showCigarettes = SHOW_CIGARETTES): boolean {
+  if (showCigarettes) return false;
   if (isExemptTobaccoAccessory(item)) return false;
   return isCigaretteCategory(item.category);
 }
@@ -121,8 +121,8 @@ const HIDDEN_COPY: Array<[string, string]> = [
   ],
 ];
 
-export function publicText(text: string): string {
-  if (SHOW_CIGARETTES) return text;
+export function publicText(text: string, showCigarettes = SHOW_CIGARETTES): string {
+  if (showCigarettes) return text;
   let next = text;
   for (const [from, to] of HIDDEN_COPY) {
     if (next.includes(from)) next = next.split(from).join(to);
@@ -130,9 +130,9 @@ export function publicText(text: string): string {
   return next;
 }
 
-export function publicFaqs<T extends { q: string; a: string }>(faqs: readonly T[]): T[] {
-  if (SHOW_CIGARETTES) return [...faqs];
+export function publicFaqs<T extends { q: string; a: string }>(faqs: readonly T[], showCigarettes = SHOW_CIGARETTES): T[] {
+  if (showCigarettes) return [...faqs];
   return faqs
     .filter((faq) => !/cigarette|native smoke/i.test(faq.q))
-    .map((faq) => ({ ...faq, a: publicText(faq.a) }));
+    .map((faq) => ({ ...faq, a: publicText(faq.a, showCigarettes) }));
 }

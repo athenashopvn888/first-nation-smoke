@@ -8,7 +8,8 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { SEO_PAGES, getSeoPageBySlug } from "../../lib/seoPages";
 import { presentSeoPage } from "../../lib/presentSeoPage";
-import { SHOW_CIGARETTES, VAPE_PAGE_PATH } from "../../lib/showCigarettes";
+import { getCigaretteSnapshot, toPublicCigaretteState } from "../../lib/cigaretteFeed";
+import { VAPE_PAGE_PATH } from "../../lib/showCigarettes";
 import { TIER_CONFIG } from "../../lib/products";
 import { STORE, resolveDocumentTitle } from "../../lib/storeIdentity";
 import LocalSeoMesh from "../../components/LocalSeoMesh";
@@ -28,7 +29,7 @@ export async function generateMetadata({
   const { seoPage: slug } = await params;
   const found = getSeoPageBySlug(slug);
   if (!found) return {};
-  if (!SHOW_CIGARETTES && found.slug === "native-cigarettes-toronto") return { robots: { index: false, follow: false } };
+  if (found.slug === "native-cigarettes-toronto" && !toPublicCigaretteState(await getCigaretteSnapshot()).web) return { robots: { index: false, follow: false } };
   const page = presentSeoPage(found);
 
   return {
@@ -51,7 +52,7 @@ export default async function SeoLandingPage({
   const { seoPage: slug } = await params;
   const found = getSeoPageBySlug(slug);
   if (!found) notFound();
-  if (!SHOW_CIGARETTES && found.slug === "native-cigarettes-toronto") redirect(VAPE_PAGE_PATH);
+  if (found.slug === "native-cigarettes-toronto" && !toPublicCigaretteState(await getCigaretteSnapshot()).web) redirect(VAPE_PAGE_PATH);
   const page = presentSeoPage(found);
 
   const tiers = Object.values(TIER_CONFIG);

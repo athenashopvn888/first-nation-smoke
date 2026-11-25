@@ -4,7 +4,7 @@ import CohortDeliveryActions from "./CohortDeliveryActions";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { SHOW_CIGARETTES } from "../lib/showCigarettes";
+import { useCigaretteState } from "./CigaretteStateProvider";
 import { storeClaimsOpen24Hours } from "../lib/storeIdentity";
 import styles from "./Navbar.module.css";
 
@@ -34,11 +34,12 @@ const ALL_LINKS: { href: string; label: string; featured?: boolean }[] = [
 ];
 
 export default function Navbar() {
+  const showCigarettes = useCigaretteState().web;
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const navLinks = ALL_LINKS.filter(
     (link) => (link.href !== "/24-hour-eglinton-west-dispensary" || storeClaimsOpen24Hours())
-      && (SHOW_CIGARETTES || link.href !== "/items/cigarettes"),
+      && (showCigarettes || link.href !== "/items/cigarettes"),
   );
   const scrollBarRef = useRef<HTMLDivElement>(null);
   const [canAdvance, setCanAdvance] = useState(false);
