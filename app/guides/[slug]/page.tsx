@@ -5,7 +5,8 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import { DELIVERY_GUIDE_REGISTRY, getDeliveryGuide } from "../../lib/deliveryGuideRegistry";
 import { GUIDE_REGISTRY, GUIDE_STORE, getGuide, resolveGuideProduct, type GuideEntry } from "../../lib/guideRegistry";
-import { SHOW_CIGARETTES, VAPE_PAGE_PATH, isExemptGuideSlug } from "../../lib/showCigarettes";
+import { getCigaretteSnapshot, toPublicCigaretteState } from "../../lib/cigaretteFeed";
+import { VAPE_PAGE_PATH, isExemptGuideSlug } from "../../lib/showCigarettes";
 import GuideBody, { stripMarkdown } from "./GuideBody";
 import DeliveryGuidePage from "./DeliveryGuidePage";
 import styles from "./guide.module.css";
@@ -24,13 +25,14 @@ export function generateStaticParams() { return [...GUIDE_REGISTRY, ...DELIVERY_
 
 export async function generateMetadata({ params }: GuidePageProps): Promise<Metadata> {
   const slug = (await params).slug;
+  const showCigarettes = toPublicCigaretteState(await getCigaretteSnapshot()).web;
   const deliveryGuide = getDeliveryGuide(slug);
   if (deliveryGuide) {
-    if (hideCigaretteGuide(deliveryGuide.lane, deliveryGuide.slug)) return {};
+    if (hideCigaretteGuide(deliveryGuide.lane, deliveryGuide.slug, showCigarettes)) return {};
     return { title: { absolute: deliveryGuide.title }, description: deliveryGuide.description, alternates: { canonical: `${BASE}/guides/${deliveryGuide.slug}` }, robots: { index: true, follow: true }, openGraph: { title: deliveryGuide.title, description: deliveryGuide.description, url: `${BASE}/guides/${deliveryGuide.slug}`, type: "website" } };
   }
   const guide = getGuide(slug);
-  if (!guide || hideCigaretteGuide(guide.lane, guide.slug)) return {};
+  if (!guide || hideCigaretteGuide(guide.lane, guide.slug, showCigarettes)) return {};
   const description = stripMarkdown(guide.description);
   return {
     title: { absolute: guide.title },
@@ -42,21 +44,22 @@ export async function generateMetadata({ params }: GuidePageProps): Promise<Meta
   };
 }
 
-const relatedEntries = (guide: GuideEntry) => guide.relatedSlugs.map(getGuide).filter((entry): entry is GuideEntry => Boolean(entry)).filter((entry) => SHOW_CIGARETTES || entry.lane !== "native_cig" || isExemptGuideSlug(entry.slug));
+const relatedEntries = (guide: GuideEntry, showCigarettes: boolean) => guide.relatedSlugs.map(getGuide).filter((entry): entry is GuideEntry => Boolean(entry)).filter((entry) => showCigarettes || entry.lane !== "native_cig" || isExemptGuideSlug(entry.slug));
 
-function hideCigaretteGuide(lane: string, slug: string) {
-  return !SHOW_CIGARETTES && lane === "native_cig" && !isExemptGuideSlug(slug);
+function hideCigaretteGuide(lane: string, slug: string, showCigarettes: boolean) {
+  return !showCigarettes && lane === "native_cig" && !isExemptGuideSlug(slug);
 }
 
 export default async function GuidePage({ params }: GuidePageProps) {
   const slug = (await params).slug;
+  const showCigarettes = toPublicCigaretteState(await getCigaretteSnapshot()).web;
   const deliveryGuide = getDeliveryGuide(slug);
   if (deliveryGuide) {
-    if (hideCigaretteGuide(deliveryGuide.lane, deliveryGuide.slug)) redirect(VAPE_PAGE_PATH);
+    if (hideCigaretteGuide(deliveryGuide.lane, deliveryGuide.slug, showCigarettes)) redirect(VAPE_PAGE_PATH);
     return <DeliveryGuidePage guide={deliveryGuide} />;
   }
   const guide = getGuide(slug);
-  if (guide && hideCigaretteGuide(guide.lane, guide.slug)) redirect(VAPE_PAGE_PATH);
+  if (guide && hideCigaretteGuide(guide.lane, guide.slug, showCigarettes)) redirect(VAPE_PAGE_PATH);
   if (!guide) notFound();
   const product = resolveGuideProduct(guide);
   const productHref = product ? `${guide.lane === "strain" ? "/flower" : "/item"}/${product.slug}` : undefined;
@@ -103,7 +106,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
         <section className={styles.section} aria-label={`${guide.name} guide`}><GuideBody markdown={guide.bodyMd} /></section>
         <section className={styles.section} aria-labelledby="related-guides-heading">
           <h2 id="related-guides-heading">Related {lane.label} guides</h2>
-          <div className={styles.related}>{relatedEntries(guide).map((entry) => <Link key={entry.slug} href={`/guides/${entry.slug}`}>{entry.name}<span>{laneCopy[entry.lane].label}</span></Link>)}</div>
+          <div className={styles.related}>{relatedEntries(guide, showCigarettes).map((entry) => <Link key={entry.slug} href={`/guides/${entry.slug}`}>{entry.name}<span>{laneCopy[entry.lane].label}</span></Link>)}</div>
         </section>
         <aside className={styles.finalCta}>
           <h2>Check today&apos;s board</h2>
